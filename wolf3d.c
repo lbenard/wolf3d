@@ -6,7 +6,7 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:30:44 by pp                #+#    #+#             */
-/*   Updated: 2019/02/21 17:25:08 by pp               ###   ########.fr       */
+/*   Updated: 2019/02/21 20:11:17 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,25 @@
 #include "mlx.h"
 
 
-int	check_inputs(int ac, char **av)
+int	check_inputs(t_param *p, int ac, char **av)
 {
-	if (ac == 2 && ft_atoi(av[1]) > 0 && ft_atoi(av[1]) <= 3)
+	if (ac == 2 && (p->map.file_descriptor = open(av[1], O_RDONLY)) > 2
+		&& read(p->map.file_descriptor, NULL, 0) == 0)
 		return (1);
 	else
 	{
-		ft_putstr("usage : wolf3d [maps]\n"
-			" fractals :\n"
-			" 1 --> Basic Map\n"
-			" 2 --> Medium Map\n"
-			" 3 --> Large Map\n");
+		ft_putstr("usage : wolf3d [maps]\n");
 		return (0);
 	}
 }
 
-int	initialize_params(t_param *p, char *filename)
+int	initialize_params(t_param *p)
 {
 	int			t;
 	int			x;
 	int			y;
 
-    (void)filename;
+    parsing_map(p);
 	x = 720;
 	y = 480;
 	p->mlx.width = x;
@@ -56,9 +53,9 @@ int	main(int ac, char **av)
 {
 	t_param p;
 
-	if (check_inputs(ac, av))
+	if (check_inputs(&p, ac, av))
 	{
-		if (initialize_params(&p, av[1]))
+		if (initialize_params(&p))
 			return (!manage_error(&p, 0, "fill_param() --> error\n"));
 		mlx_hook(p.mlx.window, 4, 1L << 2, mouse_callback, (void*)&p);
 		mlx_hook(p.mlx.window, 2, 1L << 0, press_callback, (void*)&p);

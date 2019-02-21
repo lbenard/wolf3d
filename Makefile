@@ -4,7 +4,8 @@ NAME		= wolf3d
 SRC		= wolf3d.c\
 		./sources/manage_error.c\
 		./sources/manage_callback.c\
-		./sources/callback.c
+		./sources/callback.c\
+		./sources/map_parser.c
 
 UNAME =	$(shell uname)
 

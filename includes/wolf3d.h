@@ -6,7 +6,7 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:16:07 by pp                #+#    #+#             */
-/*   Updated: 2019/02/21 17:14:06 by pp               ###   ########.fr       */
+/*   Updated: 2019/02/21 20:10:04 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,21 @@ typedef struct      s_mlx_params
 	int				height;
 }                   t_mlx_params;
 
+typedef struct      s_map
+{
+    int             file_descriptor;
+    int             *map;
+    int             width;
+    int             height;
+}                   t_map;
+
 typedef struct		s_param
 {
 	t_mlx_params    mlx;
     t_pointeur      pointeur;
     t_mouse         mouse;
     t_keybord       keyboard;
+    t_map           map;
 }					t_param;
 
 void				*manage_error(t_param *p, int code, const char *message);
@@ -68,5 +77,6 @@ int					mouse_callback(int button, int x, int y, void *param);
 void				reset_image(t_param *p);
 void				draw(t_param *p);
 void				print_fps(t_param *p);
+void                parsing_map(t_param *p);
 
 #endif

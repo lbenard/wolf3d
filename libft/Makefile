@@ -6,7 +6,7 @@
 #    By: pp <pp@student.42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/08 21:03:56 by ppetitea          #+#    #+#              #
-#    Updated: 2019/02/03 00:13:16 by pp               ###   ########.fr        #
+#    Updated: 2019/02/21 20:20:44 by pp               ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,11 +72,15 @@ SRC = ./ft_atoi.c\
 		ft_lstiter.c\
 		ft_lstmap.c\
 		get_next_line.c\
+		ft_contains_char.c\
+		ft_strcdup.c\
 		ft_rgb.c\
 		ft_rgb_to_int.c\
 		ft_int_to_rgb.c\
 		ft_hsv.c\
-		ft_hsv_to_rgb.c
+		ft_hsv_to_rgb.c\
+		ft_is_number.c\
+		ft_is_space.c
 		
 INCLUDES = ./
 
