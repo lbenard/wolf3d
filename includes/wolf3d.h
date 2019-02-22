@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wolf3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:16:07 by pp                #+#    #+#             */
-/*   Updated: 2019/02/22 10:41:46 by pp               ###   ########.fr       */
+/*   Updated: 2019/02/22 19:07:36 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@
 # include <string.h>
 # include <stdlib.h>
 # include "mlx_keys_macos.h"
+
+typedef struct			s_point
+{
+	int					x;
+	int					y;
+	int					z;
+}						t_point;
 
 typedef struct      s_pointeur
 {
@@ -57,7 +64,16 @@ typedef struct      s_map
     int             *map;
     int             width;
     int             height;
+	float			zoom;
 }                   t_map;
+
+typedef	struct		s_entity
+{
+	float			x;
+	float			y;
+	float			vector_direction;
+}					t_entity;
+
 
 typedef struct		s_param
 {
@@ -66,6 +82,7 @@ typedef struct		s_param
     t_mouse         mouse;
     t_keybord       keyboard;
     t_map           map;
+	t_entity		hero;
 }					t_param;
 
 void				*manage_error(t_param *p, int code, const char *message);
@@ -79,5 +96,9 @@ void				draw(t_param *p);
 void				print_fps(t_param *p);
 int                 parsing_map(t_param *p);
 void                render_2d_map(t_param *p);
+void     			render_3d_map(t_param *p);
+void				initialize_hero(t_param *p);
+int    				initialize_map(t_param *p);
+void				bresenham(t_param *param, t_point *p);
 
 #endif

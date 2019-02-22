@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/14 02:20:08 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/02/21 20:20:29 by pp               ###   ########.fr       */
+/*   Updated: 2019/02/22 16:57:59 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,6 +126,7 @@ int					get_next_line(const int fd, char **line);
 char				*ft_strcdup(char *string, char c);
 int					contains_char(char *string, char c);
 
+void				bresenham(t_param *param, t_point *p);
 t_rgb				ft_rgb(t_u8 r, t_u8 g, t_u8 b);
 t_u32				ft_rgb_to_int(t_rgb color);
 t_rgb				ft_int_to_rgb(t_u32 color);

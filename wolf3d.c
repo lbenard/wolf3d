@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wolf3d.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:30:44 by pp                #+#    #+#             */
-/*   Updated: 2019/02/21 20:11:17 by pp               ###   ########.fr       */
+/*   Updated: 2019/02/22 19:00:21 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,9 @@ int	initialize_params(t_param *p)
 	int			y;
 
     parsing_map(p);
-	x = 720;
-	y = 480;
+	p->hero.vector_direction = 0;
+	x = 1080;//720;
+	y = 720;//480;
 	p->mlx.width = x;
 	p->mlx.height = y;
 	if (!(p->mlx.init = mlx_init()))

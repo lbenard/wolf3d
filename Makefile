@@ -6,7 +6,10 @@ SRC		= wolf3d.c\
 		./sources/manage_callback.c\
 		./sources/callback.c\
 		./sources/map_parser.c\
-		./sources/2Dmap_renderer.c
+		./sources/2Dmap_renderer.c\
+		./sources/3Dmap_renderer.c\
+		./sources/initialize_entity.c\
+		./sources/bresenham.c
 
 UNAME =	$(shell uname)
 
