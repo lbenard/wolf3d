@@ -6,7 +6,7 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 18:07:50 by pp                #+#    #+#             */
-/*   Updated: 2019/02/21 20:32:51 by pp               ###   ########.fr       */
+/*   Updated: 2019/02/22 10:25:16 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,30 @@ int    initialize_map(t_param *p)
     return (0);
 }
 
-void    parsing_map(t_param *p)
+int    parsing_map(t_param *p)
 {
     char    *line;
     int        i;
     int        j;
 
     j = -1;
-    initialize_map(p);
+    if (initialize_map(p))
+        return (!manage_error(p, 0, "initialize_map() --> parsing error\n"));
     while (get_next_line(p->map.file_descriptor, &line) > 0)
     {
         i = 0;
         while (line[i])
         {
             p->map.map[++j] = ft_atoi(&line[i]);
-            if (!(j % 10))
-                printf("\n");
-            printf("%d\t", p->map.map[j]);
+            i++;
             while (line[i] && (!i || !ft_is_space(line[i - 1])
                 || !ft_is_number(line[i])))
                 i++;
         }
         
     }
-    /*i = -1;
+ /*   
+    i = -1;
     while (++i < 10)
     {
         j = -1;
@@ -57,4 +57,5 @@ void    parsing_map(t_param *p)
             printf("%d\t", p->map.map[i * 10 + j]);
         printf("\n");
     }*/
+    return (0);
 } 

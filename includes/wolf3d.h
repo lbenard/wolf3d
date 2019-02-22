@@ -6,7 +6,7 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:16:07 by pp                #+#    #+#             */
-/*   Updated: 2019/02/21 20:10:04 by pp               ###   ########.fr       */
+/*   Updated: 2019/02/22 10:41:46 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int					mouse_callback(int button, int x, int y, void *param);
 void				reset_image(t_param *p);
 void				draw(t_param *p);
 void				print_fps(t_param *p);
-void                parsing_map(t_param *p);
+int                 parsing_map(t_param *p);
+void                render_2d_map(t_param *p);
 
 #endif

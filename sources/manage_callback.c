@@ -6,7 +6,7 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/27 16:58:41 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/02/21 17:59:00 by pp               ###   ########.fr       */
+/*   Updated: 2019/02/22 11:31:35 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	draw(t_param *p)
 	reset_image(p);
 	mlx_clear_window(p->mlx.init, p->mlx.window);
 
-
+	render_2d_map(p);
 	mlx_put_image_to_window(p->mlx.init, p->mlx.window, p->mlx.img, 0, 0);
 	print_fps(p);
 }
@@ -58,7 +58,8 @@ int		manage_callback(void *param)
 		manage_error(p, 4, "Exit with ESC\n");
 		exit(0);
 	}
+	if (p->keyboard.press == 1)
+		draw(p);
 	p->mouse.press = 0;
-	draw(p);
 	return (0);
 }
