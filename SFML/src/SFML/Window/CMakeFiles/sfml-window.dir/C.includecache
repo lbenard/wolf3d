@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Window/OSX/SFApplication.m
+SFML/Window/OSX/SFApplication.h
+-
+
+/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Window/OSX/SFApplicationDelegate.m
+SFML/Window/OSX/SFApplicationDelegate.h
+-
+
+/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Window/OSX/SFSilentResponder.m
+SFML/Window/OSX/SFSilentResponder.h
+-
+
+/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Window/OSX/SFWindow.m
+SFML/Window/OSX/SFWindow.h
+-
+
+src/SFML/Window/OSX/SFApplication.h
+AppKit/AppKit.h
+-
+Foundation/Foundation.h
+-
+
+src/SFML/Window/OSX/SFApplicationDelegate.h
+AppKit/AppKit.h
+-
+Foundation/Foundation.h
+-
+
+src/SFML/Window/OSX/SFSilentResponder.h
+AppKit/AppKit.h
+-
+
+src/SFML/Window/OSX/SFWindow.h
+AppKit/AppKit.h
+-
+
