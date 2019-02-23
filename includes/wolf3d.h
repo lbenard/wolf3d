@@ -6,7 +6,7 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:16:07 by pp                #+#    #+#             */
-/*   Updated: 2019/02/22 19:07:36 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/02/23 20:32:20 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ typedef struct		s_param
     t_keybord       keyboard;
     t_map           map;
 	t_entity		hero;
+	t_entity		obstacle;
 }					t_param;
 
 void				*manage_error(t_param *p, int code, const char *message);
@@ -100,5 +101,6 @@ void     			render_3d_map(t_param *p);
 void				initialize_hero(t_param *p);
 int    				initialize_map(t_param *p);
 void				bresenham(t_param *param, t_point *p);
+void				render_hero_vector(t_param *p, int x, int y);
 
 #endif

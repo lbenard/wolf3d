@@ -6,7 +6,7 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:33:43 by pp                #+#    #+#             */
-/*   Updated: 2019/02/22 19:06:14 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/02/23 20:55:06 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,10 @@ void	render_hero_vector(t_param *p, int x, int y)
 
 	point[0].x = x;
 	point[0].z = y;
-	point[1].x = x + 20 * cos(p->hero.vector_direction);
-	point[1].z = y + 20 * sin(p->hero.vector_direction);
+	point[1].x = x + 100.0f * cos(p->hero.vector_direction);
+	point[1].z = y + 100.0f * sin(p->hero.vector_direction);
 	bresenham(p, point);
+	p->mlx.pixels[point[1].x + point[1].z * p->mlx.width] = 0x00FF0000;
 }
 
 void	render_hero(t_param *p)
@@ -47,13 +48,13 @@ void     render_2d_map(t_param *p)
     int     l;
 
     i = -1;
-    while (++i < p->mlx.height * 0.2)
+    while (++i < p->mlx.height * p->map.zoom)
     {
         j = -1;
-        while (++j < p->mlx.width * 0.2)
+        while (++j < p->mlx.width * p->map.zoom)
         {
-            k = ((float)i / ((float)p->mlx.height * 0.2)) * (float)p->map.height;
-            l = ((float)j / ((float)p->mlx.width * 0.2)) * (float)p->map.width;
+            k = ((float)i / ((float)p->mlx.height * p->map.zoom)) * (float)p->map.height;
+            l = ((float)j / ((float)p->mlx.width * p->map.zoom)) * (float)p->map.width;
 			if (p->map.map[(int)(l + k * p->map.width)])
                 p->mlx.pixels[j + i * p->mlx.width] = 0x00AAAAAA; 
             else
