@@ -6,12 +6,18 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 19:33:38 by lbenard           #+#    #+#              #
-#    Updated: 2019/02/23 16:31:26 by lbenard          ###   ########.fr        #
+#    Updated: 2019/02/24 18:06:21 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	wolf3d
-SRCS_LIST		=	main.c
+SRCS_LIST		=	main.c							\
+					engine/entity_list.c			\
+					engine/entity.c					\
+					engine/errors.c					\
+					engine/framebuffer.c			\
+					game/entities/dummy_entity.c	\
+					game/entities/test_entity.c
 
 SRCS_FOLDER		=	./srcs/
 SRCS			=	$(addprefix $(SRCS_FOLDER), $(SRCS_LIST))
