@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map_parser.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 18:07:50 by pp                #+#    #+#             */
-/*   Updated: 2019/02/22 15:56:12 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/02/23 13:46:40 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int    initialize_map(t_param *p)
     p->map.height = ft_atoi(line);
     if (!(p->map.map = malloc(sizeof(int) * p->map.width * p->map.height)))
         return (!manage_error(p, 0, "malloc() --> initialize_map error\n"));
-	initialize_hero(p);
+    initialize_hero(p);
     return (0);
 }
 

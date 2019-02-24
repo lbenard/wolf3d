@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_callback.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/27 16:58:41 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/02/22 18:59:49 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/02/23 13:45:33 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	reset_image(t_param *p)
 	i = -1;
 	while (++i <= (int)(0.5 * p->mlx.width * p->mlx.height))
 		p->mlx.pixels[i] = 0x004286F4;
-		i -= 2;
+	i -= 2;
 	while (++i <= p->mlx.width * p->mlx.height)
 		p->mlx.pixels[i] = 0x00B241F4;
 }
