@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 19:33:38 by lbenard           #+#    #+#              #
-#    Updated: 2019/02/24 18:06:21 by lbenard          ###   ########.fr        #
+#    Updated: 2019/02/25 16:45:45 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,8 @@ SRCS_LIST		=	main.c							\
 					game/entities/dummy_entity.c	\
 					game/entities/test_entity.c
 
+UNAME			=	$(shell uname)
+
 SRCS_FOLDER		=	./srcs/
 SRCS			=	$(addprefix $(SRCS_FOLDER), $(SRCS_LIST))
 OBJS_LIST		=	$(SRCS_LIST:.c=.o)
@@ -28,20 +30,24 @@ OBJS			=	$(addprefix $(OBJS_FOLDER), $(OBJS_LIST))
 LIBFT_FOLDER	=	libft
 LIBFT			=	$(LIBFT_FOLDER)/libft.a
 
-SFML_FOLDER		=	SFML
-SFML_ABSOLUTE	=	$(addprefix $(shell pwd)/, $(SFML_FOLDER))
-CSFML_FOLDER	=	CSFML
-CSFML			=	$(CSFML_FOLDER)/lib
+ifneq ($(UNAME), Linux)
+	SFML_FOLDER		=	SFML
+	SFML_ABSOLUTE	=	$(addprefix $(shell pwd)/, $(SFML_FOLDER))
+	CSFML_FOLDER	=	CSFML
+	CSFML			=	$(CSFML_FOLDER)/lib
+endif
 
 CXX				=	gcc
 LD				=	gcc
 
-INCLUDES		=	-I includes					\
-					-I $(LIBFT_FOLDER)/includes	\
-					-I $(CSFML_FOLDER)/include
+INCLUDES		:=	-I includes					\
+					-I $(LIBFT_FOLDER)/includes
+LIB_FOLDERS		:=	-L$(LIBFT_FOLDER)
 
-LIB_FOLDERS		=	-L$(LIBFT_FOLDER)		\
-					-L$(CSFML_FOLDER)/lib
+ifneq ($(UNAME), Linux)
+	INCLUDES		:=	$(INCLUDES) -I $(CSFML_FOLDER)/include
+	LIB_FOLDERS		:=	$(LIB_FOLDERS) -L $(CSFML_FOLDER)/lib
+endif
 
 LIBS			=	-lft				\
 					-lcsfml-graphics	\
@@ -50,8 +56,12 @@ LIBS			=	-lft				\
 					-lcsfml-audio
 
 CFLAGS			=	-Wall -Wextra -Werror -O3 -Ofast -flto
-LDFLAGS			=	-Wl,-rpath,$(SFML_FOLDER)/extlibs/libs-osx/Frameworks	\
-					$(LIB_FOLDERS) $(LIBS)
+
+LDFLAGS			:=	$(LIB_FOLDERS) $(LIBS)
+ifneq ($(UNAME), Linux)
+	LDFLAGS			:=	$(LDFLAGS) \
+						-Wl,-rpath,$(SFML_FOLDER)/extlibs/libs-osx/Frameworks
+endif
 
 # Colors
 BOLD			=	\e[1m
@@ -92,7 +102,7 @@ $(OBJS_FOLDER)%.o: $(SRCS_FOLDER)%.c
 	@printf "\e[1A\e[0K"
 
 run: all
-	./$(NAME)
+	@./$(NAME)
 
 $(LIBFT):
 	@printf "\e[0K"
@@ -105,13 +115,13 @@ $(CSFML):
 	@printf "\e[0K"
 	@printf "$(PREFIX) CSFML\n";
 	@cd $(SFML_FOLDER); \
-		cmake . &>/dev/null; \
-		make &>/dev/null
+		cmake .; \
+		make
 	@cd $(CSFML_FOLDER); \
 		cmake -DSFML_ROOT="$(SFML_ABSOLUTE)" \
 			-DSFML_INCLUDE_DIR="$(SFML_ABSOLUTE)/include" \
-			-DCMAKE_MODULE_PATH="$(SFML_ABSOLUTE)/cmake/Modules" &>/dev/null; \
-		make &>/dev/null
+			-DCMAKE_MODULE_PATH="$(SFML_ABSOLUTE)/cmake/Modules"; \
+		make
 	@printf "\e[1A\e[0K"
 	@printf "$(PREFIX) CSFML done\n";
 
@@ -132,15 +142,19 @@ libft-fclean:
 csfml-clean:
 	@printf "\e[0K"
 	@printf "$(PREFIX) CSFML clean\n";
-	@make -C $(CSFML_FOLDER) clean >/dev/null
+	@if test "$(CSFML_FOLDER)" != "" ; then \
+		make -C $(CSFML_FOLDER) clean >/dev/null; \
+	fi
 	@printf "\e[1A\e[0K"
 	@printf "$(PREFIX) CSFML clean done\n";
 
 csfml-fclean:
 	@printf "\e[0K"
 	@printf "$(PREFIX) CSFML fclean\n";
-	@make -C $(CSFML_FOLDER) clean >/dev/null
-	@rm -rf $(CSFML_FOLDER)/lib
+	@if test "$(CSFML_FOLDER)" != ""; then \
+		make -C $(CSFML_FOLDER) clean >/dev/null; \
+		rm -rf $(CSFML_FOLDER)/lib; \
+	fi
 	@printf "\e[1A\e[0K"
 	@printf "$(PREFIX) CSFML fclean done\n";
 
