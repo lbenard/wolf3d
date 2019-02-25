@@ -1,44 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   entity_list.h                                      :+:      :+:    :+:   */
+/*   menu_scene.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/24 15:48:17 by lbenard           #+#    #+#             */
-/*   Updated: 2019/02/25 17:54:58 by lbenard          ###   ########.fr       */
+/*   Created: 2019/02/24 15:24:07 by lbenard           #+#    #+#             */
+/*   Updated: 2019/02/25 18:40:46 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENTITY_LIST
-# define ENTITY_LIST
+#ifndef MENU_SCENE
+# define MENU_SCENE
 
-# include "engine/entity.h"
-# include "containers/list.h"
+# include "engine/scene.h"
 
 /*
-** Entity list used in scenes
+** Main menu scene
 */
-typedef struct	s_entity_list
+typedef struct	s_menu_scene
 {
-	t_entity	*entity;
-	t_list_head	node;
-}				t_entity_list;
+	t_scene	super;
+	int		data;
+}				t_menu_scene;
 
 /*
 ** Constructors
 */
-t_entity_list	*new_entity_list(t_entity *entity);
+t_menu_scene	*new_menu_scene(int data);
+
+/*
+** Modifiers
+*/
+void			menu_scene_update(t_menu_scene *self, float delta);
+void			menu_scene_render(t_menu_scene *self);
 
 /*
 ** Casts
 */
-t_entity_list	*entity_list_from_list(t_list_head *list);
-t_entity		*entity_from_list(t_list_head *list);
+t_menu_scene	*menu_scene_from_scene(t_scene *scene);
 
 /*
 ** Destructors
 */
-void			free_entity_list(t_entity_list *list);
+void			free_menu_scene(t_menu_scene *self);
 
 #endif

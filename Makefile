@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 19:33:38 by lbenard           #+#    #+#              #
-#    Updated: 2019/02/25 16:45:45 by lbenard          ###   ########.fr        #
+#    Updated: 2019/02/25 18:13:50 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ SRCS_LIST		=	main.c							\
 					engine/entity.c					\
 					engine/errors.c					\
 					engine/framebuffer.c			\
+					game/entities/entity_type.c		\
 					game/entities/dummy_entity.c	\
 					game/entities/test_entity.c
 

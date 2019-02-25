@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 22:17:01 by lbenard           #+#    #+#             */
-/*   Updated: 2019/02/24 19:35:05 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/02/25 19:16:21 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 #define WIDTH 1280
 #define HEIGHT 720
 
-void	print_entity(t_entity_list *entity_list)
+static void	print_entity(t_entity_list *entity_list)
 {
 	if (entity_list->entity->type == DUMMY_ENTITY_TYPE)
 	{
@@ -48,38 +48,31 @@ void	print_entity(t_entity_list *entity_list)
 	}
 }
 
-void	free_entity(t_entity_list *entity_list)
+static void	test_entity_list(void)
 {
-	if (entity_list->entity->type == DUMMY_ENTITY_TYPE)
-	{
-		free_dummy_entity(dummy_entity_from_entity(entity_list->entity));
-		free(entity_list);
-	}
-	else if (entity_list->entity->type == TEST_ENTITY_TYPE)
-	{
-		free_test_entity(test_entity_from_entity(entity_list->entity));
-		free(entity_list);
-	}
+	t_list_head entity_list;
+
+	init_list_head(&entity_list);
+	list_add_entry(&new_entity_list(&new_test_entity(42)->super)->node,
+		&entity_list);
+	list_add_entry(&new_entity_list(&new_test_entity(21)->super)->node,
+		&entity_list);
+	list_add_entry(&new_entity_list(&new_dummy_entity()->super)->node,
+		&entity_list);
+	list_foreach(&entity_list, __builtin_offsetof(t_entity_list, node),
+		print_entity);
+	list_foreach(&entity_list, __builtin_offsetof(t_entity_list, node),
+		free_entity_list);
 }
 
 int		main(void)
 {
-	t_list_head	entity_list;
-
-	init_list_head(&entity_list);
-	list_add_entry(&new_entity_list(&new_test_entity(42)->super)->node, &entity_list);
-	list_add_entry(&new_entity_list(&new_test_entity(21)->super)->node, &entity_list);
-	list_add_entry(&new_entity_list(&new_dummy_entity()->super)->node, &entity_list);
-	// printf("entity type: %lu\n", entity_from_list(entity_list.next)->type);
-	list_foreach(&entity_list, __builtin_offsetof(t_entity_list, node), print_entity);
-	list_foreach(&entity_list, __builtin_offsetof(t_entity_list, node), free_entity);
-}
-/*
 	sfVideoMode		mode;
 	sfRenderWindow	*window;
 	sfEvent			event;
 	t_framebuffer	framebuffer;
 
+	test_entity_list();
 	mode.width = WIDTH;
 	mode.height = HEIGHT;
 	mode.bitsPerPixel = 24;
@@ -90,26 +83,24 @@ int		main(void)
 	while (sfRenderWindow_isOpen(window))
 	{
 		static clock_t	last_time = 0.0;
-		static double	fps = 0.0;
+		static double	spf = 0.0;
 		framebuffer_clear(&framebuffer);
 		for (size_t y = 0; y < HEIGHT; y++)
 			for (size_t x = 0; x < WIDTH; x++)
 				framebuffer.framebuffer[WIDTH * y + x] = hsv_to_int(ft_hsv((x / (double)WIDTH * 360.0), y / (double)HEIGHT, 1.0));
-				// framebuffer.framebuffer[WIDTH * y + x] = rgb_to_int(ft_rgb(255, 255, 255));
-
 		while (sfRenderWindow_pollEvent(window, &event))
 		{
 			if (event.type == sfEvtClosed)
 				sfRenderWindow_close(window);
 		}
-		fps = 1 / ((double)(clock() - last_time) / CLOCKS_PER_SEC);
-		printf("FPS: %.2f\n", fps);
+		spf = ((double)(clock() - last_time) / CLOCKS_PER_SEC);
+		printf("FPS: %.2f\n", 1 / spf);
 		last_time = clock();
 		framebuffer_update(&framebuffer);
-		sfRenderWindow_drawSprite(window, framebuffer.sprite, NULL);
-		sfRenderWindow_display(window);
+		framebuffer_display(&framebuffer, window);
 	}
 	sfRenderWindow_destroy(window);
+	free_framebuffer(&framebuffer);
+	while (42);
 	return (0);
 }
-*/

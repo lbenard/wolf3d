@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scene.h                                            :+:      :+:    :+:   */
+/*   dummy_scene.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/23 21:05:56 by lbenard           #+#    #+#             */
-/*   Updated: 2019/02/25 18:44:46 by lbenard          ###   ########.fr       */
+/*   Created: 2019/02/25 17:38:45 by lbenard           #+#    #+#             */
+/*   Updated: 2019/02/25 17:41:41 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCENE_H
-# define SCENE_H
+#ifndef DUMMY_SCENE
+# define DUMMY_SCENE
 
-# include "containers/list.h"
+# include "engine/scene.h"
 
-typedef struct	s_scene
+typedef struct	s_dummy_scene
 {
-	size_t			type;
-	char			*name;
-	t_list_head		entities;
-	// t_renderer		renderer;
-	// t_input_manager	input_manager;
-	t_scene			*next_scene;
-}				t_scene;
+	t_scene super;
+}				t_dummy_scene;
+
+t_dummy_scene	*new_dummy_scene(void);
+t_dummy_scene	*dummy_scene_from_scene(t_scene *scene);
+void			free_dummy_scene(t_dummy_scene *self);
 
 #endif

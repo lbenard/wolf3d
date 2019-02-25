@@ -6,12 +6,15 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 16:15:04 by lbenard           #+#    #+#             */
-/*   Updated: 2019/02/24 16:37:56 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/02/25 18:13:27 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "engine/entity_list.h"
+#include "game/entities/entity_type.h"
+#include "game/entities/dummy_entity.h"
+#include "game/entities/test_entity.h"
 
 t_entity_list	*new_entity_list(t_entity *entity)
 {
@@ -33,4 +36,10 @@ t_entity_list	*entity_list_from_list(t_list_head *list)
 t_entity		*entity_from_list(t_list_head *list)
 {
 	return (entity_list_from_list(list)->entity);
+}
+
+void			free_entity_list(t_entity_list *list)
+{
+	free_entity_type(list->entity);
+	free(list);
 }
