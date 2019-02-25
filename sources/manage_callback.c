@@ -6,7 +6,7 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/27 16:58:41 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/02/23 13:45:33 by pp               ###   ########.fr       */
+/*   Updated: 2019/02/25 17:03:37 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,17 +75,17 @@ void	manage_keyboard(t_param *p)
 		p->hero.y += y * 0.1f;
 	}
 	if (p->keyboard.key == KEY_LEFT)
-		p->hero.vector_direction -= 10.0f * M_PI / 180.0f;
+		p->hero.vector_direction -= 1.0f * M_PI / 180.0f;
 	if (p->keyboard.key == KEY_RIGHT)
-		p->hero.vector_direction += 10.0f * M_PI / 180.0f;
+		p->hero.vector_direction += 1.0f * M_PI / 180.0f;
 }
 
 void	draw(t_param *p)
 {
 	reset_image(p);
 	mlx_clear_window(p->mlx.init, p->mlx.window);
-
 	render_2d_map(p);
+	render_3d_map(p);
 	mlx_put_image_to_window(p->mlx.init, p->mlx.window, p->mlx.img, 0, 0);
 	print_fps(p);
 }
@@ -102,8 +102,8 @@ int		manage_callback(void *param)
 	}
 	if (p->keyboard.press)
 		manage_keyboard(p);
-	//if (p->keyboard.press == 1)
-	draw(p);
+	if (p->keyboard.press == 1)
+		draw(p);
 	p->mouse.press = 0;
 	return (0);
 }
