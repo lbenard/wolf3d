@@ -6,18 +6,14 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 17:41:35 by lbenard           #+#    #+#             */
-/*   Updated: 2019/02/20 18:21:32 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/02/25 16:12:37 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TYPES_H
 # define TYPES_H
 
-# ifdef __linux__
-#  include <sys/types.h>
-# else
-#  include <stdint.h>
-# endif
+# include <stdint.h>
 
 typedef uint8_t		t_u8;
 typedef int8_t		t_i8;
