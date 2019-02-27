@@ -6,7 +6,7 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/27 16:58:41 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/02/25 17:03:37 by pp               ###   ########.fr       */
+/*   Updated: 2019/02/27 15:47:22 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,9 +75,9 @@ void	manage_keyboard(t_param *p)
 		p->hero.y += y * 0.1f;
 	}
 	if (p->keyboard.key == KEY_LEFT)
-		p->hero.vector_direction -= 1.0f * M_PI / 180.0f;
+		p->hero.vector_direction -= 5.0f * M_PI / 180.0f;
 	if (p->keyboard.key == KEY_RIGHT)
-		p->hero.vector_direction += 1.0f * M_PI / 180.0f;
+		p->hero.vector_direction += 5.0f * M_PI / 180.0f;
 }
 
 void	draw(t_param *p)
