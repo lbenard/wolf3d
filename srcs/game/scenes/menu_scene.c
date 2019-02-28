@@ -6,43 +6,60 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 15:24:07 by lbenard           #+#    #+#             */
-/*   Updated: 2019/02/25 18:40:46 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/02/28 17:33:20 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MENU_SCENE
-# define MENU_SCENE
+#include <stdlib.h>
+#include "game/scenes/menu_scene.h"
+#include "game/scenes/scene_type.h"
+#include "engine/entity_list.h"
+#include "game/entities/entity_type.h"
+#include "ft/str.h"
 
-# include "engine/scene.h"
+#include <stdio.h>
 
-/*
-** Main menu scene
-*/
-typedef struct	s_menu_scene
+t_menu_scene	*new_menu_scene(void)
 {
-	t_scene	super;
-	int		data;
-}				t_menu_scene;
+	t_menu_scene	*ret;
 
-/*
-** Constructors
-*/
-t_menu_scene	*new_menu_scene(int data);
+	if (!(ret = (t_menu_scene*)malloc(sizeof(t_menu_scene))))
+		return (NULL);
+	if (!init_scene(&ret->super, MENU_SCENE_TYPE, "Main menu"))
+	{
+		free(ret);
+		return (NULL);
+	}
+	return (ret);
+}
 
-/*
-** Modifiers
-*/
-void			menu_scene_update(t_menu_scene *self, float delta);
-void			menu_scene_render(t_menu_scene *self);
+#include <stdio.h>
 
-/*
-** Casts
-*/
-t_menu_scene	*menu_scene_from_scene(t_scene *scene);
+void			menu_scene_update(t_menu_scene *self, float delta)
+{
+	// printf("Menu scene update\n");
+	(void)delta;
+	list_foreach(&self->super.entities,
+		__builtin_offsetof(t_entity_list, node), entity_type_update);
+}
 
-/*
-** Destructors
-*/
-void			free_menu_scene(t_menu_scene *self);
 
-#endif
+void			menu_scene_render(t_menu_scene *self)
+{
+	// printf("Menu scene render\n");
+	(void)self;
+	// list_foreach(&self->super.entities,
+	// 	__builtin_offsetof(t_entity_list, node), entity_type_render);
+}
+
+t_menu_scene	*menu_scene_from_scene(t_scene *scene)
+{
+	return ((t_menu_scene*)((t_u8*)scene
+		- __builtin_offsetof(t_menu_scene, super)));
+}
+
+void			free_menu_scene(t_menu_scene *self)
+{
+	free_scene(&self->super);
+	free(self);
+}

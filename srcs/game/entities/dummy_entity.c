@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 17:00:35 by lbenard           #+#    #+#             */
-/*   Updated: 2019/02/24 17:15:25 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/02/26 18:37:32 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,11 @@ t_dummy_entity	*new_dummy_entity(void)
 
 	if (!(ret = (t_dummy_entity*)malloc(sizeof(t_dummy_entity))))
 		return (NULL);
-	ret->super.type = DUMMY_ENTITY_TYPE;
-	ret->super.transform = ft_transform_default();
+	if (!init_entity_default(&ret->super, DUMMY_ENTITY_TYPE))
+	{
+		free(ret);
+		return (NULL);
+	}
 	return (ret);
 }
 

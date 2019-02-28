@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scene_type.h                                       :+:      :+:    :+:   */
+/*   renderer.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/25 17:35:59 by lbenard           #+#    #+#             */
-/*   Updated: 2019/02/28 15:57:40 by lbenard          ###   ########.fr       */
+/*   Created: 2019/02/28 15:26:33 by lbenard           #+#    #+#             */
+/*   Updated: 2019/02/28 15:29:01 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCENE_TYPE
-# define SCENE_TYPE
+#ifndef RENDERER_H
+# define RENDERER_H
 
-# include "engine/scene.h"
+# include "engine/type.h"
 
-typedef enum	s_scene_type
+typedef struct	s_renderer
 {
-	DUMMY_SCENE_TYPE,
-	MENU_SCENE_TYPE
-}				t_scene_type;
+	type_t	type;
+}				t_renderer;
 
-void			scene_type_update(t_scene *scene);
-void			scene_type_render(t_scene *scene);
+t_result		init_renderer(t_renderer *renderer, type_t type);
 
 #endif
