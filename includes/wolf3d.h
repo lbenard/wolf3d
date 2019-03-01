@@ -6,7 +6,7 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:16:07 by pp                #+#    #+#             */
-/*   Updated: 2019/02/25 17:01:38 by pp               ###   ########.fr       */
+/*   Updated: 2019/03/01 12:46:06 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,12 @@ typedef	struct		s_entity
 	float			vector_direction;
 }					t_entity;
 
+typedef struct      s_camera
+{  
+    float           start_direction;
+    float           direction;
+    float           shift;
+}                   t_camera;
 
 typedef struct		s_param
 {
@@ -83,6 +89,7 @@ typedef struct		s_param
     t_keybord       keyboard;
     t_map           map;
 	t_entity		hero;
+    t_camera        cam;
 }					t_param;
 
 void				*manage_error(t_param *p, int code, const char *message);
