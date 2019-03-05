@@ -6,7 +6,7 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/26 19:09:13 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/02/22 17:23:11 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/05 20:03:48 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_abs(int nb)
 	return (nb);
 }
 
-void	bresenham_dz(t_param *param, t_point *p)
+void	bresenham_dz(t_param *param, t_point *p, int color)
 {
 	int	e;
 	int	dx;
@@ -36,7 +36,7 @@ void	bresenham_dz(t_param *param, t_point *p)
 	{
 		if (p->x > 0 && p->x < param->mlx.width
 			&& p->z > 0 && p->z < param->mlx.height)
-			param->mlx.pixels[p->x + p->z * param->mlx.width] = 0x0000FF00;
+			param->mlx.pixels[p->x + p->z * param->mlx.width] = color;
 		e -= dx;
 		if (e < 0)
 		{
@@ -47,7 +47,7 @@ void	bresenham_dz(t_param *param, t_point *p)
 	}
 }
 
-void	bresenham_dx(t_param *param, t_point *p)
+void	bresenham_dx(t_param *param, t_point *p, int color)
 {
 	int	e;
 	int	dx;
@@ -64,7 +64,7 @@ void	bresenham_dx(t_param *param, t_point *p)
 	{
 		if (p->x > 0 && p->x < param->mlx.width
 			&& p->z > 0 && p->z < param->mlx.height)
-			param->mlx.pixels[p->x + p->z * param->mlx.width] = 0x0000FF00;
+			param->mlx.pixels[p->x + p->z * param->mlx.width] = color;
 		e -= dz;
 		if (e < 0)
 		{
@@ -75,10 +75,10 @@ void	bresenham_dx(t_param *param, t_point *p)
 	}
 }
 
-void	bresenham(t_param *param, t_point *p)
+void	bresenham(t_param *param, t_point *p, int color)
 {
 	if (ft_abs(p[1].x - p[0].x) > ft_abs(p[1].z - p[0].z))
-		bresenham_dx(param, p);
+		bresenham_dx(param, p, color);
 	else
-		bresenham_dz(param, p);
+		bresenham_dz(param, p, color);
 }

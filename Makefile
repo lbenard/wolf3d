@@ -9,7 +9,8 @@ SRC		= wolf3d.c\
 		./sources/2Dmap_renderer.c\
 		./sources/3Dmap_renderer.c\
 		./sources/initialize_entity.c\
-		./sources/bresenham.c
+		./sources/bresenham.c\
+		./sources/search_intersection.c
 
 UNAME =	$(shell uname)
 

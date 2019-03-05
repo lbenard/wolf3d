@@ -6,7 +6,7 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:30:44 by pp                #+#    #+#             */
-/*   Updated: 2019/02/23 17:43:52 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/05 19:46:28 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,11 @@ int	initialize_params(t_param *p)
 	int			y;
 
     parsing_map(p);
-	p->hero.vector_direction = 0;
 	x = 1080;//720;
 	y = 720;//480;
 	p->mlx.width = x;
 	p->mlx.height = y;
+	p->keyboard.key = -42;
 	if (!(p->mlx.init = mlx_init()))
 		return (!manage_error(p, 0, "mlx_init() --> error\n"));
 	if (!(p->mlx.window = mlx_new_window(p->mlx.init, x, y, "Wolf3D")))

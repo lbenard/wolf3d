@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_callback.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/27 16:58:41 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/02/27 15:47:22 by pp               ###   ########.fr       */
+/*   Updated: 2019/03/05 19:47:09 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	manage_keyboard(t_param *p)
 {
 	float	x;
 	float	y;
-	int		res;
 
 	x = 0.0f;
 	y = 0.0f;
@@ -62,14 +61,14 @@ void	manage_keyboard(t_param *p)
 	if (p->keyboard.key == KEY_W)
 	{
 		x = cos(p->hero.vector_direction);
-		y = sin(p->hero.vector_direction);
+		y = sin(p->hero.vector_direction);	
 	}
 	if (p->keyboard.key == KEY_S)
 	{
 		x = -cos(p->hero.vector_direction);
 		y = -sin(p->hero.vector_direction);
 	}
-	if (!(res = p->map.map[(int)(p->hero.x + x  * 0.1f) + (int)(p->hero.y + y * 0.1f) * p->map.width]))
+	if (!p->map.map[(int)(p->hero.x + x  * 0.1f) + (int)(p->hero.y + y * 0.1f) * p->map.width])
 	{
 		p->hero.x += x * 0.1f;
 		p->hero.y += y * 0.1f;
@@ -95,6 +94,7 @@ int		manage_callback(void *param)
 	t_param	*p;
 
 	p = (t_param*)param;
+
 	if (p->keyboard.key == KEY_ESCAPE)
 	{
 		manage_error(p, 4, "Exit with ESC\n");
