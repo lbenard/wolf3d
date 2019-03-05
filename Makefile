@@ -33,7 +33,7 @@ MLX			= $(MLX_FOLDER)/libmlx.a
 # Compilation
 CXX		= gcc
 # -03 -> flag d'optimisation eleve de gcc
-CFLAGS		= -Wall -Wextra -Werror -O3
+CFLAGS		= #-Wall -Wextra -Werror -O3
 INCLUDES	= -I includes -I $(MLX_FOLDER) -I $(LIBFT_FOLDER)
 
 # Linking

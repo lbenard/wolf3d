@@ -6,7 +6,7 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 10:33:43 by pp                #+#    #+#             */
-/*   Updated: 2019/02/25 16:59:02 by pp               ###   ########.fr       */
+/*   Updated: 2019/03/04 04:04:23 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ void	render_hero_vector(t_param *p)
 	{
 		x = ((p->hero.x + i * cos_hvd) * ((float)p->mlx.width * p->map.zoom)) / (float)p->map.width;
 		y = ((p->hero.y + i * sin_hvd) * ((float)p->mlx.height * p->map.zoom)) / (float)p->map.height;
-        p->mlx.pixels[(int)(x + (int)y * p->mlx.width)] = 0x0000FF00;
+		if (x > 0 && (int)x < p->mlx.width && y > 0 && (int)y < p->mlx.height)
+     		p->mlx.pixels[(int)(x + (int)y * p->mlx.width)] = 0x0000FF00;
 	}
 }
 
