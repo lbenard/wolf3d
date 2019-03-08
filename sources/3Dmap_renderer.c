@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   3Dmap_renderer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 19:05:46 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/03/05 20:03:57 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/07 16:25:32 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ void	render_2d_visible_surface(t_param *p, float x, float y, int color)
 	j = y * ((float)p->mlx.height * p->map.zoom) / (float)p->map.height;
 	i = i > 0 ? i : -i;
 	j = j > 0 ? j : -j;
-	point[0].x = p->hero.x;
-	point[0].y = p->hero.y;
+	point[0].x = p->hero.x * ((float)p->mlx.width * p->map.zoom) / (float)p->map.width;
+	point[0].z = p->hero.y * ((float)p->mlx.height * p->map.zoom) / (float)p->map.height;
 	point[1].x = i;
-	point[1].y = j;
+	point[1].z = j;
 	bresenham(p, point, color);
 	//p->mlx.pixels[(int)i + (int)j * p->mlx.width] = color;
 }
@@ -59,9 +59,15 @@ int	search_wall(t_param *p, float direction, float *distance, float shift)
 	if (distancex < 0 && distancey < 0)
 		return (0);
 	else if (distancex < 0 || (distancex > 0 && distancey > 0 && distancey < distancex))
+	{
 		*distance = distancey * cos(shift);
+		render_2d_visible_surface(p, p->vertical_wall.x, p->vertical_wall.y, 0x00FF0000);
+	}
 	else
+	{
 		*distance = distancex * cos(shift);
+		render_2d_visible_surface(p, p->horizontal_wall.x, p->horizontal_wall.y, 0x000000FF);
+	}
 	*distance = *distance < 1 ? 1 : *distance;
 	return (1);
 }

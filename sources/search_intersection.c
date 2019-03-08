@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   search_intersection.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 16:16:41 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/03/05 19:43:34 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/07 16:32:27 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ int		sign(void *number, char type)
 
 float	search_horizontal_intersection(t_param *p, float cosx, float siny, float direction)
 {
-	float	x;
-	float	y;
-	float	tx;
+	double	x;
+	double	y;
+	double	tx;
 	int		signy;
 
-	x = p->hero.x;
-	y = p->hero.y;
+	x = (double)p->hero.x;
+	y = (double)p->hero.y;
 	signy = sign(&siny, 'f');
 	tx = 1.0 / tan(direction);
 	while (x > 0 && (int)x < p->map.width && y > 0 && (int)y < p->map.height
@@ -49,7 +49,10 @@ float	search_horizontal_intersection(t_param *p, float cosx, float siny, float d
 		y += signy;
 	}
 	if (x > 0 && (int)x < p->map.width && y > 0 && (int)y < p->map.height)
-		render_2d_visible_surface(p, x, y, 0x00FF0000);
+	{
+		p->horizontal_wall.x = x;
+		p->horizontal_wall.y = y;
+	}
 	if (x > 0 && (int)x < p->map.width && y > 0 && (int)y < p->map.height
 		&& p->map.map[(int)(x + (int)y * p->map.width)])
 	{
@@ -62,13 +65,13 @@ float	search_horizontal_intersection(t_param *p, float cosx, float siny, float d
 
 float	search_vertical_intersection(t_param *p, float cosx, float siny, float direction)
 {
-	float	x;
-	float	y;
-	float	ty;
+	double	x;
+	double	y;
+	double	ty;
 	int		signx;
 
-	x = p->hero.x;
-	y = p->hero.y;
+	x = (double)p->hero.x;
+	y = (double)p->hero.y;
 	signx = sign(&cosx, 'f');
 	ty = tan(direction);
 	while (x > 0 && (int)x < p->map.width && y > 0 && (int)y < p->map.height
@@ -85,7 +88,10 @@ float	search_vertical_intersection(t_param *p, float cosx, float siny, float dir
 		y += ty * signx;
 	}
 	if (x > 0 && (int)x < p->map.width && y > 0 && (int)y < p->map.height)
-		render_2d_visible_surface(p, x, y, 0x000000FF);
+	{
+		p->vertical_wall.x = x;
+		p->vertical_wall.y = y;
+	}
 	if (x > 0 && (int)x < p->map.width && y > 0 && (int)y < p->map.height
 		&& p->map.map[(int)(x + (int)y * p->map.width)])
 	{

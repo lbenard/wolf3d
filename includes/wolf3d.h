@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wolf3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:16:07 by pp                #+#    #+#             */
-/*   Updated: 2019/03/05 20:03:33 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/07 14:08:30 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,18 @@ typedef struct			s_point
 	int					y;
 	int					z;
 }						t_point;
+
+typedef struct          s_vector2d
+{
+    float               x;
+    float               y;
+}                       t_vector2d;
+
+typedef struct          s_point2d
+{
+    int                 x;
+    int                 y;
+}                       t_point2d;
 
 typedef struct      s_pointeur
 {
@@ -74,12 +86,26 @@ typedef	struct		s_entity
 	float			vector_direction;
 }					t_entity;
 
-typedef struct      s_camera
-{  
-    float           start_direction;
-    float           direction;
-    float           shift;
-}                   t_camera;
+typedef struct      s_view
+{
+    t_vector2d      direction;
+    t_vector2d      plane;
+    t_vector2d      position;
+    t_vector2d      rayon;
+    t_point2d       coordonnee;
+    float           dist_sidex;
+    float           dist_sidey;
+    float           delta_distx;
+    float           delta_disty;
+    float           perp_wall_dist;
+    int             stepx;
+    int             stepy;
+    int             hit;
+    int             side;
+    // float           start_direction;
+    // float           direction;
+    // float           shift;
+}                   t_view;
 
 typedef struct		s_param
 {
@@ -89,7 +115,9 @@ typedef struct		s_param
     t_keybord       keyboard;
     t_map           map;
 	t_entity		hero;
-    t_camera        cam;
+	t_entity		horizontal_wall;
+	t_entity		vertical_wall;
+    t_view          view;
 }					t_param;
 
 void				*manage_error(t_param *p, int code, const char *message);
