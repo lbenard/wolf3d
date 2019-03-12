@@ -6,7 +6,7 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 16:16:41 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/03/12 14:44:50 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/12 14:51:11 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ void	search_horizontal_intersection(t_param *p, double x, double y)
 		x += x_increment;
 		y += y_increment;
 	}
-	p->vertical_wall.x = x;
-	p->vertical_wall.y = y;
+	p->horizontal_wall.x = x;
+	p->horizontal_wall.y = y;
 	if (x > 0 && (int)x < p->map.width && y > 0 && (int)y < p->map.height
 		&& p->map.map[(int)(x + (int)y * p->map.width)])
 	{
