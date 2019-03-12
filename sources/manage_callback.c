@@ -6,7 +6,7 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/27 16:58:41 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/03/12 14:39:56 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/12 17:32:24 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ void	print_fps(t_param *p)
 
 void	manage_keyboard(t_param *p)
 {
-	float	x;
-	float	y;
+	double	x;
+	double	y;
 
 	x = 0.0f;
 	y = 0.0f;
@@ -74,17 +74,18 @@ void	manage_keyboard(t_param *p)
 		p->hero.y += y * 0.1f;
 	}
 	if (p->keyboard.key == KEY_LEFT)
-		p->hero.vector_direction -= 5.0f * M_PI / 180.0f;
+		p->hero.angle = ((int)p->hero.angle - 3) % 360;
 	if (p->keyboard.key == KEY_RIGHT)
-		p->hero.vector_direction += 5.0f * M_PI / 180.0f;
+		p->hero.angle = ((int)p->hero.angle + 3) % 360;
+	p->hero.vector_direction = p->hero.angle * M_PI / 180.0;
 }
 
 void	draw(t_param *p)
 {
 	reset_image(p);
 	mlx_clear_window(p->mlx.init, p->mlx.window);
-	render_2d_map(p);
 	render_3d_map(p);
+	render_2d_map(p);
 	mlx_put_image_to_window(p->mlx.init, p->mlx.window, p->mlx.img, 0, 0);
 	print_fps(p);
 }

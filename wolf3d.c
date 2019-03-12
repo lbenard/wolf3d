@@ -6,7 +6,7 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:30:44 by pp                #+#    #+#             */
-/*   Updated: 2019/03/12 14:38:32 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/12 17:32:16 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	initialize_params(t_param *p)
 	x = 1080;//720;
 	y = 720;//480;
 	p->hero.vector_direction = 0;
+	p->hero.angle = 0;
 	p->mlx.width = x;
 	p->mlx.height = y;
 	p->keyboard.key = -42;
@@ -48,6 +49,8 @@ int	initialize_params(t_param *p)
 		return (!manage_error(p, 2, "mlx_new_image() --> error\n"));
 	if (!(p->mlx.pixels = (int*)mlx_get_data_addr(p->mlx.img, &t, &t, &t)))
 		return (!manage_error(p, 2, "mlx_get_data() --> error\n"));
+	if (!(p->map.rays = malloc(sizeof(t_dpoint_2d) * p->mlx.width)))
+		return (!manage_error(p, 3, "malloc --> error\n"));
 	return (0);
 }
 

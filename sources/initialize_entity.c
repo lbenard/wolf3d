@@ -6,7 +6,7 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 15:30:09 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/03/12 14:39:58 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/12 15:09:09 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 void	initialize_hero(t_param *p)
 {
-	p->hero.x = 5.0f;
-	p->hero.y = 5.0f;
+	p->hero.x = 5.0;
+	p->hero.y = 5.0;
 }

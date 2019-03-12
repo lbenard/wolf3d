@@ -6,7 +6,7 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:16:07 by pp                #+#    #+#             */
-/*   Updated: 2019/03/12 14:42:49 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/12 17:31:01 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,12 @@
 # include <string.h>
 # include <stdlib.h>
 # include "mlx_keys_macos.h"
+
+typedef struct 			s_dpoint_2d
+{
+	double				x;
+	double				y;
+}						t_dpoint_2d;
 
 typedef struct			s_point
 {
@@ -77,16 +83,21 @@ typedef struct      s_map
     int             width;
     int             height;
 	float			zoom;
+	t_dpoint_2d		*rays;
+	double			w_ratio;
+	double			h_ratio;
+	
 }                   t_map;
 
 typedef	struct		s_entity
 {
-	float			x;
-	float			y;
-	float			vector_direction;
+	double			x;
+	double			y;
+	double			vector_direction;
+	double			angle;
 }					t_entity;
 
-typedef struct      s_view
+typedef struct      s_ray
 {
     double          distance;
     double          fisheye_correction;
@@ -97,7 +108,7 @@ typedef struct      s_view
     double          dist_to_v_wall;
     int             h_hit;
     int             v_hit;
-}                   t_view;
+}                   t_ray;
 
 typedef struct		s_param
 {
@@ -109,7 +120,8 @@ typedef struct		s_param
 	t_entity		hero;
 	t_entity		horizontal_wall;
 	t_entity		vertical_wall;
-    t_view          view;
+	t_entity		wall;
+    t_ray			ray;
 }					t_param;
 
 void				*manage_error(t_param *p, int code, const char *message);
@@ -127,8 +139,8 @@ void     			render_3d_map(t_param *p);
 void				initialize_hero(t_param *p);
 int    				initialize_map(t_param *p);
 void				bresenham(t_param *param, t_point *p, int color);
-void				search_vertical_intersection(t_param *p, double x, double y);
-void				search_horizontal_intersection(t_param *p, double x, double y);
-void				render_2d_visible_surface(t_param *p, double x, double y, int color);
+void				search_vertical_wall(t_param *p, double x, double y);
+void				search_horizontal_wall(t_param *p, double x, double y);
+void				render_2d_visible_surface(t_param *p, int color);
 
 #endif
