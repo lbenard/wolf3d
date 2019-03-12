@@ -6,7 +6,7 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 19:05:46 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/03/07 16:25:32 by pp               ###   ########.fr       */
+/*   Updated: 2019/03/12 11:56:30 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,14 +27,14 @@ void    render_column(t_param *p, float distance, int column)
 	}
 }
 
-void	render_2d_visible_surface(t_param *p, float x, float y, int color)
+void	render_2d_visible_surface(t_param *p, t_point wall, int color)
 {
 	t_point point[2];
 	float	i;
 	float	j;
 
-	i = x * ((float)p->mlx.width * p->map.zoom) / (float)p->map.width;
-	j = y * ((float)p->mlx.height * p->map.zoom) / (float)p->map.height;
+	i = wall.x * ((float)p->mlx.width * p->map.zoom) / (float)p->map.width;
+	j = wall.y * ((float)p->mlx.height * p->map.zoom) / (float)p->map.height;
 	i = i > 0 ? i : -i;
 	j = j > 0 ? j : -j;
 	point[0].x = p->hero.x * ((float)p->mlx.width * p->map.zoom) / (float)p->map.width;
@@ -42,33 +42,42 @@ void	render_2d_visible_surface(t_param *p, float x, float y, int color)
 	point[1].x = i;
 	point[1].z = j;
 	bresenham(p, point, color);
-	//p->mlx.pixels[(int)i + (int)j * p->mlx.width] = color;
 }
 
-int	search_wall(t_param *p, float direction, float *distance, float shift)
+void	find_distance(t_param *p)
 {
-	float	distancex;
-	float	distancey;
-	float	cosx;
-	float	siny;
+	t_point	wall;
 
-	cosx = cos(direction);
-	siny = sin(direction);
-	distancex = search_horizontal_intersection(p, cosx, siny, direction);
-	distancey = search_vertical_intersection(p, cosx, siny, direction);
-	if (distancex < 0 && distancey < 0)
-		return (0);
-	else if (distancex < 0 || (distancex > 0 && distancey > 0 && distancey < distancex))
+	if (!p->view.h_hit	|| (p->view.h_hit 
+		&& p->view.dist_to_v_wall < p->view.dist_to_h_wall))
 	{
-		*distance = distancey * cos(shift);
-		render_2d_visible_surface(p, p->vertical_wall.x, p->vertical_wall.y, 0x00FF0000);
+		p->view.distance = p->view.dist_to_v_wall * p->view.fisheye_correction;
+		wall.x = p->horizontal_wall.x;
+		wall.y = p->horizontal_wall.y;
 	}
 	else
 	{
-		*distance = distancex * cos(shift);
-		render_2d_visible_surface(p, p->horizontal_wall.x, p->horizontal_wall.y, 0x000000FF);
-	}
-	*distance = *distance < 1 ? 1 : *distance;
+		p->view.distance = p->view.dist_to_h_wall * p->view.fisheye_correction;
+		wall.x = p->vertical_wall.x;
+		wall.y = p->vertical_wall.y;
+	}		
+	render_2d_visible_surface(p, wall, 0x00FF0000);
+	p->view.distance = p->view.distance < 1 ? 1 : p->view.distance;
+}
+
+int	search_wall(t_param *p, float direction, float *distance)
+{
+	p->view.h_hit = 0;
+	p->view.v_hit = 0;
+	p->view.cos = cos(direction);
+	p->view.cos = sin(direction);
+	p->view.tan = tan(direction);
+	search_horizontal_intersection(p, direction);
+	search_vertical_intersection(p, direction);
+	if (!p->view.h_hit && !p->view.v_hit)
+		return (0);
+	else
+		find_distance(p);
 	return (1);
 }
 

@@ -6,7 +6,7 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/27 16:58:41 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/03/07 16:15:51 by pp               ###   ########.fr       */
+/*   Updated: 2019/03/12 10:31:01 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int		manage_callback(void *param)
 	}
 	if (p->keyboard.press)
 		manage_keyboard(p);
-	if (p->keyboard.press == 1)
+	if (p->keyboard.press)
 		draw(p);
 	p->mouse.press = 0;
 	return (0);

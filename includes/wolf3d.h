@@ -6,7 +6,7 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:16:07 by pp                #+#    #+#             */
-/*   Updated: 2019/03/07 14:08:30 by pp               ###   ########.fr       */
+/*   Updated: 2019/03/12 11:56:32 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,23 +88,15 @@ typedef	struct		s_entity
 
 typedef struct      s_view
 {
-    t_vector2d      direction;
-    t_vector2d      plane;
-    t_vector2d      position;
-    t_vector2d      rayon;
-    t_point2d       coordonnee;
-    float           dist_sidex;
-    float           dist_sidey;
-    float           delta_distx;
-    float           delta_disty;
-    float           perp_wall_dist;
-    int             stepx;
-    int             stepy;
-    int             hit;
-    int             side;
-    // float           start_direction;
-    // float           direction;
-    // float           shift;
+    double          distance;
+    double          fisheye_correction;
+    double          cos;
+    double          sin;
+    double          tan;
+    double          dist_to_h_wall;
+    double          dist_to_v_wall;
+    int             h_hit;
+    int             v_hit;
 }                   t_view;
 
 typedef struct		s_param

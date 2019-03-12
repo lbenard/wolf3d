@@ -6,7 +6,7 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 16:16:41 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/03/07 16:32:27 by pp               ###   ########.fr       */
+/*   Updated: 2019/03/12 11:56:35 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int		sign(void *number, char type)
 	return (0);
 }
 
-float	search_horizontal_intersection(t_param *p, float cosx, float siny, float direction)
+int		search_horizontal_intersection(t_param *p, float cosx, float siny, float direction)
 {
 	double	x;
 	double	y;
@@ -58,9 +58,9 @@ float	search_horizontal_intersection(t_param *p, float cosx, float siny, float d
 	{
 		x -= p->hero.x;
 		y -= p->hero.y;
-		return (sqrt(x * x + y * y));
+		p->view.dist_to_v_wall = sqrt(x * x + y * y);
+		p->view.hit += 1;
 	}
-	return (-42);
 }
 
 float	search_vertical_intersection(t_param *p, float cosx, float siny, float direction)
