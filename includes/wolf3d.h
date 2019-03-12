@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wolf3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:16:07 by pp                #+#    #+#             */
-/*   Updated: 2019/03/12 11:56:32 by pp               ###   ########.fr       */
+/*   Updated: 2019/03/12 14:42:49 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,8 +127,8 @@ void     			render_3d_map(t_param *p);
 void				initialize_hero(t_param *p);
 int    				initialize_map(t_param *p);
 void				bresenham(t_param *param, t_point *p, int color);
-float				search_vertical_intersection(t_param *p, float cosx, float siny, float direction);
-float				search_horizontal_intersection(t_param *p, float cosx, float siny, float direction);
-void				render_2d_visible_surface(t_param *p, float x, float y, int color);
+void				search_vertical_intersection(t_param *p, double x, double y);
+void				search_horizontal_intersection(t_param *p, double x, double y);
+void				render_2d_visible_surface(t_param *p, double x, double y, int color);
 
 #endif

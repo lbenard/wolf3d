@@ -6,7 +6,7 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 16:30:44 by pp                #+#    #+#             */
-/*   Updated: 2019/03/05 19:46:28 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/12 14:38:32 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	initialize_params(t_param *p)
     parsing_map(p);
 	x = 1080;//720;
 	y = 720;//480;
+	p->hero.vector_direction = 0;
 	p->mlx.width = x;
 	p->mlx.height = y;
 	p->keyboard.key = -42;
