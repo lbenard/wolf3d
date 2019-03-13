@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   search_intersection.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/05 16:16:41 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/03/12 17:55:56 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/13 13:33:11 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,14 @@ void	search_horizontal_wall(t_param *p, double x, double y)
 	}
 	while (x > 0 && (int)x < p->map.width && y > 0 && (int)y < p->map.height)
 	{
+		if (p->map.map[(int)(x - 0.01 + (int)y * p->map.width)])
+		 	x -= 0.01;
+		if (p->map.map[(int)(x + (int)(y - 0.01) * p->map.width)])
+		 	y -= 0.01;
+		if (p->map.map[(int)(x + 0.01 + (int)y * p->map.width)])
+		 	x += 0.01;
+		if (p->map.map[(int)(x + (int)(y + 0.01) * p->map.width)])
+		 	y += 0.01;
 		if (p->map.map[(int)(x + (int)y * p->map.width)])
 		 	break ;
 		x += x_increment;
