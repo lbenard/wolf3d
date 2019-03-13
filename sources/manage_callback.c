@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manage_callback.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/27 16:58:41 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/03/12 17:32:24 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/13 14:03:20 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,17 +61,23 @@ void	manage_keyboard(t_param *p)
 	if (p->keyboard.key == KEY_W)
 	{
 		x = cos(p->hero.vector_direction);
-		y = sin(p->hero.vector_direction);	
+		y = sin(p->hero.vector_direction);
 	}
 	if (p->keyboard.key == KEY_S)
 	{
 		x = -cos(p->hero.vector_direction);
 		y = -sin(p->hero.vector_direction);
 	}
-	if (!p->map.map[(int)(p->hero.x + x  * 0.1f) + (int)(p->hero.y + y * 0.1f) * p->map.width])
+	x *= 0.05;
+	y *= 0.05;
+	if (!p->map.map[(int)(p->hero.x + x - 0.01 + (int)(p->hero.y + y) * p->map.width)]
+		&& !p->map.map[(int)(p->hero.x + x + (int)(p->hero.y + y - 0.01) * p->map.width)]
+		&& !p->map.map[(int)(p->hero.x + x + 0.01 + (int)(p->hero.y + y) * p->map.width)]
+		&& !p->map.map[(int)(p->hero.x + x + (int)(p->hero.y + y + 0.01) * p->map.width)]
+		&& !p->map.map[(int)(p->hero.x + x + (int)(p->hero.y + y) * p->map.width)])
 	{
-		p->hero.x += x * 0.1f;
-		p->hero.y += y * 0.1f;
+		p->hero.x += x ;
+		p->hero.y += y;
 	}
 	if (p->keyboard.key == KEY_LEFT)
 		p->hero.angle = ((int)p->hero.angle - 3) % 360;
