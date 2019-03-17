@@ -6,7 +6,7 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 19:05:46 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/03/17 18:59:11 by pp               ###   ########.fr       */
+/*   Updated: 2019/03/17 20:42:13 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 void    render_column(t_param *p, double distance, int column)
 {
 	int		j;
+	double	d = distance > 2 ? distance : 2;
+	int		l = 255.0 / d;
 
 	j = -1;
 	while (++j < (int)(((double)p->mlx.height / 2.0) / distance))
 	{
-		p->mlx.pixels[column + (int)(0.5 * p->mlx.height - j) * p->mlx.width] = 0x00FFFFFF;
-		p->mlx.pixels[column + (int)(0.5 * p->mlx.height + j) * p->mlx.width] = 0x00FFFFFF;
+		p->mlx.pixels[column + (int)(0.5 * p->mlx.height - j) * p->mlx.width] = l * 256 * 256 + l * 256 + l;//0x00FFFFFF;
+		p->mlx.pixels[column + (int)(0.5 * p->mlx.height + j) * p->mlx.width] = l * 256 * 256 + l * 256 + l;//0x00FFFFFF;
 	}
 }
 

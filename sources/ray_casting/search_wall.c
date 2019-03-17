@@ -6,7 +6,7 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/17 18:17:43 by pp                #+#    #+#             */
-/*   Updated: 2019/03/17 18:18:15 by pp               ###   ########.fr       */
+/*   Updated: 2019/03/17 20:18:50 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,19 +23,19 @@ void	search_horizontal_wall(t_param *p, double x, double y)
 	while (x > 0 && (int)x < p->map.width && y > 0 && (int)y < p->map.height
 		&& (int)y == (int)p->hero.y)
 	{
-		x += 0.01 * p->ray.cos;
-		y += 0.01 * p->ray.sin;
+		x += 0.005 * p->ray.cos;
+		y += 0.005 * p->ray.sin;
 	}
 	while (x > 0 && (int)x < p->map.width && y > 0 && (int)y < p->map.height)
 	{
-		if (p->map.map[(int)(x - 0.01 + (int)y * p->map.width)])
-		 	x -= 0.01;
-		if (p->map.map[(int)(x + (int)(y - 0.01) * p->map.width)])
-		 	y -= 0.01;
-		if (p->map.map[(int)(x + 0.01 + (int)y * p->map.width)])
-		 	x += 0.01;
-		if (p->map.map[(int)(x + (int)(y + 0.01) * p->map.width)])
-		 	y += 0.01;
+		if (p->map.map[(int)(x - 0.005 + (int)y * p->map.width)])
+		 	x -= 0.005;
+		if (p->map.map[(int)(x + (int)(y - 0.005) * p->map.width)])
+		 	y -= 0.005;
+		if (p->map.map[(int)(x + 0.005 + (int)y * p->map.width)])
+		 	x += 0.005;
+		if (p->map.map[(int)(x + (int)(y + 0.005) * p->map.width)])
+		 	y += 0.005;
 		if (p->map.map[(int)(x + (int)y * p->map.width)])
 		 	break ;
 		x += x_increment;
@@ -63,11 +63,19 @@ void	search_vertical_wall(t_param *p, double x, double y)
 	while (x > 0 && (int)x < p->map.width && y > 0 && (int)y < p->map.height
 		&& (int)x == (int)p->hero.x)
 	{
-		x += 0.01 * p->ray.cos;
-		y += 0.01 * p->ray.sin;
+		x += 0.005 * p->ray.cos;
+		y += 0.005 * p->ray.sin;
 	}
 	while (x > 0 && (int)x < p->map.width && y > 0 && (int)y < p->map.height)
 	{
+		if (p->map.map[(int)(x - 0.005 + (int)y * p->map.width)])
+		 	x -= 0.005;
+		if (p->map.map[(int)(x + (int)(y - 0.005) * p->map.width)])
+		 	y -= 0.005;
+		if (p->map.map[(int)(x + 0.005 + (int)y * p->map.width)])
+		 	x += 0.005;
+		if (p->map.map[(int)(x + (int)(y + 0.005) * p->map.width)])
+		 	y += 0.005;
 		if (p->map.map[(int)(x + (int)y * p->map.width)])
 		 	break ;
 		x += x_increment;
