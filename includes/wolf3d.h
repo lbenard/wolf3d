@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wolf3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:16:07 by pp                #+#    #+#             */
-/*   Updated: 2019/03/12 17:31:01 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/17 19:18:46 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <string.h>
 # include <stdlib.h>
 # include "mlx_keys_macos.h"
+
+# define END -42
 
 typedef struct 			s_dpoint_2d
 {
@@ -124,23 +126,40 @@ typedef struct		s_param
     t_ray			ray;
 }					t_param;
 
-void				*manage_error(t_param *p, int code, const char *message);
-int					manage_callback(void *param);
-int					press_callback(int key, void *param);
-int					release_callback(int key, void *param);
-int					pointer_callback(int x, int y, void *param);
-int					mouse_callback(int button, int x, int y, void *param);
-void				reset_image(t_param *p);
-void				draw(t_param *p);
-void				print_fps(t_param *p);
-int                 parsing_map(t_param *p);
-void                render_2d_map(t_param *p);
-void     			render_3d_map(t_param *p);
-void				initialize_hero(t_param *p);
-int    				initialize_map(t_param *p);
-void				bresenham(t_param *param, t_point *p, int color);
-void				search_vertical_wall(t_param *p, double x, double y);
-void				search_horizontal_wall(t_param *p, double x, double y);
-void				render_2d_visible_surface(t_param *p, int color);
+int     start(t_param *p, int ac, char **av);
+void    check_inputs(t_param *p, int ac, char **av);
+int     initialize_mlx_params(t_param *p);
+int     initialize_map_params(t_param *p);
+int     initialize_hero_params(t_param *p);
+int     initialize_callbacks_params(t_param *p);
+int     parse_map(t_param *p);
+
+void    loop(t_param *p);
+int		press_callback(int key, void *param);
+int		release_callback(int key, void *param);
+int		pointer_callback(int x, int y, void *param);
+int		mouse_callback(int button, int x, int y, void *param);
+int		manage_callback(void *param);
+int		manage_keyboard(t_param *p);
+
+void	draw(t_param *p);
+void	reset_image(t_param *p);
+void	print_fps(t_param *p);
+void	render_3d_map(t_param *p);
+int     search_wall(t_param *p, double direction);
+void	find_distance(t_param *p);
+void    render_column(t_param *p, double distance, int column);
+void    render_2d_map(t_param *p);
+void	render_hero(t_param *p);
+void	render_hero_vector(t_param *p);
+void	render_2d_visible_surface(t_param *p, int color);
+void	bresenham_dx(t_param *param, t_point *p, int color);
+void	bresenham_dz(t_param *param, t_point *p, int color);
+
+void	search_vertical_wall(t_param *p, double x, double y);
+void	search_horizontal_wall(t_param *p, double x, double y);
+
+void	*manage_error(t_param *p, int code, const char *message);
+void    *end(t_param *p, int code);
 
 #endif

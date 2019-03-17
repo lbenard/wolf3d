@@ -2,15 +2,19 @@ NAME		= wolf3d
 
 # Sources
 SRC		= wolf3d.c\
-		./sources/manage_error.c\
-		./sources/manage_callback.c\
-		./sources/callback.c\
-		./sources/map_parser.c\
-		./sources/2Dmap_renderer.c\
-		./sources/3Dmap_renderer.c\
-		./sources/initialize_entity.c\
-		./sources/bresenham.c\
-		./sources/search_intersection.c
+		./sources/start/start.c\
+		./sources/start/initialize_params.c\
+		./sources/start/parse_map.c\
+		./sources/loop/loop.c\
+		./sources/loop/callback.c\
+		./sources/loop/manage_callback.c\
+		./sources/draw/draw.c\
+		./sources/draw/2Dmap_renderer.c\
+		./sources/draw/3Dmap_renderer.c\
+		./sources/draw/bresenham.c\
+		./sources/ray_casting/search_wall.c\
+		./sources/end/end.c\
+		./sources/end/manage_error.c
 
 UNAME =	$(shell uname)
 

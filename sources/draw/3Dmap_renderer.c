@@ -6,13 +6,12 @@
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 19:05:46 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/03/13 08:37:45 by pp               ###   ########.fr       */
+/*   Updated: 2019/03/17 18:59:11 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/wolf3d.h"
 #include "libft.h"
-
 
 void    render_column(t_param *p, double distance, int column)
 {
@@ -44,7 +43,7 @@ void	find_distance(t_param *p)
 	p->ray.distance = p->ray.distance < 1 ? 1 : p->ray.distance;
 }
 
-int	search_wall(t_param *p, double direction)
+int		search_wall(t_param *p, double direction)
 {
 	p->ray.h_hit = 0;
 	p->ray.v_hit = 0;

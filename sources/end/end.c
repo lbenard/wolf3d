@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   wolf3d.c                                           :+:      :+:    :+:   */
+/*   end.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/21 16:30:44 by pp                #+#    #+#             */
-/*   Updated: 2019/03/17 19:09:21 by pp               ###   ########.fr       */
+/*   Created: 2019/03/17 17:32:47 by pp                #+#    #+#             */
+/*   Updated: 2019/03/17 18:20:06 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/wolf3d.h"
+#include "../includes/wolf3d.h"
+#include "mlx.h"
 
-int	main(int ac, char **av)
+void    *end(t_param *p, int code)
 {
-	t_param p;
-
-	if (start(&p, ac, av))
-        manage_error(&p, END, "start --> error\n");
-	loop(&p);
-	return (0);
+    if (code > 2)
+		mlx_destroy_image(p->mlx.init, p->mlx.img);
+	if (code > 1)
+		mlx_destroy_window(p->mlx.init, p->mlx.window);
+	if (code > 0)
+		free(p->mlx.init);
+	if (code == END)
+		exit(0);
+	return (NULL);
 }

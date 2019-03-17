@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   manage_error.c                                     :+:      :+:    :+:   */
+/*   loop->c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/12 15:17:35 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/02/21 17:16:51 by pp               ###   ########.fr       */
+/*   Created: 2019/03/17 17:03:20 by pp                #+#    #+#             */
+/*   Updated: 2019/03/17 17:03:42 by pp               ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/wolf3d.h"
-#include "libft.h"
 #include "mlx.h"
 
-void	*manage_error(t_param *p, int code, const char *message)
+void    loop(t_param *p)
 {
-	ft_putstr(message);
-	if (code > 2)
-		mlx_destroy_image(p->mlx.init, p->mlx.img);
-	if (code > 1)
-		mlx_destroy_window(p->mlx.init, p->mlx.window);
-	if (code > 0)
-		free(p->mlx.init);
-	return (NULL);
+    mlx_hook(p->mlx.window, 4, 1L << 2, mouse_callback, (void*)p);
+    mlx_hook(p->mlx.window, 2, 1L << 0, press_callback, (void*)p);
+    mlx_hook(p->mlx.window, 3, 1L << 1, release_callback, (void*)p);
+    mlx_hook(p->mlx.window, 6, 1L << 6, pointer_callback, (void*)p);
+    mlx_loop_hook(p->mlx.init, manage_callback, (void*)p);
+    mlx_loop(p->mlx.init);
 }
