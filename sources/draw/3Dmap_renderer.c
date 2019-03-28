@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   3Dmap_renderer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 19:05:46 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/03/17 20:42:13 by pp               ###   ########.fr       */
+/*   Updated: 2019/03/28 18:48:24 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void    render_column(t_param *p, double distance, int column)
 {
 	int		j;
-	double	d = distance > 2 ? distance : 2;
+	double	d = distance > 1.5 ? distance : 1.5;
 	int		l = 255.0 / d;
 
 	j = -1;

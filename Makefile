@@ -5,6 +5,7 @@ SRC		= wolf3d.c\
 		./sources/start/start.c\
 		./sources/start/initialize_params.c\
 		./sources/start/parse_map.c\
+		./sources/start/bitmap_parser.c\
 		./sources/loop/loop.c\
 		./sources/loop/callback.c\
 		./sources/loop/manage_callback.c\

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wolf3d.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: pp <pp@student.42.fr>                      +#+  +:+       +#+        */
+/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:16:07 by pp                #+#    #+#             */
-/*   Updated: 2019/03/17 19:36:08 by pp               ###   ########.fr       */
+/*   Updated: 2019/03/28 19:21:57 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include "mlx_keys_macos.h"
+# include "../includes/bitmap.h"
 
 # define END -42
 
@@ -78,6 +79,7 @@ typedef struct      s_mlx_params
 	int				height;
 }                   t_mlx_params;
 
+
 typedef struct      s_map
 {
     int             file_descriptor;
@@ -88,7 +90,7 @@ typedef struct      s_map
 	t_dpoint_2d		*rays;
 	double			w_ratio;
 	double			h_ratio;
-	
+	t_bitmap_image	*texture;
 }                   t_map;
 
 typedef	struct		s_entity
@@ -155,6 +157,7 @@ void	render_hero_vector(t_param *p);
 void	render_2d_visible_surface(t_param *p, int color);
 void	bresenham_dx(t_param *param, t_point *p, int color);
 void	bresenham_dz(t_param *param, t_point *p, int color);
+void	bresenham(t_param *param, t_point *p, int color);
 
 void	search_vertical_wall(t_param *p, double x, double y);
 void	search_horizontal_wall(t_param *p, double x, double y);
