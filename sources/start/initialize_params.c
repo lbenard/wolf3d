@@ -6,7 +6,7 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/17 16:07:22 by pp                #+#    #+#             */
-/*   Updated: 2019/03/28 19:30:23 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/29 16:25:54 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int     initialize_map_params(t_param *p)
         return (!manage_error(p, 0, "malloc map --> error\n"));
 	if (!(p->map.rays = malloc(sizeof(t_dpoint_2d) * p->mlx.width)))
 		return (!manage_error(p, 3, "malloc rays --> error\n"));
-	if (!(p->map.texture = bitmap_parser("textures/red_wall.bmp")))
+	if (!(p->map.texture = bitmap_parser("textures/rivet_steel_2.bmp")))
 		return (!manage_error(p, 3, "parse texture --> error\n"));
     return (0);
 }

@@ -6,24 +6,42 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 19:05:46 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/03/28 18:48:24 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/03/29 16:13:23 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/wolf3d.h"
 #include "libft.h"
 
+int	render_texture(t_param *p, double j, double height)
+{
+	double	i_column;
+	double	i_line;
+
+	if (p->ray.h_hit)
+		i_column = p->wall.x - (double)((int)p->wall.x);
+	else
+		i_column = p->wall.y - (double)((int)p->wall.y);
+	i_column *= p->map.texture->head.width;
+	i_line = (double)p->map.texture->head.height * 0.5;
+	i_line += (j / height) * i_line;
+	return (p->map.texture->pixels[(int)(i_column + ((int)i_line * p->map.texture->head.width))]);
+}
+
 void    render_column(t_param *p, double distance, int column)
 {
 	int		j;
 	double	d = distance > 1.5 ? distance : 1.5;
 	int		l = 255.0 / d;
+	int		wall_height;
 
-	j = -1;
-	while (++j < (int)(((double)p->mlx.height / 2.0) / distance))
+	wall_height = (int)(((double)p->mlx.height / 2.0) / distance);
+
+	j = -wall_height;
+	while (++j < wall_height)
 	{
-		p->mlx.pixels[column + (int)(0.5 * p->mlx.height - j) * p->mlx.width] = l * 256 * 256 + l * 256 + l;//0x00FFFFFF;
-		p->mlx.pixels[column + (int)(0.5 * p->mlx.height + j) * p->mlx.width] = l * 256 * 256 + l * 256 + l;//0x00FFFFFF;
+		p->mlx.pixels[column + (int)(0.5 * p->mlx.height + j) * p->mlx.width]
+		= render_texture(p, j, wall_height);//l * 256 * 256 + l * 256 + l;//0x00FFFFFF;
 	}
 }
 
@@ -35,12 +53,14 @@ void	find_distance(t_param *p)
 		p->ray.distance = p->ray.dist_to_h_wall * p->ray.fisheye_correction;
 		p->wall.x = p->horizontal_wall.x;
 		p->wall.y = p->horizontal_wall.y;
+		p->ray.v_hit = 0;
 	}
 	else
 	{
 		p->ray.distance = p->ray.dist_to_v_wall * p->ray.fisheye_correction;
 		p->wall.x = p->vertical_wall.x;
 		p->wall.y = p->vertical_wall.y;
+		p->ray.h_hit = 0;
 	}
 	p->ray.distance = p->ray.distance < 1 ? 1 : p->ray.distance;
 }
