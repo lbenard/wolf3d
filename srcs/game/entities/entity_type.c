@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/25 17:52:49 by lbenard           #+#    #+#             */
-/*   Updated: 2019/02/28 17:41:33 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/03/29 15:20:10 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,13 @@ void	entity_type_update(t_entity *entity, t_scene *scene)
 	if (entity->type == DUMMY_ENTITY_TYPE)
 		;
 	else if (entity->type == TEST_ENTITY_TYPE)
-	{
-		test_entity_update(test_entity_from_entity(entity), scene);
-	}
+		test_entity_update((t_test_entity*)entity, scene);
 }
 
 void	free_entity_type(t_entity *entity)
 {
 	if (entity->type == DUMMY_ENTITY_TYPE)
-		free_dummy_entity(dummy_entity_from_entity(entity));
+		free_dummy_entity((t_dummy_entity*)entity);
 	else if (entity->type == TEST_ENTITY_TYPE)
-		free_test_entity(test_entity_from_entity(entity));
+		free_test_entity((t_test_entity*)entity);
 }

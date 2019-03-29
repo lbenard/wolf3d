@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 17:00:35 by lbenard           #+#    #+#             */
-/*   Updated: 2019/02/26 18:37:32 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/03/29 15:23:27 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,6 @@ t_dummy_entity	*new_dummy_entity(void)
 		return (NULL);
 	}
 	return (ret);
-}
-
-t_dummy_entity	*dummy_entity_from_entity(t_entity *entity)
-{
-	return ((t_dummy_entity*)((t_u8*)entity
-		- __builtin_offsetof(t_dummy_entity, super)));
 }
 
 void			free_dummy_entity(t_dummy_entity *self)
