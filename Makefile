@@ -9,6 +9,8 @@ SRC		= wolf3d.c\
 		./sources/loop/loop.c\
 		./sources/loop/callback.c\
 		./sources/loop/manage_callback.c\
+		./sources/loop/manage_hero_moves.c\
+		./sources/loop/manage_hero_vector_direction.c\
 		./sources/draw/draw.c\
 		./sources/draw/2Dmap_renderer.c\
 		./sources/draw/3Dmap_renderer.c\

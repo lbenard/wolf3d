@@ -6,12 +6,35 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/22 19:05:46 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/03/29 16:13:23 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/04/15 19:40:27 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/wolf3d.h"
 #include "libft.h"
+
+#define R 16777216
+#define G 65536
+#define B 256
+
+int		add_shadow(int color, double distance)
+{
+	int		r;
+	int		g;
+	int		b;
+	int		l;
+
+	b = color % B;
+	g = ((color - b) % G) / 256;
+	r = ((color - g - b) % R) / (256 * 256);
+
+	distance = distance > 100 ? 100 : distance;
+	r /= distance;
+	g /= distance;
+	b /= distance;
+	color =  r * (256 * 256) + g * 256 + b;
+	return (color);
+}
 
 int	render_texture(t_param *p, double j, double height)
 {
@@ -30,18 +53,20 @@ int	render_texture(t_param *p, double j, double height)
 
 void    render_column(t_param *p, double distance, int column)
 {
-	int		j;
-	double	d = distance > 1.5 ? distance : 1.5;
-	int		l = 255.0 / d;
 	int		wall_height;
+	int		j;
+	double	d = distance > 1 ? distance : 1;
+	// double		l = 255.0 / d;
 
 	wall_height = (int)(((double)p->mlx.height / 2.0) / distance);
-
-	j = -wall_height;
-	while (++j < wall_height)
+	if (distance > 1)
+		j = -wall_height;
+	else
+		j = -(int)(((double)p->mlx.height / 2.0)) - 1;
+	while (++j < (int)(((double)p->mlx.height / 2.0)) && j < wall_height)
 	{
 		p->mlx.pixels[column + (int)(0.5 * p->mlx.height + j) * p->mlx.width]
-		= render_texture(p, j, wall_height);//l * 256 * 256 + l * 256 + l;//0x00FFFFFF;
+		= add_shadow(render_texture(p, j, wall_height), d);
 	}
 }
 
@@ -62,7 +87,7 @@ void	find_distance(t_param *p)
 		p->wall.y = p->vertical_wall.y;
 		p->ray.h_hit = 0;
 	}
-	p->ray.distance = p->ray.distance < 1 ? 1 : p->ray.distance;
+	//p->ray.distance = p->ray.distance < 1 ? 1 : p->ray.distance;
 }
 
 int		search_wall(t_param *p, double direction)

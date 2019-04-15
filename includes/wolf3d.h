@@ -6,7 +6,7 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 15:16:07 by pp                #+#    #+#             */
-/*   Updated: 2019/03/28 19:21:57 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/04/15 19:29:46 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,10 @@ int		release_callback(int key, void *param);
 int		pointer_callback(int x, int y, void *param);
 int		mouse_callback(int button, int x, int y, void *param);
 int		manage_callback(void *param);
-int		manage_keyboard(t_param *p);
+void	manage_keyboard(t_param *p);
+void	manage_hero_vector_direction(t_param *p);
+void	manage_hero_moves(t_param *p);
+
 
 void	draw(t_param *p);
 void	reset_image(t_param *p);
