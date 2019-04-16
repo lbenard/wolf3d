@@ -13,27 +13,21 @@
 #include "../includes/wolf3d.h"
 #include "libft.h"
 
-#define R 16777216
-#define G 65536
-#define B 256
-
 int		add_shadow(int color, double distance)
 {
 	int		r;
 	int		g;
 	int		b;
-	int		l;
 
-	b = color % B;
-	g = ((color - b) % G) / 256;
-	r = ((color - g - b) % R) / (256 * 256);
-
-	distance = distance > 100 ? 100 : distance;
+	if (distance > 100)
+	       	distance = 100;
+	r = color >> 16;
+	g = (color >> 8) - (r << 8);
+	b = color - (r << 16) - (g << 8);
 	r /= distance;
 	g /= distance;
 	b /= distance;
-	color =  r * (256 * 256) + g * 256 + b;
-	return (color);
+	return((r << 16) + (g << 8) + b);
 }
 
 int	render_texture(t_param *p, double j, double height)
@@ -42,7 +36,7 @@ int	render_texture(t_param *p, double j, double height)
 	double	i_line;
 
 	if (p->ray.h_hit)
-		i_column = p->wall.x - (double)((int)p->wall.x);
+			i_column = p->wall.x - (double)((int)p->wall.x);
 	else
 		i_column = p->wall.y - (double)((int)p->wall.y);
 	i_column *= p->map.texture->head.width;
@@ -54,15 +48,16 @@ int	render_texture(t_param *p, double j, double height)
 void    render_column(t_param *p, double distance, int column)
 {
 	int		wall_height;
+	int		wall_height_max;
 	int		j;
 	double	d = distance > 1 ? distance : 1;
-	// double		l = 255.0 / d;
 
 	wall_height = (int)(((double)p->mlx.height / 2.0) / distance);
+	wall_height_max = (int)((double)p->mlx.height / 2.0);
 	if (distance > 1)
 		j = -wall_height;
 	else
-		j = -(int)(((double)p->mlx.height / 2.0)) - 1;
+		j = -wall_height_max - 1;
 	while (++j < (int)(((double)p->mlx.height / 2.0)) && j < wall_height)
 	{
 		p->mlx.pixels[column + (int)(0.5 * p->mlx.height + j) * p->mlx.width]

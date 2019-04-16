@@ -32,13 +32,36 @@ void	print_fps(t_param *p)
 void	reset_image(t_param *p)
 {
 	int	i;
+	int	j;
+	t_rgb	sky;
+	t_rgb	floor;
 
 	i = -1;
+	j = p->mlx.height * 0.5 + 1;
 	while (++i <= (int)(0.5 * p->mlx.width * p->mlx.height))
-		p->mlx.pixels[i] = 0x004286F4;
+	{
+		if (!(i % p->mlx.width))
+		{
+			j--;
+			sky.r = 135.0 * ((double)j / ((double)p->mlx.height * 0.5));
+			sky.g = 206.0 * ((double)j / ((double)p->mlx.height * 0.5));
+			sky.b = 235.0 * ((double)j / ((double)p->mlx.height * 0.5));
+		}
+		p->mlx.pixels[i] = ft_rgb_to_int(sky);
+	}
 	i -= 2;
+	j = 0;
 	while (++i <= p->mlx.width * p->mlx.height)
-		p->mlx.pixels[i] = 0x00B241F4;
+	{
+		if (!(i % p->mlx.width))
+		{
+			j++;
+			floor.r = 96.0 * ((double)j / ((double)p->mlx.height * 0.5));
+			floor.g = 128.0 * ((double)j / ((double)p->mlx.height * 0.5));
+			floor.b = 56.0 * ((double)j / ((double)p->mlx.height * 0.5));
+		}
+		p->mlx.pixels[i] = ft_rgb_to_int(floor);
+	}
 }
 
 void	draw(t_param *p)

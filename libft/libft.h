@@ -59,7 +59,7 @@ typedef struct			s_hsv
 	float	v;
 }						t_hsv;
 
-int					contains_char(char	*string, char c);
+int				contains_char(char	*string, char c);
 char				*ft_strcdup(char *string, char c);
 size_t				ft_strlen(const char *s);
 char				*ft_strsub(const char *s, unsigned int start, size_t len);
