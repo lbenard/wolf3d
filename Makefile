@@ -15,9 +15,10 @@ SRC		= wolf3d.c\
 		./sources/draw/2Dmap_renderer.c\
 		./sources/draw/3Dmap_renderer.c\
 		./sources/draw/bresenham.c\
-		./sources/ray_casting/search_wall.c\
+		./sources/ray_casting/test.c\
 		./sources/end/end.c\
-		./sources/end/manage_error.c
+		./sources/end/manage_error.c 
+# search_wall.c\
 
 UNAME =	$(shell uname)
 
