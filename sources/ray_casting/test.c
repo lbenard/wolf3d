@@ -53,15 +53,22 @@ void	search_horizontal_wall(t_param *p, double x, double y)
 		x += x_increment;
 		y += y_increment;
 	}
+	/*if (y < 0)
+		y = 0;
+	if (x > p->map.width)
+		x = p->map.width;*/
+	if (x < 0)
+		x = 0;
+	if (y > p->map.height)
+		y = p->map.height;
+//	printf("h x %lf, y %lf  ", x, y);
 	p->horizontal_wall.x = x;
 	p->horizontal_wall.y = y;
 	if (check_map_limits(p, x, y) && check_walls(p, x, y + direction))
-	{
-		x -= p->hero.x;
-		y -= p->hero.y;
-		p->ray.dist_to_h_wall = sqrt(x * x + y * y);
 		p->ray.h_hit = 1;
-	}
+	x -= p->hero.x;
+	y -= p->hero.y;
+	p->ray.dist_to_h_wall = sqrt(x * x + y * y);
 }
 
 void	search_vertical_wall(t_param *p, double x, double y)
@@ -88,13 +95,20 @@ void	search_vertical_wall(t_param *p, double x, double y)
 		x += x_increment;
 		y += y_increment;
 	}
+	/*if (y < 0)
+		y = 0;
+	if (x > p->map.width)
+		x = p->map.width;*/
+	if (y > p->map.height)
+		y = p->map.height;
+	if (x < 0)
+		x = 0;
+//	printf("v x %lf, y %lf\n", x, y);
 	p->vertical_wall.x = x;
 	p->vertical_wall.y = y;
 	if (check_map_limits(p, x, y) && check_walls(p, x + direction, y))
-	{
-		x -= p->hero.x;
-		y -= p->hero.y;
-		p->ray.dist_to_v_wall = sqrt(x * x + y * y);
 		p->ray.v_hit = 1;
-	}
+	x -= p->hero.x;
+	y -= p->hero.y;
+	p->ray.dist_to_v_wall = sqrt(x * x + y * y);
 }

@@ -36,7 +36,7 @@ int	render_texture(t_param *p, double j, double height)
 	double	i_line;
 
 	if (p->ray.h_hit)
-			i_column = p->wall.x - (double)((int)p->wall.x);
+		i_column = p->wall.x - (double)((int)p->wall.x);
 	else
 		i_column = p->wall.y - (double)((int)p->wall.y);
 	i_column *= p->map.texture->head.width;
@@ -67,8 +67,8 @@ void    render_column(t_param *p, double distance, int column)
 
 void	find_distance(t_param *p)
 {
-	if (!p->ray.v_hit || (p->ray.h_hit 
-		&& p->ray.dist_to_h_wall < p->ray.dist_to_v_wall))
+	if (/*!p->ray.v_hit || (p->ray.h_hit 
+		&&*/( p->ray.dist_to_h_wall < p->ray.dist_to_v_wall))
 	{
 		p->ray.distance = p->ray.dist_to_h_wall * p->ray.fisheye_correction;
 		p->wall.x = p->horizontal_wall.x;
