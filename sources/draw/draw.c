@@ -68,7 +68,7 @@ void	draw(t_param *p)
 {
 	reset_image(p);
 	mlx_clear_window(p->mlx.init, p->mlx.window);
-	render_3d_map(p);
+	render_3dmap(p);
 	render_2d_map(p);
 	mlx_put_image_to_window(p->mlx.init, p->mlx.window, p->mlx.img, 0, 0);
 	print_fps(p);

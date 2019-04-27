@@ -17,6 +17,8 @@ int		check_walls(t_param *p, double move_x, double move_y)
 	int		i;
 	double	x;
 	double	y;
+	double	hx = p->hero.position.x;
+	double	hy = p->hero.position.y;
 
 	move_x *= 0.1;
 	move_y *= 0.1;
@@ -25,11 +27,11 @@ int		check_walls(t_param *p, double move_x, double move_y)
 	{
 		x = i * move_x;
 		y = i * move_y;
-	if (p->map.map[(int)(p->hero.x + x - 0.01 + (int)(p->hero.y + y) * p->map.width)]
-		|| p->map.map[(int)(p->hero.x + x + (int)(p->hero.y + y - 0.01) * p->map.width)]
-		|| p->map.map[(int)(p->hero.x + x + 0.01 + (int)(p->hero.y + y) * p->map.width)]
-		|| p->map.map[(int)(p->hero.x + x + (int)(p->hero.y + y + 0.01) * p->map.width)]
-		|| p->map.map[(int)(p->hero.x + x + (int)(p->hero.y + y) * p->map.width)])
+	if (p->map.map[(int)(hx + x - 0.01 + (int)(hy + y) * p->map.width)]
+		|| p->map.map[(int)(hx + x + (int)(hy + y - 0.01) * p->map.width)]
+		|| p->map.map[(int)(hx + x + 0.01 + (int)(hy + y) * p->map.width)]
+		|| p->map.map[(int)(hx + x + (int)(hy + y + 0.01) * p->map.width)]
+		|| p->map.map[(int)(hx + x + (int)(hy + y) * p->map.width)])
 			return (0);
 	}
 	return (1);
@@ -37,11 +39,11 @@ int		check_walls(t_param *p, double move_x, double move_y)
 
 int		check_map_limits(t_param *p, double move_x, double move_y)
 {
-	if (p->hero.x + move_x < 0
-		|| p->hero.x + move_x > p->map.width)
+	if (p->hero.position.x + move_x < 0
+		|| p->hero.position.x + move_x > p->map.width)
 		return (0);
-	if (p->hero.y + move_y < 0
-		|| p->hero.y + move_y > p->map.height)
+	if (p->hero.position.y + move_y < 0
+		|| p->hero.position.y + move_y > p->map.height)
 		return (0);
 	return (1);
 }
@@ -71,7 +73,7 @@ void	manage_hero_moves(t_param *p)
 	if (check_walls(p, hero_vector.x, hero_vector.y)
 	&& check_map_limits(p, hero_vector.x, hero_vector.y))
 	{
-		p->hero.x += hero_vector.x;
-		p->hero.y += hero_vector.y;
+		p->hero.position.x += hero_vector.x;
+		p->hero.position.y += hero_vector.y;
 	}
 }

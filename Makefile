@@ -12,10 +12,9 @@ SRC		= wolf3d.c\
 		./sources/loop/manage_hero_moves.c\
 		./sources/loop/manage_hero_vector_direction.c\
 		./sources/draw/draw.c\
+		./sources/draw/map_render.c\
 		./sources/draw/2Dmap_renderer.c\
-		./sources/draw/3Dmap_renderer.c\
 		./sources/draw/bresenham.c\
-		./sources/ray_casting/test.c\
 		./sources/end/end.c\
 		./sources/end/manage_error.c 
 # search_wall.c\

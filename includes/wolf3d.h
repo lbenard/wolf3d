@@ -20,8 +20,14 @@
 # include <stdlib.h>
 # include "mlx_keys_macos.h"
 # include "../includes/bitmap.h"
+# include "../includes/obstacle.h"
+# include "../includes/maths.h"
 
 # define END -42
+# define W_WIDTH 1080
+# define W_HEIGHT 720
+# define WALL 1
+# define LIMIT 0
 
 typedef struct 			s_dpoint_2d
 {
@@ -95,12 +101,11 @@ typedef struct      s_map
 
 typedef	struct		s_entity
 {
-	double			x;
-	double			y;
+	t_pos2d			position;
 	double			vector_direction;
 	double			angle;
 }					t_entity;
-
+/*
 typedef struct      s_ray
 {
     double          distance;
@@ -113,20 +118,20 @@ typedef struct      s_ray
     int             h_hit;
     int             v_hit;
 }                   t_ray;
-
+*/
 typedef struct		s_param
 {
 	t_mlx_params    mlx;
-    t_pointeur      pointeur;
-    t_mouse         mouse;
-    t_keybord       keyboard;
-    t_map           map;
-	t_entity		hero;
-	t_entity		horizontal_wall;
-	t_entity		vertical_wall;
-	t_entity		wall;
-    t_ray			ray;
-}					t_param;
+	t_pointeur      pointeur;
+	t_mouse         mouse;
+	t_keybord       keyboard;
+	t_map           map;
+	t_entity	hero;
+	t_entity	horizontal_wall;
+	t_entity	vertical_wall;
+	t_entity	wall;
+	t_obstacle	*obstacle;
+}			t_param;
 
 int     start(t_param *p, int ac, char **av);
 void    check_inputs(t_param *p, int ac, char **av);
@@ -150,10 +155,10 @@ void	manage_hero_moves(t_param *p);
 void	draw(t_param *p);
 void	reset_image(t_param *p);
 void	print_fps(t_param *p);
-void	render_3d_map(t_param *p);
+void	render_3dmap(t_param *p);
 int     search_wall(t_param *p, double direction);
 void	find_distance(t_param *p);
-void    render_column(t_param *p, double distance, int column);
+//void    render_column(t_param *p, double distance, int column);
 void    render_2d_map(t_param *p);
 void	render_hero(t_param *p);
 void	render_hero_vector(t_param *p);

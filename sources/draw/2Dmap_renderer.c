@@ -23,10 +23,10 @@ void	render_2d_visible_surface(t_param *p, int color)
 	column = -1;
 	while (++column < p->mlx.width)
 	{
-		point[0].x = p->hero.x * p->map.w_ratio;
-		point[0].z = p->hero.y * p->map.h_ratio;
-		x = p->map.rays[column].x * p->map.w_ratio;
-		y = p->map.rays[column].y * p->map.h_ratio;
+		point[0].x = p->hero.position.x * p->map.w_ratio;
+		point[0].z = p->hero.position.y * p->map.h_ratio;
+		x = p->obstacle[column].position.x * p->map.w_ratio;
+		y = p->obstacle[column].position.y * p->map.h_ratio;
 		x = x > 0 ? x : -x;
 		y = y > 0 ? y : -y;
 		point[1].x = x;
@@ -48,8 +48,8 @@ void	render_hero_vector(t_param *p)
 	i = -1;
 	while (++i < 100)
 	{
-		x = (p->hero.x + i * cos_hvd) * p->map.w_ratio;
-		y = (p->hero.y + i * sin_hvd) * p->map.h_ratio;
+		x = (p->hero.position.x + i * cos_hvd) * p->map.w_ratio;
+		y = (p->hero.position.y + i * sin_hvd) * p->map.h_ratio;
 		if (x > 0 && (int)x < p->mlx.width && y > 0 && (int)y < p->mlx.height)
      		p->mlx.pixels[(int)(x + (int)y * p->mlx.width)] = 0x000000FF;
 	}
@@ -70,8 +70,8 @@ void	render_hero(t_param *p)
 	p->map.h_ratio = h_ratio;
 	render_2d_visible_surface(p, 0x00FF0000);
 	render_hero_vector(p);
-	x = p->hero.x * p->map.w_ratio;
-	y = p->hero.y * p->map.h_ratio;
+	x = p->hero.position.x * p->map.w_ratio;
+	y = p->hero.position.y * p->map.h_ratio;
 	p->mlx.pixels[x + y * p->mlx.width] = color;
 	p->mlx.pixels[x + 1 + y * p->mlx.width] = color;
 	p->mlx.pixels[x - 1 + y * p->mlx.width] = color;
