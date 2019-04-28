@@ -131,7 +131,7 @@ t_pos2d	ray_increment(t_map map, t_pos2d ray, t_pos2d inc)
 	return (limit_ray(res, map.width, map.height));
 }
 
-t_obstacle find_obstacle(t_map map, t_hero hero, t_angle direction,
+t_obstacle find_obstacle(t_map map, t_entity hero, t_angle direction,
 	double fisheye_correction)
 {
 	t_ray	h;
@@ -169,7 +169,7 @@ t_angle	new_angle(double radian)
 	return (angle);
 }
 	
-void	render_3dmap(t_param *p)
+void	render_sprites(t_param *p, t_sprite *sprites, t_obstacle *obstacle)
 {
 	int	column_number;
 	double	shift;
@@ -177,7 +177,7 @@ void	render_3dmap(t_param *p)
 	double	fisheye_correction;
 
 	shift = (M_PI / 3.0f) / (double)p->mlx.width;
-	direction = new_angle(p->hero.view.direction - (M_PI / 6.0f));
+	direction = new_angle(p->hero.vector_direction - (M_PI / 6.0f));
 	fisheye_correction = -M_PI / 6.0;
 	column_number = -1;
 	while (++column_number < p->mlx.width)

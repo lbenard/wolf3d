@@ -43,8 +43,8 @@ void	render_hero_vector(t_param *p)
 	float	sin_hvd;
 	int   i;
 
-	cos_hvd = 0.05f * cos(p->hero.vector_direction);
-	sin_hvd = 0.05f * sin(p->hero.vector_direction);
+	cos_hvd = 0.05f * cos(p->hero.view.direction);
+	sin_hvd = 0.05f * sin(p->hero.view.direction);
 	i = -1;
 	while (++i < 100)
 	{
