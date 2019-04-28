@@ -16,58 +16,6 @@
 #include "../includes/bitmap.h"
 #include "libft.h"
 
-int		add_shadow(int color, double distance)
-{
-	int		r;
-	int		g;
-	int		b;
-
-	if (distance > 100)
-	       	distance = 100;
-	r = color >> 16;
-	g = (color >> 8) - (r << 8);
-	b = color - (r << 16) - (g << 8);
-	r /= distance;
-	g /= distance;
-	b /= distance;
-	return((r << 16) + (g << 8) + b);
-}
-/*
-int	render_texture(t_param *p, double j, double height)
-{
-	double	i_column;
-	double	i_line;
-
-	if (p->ray.h_hit)
-		i_column = p->wall.x - (double)((int)p->wall.x);
-	else
-		i_column = p->wall.y - (double)((int)p->wall.y);
-	i_column *= p->map.texture->head.width;
-	i_line = (double)p->map.texture->head.height * 0.5;
-	i_line += (j / height) * i_line;
-	return (p->map.texture->pixels[(int)(i_column + ((int)i_line * p->map.texture->head.width))]);
-}
-
-void    render_column(t_param *p, double distance, int column)
-{
-	int		wall_height;
-	int		wall_height_max;
-	int		j;
-	double	d = distance > 1 ? distance : 1;
-
-	wall_height = (int)(((double)p->mlx.height / 2.0) / distance);
-	wall_height_max = (int)((double)p->mlx.height / 2.0);
-	if (distance > 1)
-		j = -wall_height;
-	else
-		j = -wall_height_max - 1;
-	while (++j < (int)(((double)p->mlx.height / 2.0)) && j < wall_height)
-	{
-		p->mlx.pixels[column + (int)(0.5 * p->mlx.height + j) * p->mlx.width]
-		= add_shadow(render_texture(p, j, wall_height), d);
-	}
-}*/
-
 double	to_last_int(double n)
 {
 	return (n - (double)((int)n));
@@ -220,48 +168,6 @@ t_angle	new_angle(double radian)
 	angle.tan = tan(radian);
 	return (angle);
 }
-
-int	texture(t_bitmap_image *texture, t_obstacle obstacle, double line_ratio)
-{
-	double	column_ratio;
-	int	column;
-	int	line;
-
-	line = texture->head.height - line_ratio * (double)texture->head.height;
-	if (obstacle.direction == 'N' || obstacle.direction == 'S')
-		column_ratio = obstacle.position.x - (int)obstacle.position.x;
-	else
-		column_ratio = obstacle.position.y - (int)obstacle.position.y;
-	column = column_ratio * (double)texture->head.width;
-	return (texture->pixels[column + line * texture->head.width]);
-}
-
-void	render_column(t_param *p, t_obstacle obstacle, int col)
-{
-	double	line_ratio;
-	int	y_start;
-	int	i;
-
-	y_start = (W_HEIGHT - obstacle.size) * 0.5;
-	i = -1;
-	while (++i < obstacle.size)
-	{
-		line_ratio = (double)i / (double)obstacle.size;
-		p->mlx.pixels[col + (y_start + i) * W_WIDTH] =
-		add_shadow (texture(p->map.texture, obstacle, line_ratio),
-			obstacle.distance);
-	}
-}
-
-void	draw_3dmap(t_param *p, t_obstacle *obstacle)
-{	
-	int	column_number;
-	
-	column_number = -1;
-	while (++column_number < W_WIDTH)
-		render_column(p, obstacle[column_number], column_number);
-}
-
 	
 void	render_3dmap(t_param *p)
 {
