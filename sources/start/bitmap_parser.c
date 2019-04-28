@@ -39,6 +39,7 @@ static int			fill_image_pixels(t_bitmap_image *bmp, FILE *file)
 				return (-1);
 			bmp->pixels[w_i + (h - h_i - 1) * w] = bgr_to_int_pixel(bgr_pixel);
 		}
+		fseek(file, w % 4, SEEK_CUR);
 	}
 	return (0);
 }
@@ -58,6 +59,7 @@ t_bitmap_image		*bitmap_parser(char *bmp_pathname)
 	if (!(bmp->pixels = malloc(sizeof(uint32_t) * (bmp->head.width
 		* bmp->head.height))))
 		return (NULL);
+	fseek(file, bmp->head.offset, SEEK_SET);
 	if (fill_image_pixels(bmp, file))
 		return (NULL);
 	return (bmp);

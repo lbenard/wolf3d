@@ -48,14 +48,14 @@ int     initialize_map_params(t_param *p)
         return (!manage_error(p, 0, "malloc map --> error\n"));
 	if (!(p->map.rays = malloc(sizeof(t_dpoint_2d) * p->mlx.width)))
 		return (!manage_error(p, 3, "malloc rays --> error\n"));
-	if (!(p->map.texture = bitmap_parser("textures/red_wall.bmp")))
+	if (!(p->map.texture = bitmap_parser("textures/rivet.bmp")))
 		return (!manage_error(p, 3, "parse texture --> error\n"));
     return (0);
 }
 
 int     initialize_hero_params(t_param *p)
 {
-    p->hero.vector_direction = 0;
+	p->hero.vector_direction = 0;
 	p->hero.angle = 0;
 	p->hero.position.x = 5.0;
 	p->hero.position.y = 5.0;

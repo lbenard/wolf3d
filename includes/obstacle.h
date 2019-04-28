@@ -11,7 +11,7 @@ typedef struct			s_obstacle
 	char			direction;
 	int			type;
 	int			size;
-	struct	s_obstacle	*next;
+	struct s_obstacle	*next;
 }				t_obstacle;
 
 t_obstacle	create_obstacle(t_ray rayon);

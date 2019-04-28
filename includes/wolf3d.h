@@ -152,7 +152,7 @@ void	manage_hero_vector_direction(t_param *p);
 void	manage_hero_moves(t_param *p);
 
 
-void	draw(t_param *p);
+void	draw_3dmap(t_param *p, t_obstacle *obstacle);
 void	reset_image(t_param *p);
 void	print_fps(t_param *p);
 void	render_3dmap(t_param *p);
