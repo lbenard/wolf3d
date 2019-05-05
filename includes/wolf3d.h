@@ -22,12 +22,16 @@
 # include "../includes/bitmap.h"
 # include "../includes/obstacle.h"
 # include "../includes/maths.h"
+# include "../includes/textures.h"
+# include "../includes/sprite.h"
+# include "../includes/array.h"
 
 # define END -42
 # define W_WIDTH 1080
 # define W_HEIGHT 720
 # define WALL 1
 # define LIMIT 0
+# define SPRITE 2
 
 typedef struct 			s_dpoint_2d
 {
@@ -99,44 +103,45 @@ typedef struct      s_map
 	t_bitmap_image	*texture;
 }                   t_map;
 
+typedef struct		s_field_of_view
+{
+	double		direction;
+	double		angle;
+}			t_field_of_view;
+
 typedef	struct		s_entity
 {
-	t_pos2d			position;
-	double			vector_direction;
-	double			angle;
-}					t_entity;
-/*
-typedef struct      s_ray
+	t_pos2d		position;
+}			t_entity;
+
+typedef struct 		s_hero
 {
-    double          distance;
-    double          fisheye_correction;
-    double          cos;
-    double          sin;
-    double          tan;
-    double          dist_to_h_wall;
-    double          dist_to_v_wall;
-    int             h_hit;
-    int             v_hit;
-}                   t_ray;
-*/
+	t_pos2d		position;
+	t_field_of_view	view;
+}			t_hero;
+
 typedef struct		s_param
 {
 	t_mlx_params    mlx;
 	t_pointeur      pointeur;
 	t_mouse         mouse;
+# include "../includes/maths.h"
 	t_keybord       keyboard;
 	t_map           map;
-	t_entity	hero;
+	t_hero		hero;
 	t_entity	horizontal_wall;
 	t_entity	vertical_wall;
 	t_entity	wall;
 	t_obstacle	*obstacle;
+	t_bitmap_image	**texture;
+	t_sprite	*sprite;
 }			t_param;
 
 int     start(t_param *p, int ac, char **av);
 void    check_inputs(t_param *p, int ac, char **av);
 int     initialize_mlx_params(t_param *p);
 int     initialize_map_params(t_param *p);
+int     initialize_textures(t_param *p);
 int     initialize_hero_params(t_param *p);
 int     initialize_callbacks_params(t_param *p);
 int     parse_map(t_param *p);
@@ -153,11 +158,13 @@ void	manage_hero_moves(t_param *p);
 
 
 void	draw_3dmap(t_param *p, t_obstacle *obstacle);
+void	draw(t_param *p);
 void	reset_image(t_param *p);
 void	print_fps(t_param *p);
 void	render_3dmap(t_param *p);
+void	render_sprites(t_param *p, t_sprite *sprite, t_obstacle *obstacle);
 int     search_wall(t_param *p, double direction);
-void	find_distance(t_param *p);
+//void	find_distance(t_param *p);
 //void    render_column(t_param *p, double distance, int column);
 void    render_2d_map(t_param *p);
 void	render_hero(t_param *p);

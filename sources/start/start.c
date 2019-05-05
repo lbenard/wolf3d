@@ -29,8 +29,24 @@ int	initialize_obstacles(t_param *p)
 	return (0);
 }
 
+
+t_sprite *new_sprite(t_pos2d position, int type, t_size size)
+{
+	t_sprite *sprite;
+
+	sprite = malloc(sizeof(t_sprite));
+	sprite->position = position;
+	sprite->type = type;
+	sprite->size = size;
+	sprite->next = NULL;
+	return (sprite);
+}
+
 int    start(t_param *p, int ac, char **av)
 {
+	t_pos2d position;
+	t_size	size;
+
     check_inputs(p, ac, av);
     if (initialize_mlx_params(p))
         return (!manage_error(p, 0, "initialize_mlx_params --> error\n"));
@@ -44,5 +60,12 @@ int    start(t_param *p, int ac, char **av)
         return (!manage_error(p, 0, "parse_map --> error\n"));
     if (initialize_obstacles(p))
         return (!manage_error(p, 0, "initialize_obstacles --> error\n"));
+    if (initialize_textures(p))
+        return (!manage_error(p, 0, "initialize_textures --> error\n"));
+	size.x = 100;
+	size.y = 100;
+	position.x = 7;
+	position.y = 5;
+    p->sprite = new_sprite(position, SPRITE, size);
     return (0);
 }

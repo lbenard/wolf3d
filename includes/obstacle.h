@@ -3,6 +3,7 @@
 
 # include "maths.h"
 # include "rayon.h"
+# include "array.h"
 
 typedef struct			s_obstacle
 {
@@ -11,6 +12,7 @@ typedef struct			s_obstacle
 	char			direction;
 	int			type;
 	int			size;
+	double			texture_column_ratio;
 	struct s_obstacle	*next;
 }				t_obstacle;
 

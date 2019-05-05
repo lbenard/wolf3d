@@ -113,6 +113,11 @@ t_obstacle create_obstacle(t_ray rayon)
 	obstacle.distance = rayon.distance;
 	obstacle.type = rayon.hit? WALL : LIMIT;
 	obstacle.direction = rayon.direction;
+	if (rayon.direction == 'N' || rayon.direction == 'S')
+		obstacle.texture_column_ratio = rayon.position.x - (int)rayon.position.x;
+	else
+		obstacle.texture_column_ratio = rayon.position.y - (int)rayon.position.y;
+
 	if (rayon.distance > 1)
 		obstacle.size = (double)W_HEIGHT / rayon.distance;
 	else
@@ -187,5 +192,8 @@ void	render_3dmap(t_param *p)
 		direction = new_angle(direction.rad + shift);
 		fisheye_correction += shift;
 	}
+	//printf("type %d\n", p->sprite->type); 
+	//printf("next %s\n", p->sprite->next);
+	render_sprites(p, p->sprite, p->obstacle);
 	draw_3dmap(p, p->obstacle);
 }

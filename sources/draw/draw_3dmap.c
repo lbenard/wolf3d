@@ -44,7 +44,9 @@ int	texture(t_bitmap_image *texture, t_obstacle obstacle, double line_ratio)
 		column_ratio = obstacle.position.x - (int)obstacle.position.x;
 	else
 		column_ratio = obstacle.position.y - (int)obstacle.position.y;
-	column = column_ratio * (double)texture->head.width;
+	column = obstacle.texture_column_ratio * (double)texture->head.width;
+	//printf("width  %d\n",texture->head.width);
+	//printf("column %d line %d\n", column, line);
 	return (texture->pixels[column + line * texture->head.width]);
 }
 
@@ -54,7 +56,7 @@ void	render_column(t_param *p, t_obstacle obs, int col)
 	int	y_start;
 	int	i;
 	t_obstacle *obstacle;
-
+	
 	obstacle = &obs;
 	while (obstacle)
 	{
@@ -63,10 +65,14 @@ void	render_column(t_param *p, t_obstacle obs, int col)
 		while (++i < obstacle->size)
 		{
 			line_ratio = (double)i / (double)obstacle->size;
+			//printf("col %d ystart %d i %d\n", col, y_start, i);
+			//printf("obstacle->type %d\n", obstacle->type);
+			//printf("width %d\n",p->texture[obstacle->type]->head.width);
 			p->mlx.pixels[col + (y_start + i) * W_WIDTH] =
-			add_shadow (texture(p->map.texture, *obstacle, line_ratio),
+			add_shadow (texture(p->texture[obstacle->type], *obstacle, line_ratio),
 				obstacle->distance);
 		}
+		//printf("%d\n",obstacle->type);
 		obstacle = obstacle->next;
 	}
 }

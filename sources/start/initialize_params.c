@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../includes/wolf3d.h"
+#include "../includes/textures.h"
 #include "libft.h"
 #include "mlx.h"
 
@@ -53,10 +54,24 @@ int     initialize_map_params(t_param *p)
     return (0);
 }
 
+int	initialize_textures(t_param *p)
+{
+	if (!(p->texture = malloc(sizeof(void*) * 3)))
+		return (!manage_error(p, 3, "malloc texture --> error\n"));
+	if (!(p->texture[0] = bitmap_parser("textures/jul.bmp")))
+		return (!manage_error(p, 3, "parse texture --> error\n"));
+	if (!(p->texture[1] = bitmap_parser("textures/rivet.bmp")))
+		return (!manage_error(p, 3, "parse texture --> error\n"));
+	if (!(p->texture[2] = bitmap_parser("textures/sprite.bmp")))
+		return (!manage_error(p, 3, "parse texture --> error\n"));
+//	printf("w %d\n",p->texture[1]->head.width);
+	return (0);
+}
+
 int     initialize_hero_params(t_param *p)
 {
-	p->hero.vector_direction = 0;
-	p->hero.angle = 0;
+	p->hero.view.direction = 0;
+	p->hero.view.angle = 60;
 	p->hero.position.x = 5.0;
 	p->hero.position.y = 5.0;
     return (0);

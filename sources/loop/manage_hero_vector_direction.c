@@ -14,9 +14,11 @@
 
 void	manage_hero_vector_direction(t_param *p)
 {
+	double	rad;
+
 	if (p->keyboard.key == KEY_LEFT)
-		p->hero.angle = ((int)p->hero.angle - 3) % 360;
+		rad = -3.0 * (M_PI / 180.0);
 	if (p->keyboard.key == KEY_RIGHT)
-		p->hero.angle = ((int)p->hero.angle + 3) % 360;
-	p->hero.vector_direction = p->hero.angle * M_PI / 180.0;
+		rad = 3.0 * (M_PI / 180.0);
+	p->hero.view.direction += rad;
 }

@@ -50,8 +50,8 @@ int		check_map_limits(t_param *p, double move_x, double move_y)
 
 void	find_hero_vector(t_param *p, t_dpoint_2d *hv, int sign, double shift)
 {
-	hv->x = sign * cos(p->hero.vector_direction + shift);
-	hv->y = sign * sin(p->hero.vector_direction + shift);
+	hv->x = sign * cos(p->hero.view.direction + shift);
+	hv->y = sign * sin(p->hero.view.direction + shift);
 }
 
 void	manage_hero_moves(t_param *p)
