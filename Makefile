@@ -6,22 +6,72 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 19:33:38 by lbenard           #+#    #+#              #
-#    Updated: 2019/02/28 18:03:28 by lbenard          ###   ########.fr        #
+#    Updated: 2019/05/12 16:21:14 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	wolf3d
-SRCS_LIST		=	main.c							\
-					engine/delta.c					\
-					engine/entity_list.c			\
-					engine/entity.c					\
-					engine/errors.c					\
-					engine/framebuffer.c			\
-					engine/scene.c					\
-					game/entities/entity_type.c		\
-					game/entities/dummy_entity.c	\
-					game/entities/test_entity.c		\
-					game/scenes/menu_scene.c		\
+SRCS_LIST		=	main.c												\
+																		\
+					engine/delta/get_delta_ptr.c						\
+					engine/delta/get_last_delta.c						\
+					engine/delta/get_wall_time.c						\
+					engine/delta/set_last_delta.c						\
+																		\
+					engine/entity_node/new.c							\
+					engine/entity_node/entity_from_node.c				\
+					engine/entity_node/free.c							\
+																		\
+					engine/entity/init.c								\
+					engine/entity/init_default.c						\
+																		\
+					engine/error/throw_error_errno.c					\
+					engine/error/throw_error_str.c						\
+					engine/error/throw_error.c							\
+					engine/error/throw_result_str.c						\
+					engine/error/throw_result.c							\
+																		\
+					engine/event/callback_node/new.c					\
+					engine/event/callback_node/free.c					\
+																		\
+					engine/event/event_handler/init.c					\
+					engine/event/event_handler/add_callback.c			\
+					engine/event/event_handler/call.c					\
+					engine/event/event_handler/free.c					\
+																		\
+					engine/framebuffer/init.c							\
+					engine/framebuffer/update.c							\
+					engine/framebuffer/clear.c							\
+					engine/framebuffer/display.c						\
+					engine/framebuffer/free.c							\
+																		\
+					engine/game/init.c									\
+					engine/game/set_scene.c								\
+					engine/game/loop.c									\
+					engine/game/is_running.c							\
+					engine/game/is_focused.c							\
+					engine/game/free.c									\
+																		\
+					engine/map/init_map.c								\
+					engine/map/free_map.c								\
+																		\
+					engine/raycasting/angle/ft.c						\
+					engine/raycasting/ray/ft.c							\
+					engine/raycasting/raycasting_renderer/init.c		\
+					engine/raycasting/raycasting_renderer/update.c		\
+					engine/raycasting/raycasting_renderer/free.c		\
+																		\
+					engine/scene/init.c									\
+					engine/scene/add_entity.c							\
+					engine/scene/free.c									\
+																		\
+					game/entities/entity_type.c							\
+					game/entities/dummy_entity.c						\
+					game/entities/test_entity.c							\
+					game/events/add_test_entity_event.c					\
+					game/events/close_game_event.c						\
+					game/scenes/menu_scene.c							\
+					game/scenes/raycasting_scene.c						\
 					game/scenes/scene_type.c
 
 UNAME			=	$(shell uname)
@@ -55,6 +105,7 @@ ifneq ($(UNAME), Linux)
 endif
 
 LIBS			=	-lft				\
+					-lm					\
 					-lcsfml-graphics	\
 					-lcsfml-window		\
 					-lcsfml-system		\

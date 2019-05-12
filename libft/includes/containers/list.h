@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 18:29:38 by lbenard           #+#    #+#             */
-/*   Updated: 2019/02/20 20:20:19 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/05/07 17:28:14 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void			list_foreach(t_list_head *list, size_t offset, void (*fn)());
 */
 t_bool			list_is_last(const t_list_head *list, const t_list_head *head);
 t_bool			list_is_empty(const t_list_head *head);
+size_t			list_size(const t_list_head *head);
 
 /*
 ** Modifiers

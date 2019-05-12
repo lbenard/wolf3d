@@ -6,15 +6,16 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 15:44:12 by lbenard           #+#    #+#             */
-/*   Updated: 2019/03/29 15:23:19 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/05/07 16:46:13 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "game/entities/test_entity.h"
 #include "game/entities/entity_type.h"
+#include "engine/delta.h"
 
-t_test_entity	*new_test_entity(int data)
+t_test_entity	*new_test_entity(void)
 {
 	t_test_entity	*ret;
 
@@ -25,14 +26,15 @@ t_test_entity	*new_test_entity(int data)
 		free(ret);
 		return (NULL);
 	}
-	ret->data = data;
+	ret->data = 0.0f;
 	return (ret);
 }
 
 void			test_entity_update(t_test_entity *self, t_scene *scene)
 {
 	(void)scene;
-	self->data++;
+	self->data += 1.0f * get_last_delta();
+	// printf("%f\n", self->data);
 }
 
 void			free_test_entity(t_test_entity *self)

@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 17:02:52 by lbenard           #+#    #+#             */
-/*   Updated: 2019/02/28 16:10:38 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/05/06 17:21:01 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ typedef enum	s_entity_type
 	TEST_ENTITY_TYPE
 }				t_entity_type;
 
-void			entity_type_update(t_entity *entity, t_scene *scene);
-void			free_entity_type(t_entity *entity);
+void			entity_type_update(t_entity_node *node, t_scene *scene);
+void			free_entity_type(t_entity_node *node);
+
+t_result		get_entities_from_type(t_list_head *const dest,
+	const t_list_head *const from, const type_t type);
 
 #endif

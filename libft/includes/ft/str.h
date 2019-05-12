@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 17:43:05 by lbenard           #+#    #+#             */
-/*   Updated: 2019/02/19 18:38:21 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/04/24 16:55:03 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int				ft_isprint(int c);
 int				ft_isspace(int c);
 int				ft_isupper(int c);
 int				ft_islower(int c);
+int				ft_isnumber(const char *str);
 
 int				ft_toupper(int c);
 int				ft_tolower(int c);

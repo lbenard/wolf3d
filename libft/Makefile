@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/05 18:02:14 by lbenard           #+#    #+#              #
-#    Updated: 2019/02/23 21:24:14 by lbenard          ###   ########.fr        #
+#    Updated: 2019/05/07 17:30:33 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ SRCS_LIST		=	containers/list/init_list_head.c		\
 					containers/list/list_foreach.c			\
 					containers/list/list_is_last.c			\
 					containers/list/list_is_empty.c			\
+					containers/list/list_size.c				\
 					containers/list/list_add.c				\
 					containers/list/list_add_entry.c		\
 					containers/list/list_add_tail.c			\
@@ -167,6 +168,7 @@ SRCS_LIST		=	containers/list/init_list_head.c		\
 					ft/str/ft_isspace.c						\
 					ft/str/ft_isupper.c						\
 					ft/str/ft_islower.c						\
+					ft/str/ft_isnumber.c					\
 					ft/str/ft_toupper.c						\
 					ft/str/ft_tolower.c						\
 					ft/str/ft_get_next_line.c
