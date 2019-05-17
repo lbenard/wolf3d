@@ -125,7 +125,6 @@ typedef struct		s_param
 	t_mlx_params    mlx;
 	t_pointeur      pointeur;
 	t_mouse         mouse;
-# include "../includes/maths.h"
 	t_keybord       keyboard;
 	t_map           map;
 	t_hero		hero;

@@ -2,13 +2,14 @@
 # define SPRITE_H
 
 # include "../includes/array.h"
+# include "../includes/list.h"
 
 typedef struct		s_sprite
 {
+	t_node		node;
 	t_pos2d		position;
-	t_size		size;
-	int		type;
-	struct s_sprite	*next;
+	double		size;
+	int			type;
 }			t_sprite;
 
 #endif

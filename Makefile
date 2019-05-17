@@ -14,7 +14,6 @@ SRC		= wolf3d.c\
 		./sources/draw/draw.c\
 		./sources/draw/draw_3dmap.c\
 		./sources/draw/map_render.c\
-		./sources/draw/sprite_render.c\
 		./sources/draw/2Dmap_renderer.c\
 		./sources/draw/bresenham.c\
 		./sources/end/end.c\

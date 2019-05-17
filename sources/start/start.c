@@ -29,7 +29,7 @@ int	initialize_obstacles(t_param *p)
 	return (0);
 }
 
-
+/*
 t_sprite *new_sprite(t_pos2d position, int type, t_size size)
 {
 	t_sprite *sprite;
@@ -40,7 +40,7 @@ t_sprite *new_sprite(t_pos2d position, int type, t_size size)
 	sprite->size = size;
 	sprite->next = NULL;
 	return (sprite);
-}
+}*/
 
 int    start(t_param *p, int ac, char **av)
 {
@@ -66,6 +66,6 @@ int    start(t_param *p, int ac, char **av)
 	size.y = 100;
 	position.x = 7;
 	position.y = 5;
-    p->sprite = new_sprite(position, SPRITE, size);
+    //p->sprite = new_sprite(position, SPRITE, size);
     return (0);
 }

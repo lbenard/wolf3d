@@ -173,7 +173,7 @@ t_angle	new_angle(double radian)
 	angle.tan = tan(radian);
 	return (angle);
 }
-	
+
 void	render_3dmap(t_param *p)
 {
 	int	column_number;
@@ -189,11 +189,12 @@ void	render_3dmap(t_param *p)
 	{
 		p->obstacle[column_number] = find_obstacle(p->map
 			, p->hero, direction, cos(fisheye_correction));
+		printf("dist %lf\n",  p->obstacle[column_number].distance);
 		direction = new_angle(direction.rad + shift);
 		fisheye_correction += shift;
 	}
 	//printf("type %d\n", p->sprite->type); 
 	//printf("next %s\n", p->sprite->next);
-	render_sprites(p, p->sprite, p->obstacle);
+	//render_sprites(p, p->sprite, p->obstacle);
 	draw_3dmap(p, p->obstacle);
 }

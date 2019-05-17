@@ -49,8 +49,6 @@ int     initialize_map_params(t_param *p)
         return (!manage_error(p, 0, "malloc map --> error\n"));
 	if (!(p->map.rays = malloc(sizeof(t_dpoint_2d) * p->mlx.width)))
 		return (!manage_error(p, 3, "malloc rays --> error\n"));
-	if (!(p->map.texture = bitmap_parser("textures/rivet.bmp")))
-		return (!manage_error(p, 3, "parse texture --> error\n"));
     return (0);
 }
 
@@ -64,7 +62,6 @@ int	initialize_textures(t_param *p)
 		return (!manage_error(p, 3, "parse texture --> error\n"));
 	if (!(p->texture[2] = bitmap_parser("textures/sprite.bmp")))
 		return (!manage_error(p, 3, "parse texture --> error\n"));
-//	printf("w %d\n",p->texture[1]->head.width);
 	return (0);
 }
 
