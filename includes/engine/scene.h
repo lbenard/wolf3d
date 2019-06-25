@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 21:05:56 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/06 17:00:54 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/06/24 15:28:24 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct	s_scene
 	const type_t	type;
 	const char		*const name;
 	t_list_head		entities;
-	// t_renderer		renderer;
 	t_event_handler	input_manager;
 	struct s_scene	*next_scene;
 }				t_scene;

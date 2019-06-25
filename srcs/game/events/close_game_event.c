@@ -6,14 +6,14 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 20:15:00 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/03 20:21:03 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/05/29 19:12:45 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game/events/events.h"
 #include "engine/error.h"
 
-void			close_game_event(t_game *game, sfEvent *event)
+static void		close_game_event(t_game *game, sfEvent *event)
 {
 	if (event->type == sfEvtClosed ||
 		(event->type == sfEvtKeyPressed && event->key.code == sfKeyEscape))

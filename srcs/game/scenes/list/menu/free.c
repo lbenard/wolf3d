@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   events.h                                           :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 20:15:19 by lbenard           #+#    #+#             */
-/*   Updated: 2019/06/25 17:41:18 by lbenard          ###   ########.fr       */
+/*   Created: 2019/02/24 15:24:07 by lbenard           #+#    #+#             */
+/*   Updated: 2019/05/29 19:20:52 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EVENTS_H
-# define EVENTS_H
+#include <stdlib.h>
+#include "game/scenes/menu_scene.h"
+#include "engine/entity_node.h"
 
-# include "engine/game.h"
-# include <SFML/Window.h>
+static void	free_only_entity_node(t_entity_node *node)
+{
+	free(node);
+}
 
-t_callback_node	*new_close_game_event(void *params);
-t_callback_node	*new_add_test_entity_event(void *params);
-t_callback_node	*new_player_movements_event(void *params);
-
-#endif
+void		free_menu_scene(t_menu_scene *self)
+{
+	list_foreach(&self->test_entity_list, 0, free_only_entity_node);
+	free_scene(&self->super);
+	free(self);
+}

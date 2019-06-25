@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/12 15:51:49 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/12 18:30:27 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/06/25 18:56:26 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,18 @@
 # include "engine/scene.h"
 # include "engine/raycasting.h"
 # include "engine/framebuffer.h"
+# include "game/entities/player_entity.h"
 
 typedef struct		s_raycasting_scene
 {
 	t_scene					super;
 	t_map					map;
+	t_rgb					ground_color;
+	t_rgb					sky_color;
 	t_framebuffer			background;
 	t_raycasting_renderer	renderer;
 	sfImage					*texture;
+	t_player_entity			*player_ref;
 }					t_raycasting_scene;
 
 /*

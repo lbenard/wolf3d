@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/03 19:17:06 by lbenard           #+#    #+#             */
-/*   Updated: 2019/06/25 17:50:35 by lbenard          ###   ########.fr       */
+/*   Created: 2019/05/29 19:46:15 by lbenard           #+#    #+#             */
+/*   Updated: 2019/05/29 19:46:30 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "engine/event_handler.h"
-#include "types.h"
+#include "game/scenes/scene_type.h"
+#include "game/scenes/menu_scene.h"
+#include "game/scenes/raycasting_scene.h"
 
-t_result	init_event_handler(t_event_handler *self, void *const object)
+void	scene_type_render(t_scene *scene, t_framebuffer *fb)
 {
-	if (!init_list_head(&self->callbacks))
-		return (ERROR);
-	*(void**)&self->object = object;
-	init_list_head(&self->node);
-	init_list_head(&self->childs);
-	return (OK);
+	if (scene->type == DUMMY_SCENE_TYPE)
+		;
+	else if (scene->type == MENU_SCENE_TYPE)
+		menu_scene_render((t_menu_scene*)scene, fb);
+	else if (scene->type == RAYCASTING_SCENE_TYPE)
+		raycasting_scene_render((t_raycasting_scene*)scene, fb);
 }

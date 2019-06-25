@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 20:22:43 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/03 20:25:04 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/06/25 18:11:05 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,11 @@ t_result	init_scene(t_scene *const self, const type_t type,
 		return (ERROR);
 	*(type_t*)&self->type = type;
 	if (!init_list_head(&self->entities))
+	{
+		free((void*)self->name);
+		return (ERROR);
+	}
+	if (init_event_handler(&self->input_manager, self) == ERROR)
 	{
 		free((void*)self->name);
 		return (ERROR);

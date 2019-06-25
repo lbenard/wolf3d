@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 19:31:47 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/03 20:20:49 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/06/25 17:58:40 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ t_result	init_framebuffer(t_framebuffer *const self, const t_usize size)
 		sfRenderTexture_destroy(self->render_texture);
 		return (throw_result_str("failed while creating SFML sprite"));
 	}
+	ft_bzero(self->framebuffer, sizeof(t_u32) * (size.x * size.y));
 	*(t_usize*)&self->size = size;
 	return (OK);
 }

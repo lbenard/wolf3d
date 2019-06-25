@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 20:07:46 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/12 18:23:06 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/06/25 18:41:37 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "engine/delta.h"
 #include "game/scenes/scene_type.h"
 
-#include <stdio.h>
+// #include <stdio.h>
 
 void	game_loop(t_game *self)
 {
@@ -33,7 +33,7 @@ void	game_loop(t_game *self)
 	}
 	// list_foreach(&self->scene->entities, 0, print_entity);
 	double spf = get_wall_time() - last_time;
-	printf("fps %f\n", 1.0f / spf);
+	// printf("fps %f\n", 1.0f / spf);
 	set_last_delta(spf);
 	last_time = get_wall_time();
 }

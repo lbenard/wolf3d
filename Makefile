@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 19:33:38 by lbenard           #+#    #+#              #
-#    Updated: 2019/05/12 16:21:14 by lbenard          ###   ########.fr        #
+#    Updated: 2019/06/25 19:09:16 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRCS_LIST		=	main.c												\
 																		\
 					engine/event/event_handler/init.c					\
 					engine/event/event_handler/add_callback.c			\
+					engine/event/event_handler/add_sub_handler.c		\
 					engine/event/event_handler/call.c					\
 					engine/event/event_handler/free.c					\
 																		\
@@ -52,8 +53,8 @@ SRCS_LIST		=	main.c												\
 					engine/game/is_focused.c							\
 					engine/game/free.c									\
 																		\
-					engine/map/init_map.c								\
-					engine/map/free_map.c								\
+					engine/map/init.c									\
+					engine/map/free.c									\
 																		\
 					engine/raycasting/angle/ft.c						\
 					engine/raycasting/ray/ft.c							\
@@ -65,14 +66,34 @@ SRCS_LIST		=	main.c												\
 					engine/scene/add_entity.c							\
 					engine/scene/free.c									\
 																		\
-					game/entities/entity_type.c							\
-					game/entities/dummy_entity.c						\
-					game/entities/test_entity.c							\
+					game/entities/entity_type/update.c					\
+					game/entities/entity_type/free.c					\
+					game/entities/entity_type/get_entities_from_type.c	\
+																		\
+					game/entities/list/dummy/new.c						\
+					game/entities/list/dummy/free.c						\
+					game/entities/list/player/new.c						\
+					game/entities/list/player/update.c					\
+					game/entities/list/player/movements_event.c			\
+					game/entities/list/test/new.c						\
+					game/entities/list/test/update.c					\
+					game/entities/list/test/free.c						\
+																		\
 					game/events/add_test_entity_event.c					\
 					game/events/close_game_event.c						\
-					game/scenes/menu_scene.c							\
-					game/scenes/raycasting_scene.c						\
-					game/scenes/scene_type.c
+																		\
+					game/scenes/list/menu/new.c							\
+					game/scenes/list/menu/update.c						\
+					game/scenes/list/menu/render.c						\
+					game/scenes/list/menu/free.c						\
+					game/scenes/list/raycasting/new.c					\
+					game/scenes/list/raycasting/update.c				\
+					game/scenes/list/raycasting/render.c				\
+					game/scenes/list/raycasting/free.c					\
+																		\
+					game/scenes/scene_type/update.c						\
+					game/scenes/scene_type/render.c						\
+					game/scenes/scene_type/free.c
 
 UNAME			=	$(shell uname)
 

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   events.h                                           :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 20:15:19 by lbenard           #+#    #+#             */
-/*   Updated: 2019/06/25 17:41:18 by lbenard          ###   ########.fr       */
+/*   Created: 2019/05/12 15:55:14 by lbenard           #+#    #+#             */
+/*   Updated: 2019/05/29 19:44:31 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EVENTS_H
-# define EVENTS_H
+#include <stdlib.h>
+#include "game/scenes/raycasting_scene.h"
+#include "game/scenes/scene_type.h"
 
-# include "engine/game.h"
-# include <SFML/Window.h>
-
-t_callback_node	*new_close_game_event(void *params);
-t_callback_node	*new_add_test_entity_event(void *params);
-t_callback_node	*new_player_movements_event(void *params);
-
-#endif
+void	free_raycasting_scene(t_raycasting_scene *self)
+{
+	free_scene(&self->super);
+	free_map(&self->map);
+	free_raycasting_renderer(&self->renderer);
+	free(self);
+}

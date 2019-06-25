@@ -1,23 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   events.h                                           :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 20:15:19 by lbenard           #+#    #+#             */
-/*   Updated: 2019/06/25 17:41:18 by lbenard          ###   ########.fr       */
+/*   Created: 2019/02/28 15:32:51 by lbenard           #+#    #+#             */
+/*   Updated: 2019/05/29 19:46:58 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EVENTS_H
-# define EVENTS_H
+#include "game/scenes/scene_type.h"
+#include "game/scenes/menu_scene.h"
+#include "game/scenes/raycasting_scene.h"
 
-# include "engine/game.h"
-# include <SFML/Window.h>
-
-t_callback_node	*new_close_game_event(void *params);
-t_callback_node	*new_add_test_entity_event(void *params);
-t_callback_node	*new_player_movements_event(void *params);
-
-#endif
+void	free_scene_type(t_scene *scene)
+{
+	if (scene->type == DUMMY_SCENE_TYPE)
+		;
+	else if (scene->type == MENU_SCENE_TYPE)
+		free_menu_scene((t_menu_scene*)scene);
+	else if (scene->type == RAYCASTING_SCENE_TYPE)
+		free_raycasting_scene((t_raycasting_scene*)scene);
+}

@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   events.h                                           :+:      :+:    :+:   */
+/*   add_sub_handler.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/17 20:15:19 by lbenard           #+#    #+#             */
-/*   Updated: 2019/06/25 17:41:18 by lbenard          ###   ########.fr       */
+/*   Created: 2019/06/25 17:28:56 by lbenard           #+#    #+#             */
+/*   Updated: 2019/06/25 17:34:05 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EVENTS_H
-# define EVENTS_H
+#include "engine/event_handler.h"
 
-# include "engine/game.h"
-# include <SFML/Window.h>
-
-t_callback_node	*new_close_game_event(void *params);
-t_callback_node	*new_add_test_entity_event(void *params);
-t_callback_node	*new_player_movements_event(void *params);
-
-#endif
+void	event_handler_add_sub_handler(t_event_handler *const self,
+	t_event_handler *const sub_handler)
+{
+	list_add_entry(&sub_handler->node, &self->childs);
+}

@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 17:14:21 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/12 18:29:33 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/06/25 19:23:13 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_result	init_raycasting_renderer(t_raycasting_renderer *const self,
 	self->columns_number = window_size.x;
 	self->position = map->spawn_position;
 	self->direction = 0.0f;
-	self->fov = 70.0f;
-	init_list_head(&self->sprites);
+	self->fov = 100.0f;
+	// init_list_head(&self->sprites);
 	return (OK);
 }

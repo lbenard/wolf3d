@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   entity_type.h                                      :+:      :+:    :+:   */
+/*   player_entity.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/24 17:02:52 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/31 12:59:19 by lbenard          ###   ########.fr       */
+/*   Created: 2019/02/24 15:42:02 by lbenard           #+#    #+#             */
+/*   Updated: 2019/06/23 18:34:00 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENTITY_TYPE
-# define ENTITY_TYPE
+#ifndef PLAYER_ENTITY
+# define PLAYER_ENTITY
 
 # include "engine/entity.h"
+# include "engine/entity_node.h"
 # include "engine/scene.h"
 
-typedef enum	s_entity_type
+typedef struct	s_player_entity
 {
-	DUMMY_ENTITY_TYPE,
-	TEST_ENTITY_TYPE,
-	PLAYER_ENTITY_TYPE
-}				t_entity_type;
+	t_entity		super;
+	t_event_handler	event_handler;
+	float			health;
+	size_t			score;
+	t_bool			is_moving;
+}				t_player_entity;
 
-void			entity_type_update(t_entity_node *node, t_scene *scene);
-void			free_entity_type(t_entity_node *node);
-
-t_result		get_entities_from_type(t_list_head *const dest,
-	const t_list_head *const from, const type_t type);
+t_player_entity	*new_player_entity(void);
+void			player_entity_update(t_player_entity *self, t_scene *scene);
+void			free_player_entity(t_player_entity *self);
 
 #endif

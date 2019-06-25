@@ -6,14 +6,14 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 17:51:27 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/12 17:17:28 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/06/25 19:27:22 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include "engine/raycasting.h"
 
-static t_bool	is_ray_in_map(t_map *map, t_vec2f pos)
+static t_bool	is_ray_in_map(const t_map *const map, const t_vec2f pos)
 {
 	if (pos.x <= 0 || pos.y <= 0)
 		return (0);
@@ -22,14 +22,16 @@ static t_bool	is_ray_in_map(t_map *map, t_vec2f pos)
 	return (1);
 }
 
-static t_u8		ray_hitting_texture(t_map *map, t_vec2f pos,
-	t_direction direction, t_vec2f shift)
+static t_u8		ray_hitting_texture(const t_map *const map, const t_vec2f pos,
+	const t_direction direction, const t_vec2f shift)
 {
 	t_wall	*wall;
+	t_vec2f	collision;
 
-	pos.x += shift.x;
-	pos.y += shift.y;
-	wall = &map->map[(int)pos.x + (int)pos.y * map->size.y];
+	collision = pos;
+	collision.x += shift.x;
+	collision.y += shift.y;
+	wall = &map->map[(int)collision.x + (int)collision.y * map->size.y];
 	if (direction == NORTH && wall->north_texture_id)
 		return (wall->north_texture_id);
 	if (direction == EAST && wall->east_texture_id)
@@ -41,7 +43,7 @@ static t_u8		ray_hitting_texture(t_map *map, t_vec2f pos,
 	return (0);
 }
 
-float			euclidean_distance(t_vec2f a, t_vec2f b)
+float			euclidean_distance(const t_vec2f a, const t_vec2f b)
 {
 	return (sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)));
 }
@@ -73,7 +75,7 @@ static t_ray	north_ray(const t_raycasting_renderer *const raycasting_renderer,
 }
 
 static t_ray	east_ray(const t_raycasting_renderer *const raycasting_renderer,
-	t_angle direction)
+	const t_angle direction)
 {
 	t_vec2f	pos;
 	float	x_shift;
@@ -99,7 +101,7 @@ static t_ray	east_ray(const t_raycasting_renderer *const raycasting_renderer,
 }
 
 static t_ray	south_ray(const t_raycasting_renderer *const raycasting_renderer,
-	t_angle direction)
+	const t_angle direction)
 {
 	t_vec2f	pos;
 	float	x_shift;
@@ -125,7 +127,7 @@ static t_ray	south_ray(const t_raycasting_renderer *const raycasting_renderer,
 }
 
 static t_ray	west_ray(const t_raycasting_renderer *const raycasting_renderer,
-	t_angle direction)
+	const t_angle direction)
 {
 	t_vec2f	pos;
 	float	x_shift;
@@ -151,7 +153,7 @@ static t_ray	west_ray(const t_raycasting_renderer *const raycasting_renderer,
 }
 
 static t_ray	find_obstacle(const t_raycasting_renderer *const raycasting_renderer,
-	float fisheye_cos, t_angle direction)
+	const float fisheye_cos, const t_angle direction)
 {
 	t_ray	horizontal_ray;
 	t_ray	vertical_ray;
@@ -176,7 +178,7 @@ static t_ray	find_obstacle(const t_raycasting_renderer *const raycasting_rendere
 	}
 }
 
-void			raycasting_renderer_update(t_raycasting_renderer *self)
+void			raycasting_renderer_update(const t_raycasting_renderer *const self)
 {
 	size_t	column;
 	float	shift;
