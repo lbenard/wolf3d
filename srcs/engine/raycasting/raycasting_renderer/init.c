@@ -24,7 +24,7 @@ t_result	init_raycasting_renderer(t_raycasting_renderer *const self,
 	self->columns_number = window_size.x;
 	self->position = map->spawn_position;
 	self->direction = 0.0f;
-	self->fov = 100.0f;
+	self->fov = 200.0f;
 	// init_list_head(&self->sprites);
 	return (OK);
 }

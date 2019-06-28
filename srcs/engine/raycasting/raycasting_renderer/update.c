@@ -181,20 +181,18 @@ static t_ray	find_obstacle(const t_raycasting_renderer *const raycasting_rendere
 void			raycasting_renderer_update(const t_raycasting_renderer *const self)
 {
 	size_t	column;
-	float	shift;
+	float angle;
 	float	fisheye_correction;
 	t_angle	direction;
 
-	shift = (M_PI * self->fov / 180.0f) / (float)self->columns_number;
-	direction = ft_angle(self->direction - (M_PI * self->fov / 360.0f));
-	fisheye_correction = -(M_PI * self->fov / 360.0f);
 	column = 0;
 	while (column < self->columns_number)
 	{
+		angle = atan((float)(column - (self->columns_number * 0.5)) / (float)(self->columns_number * 0.5));
+		direction = ft_angle(self->direction + angle);
+		fisheye_correction = angle;
 		self->columns[column] = find_obstacle(self, cos(fisheye_correction),
 			direction);
-		direction = ft_angle(direction.rad + shift);
-		fisheye_correction += shift;
 		column++;
 	}
 }
