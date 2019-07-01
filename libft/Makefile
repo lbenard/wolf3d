@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/05 18:02:14 by lbenard           #+#    #+#              #
-#    Updated: 2019/05/07 17:30:33 by lbenard          ###   ########.fr        #
+#    Updated: 2019/07/01 19:04:31 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,7 @@ SRCS_LIST		=	containers/list/init_list_head.c		\
 					maths/vec3f/ft_vec3f.c					\
 					maths/vec3f/vec3f_dot.c					\
 					maths/vec3f/vec3f_scalar.c				\
+					maths/vec3f/vec3f_normalize.c			\
 					maths/vec3f/vec3f_to_vec2f.c			\
 					maths/vec3f/vec3f_to_vec4f.c			\
 					maths/vec4f/ft_vec4f.c					\

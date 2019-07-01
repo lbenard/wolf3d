@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 12:57:30 by lbenard           #+#    #+#             */
-/*   Updated: 2019/06/25 17:42:12 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/01 19:19:18 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ t_player_entity	*new_player_entity(void)
 	ret->health = 100.0f;
 	ret->score = 0;
 	ret->is_moving = 0;
+	ret->speed = 2.0f;
 	if (event_handler_add_callback(&ret->event_handler,
 		new_player_movements_event(NULL)) == ERROR)
 	{
