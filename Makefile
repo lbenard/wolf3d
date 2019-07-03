@@ -132,7 +132,8 @@ LIBS			=	-lft				\
 					-lcsfml-system		\
 					-lcsfml-audio
 
-CFLAGS			=	-Wall -Wextra -Werror -O3 -Ofast -flto
+CFLAGS			=	
+#-Wall -Wextra -Werror -O3 -Ofast -flto
 
 LDFLAGS			:=	$(LIB_FOLDERS) $(LIBS)
 ifneq ($(UNAME), Linux)

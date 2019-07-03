@@ -16,8 +16,12 @@
 
 void	raycasting_scene_update(t_raycasting_scene *self, float delta)
 {
+	const t_list_head	*pos;
+
 	(void)delta;
-	list_foreach(&self->super.entities, 0, entity_type_update);
+	pos = &self->super.entities;
+	while ((pos = pos->next) != &self->super.entities)
+		entity_type_update((t_entity_node*)pos, &self->super);
 	self->renderer.direction = self->player_ref->super.transform.rotation.y;
 	self->renderer.position = vec3f_to_vec2f(self->player_ref->super.transform.position);
 	if (self->renderer.direction < M_PI)

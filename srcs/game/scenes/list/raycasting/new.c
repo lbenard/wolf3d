@@ -56,7 +56,7 @@ t_raycasting_scene	*new_raycasting_scene(const t_usize window_size)
 		free(ret);
 		return (throw_error_str("Failed while initalizing scene"));
 	}
-	if (init_map(&ret->map, "maps/simple_map.wolf") == ERROR)
+	if (init_map(&ret->map, "maps/maze_map.wolf") == ERROR)
 	{
 		free(ret);
 		return (throw_error_str("Failed while initializing map"));
