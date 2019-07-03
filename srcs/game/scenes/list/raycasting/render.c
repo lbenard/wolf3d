@@ -29,10 +29,10 @@ void	raycasting_scene_render(t_raycasting_scene *self, t_framebuffer *fb)
 		sizeof(t_u32) * (fb->size.x * fb->size.y));
 	texture = (t_u32*)sfImage_getPixelsPtr(self->texture);
 	texture_size = sfImage_getSize(self->texture);
-	wall_exceed = 0.0f;
 	i = ft_usize(0, 0);
 	while (i.x < self->renderer.columns_number)
 	{
+		wall_exceed = 0.0f;
 		size = fb->size.y / self->renderer.columns[i.x].distance;
 		if (size > fb->size.y)
 			wall_exceed = (size - fb->size.y) * 0.5;
