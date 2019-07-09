@@ -6,12 +6,12 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 22:17:01 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/13 01:07:14 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/09 16:59:42 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "engine/error.h"
-#include "engine/framebuffer.h"
+#include "engine/frame.h"
 #include "engine/entity_node.h"
 #include "engine/scene.h"
 #include "game/entities/test_entity.h"

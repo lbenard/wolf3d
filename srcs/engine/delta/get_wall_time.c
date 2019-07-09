@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 17:48:11 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/01 20:28:35 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/04 18:20:35 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <sys/time.h>
 #include "engine/delta.h"
 
-double	get_wall_time()
+double	get_wall_time(void)
 {
 	struct timeval	time;
 	if (gettimeofday(&time, NULL))

@@ -6,13 +6,13 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 19:44:00 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/03 19:44:15 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/09 17:01:46 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "engine/framebuffer.h"
+#include "engine/frame.h"
 
-void	framebuffer_display(t_framebuffer *const self,
+void	frame_display(t_frame *const self,
 	sfRenderWindow *const target)
 {
 	sfRenderWindow_drawSprite(target, self->sprite, NULL);

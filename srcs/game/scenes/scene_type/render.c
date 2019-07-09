@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:46:15 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/29 19:46:30 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/09 17:04:49 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "game/scenes/menu_scene.h"
 #include "game/scenes/raycasting_scene.h"
 
-void	scene_type_render(t_scene *scene, t_framebuffer *fb)
+void	scene_type_render(t_scene *scene, t_frame *fb)
 {
 	if (scene->type == DUMMY_SCENE_TYPE)
 		;

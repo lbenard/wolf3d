@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 20:07:46 by lbenard           #+#    #+#             */
-/*   Updated: 2019/06/25 18:41:37 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/09 17:02:59 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	game_loop(t_game *self)
 	scene_type_update(self->scene, get_last_delta());
 	if (game_is_focused(self))
 	{
-		scene_type_render(self->scene, &self->window_framebuffer);
-		framebuffer_update(&self->window_framebuffer);
-		framebuffer_display(&self->window_framebuffer, self->window);
+		scene_type_render(self->scene, &self->window_frame);
+		frame_update(&self->window_frame);
+		frame_display(&self->window_frame, self->window);
 	}
 	// list_foreach(&self->scene->entities, 0, print_entity);
 	double spf = get_wall_time() - last_time;

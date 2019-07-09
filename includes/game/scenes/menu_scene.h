@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 15:24:16 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/08 14:16:29 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/09 17:03:23 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define MENU_SCENE
 
 # include "engine/scene.h"
-# include "engine/framebuffer.h"
+# include "engine/frame.h"
 # include "colors/rgb.h"
 
 /*
@@ -36,7 +36,7 @@ t_menu_scene	*new_menu_scene(void);
 ** Modifiers
 */
 void			menu_scene_update(t_menu_scene *self, float delta);
-void			menu_scene_render(t_menu_scene *self, t_framebuffer *fb);
+void			menu_scene_render(t_menu_scene *self, t_frame *fb);
 
 /*
 ** Destructors

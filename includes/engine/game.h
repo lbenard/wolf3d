@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 15:39:38 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/12 18:32:49 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/09 17:00:29 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GAME_H
 
 # include <SFML/Graphics.h>
-# include "engine/framebuffer.h"
+# include "engine/frame.h"
 # include "engine/scene.h"
 # include "types.h"
 # include "engine/event_handler.h"
@@ -23,7 +23,7 @@ typedef struct	s_game
 {
 	sfRenderWindow	*const window;
 	t_usize			window_size;
-	t_framebuffer	window_framebuffer;
+	t_frame			window_frame;
 	t_scene			*scene;
 	t_event_handler	event_handler;
 }				t_game;

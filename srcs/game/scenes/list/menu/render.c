@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:19:02 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/29 19:20:10 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/09 17:03:32 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "game/entities/entity_type.h"
 #include "ft/str.h"
 
-void	menu_scene_render(t_menu_scene *self, t_framebuffer *fb)
+void	menu_scene_render(t_menu_scene *self, t_frame *fb)
 {
 	size_t	x;
 	size_t	y;
@@ -31,7 +31,7 @@ void	menu_scene_render(t_menu_scene *self, t_framebuffer *fb)
 		x = 0;
 		while (x < fb->size.x)
 		{
-			fb->framebuffer[fb->size.x * y + x] = color;
+			fb->frame[fb->size.x * y + x] = color;
 			x++;
 		}
 		y++;

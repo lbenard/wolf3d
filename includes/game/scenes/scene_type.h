@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/25 17:35:59 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/12 15:56:51 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/09 17:02:41 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SCENE_TYPE
 
 # include "engine/scene.h"
-# include "engine/framebuffer.h"
+# include "engine/frame.h"
 
 typedef enum	s_scene_type
 {
@@ -24,7 +24,7 @@ typedef enum	s_scene_type
 }				t_scene_type;
 
 void			scene_type_update(t_scene *scene, float delta);
-void			scene_type_render(t_scene *scene, t_framebuffer *fb);
+void			scene_type_render(t_scene *scene, t_frame *fb);
 void			free_scene_type(t_scene *scene);
 
 #endif

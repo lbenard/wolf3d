@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:26:02 by lbenard           #+#    #+#             */
-/*   Updated: 2019/06/25 19:14:23 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/09 17:04:32 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,32 @@
 #include "game/scenes/scene_type.h"
 #include "engine/error.h"
 
-void	background_framebuffer(t_framebuffer *framebuffer, t_rgb ground_color,
+void	background_frame(t_frame *frame, t_rgb ground_color,
 	t_rgb sky_color)
 {
 	t_usize	i;
 	float	darkness;
 
 	i = ft_usize(0, 0);
-	while (i.y < framebuffer->size.y)
+	while (i.y < frame->size.y)
 	{
 		i.x = 0;
-		while (i.x < framebuffer->size.x)
+		while (i.x < frame->size.x)
 		{
-			darkness = (((double)framebuffer->size.y / 2.0f) - (double)i.y);
-			if (i.y < framebuffer->size.y / 2)
-				darkness /= ((double)framebuffer->size.y / 2.0f);
+			darkness = (((double)frame->size.y / 2.0f) - (double)i.y);
+			if (i.y < frame->size.y / 2)
+				darkness /= ((double)frame->size.y / 2.0f);
 			else
-				darkness /= (((double)framebuffer->size.y / 2.0f)
-					- ((double)framebuffer->size.y));
-			if (i.y < framebuffer->size.y / 2)
-				framebuffer->framebuffer[i.y * framebuffer->size.x + i.x] =
-					rgb_to_int(ft_rgb(ground_color.r * darkness, ground_color.g * darkness, ground_color.b * darkness));
+				darkness /= (((double)frame->size.y / 2.0f)
+					- ((double)frame->size.y));
+			if (i.y < frame->size.y / 2)
+				frame->frame[i.y * frame->size.x + i.x] =
+					rgb_to_int(ft_rgb(ground_color.r * darkness, ground_color.g
+					* darkness, ground_color.b * darkness));
 			else
-				framebuffer->framebuffer[i.y * framebuffer->size.x + i.x] =
-					rgb_to_int(ft_rgb(sky_color.r * darkness, sky_color.g * darkness, sky_color.b * darkness));
+				frame->frame[i.y * frame->size.x + i.x] =
+					rgb_to_int(ft_rgb(sky_color.r * darkness, sky_color.g
+					* darkness, sky_color.b * darkness));
 			i.x++;
 		}
 		i.y++;
@@ -61,15 +63,15 @@ t_raycasting_scene	*new_raycasting_scene(const t_usize window_size)
 		free(ret);
 		return (throw_error_str("Failed while initializing map"));
 	}
-	if (init_framebuffer(&ret->background, window_size) == ERROR)
+	if (init_frame(&ret->background, window_size) == ERROR)
 	{
 		free(ret);
 		free_map(&ret->map);
-		return (throw_error_str("Failed while initializing framebuffer"));
+		return (throw_error_str("Failed while initializing frame"));
 	}
 	ret->ground_color = ft_rgb(235, 206, 135);
 	ret->sky_color = ft_rgb(96, 128, 56);
-	background_framebuffer(&ret->background, ret->ground_color, ret->sky_color);
+	background_frame(&ret->background, ret->ground_color, ret->sky_color);
 	if (init_raycasting_renderer(&ret->renderer, window_size, &ret->map) ==
 		ERROR)
 	{
@@ -78,7 +80,7 @@ t_raycasting_scene	*new_raycasting_scene(const t_usize window_size)
 		return (throw_error_str("Failed while initializing raycasting "
 			"renderer"));
 	}
-	if (!(ret->texture = sfImage_createFromFile("tnt_wall.png")))
+	if (!(ret->texture = sfImage_createFromFile("wall.png")))
 	{
 		free(ret);
 		free_map(&ret->map);
