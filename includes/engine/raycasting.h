@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 16:50:53 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/31 14:38:12 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/12 23:53:20 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,6 @@ t_result		init_raycasting_renderer(
 					t_map *const map);
 void			raycasting_renderer_update(
 					const t_raycasting_renderer *const self);
-void			free_raycasting_renderer(t_raycasting_renderer *const self);
+void			destroy_raycasting_renderer(t_raycasting_renderer *const self);
 
 #endif

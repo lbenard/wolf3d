@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 16:38:15 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/08 17:36:34 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/12 23:53:08 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,6 @@ typedef struct	s_map
 }				t_map;
 
 t_result	init_map(t_map *self, const char *const path);
-void		free_map(t_map *self);
+void		destroy_map(t_map *self);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 15:53:03 by lbenard           #+#    #+#             */
-/*   Updated: 2019/06/25 17:48:36 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/12 23:52:50 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,6 @@ t_result		event_handler_add_callback(t_event_handler *const self,
 void			event_handler_add_sub_handler(t_event_handler *const self,
 	t_event_handler *const sub_handler);
 void			event_handler_call(t_event_handler *self, sfEvent *event);
-void			free_event_handler(t_event_handler *const self);
+void			destroy_event_handler(t_event_handler *const self);
 
 #endif

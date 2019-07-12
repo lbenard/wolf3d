@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 15:39:38 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/09 17:00:29 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/12 23:53:03 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ t_result		game_set_scene(t_game *const self, t_scene *const scene);
 void			game_loop(t_game *const self);
 t_bool			game_is_running(t_game *const self);
 t_bool			game_is_focused(t_game *const self);
-void			free_game(t_game *const self);
+void			destroy_game(t_game *const self);
 
 #endif
