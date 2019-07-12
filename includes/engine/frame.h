@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 17:02:59 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/09 17:00:02 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/13 00:01:29 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 # define FRAME_H
 
 # include <SFML/Graphics.h>
-# include "libft.h"
+# include "engine/window.h"
+# include "sizes/usize.h"
+# include "sizes/isize.h"
+# include "colors/rgba.h"
 
 /*
 ** Rendering frame with alpha channel
@@ -30,20 +33,22 @@ typedef struct	s_frame
 /*
 ** Constructors
 */
-t_result		init_frame(t_frame *const self, const t_usize size);
+t_result		init_frame(t_frame *const self, const t_usize size,
+					t_rgba fill_color);
 /*
 ** Modifiers
 */
 void			frame_update(t_frame *const self);
 void			frame_clear(t_frame *const self);
 void			frame_display(t_frame *const self,
-	sfRenderWindow *const target);
-void			frame_layer(t_frame *const self,
-	const t_frame *const layer, const t_usize position);
+					t_window *const target);
+void			frame_fill(t_frame *const self, t_rgba fill_color);
+void			frame_layer(t_frame *self, t_frame *layer, t_isize pos,
+					void (*blend)(t_rgba *const a, const t_rgba *const b));
 
 /*
 ** Destructors
 */
-void			free_frame(t_frame *const self);
+void			destroy_frame(t_frame *const self);
 
 #endif
