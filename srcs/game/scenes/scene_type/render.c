@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:46:15 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/09 17:04:49 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/09 17:18:12 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 void	scene_type_render(t_scene *scene, t_frame *fb)
 {
+	if (!scene)
+		return ;
 	if (scene->type == DUMMY_SCENE_TYPE)
 		;
 	else if (scene->type == MENU_SCENE_TYPE)

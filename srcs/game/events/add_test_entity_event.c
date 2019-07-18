@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/06 17:29:35 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/29 19:12:40 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/13 00:39:31 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void		add_test_entity_event(t_game *game, sfEvent *event)
 			new_entity_node((t_entity*)new_test_entity())))
 		{
 			throw_error_str("failed to add new test entity");
-			sfRenderWindow_close(game->window);
+			window_close(&game->window);
 		}
 	}
 }

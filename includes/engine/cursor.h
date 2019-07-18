@@ -1,44 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rgba.h                                             :+:      :+:    :+:   */
+/*   cursor.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/20 16:15:26 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/15 14:53:14 by lbenard          ###   ########.fr       */
+/*   Created: 2019/07/12 23:38:02 by lbenard           #+#    #+#             */
+/*   Updated: 2019/07/13 00:10:46 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RGBA_H
-# define RGBA_H
+#ifndef CURSOR_H
+# define CURSOR_H
 
 # include "types.h"
-# include "colors/hsv.h"
-# include "colors/rgb.h"
+# include "engine/frame.h"
 
-/*
-** RGBA color
-*/
-typedef struct	s_rgba
+typedef struct	s_cursor
 {
-	t_u8	a;
-	t_u8	b;
-	t_u8	g;
-	t_u8	r;
-}				t_rgba;
+	t_bool	is_visible;
+	t_bool	is_custom;
+	t_frame	custom_cursor;
+}				t_cursor;
 
-/*
-** Constructors
-*/
-t_rgba			ft_rgba(t_u8 r, t_u8 g, t_u8 b, t_u8 a);
-t_rgba			ft_rgba_rgb(t_rgb color);
-t_rgba			ft_rgba_int(t_u32 color);
-t_rgba			ft_rgba_hsv(t_hsv color);
-
-/*
-** Casts
-*/
-t_u32			rgba_to_int(t_rgba color);
+t_result		init_cursor(t_cursor *const self);
+t_result		init_cursor_custom(t_cursor *const self,
+					const t_usize cursor_size);
+void			cursor_set_visibility(t_cursor *const self,
+					const t_bool is_visible);
+void			destroy_cursor(t_cursor *const self);
 
 #endif

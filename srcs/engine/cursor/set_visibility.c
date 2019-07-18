@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   set_visibility.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/10 16:02:06 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/03 19:38:17 by lbenard          ###   ########.fr       */
+/*   Created: 2019/07/12 23:50:53 by lbenard           #+#    #+#             */
+/*   Updated: 2019/07/12 23:51:32 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "engine/event_handler.h"
-#include "containers/list.h"
+#include "engine/cursor.h"
 
-void			free_event_handler(t_event_handler *self)
+void	cursor_set_visibility(t_cursor *const self, const t_bool is_visible)
 {
-	list_foreach(&self->callbacks, 0, free_callback_node);
+	self->is_visible = is_visible;
 }

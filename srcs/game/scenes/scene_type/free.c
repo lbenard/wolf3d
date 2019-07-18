@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 15:32:51 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/29 19:46:58 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/09 17:18:25 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 void	free_scene_type(t_scene *scene)
 {
+	if (!scene)
+		return ;
 	if (scene->type == DUMMY_SCENE_TYPE)
 		;
 	else if (scene->type == MENU_SCENE_TYPE)

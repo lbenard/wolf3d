@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 22:17:01 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/09 16:59:42 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/17 17:06:20 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 #include "colors/hsv.h"
 #include "engine/game.h"
 #include "game/scenes/raycasting_scene.h"
+#include "game/scenes/menu_scene.h"
 #include "game/events/events.h"
 #include "engine/map.h"
 
@@ -33,26 +34,35 @@
 #include <stdio.h>
 #include "engine/map.h"
 #include "engine/raycasting.h"
+#include "engine/blend.h"
 
 int		main(void)
 {
-	t_game					game;
+	t_game	game;
 
 	if (init_game(&game, "wolf3d", ft_usize(1280, 720)) == ERROR)
 		return (!throw_error_str("Failed to init game"));
-	if (game_set_scene(&game, (t_scene*)new_raycasting_scene(game.window_size)) == ERROR)
+	if (game_set_scene(&game, (t_scene*)new_raycasting_scene(&game.window))
+		== ERROR)
 	{
-		free_game(&game);
+		destroy_game(&game);
 		return (!throw_error_str("Failed to init menu scene"));
 	}
+	// if (game_set_scene(&game, (t_scene*)new_menu_scene(&game.window))
+	// 	== ERROR)
+	// {
+	// 	destroy_game(&game);
+	// 	return (!throw_error_str("Failed to init menu scene"));
+	// }
 	if (!event_handler_add_callback(&game.event_handler,
 		new_close_game_event(NULL)))
 	{
-		free_game(&game);
+		destroy_game(&game);
 		return (!throw_error_str("Failed to add exit callback"));
 	}
-	while (game_is_running(&game))
+	printf("%lu\n", (size_t)game.window.frame.frame[0]);
+	while (window_is_running(&game.window))
 		game_loop(&game);
-	free_game(&game);
+	destroy_game(&game);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 12:57:30 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/01 19:19:18 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/13 00:18:44 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_player_entity	*new_player_entity(void)
 	if (event_handler_add_callback(&ret->event_handler,
 		new_player_movements_event(NULL)) == ERROR)
 	{
-		free_event_handler(&ret->event_handler);
+		destroy_event_handler(&ret->event_handler);
 		free(ret);
 		return (NULL);
 	}

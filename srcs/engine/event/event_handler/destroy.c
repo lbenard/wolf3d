@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_map.c                                         :+:      :+:    :+:   */
+/*   destroy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/04/26 16:51:41 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/11 18:39:23 by lbenard          ###   ########.fr       */
+/*   Created: 2019/04/10 16:02:06 by lbenard           #+#    #+#             */
+/*   Updated: 2019/07/13 00:16:52 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "engine/map.h"
+#include "engine/event_handler.h"
+#include "containers/list.h"
 
-void	free_map(t_map *self)
+void			destroy_event_handler(t_event_handler *self)
 {
-	free(self->map);
+	list_foreach(&self->callbacks, 0, free_callback_node);
 }

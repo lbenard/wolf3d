@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_running.c                                       :+:      :+:    :+:   */
+/*   close.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/03 20:08:27 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/03 20:08:50 by lbenard          ###   ########.fr       */
+/*   Created: 2019/07/13 00:38:53 by lbenard           #+#    #+#             */
+/*   Updated: 2019/07/13 00:39:19 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "engine/game.h"
+#include "engine/window.h"
 
-t_bool	game_is_running(t_game *const self)
+void	window_close(t_window *const self)
 {
-	return (sfRenderWindow_isOpen(self->window));
+	sfRenderWindow_close(self->window);
 }

@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 19:05:27 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/01 19:19:03 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/13 00:51:39 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ void	player_entity_update(t_player_entity *self, t_scene *scene)
 	velocity = vec3f_normalize(velocity);
 	velocity = vec3f_scalar(velocity, get_last_delta());
 	velocity = vec3f_scalar(velocity, self->speed);
+	if (sfKeyboard_isKeyPressed(sfKeyLShift))
+		velocity = vec3f_scalar(velocity, 2.0f);
 	if (!is_safe_move(raycasting_scene->renderer.map, self->super.transform.position, velocity))
 		return ;
 	self->super.transform.position.x += velocity.x;

@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/12 15:51:49 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/09 17:00:57 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/13 00:47:51 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define RAYCASTING_SCENE
 
 # include "engine/scene.h"
+# include "engine/window.h"
 # include "engine/raycasting.h"
 # include "engine/frame.h"
 # include "game/entities/player_entity.h"
@@ -33,7 +34,7 @@ typedef struct		s_raycasting_scene
 /*
 ** Constructors
 */
-t_raycasting_scene	*new_raycasting_scene(const t_usize window_size);
+t_raycasting_scene	*new_raycasting_scene(const t_window *const window);
 
 /*
 ** Modifiers

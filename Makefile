@@ -6,12 +6,19 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 19:33:38 by lbenard           #+#    #+#              #
-#    Updated: 2019/06/25 19:09:16 by lbenard          ###   ########.fr        #
+#    Updated: 2019/07/15 21:22:52 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	wolf3d
 SRCS_LIST		=	main.c												\
+																		\
+					engine/blend/add.c									\
+																		\
+					engine/cursor/init.c								\
+					engine/cursor/init_custom.c							\
+					engine/cursor/set_visibility.c						\
+					engine/cursor/destroy.c								\
 																		\
 					engine/delta/get_delta_ptr.c						\
 					engine/delta/get_last_delta.c						\
@@ -38,33 +45,40 @@ SRCS_LIST		=	main.c												\
 					engine/event/event_handler/add_callback.c			\
 					engine/event/event_handler/add_sub_handler.c		\
 					engine/event/event_handler/call.c					\
-					engine/event/event_handler/free.c					\
+					engine/event/event_handler/destroy.c				\
 																		\
-					engine/framebuffer/init.c							\
-					engine/framebuffer/update.c							\
-					engine/framebuffer/clear.c							\
-					engine/framebuffer/display.c						\
-					engine/framebuffer/free.c							\
+					engine/frame/init.c									\
+					engine/frame/update.c								\
+					engine/frame/clear.c								\
+					engine/frame/fill.c									\
+					engine/frame/layer.c								\
+					engine/frame/destroy.c								\
 																		\
 					engine/game/init.c									\
 					engine/game/set_scene.c								\
 					engine/game/loop.c									\
-					engine/game/is_running.c							\
-					engine/game/is_focused.c							\
-					engine/game/free.c									\
+					engine/game/destroy.c								\
 																		\
 					engine/map/init.c									\
-					engine/map/free.c									\
+					engine/map/destroy.c								\
+																		\
+					engine/window/init.c								\
+					engine/window/update.c								\
+					engine/window/is_running.c							\
+					engine/window/is_focused.c							\
+					engine/window/set_name.c							\
+					engine/window/close.c								\
+					engine/window/destroy.c								\
 																		\
 					engine/raycasting/angle/ft.c						\
 					engine/raycasting/ray/ft.c							\
 					engine/raycasting/raycasting_renderer/init.c		\
 					engine/raycasting/raycasting_renderer/update.c		\
-					engine/raycasting/raycasting_renderer/free.c		\
+					engine/raycasting/raycasting_renderer/destroy.c		\
 																		\
 					engine/scene/init.c									\
 					engine/scene/add_entity.c							\
-					engine/scene/free.c									\
+					engine/scene/destroy.c								\
 																		\
 					game/entities/entity_type/update.c					\
 					game/entities/entity_type/free.c					\
@@ -132,8 +146,7 @@ LIBS			=	-lft				\
 					-lcsfml-system		\
 					-lcsfml-audio
 
-CFLAGS			=	
-#-Wall -Wextra -Werror -O3 -Ofast -flto
+CFLAGS			=	-Wall -Wextra -Werror -O3 -Ofast -flto
 
 LDFLAGS			:=	$(LIB_FOLDERS) $(LIBS)
 ifneq ($(UNAME), Linux)

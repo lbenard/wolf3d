@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 20:15:00 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/29 19:12:45 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/13 00:39:46 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void		close_game_event(t_game *game, sfEvent *event)
 {
 	if (event->type == sfEvtClosed ||
 		(event->type == sfEvtKeyPressed && event->key.code == sfKeyEscape))
-		sfRenderWindow_close(game->window);
+		window_close(&game->window);
 }
 
 t_callback_node	*new_close_game_event(void *params)

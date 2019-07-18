@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/10 00:31:57 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/10 00:44:48 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/15 14:38:58 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 # include "colors/rgba.h"
 
-void	blend_add(t_rgba *const a, const t_rgba *const b);
+t_u32	blend_add(const t_rgba *const back, const t_rgba *const front);
 
 #endif

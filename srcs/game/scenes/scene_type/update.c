@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:45:36 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/29 19:45:59 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/09 17:17:58 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 
 void	scene_type_update(t_scene *scene, float delta)
 {
+	if (!scene)
+		return ;
 	if (scene->type == DUMMY_SCENE_TYPE)
 		;
 	else if (scene->type == MENU_SCENE_TYPE)

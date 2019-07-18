@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/12 15:55:14 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/29 19:44:31 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/15 13:58:36 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 void	free_raycasting_scene(t_raycasting_scene *self)
 {
-	free_scene(&self->super);
-	free_map(&self->map);
-	free_raycasting_renderer(&self->renderer);
+	destroy_scene(&self->super);
+	destroy_map(&self->map);
+	destroy_raycasting_renderer(&self->renderer);
 	free(self);
 }

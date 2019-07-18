@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/23 17:29:25 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/09 17:02:01 by lbenard          ###   ########.fr       */
+/*   Created: 2019/07/12 23:45:23 by lbenard           #+#    #+#             */
+/*   Updated: 2019/07/12 23:49:47 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "engine/frame.h"
+#include "engine/cursor.h"
+#include "ft/mem.h"
 
-void	free_frame(t_frame *const self)
+t_result	init_cursor(t_cursor *const self)
 {
-	free(self->frame);
-	sfRenderTexture_destroy(self->render_texture);
-	sfSprite_destroy(self->sprite);
+	ft_bzero(&self->custom_cursor, sizeof(t_frame));
+	self->is_custom = FALSE;
+	self->is_visible = TRUE;
+	return (OK);
 }

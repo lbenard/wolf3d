@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   display.c                                          :+:      :+:    :+:   */
+/*   destroy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/03 19:44:00 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/13 00:01:55 by lbenard          ###   ########.fr       */
+/*   Created: 2019/07/13 00:27:51 by lbenard           #+#    #+#             */
+/*   Updated: 2019/07/13 00:36:49 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "engine/frame.h"
+#include <stdlib.h>
+#include "engine/window.h"
 
-void	frame_display(t_frame *const self,
-	t_window *const target)
+void	destroy_window(t_window *const self)
 {
-	sfRenderWindow_drawSprite(target->window, self->sprite, NULL);
-	sfRenderWindow_display(target->window);
+	sfRenderWindow_destroy(self->window);
+	free(*(char**)&self->name);
+	destroy_frame(&self->frame);
+	destroy_cursor(&self->cursor);
 }
