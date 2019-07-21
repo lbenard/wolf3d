@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/04 19:41:39 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/04 19:41:55 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/21 15:33:56 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ t_rgba	ft_rgba(t_u8 r, t_u8 g, t_u8 b, t_u8 a)
 {
 	t_rgba	ret;
 
-	ret.r = r;
-	ret.g = g;
-	ret.b = b;
-	ret.a = a;
+	ret.c.r = r;
+	ret.c.g = g;
+	ret.c.b = b;
+	ret.c.a = a;
 	return (ret);
 }

@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/05 18:02:14 by lbenard           #+#    #+#              #
-#    Updated: 2019/07/04 19:49:05 by lbenard          ###   ########.fr        #
+#    Updated: 2019/07/21 15:38:55 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,7 +53,6 @@ SRCS_LIST		=	containers/list/init_list_head.c		\
 					colors/rgba/ft_rgba_rgb.c				\
 					colors/rgba/ft_rgba_int.c				\
 					colors/rgba/ft_rgba_hsv.c				\
-					colors/rgba/rgba_to_int.c				\
 					colors/hsv/ft_hsv.c						\
 					colors/hsv/hsv_to_int.c					\
 					sizes/ft_usize.c						\

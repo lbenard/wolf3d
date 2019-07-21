@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 22:17:01 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/17 17:06:20 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/21 15:41:08 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,9 +60,16 @@ int		main(void)
 		destroy_game(&game);
 		return (!throw_error_str("Failed to add exit callback"));
 	}
-	printf("%lu\n", (size_t)game.window.frame.frame[0]);
+	// t_rgba	back = ft_rgba(255, 255, 255, 255);
+	// t_rgba	layer = ft_rgba(0, 0, 0, 255);
+
+	// t_rgba	result = ft_rgba_int(blend_add(&back, &layer));
+	// printf("result: r: %d, g: %d, b: %d, a: %d\n", result.r, result.g, result.b, result.a);
 	while (window_is_running(&game.window))
+	{
 		game_loop(&game);
+		// frame_clear(&game.window.frame);
+	}
 	destroy_game(&game);
 	return (0);
 }

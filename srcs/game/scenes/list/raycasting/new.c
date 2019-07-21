@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:26:02 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/15 20:58:22 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/21 15:44:20 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 #include "game/scenes/scene_type.h"
 #include "engine/error.h"
 
-void	background_frame(t_frame *frame, t_rgb ground_color,
-	t_rgb sky_color)
+void	background_frame(t_frame *frame, t_rgb ground_color, t_rgb sky_color)
 {
 	t_usize	i;
 	float	darkness;
@@ -35,12 +34,12 @@ void	background_frame(t_frame *frame, t_rgb ground_color,
 					- ((double)frame->size.y));
 			if (i.y < frame->size.y / 2)
 				frame->frame[i.y * frame->size.x + i.x] =
-					rgb_to_int(ft_rgb(ground_color.r * darkness, ground_color.g
-					* darkness, ground_color.b * darkness));
+					ft_rgba(sky_color.r * darkness, sky_color.g
+					* darkness, sky_color.b * darkness, 255).integer;
 			else
 				frame->frame[i.y * frame->size.x + i.x] =
-					rgb_to_int(ft_rgb(sky_color.r * darkness, sky_color.g
-					* darkness, sky_color.b * darkness));
+					ft_rgba(ground_color.r * darkness, ground_color.g
+					* darkness, ground_color.b * darkness, 255).integer;
 			i.x++;
 		}
 		i.y++;
@@ -70,14 +69,16 @@ t_raycasting_scene	*new_raycasting_scene(const t_window *const window)
 		destroy_map(&ret->map);
 		return (throw_error_str("Failed while initializing frame"));
 	}
-	ret->ground_color = ft_rgb(235, 206, 135);
-	ret->sky_color = ft_rgb(96, 128, 56);
+	ret->ground_color = ft_rgb(105, 105, 105);
+	ret->sky_color = ft_rgb(129, 244, 252);
+	// frame_fill(&ret->background, ft_rgba(255, 0, 255, 255));
 	background_frame(&ret->background, ret->ground_color, ret->sky_color);
 	if (init_raycasting_renderer(&ret->renderer, window->size, &ret->map) ==
 		ERROR)
 	{
 		free(ret);
 		destroy_map(&ret->map);
+		destroy_frame(&ret->background);
 		return (throw_error_str("Failed while initializing raycasting "
 			"renderer"));
 	}
@@ -85,6 +86,7 @@ t_raycasting_scene	*new_raycasting_scene(const t_window *const window)
 	{
 		free(ret);
 		destroy_map(&ret->map);
+		destroy_frame(&ret->background);
 		destroy_raycasting_renderer(&ret->renderer);
 		return (throw_error_str("Failed while initializing texture"));
 	}
@@ -94,9 +96,9 @@ t_raycasting_scene	*new_raycasting_scene(const t_window *const window)
 	{
 		free(ret);
 		destroy_map(&ret->map);
+		destroy_frame(&ret->background);
 		destroy_raycasting_renderer(&ret->renderer);
 		sfImage_destroy(ret->texture);
-		return (throw_error_str("Failed while initializing player entity"));
 	}
 	ret->player_ref->super.transform.position = ft_vec3f(ret->renderer.position.x, ret->renderer.position.y, 0);
 	event_handler_add_sub_handler(&ret->super.input_manager,

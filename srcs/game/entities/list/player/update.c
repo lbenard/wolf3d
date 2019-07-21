@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 19:05:27 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/13 00:51:39 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/21 16:31:35 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,76 +16,78 @@
 #include "game/entities/player_entity.h"
 #include "engine/delta.h"
 
-int		is_safe_move(t_map *map, t_vec3f position, t_vec3f velocity)
+static t_bool	is_safe_move(t_map *map, t_vec3f pos, t_vec3f vel)
 {
 	float	x_miss;
-	float y_miss;
+	float	y_miss;
 
-	if (position.x + velocity.x < 0 || position.x + velocity.x >= map->size.x
-		|| position.y + velocity.y < 0 || position.y + velocity.y >= map->size.y)
-		return (0);
-	if (map->map[(int)(position.x + velocity.x) + (int)(position.y + velocity.y) * map->size.x].east_texture_id)
-		return (0);
-	if ((int)position.x == (int)(position.x + velocity.x)
-		|| (int)position.y == (int)(position.y + velocity.y))
-		return (1);
-	x_miss = velocity.x > 0 ? 1 - (position.x - (int)position.x) : (int)position.x - position.x;
-	y_miss = x_miss * velocity.y / velocity.x;
-	if ((int)(position.y + y_miss) == (int)position.y)
-	{
-		if (map->map[(int)(position.x + velocity.x) + (int)position.y * map->size.x].east_texture_id)
-			return (0);
-		else
-			return (1);
-	}
+	if (pos.x + vel.x < 0 || pos.x + vel.x >= map->size.x
+		|| pos.y + vel.y < 0 || pos.y + vel.y >= map->size.y)
+		return (FALSE);
+	if (map->map[(int)(pos.x + vel.x) + (int)(pos.y + vel.y) * map->size.x]
+		.east_texture_id)
+		return (FALSE);
+	if ((int)pos.x == (int)(pos.x + vel.x)
+		|| (int)pos.y == (int)(pos.y + vel.y))
+		return (TRUE);
+	x_miss = vel.x > 0 ? 1 - (pos.x - (int)pos.x) : (int)pos.x - pos.x;
+	y_miss = x_miss * vel.y / vel.x;
+	if ((int)(pos.y + y_miss) == (int)pos.y)
+		return (map->map[(int)(pos.x + vel.x) + (int)pos.y * map->size.x]
+			.east_texture_id ? FALSE : TRUE);
 	else
+		return (map->map[(int)(pos.x) + (int)(pos.y + vel.y) * map->size.x]
+			.east_texture_id == 0 ? FALSE : TRUE);
+}
+
+static void	orientation(t_vec3f	*rotation)
+{
+	if (sfKeyboard_isKeyPressed(sfKeyLeft))
+		rotation->y -= 3.0f * get_last_delta();
+	if (sfKeyboard_isKeyPressed(sfKeyRight))
+		rotation->y += 3.0f * get_last_delta();
+}
+
+static void	wasd(t_vec3f *transform, t_vec3f rotation)
+{
+	t_vec2f	rotation_trigonometry;
+
+	rotation_trigonometry = ft_vec2f(cos(rotation.y), sin(rotation.y));
+	if (sfKeyboard_isKeyPressed(sfKeyW) && !sfKeyboard_isKeyPressed(sfKeyS))
 	{
-		if (map->map[(int)(position.x) + (int)(position.y + velocity.y) * map->size.x].east_texture_id)
-			return (0);
-		else
-		{
-			return (1);
-		}		
+		transform->x += rotation_trigonometry.x;
+		transform->y += rotation_trigonometry.y;
 	}
+	if (sfKeyboard_isKeyPressed(sfKeyA) && !sfKeyboard_isKeyPressed(sfKeyD))
+	{
+		transform->x += rotation_trigonometry.y;
+		transform->y -= rotation_trigonometry.x;
+	}
+	if (sfKeyboard_isKeyPressed(sfKeyS) && !sfKeyboard_isKeyPressed(sfKeyW))
+	{
+		transform->x -= rotation_trigonometry.x;
+		transform->y -= rotation_trigonometry.y;
+	}
+	if (sfKeyboard_isKeyPressed(sfKeyD) && !sfKeyboard_isKeyPressed(sfKeyA))
+	{
+		transform->x -= rotation_trigonometry.y;
+		transform->y += rotation_trigonometry.x;
+	}
+	*transform = vec3f_normalize(*transform);
 }
 
 void	player_entity_update(t_player_entity *self, t_scene *scene)
 {
 	t_vec3f	velocity;
-	t_raycasting_scene	*raycasting_scene;
 	
 	velocity = ft_vec3f(0.0f, 0.0f, 0.0f);
-	raycasting_scene = (t_raycasting_scene*)scene;
-	if (sfKeyboard_isKeyPressed(sfKeyLeft))
-		self->super.transform.rotation.y -= 3.0f * get_last_delta();
-	if (sfKeyboard_isKeyPressed(sfKeyRight))
-		self->super.transform.rotation.y += 3.0f * get_last_delta();
-	if (sfKeyboard_isKeyPressed(sfKeyW))
-	{
-		velocity.x += cos(self->super.transform.rotation.y);
-		velocity.y += sin(self->super.transform.rotation.y);
-	}
-	if (sfKeyboard_isKeyPressed(sfKeyA))
-	{
-		velocity.x += sin(self->super.transform.rotation.y);
-		velocity.y -= cos(self->super.transform.rotation.y);
-	}
-	if (sfKeyboard_isKeyPressed(sfKeyS))
-	{
-		velocity.x -= cos(self->super.transform.rotation.y);
-		velocity.y -= sin(self->super.transform.rotation.y);
-	}
-	if (sfKeyboard_isKeyPressed(sfKeyD))
-	{
-		velocity.x -= sin(self->super.transform.rotation.y);
-		velocity.y += cos(self->super.transform.rotation.y);
-	}
-	velocity = vec3f_normalize(velocity);
+	orientation(&self->super.transform.rotation);
+	wasd(&velocity, self->super.transform.rotation);
 	velocity = vec3f_scalar(velocity, get_last_delta());
 	velocity = vec3f_scalar(velocity, self->speed);
 	if (sfKeyboard_isKeyPressed(sfKeyLShift))
 		velocity = vec3f_scalar(velocity, 2.0f);
-	if (!is_safe_move(raycasting_scene->renderer.map, self->super.transform.position, velocity))
+	if (!is_safe_move(((t_raycasting_scene*)scene)->renderer.map, self->super.transform.position, velocity))
 		return ;
 	self->super.transform.position.x += velocity.x;
 	self->super.transform.position.y += velocity.y;
