@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 19:05:27 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/21 16:31:35 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/21 17:34:29 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "game/entities/player_entity.h"
 #include "engine/delta.h"
 
-static t_bool	is_safe_move(t_map *map, t_vec3f pos, t_vec3f vel)
+static t_bool	is_colliding(t_map *map, t_vec3f pos, t_vec3f vel)
 {
 	float	x_miss;
 	float	y_miss;
@@ -24,8 +24,8 @@ static t_bool	is_safe_move(t_map *map, t_vec3f pos, t_vec3f vel)
 	if (pos.x + vel.x < 0 || pos.x + vel.x >= map->size.x
 		|| pos.y + vel.y < 0 || pos.y + vel.y >= map->size.y)
 		return (FALSE);
-	if (map->map[(int)(pos.x + vel.x) + (int)(pos.y + vel.y) * map->size.x]
-		.east_texture_id)
+	if (map->map[(int)(pos.x + vel.x) + (int)(pos.y + vel.y)
+		* map->size.x].east_texture_id)
 		return (FALSE);
 	if ((int)pos.x == (int)(pos.x + vel.x)
 		|| (int)pos.y == (int)(pos.y + vel.y))
@@ -33,19 +33,19 @@ static t_bool	is_safe_move(t_map *map, t_vec3f pos, t_vec3f vel)
 	x_miss = vel.x > 0 ? 1 - (pos.x - (int)pos.x) : (int)pos.x - pos.x;
 	y_miss = x_miss * vel.y / vel.x;
 	if ((int)(pos.y + y_miss) == (int)pos.y)
-		return (map->map[(int)(pos.x + vel.x) + (int)pos.y * map->size.x]
-			.east_texture_id ? FALSE : TRUE);
+		return (!(map->map[(int)(pos.x + vel.x)+ (int)pos.y * map->size.x]
+			.east_texture_id));
 	else
-		return (map->map[(int)(pos.x) + (int)(pos.y + vel.y) * map->size.x]
-			.east_texture_id == 0 ? FALSE : TRUE);
+		return (!(map->map[(int)(pos.x) + (int)(pos.y + vel.y) * map->size.x]
+			.east_texture_id));
 }
 
 static void	orientation(t_vec3f	*rotation)
 {
 	if (sfKeyboard_isKeyPressed(sfKeyLeft))
-		rotation->y -= 3.0f * get_last_delta();
+		rotation->y -= 2.0f * get_last_delta();
 	if (sfKeyboard_isKeyPressed(sfKeyRight))
-		rotation->y += 3.0f * get_last_delta();
+		rotation->y += 2.0f * get_last_delta();
 }
 
 static void	wasd(t_vec3f *transform, t_vec3f rotation)
@@ -78,6 +78,7 @@ static void	wasd(t_vec3f *transform, t_vec3f rotation)
 
 void	player_entity_update(t_player_entity *self, t_scene *scene)
 {
+	(void)scene;
 	t_vec3f	velocity;
 	
 	velocity = ft_vec3f(0.0f, 0.0f, 0.0f);
@@ -87,7 +88,8 @@ void	player_entity_update(t_player_entity *self, t_scene *scene)
 	velocity = vec3f_scalar(velocity, self->speed);
 	if (sfKeyboard_isKeyPressed(sfKeyLShift))
 		velocity = vec3f_scalar(velocity, 2.0f);
-	if (!is_safe_move(((t_raycasting_scene*)scene)->renderer.map, self->super.transform.position, velocity))
+	if (is_colliding(((t_raycasting_scene*)scene)->renderer.map,
+		self->super.transform.position, velocity) == FALSE)
 		return ;
 	self->super.transform.position.x += velocity.x;
 	self->super.transform.position.y += velocity.y;

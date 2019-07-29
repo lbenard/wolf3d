@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 23:47:36 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/21 16:54:53 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/21 17:28:32 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,20 @@ static void	crosshair_cursor(t_cursor *const self)
 
 	cursor_size = self->custom_cursor.size;
 	i = ft_usize(0, 0);
-	while (i.x < self->custom_cursor.size.x)
-		self->custom_cursor.frame[cursor_size.x * (cursor_size.y / 2) + i.x++]
+	while (i.x < cursor_size.x)
+	{
+		self->custom_cursor.frame[i.x] = ft_rgba(255, 255, 255, 255).integer;
+		i.x++;
+	}
+	while (i.y < cursor_size.x / 1.5f)
+	{
+		self->custom_cursor.frame[cursor_size.x * (i.y) + i.y]
 			= ft_rgba(255, 255, 255, 255).integer;
-	while (i.y < self->custom_cursor.size.y)
-		self->custom_cursor.frame[cursor_size.x * i.y++ - (cursor_size.x / 2)]
-			= ft_rgba(255, 255, 255, 255).integer;
+		i.y++;
+	}
+	// while (i.y < self->custom_cursor.size.y)
+	// 	self->custom_cursor.frame[cursor_size.x * i.y++ - (cursor_size.x / 2)]
+	// 		= ft_rgba(255, 255, 255, 255).integer;
 }
 
 t_result	init_cursor_custom(t_cursor *const self, const t_usize cursor_size)

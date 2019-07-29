@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 19:33:38 by lbenard           #+#    #+#              #
-#    Updated: 2019/07/15 21:22:52 by lbenard          ###   ########.fr        #
+#    Updated: 2019/07/29 20:22:26 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ SRCS_LIST		=	main.c												\
 					engine/frame/layer.c								\
 					engine/frame/destroy.c								\
 																		\
+					engine/game/args.c									\
 					engine/game/init.c									\
 					engine/game/set_scene.c								\
 					engine/game/loop.c									\
@@ -61,6 +62,16 @@ SRCS_LIST		=	main.c												\
 																		\
 					engine/map/init.c									\
 					engine/map/destroy.c								\
+																		\
+					engine/module/ft_stack_module_descriptor.c			\
+					engine/module/ft_heap_module_descriptor.c			\
+					engine/module/new_stack_module.c					\
+					engine/module/free_stack_module.c					\
+					engine/module/new_heap_module.c						\
+					engine/module/free_heap_module.c					\
+					engine/module/ft_module.c							\
+					engine/module/add_stack_module.c					\
+					engine/module/add_heap_module.c						\
 																		\
 					engine/window/init.c								\
 					engine/window/update.c								\

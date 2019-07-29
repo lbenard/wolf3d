@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   new_heap_module.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/03 20:04:22 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/29 20:22:12 by lbenard          ###   ########.fr       */
+/*   Created: 2019/07/29 19:49:04 by lbenard           #+#    #+#             */
+/*   Updated: 2019/07/29 20:03:44 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "engine/game.h"
+#include <stdlib.h>
+#include "engine/module.h"
 #include "engine/error.h"
 
-t_result	init_game(t_game *const self, const t_game_args *const args)
+t_heap_module	*mew_heap_module(void **const module,
+					t_heap_module_descriptor descriptor)
 {
-	if (init_window(&self->window, args->name, args->window_size) == ERROR)
-		return (throw_result_str("Error while creating sfWindow"));
-	if (init_event_handler(&self->event_handler, self) == ERROR)
-	{
-		destroy_window(&self->window);
-		return (throw_result_str("Error while creating event handler"));
-	}
-	self->scene = NULL;
-	return (OK);
+	t_heap_module	*ret;
+
+	if (!(ret = (t_heap_module*)malloc(sizeof(t_heap_module))))
+		return (throw_error_str("Failed to allocate new heap module node"));
+	init_list_head(&ret->node);
+	ret->module_ref = module;
+	ret->descriptor = descriptor;
+	return (ret);
 }

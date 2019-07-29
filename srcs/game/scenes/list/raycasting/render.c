@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:42:30 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/21 16:43:15 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/07/21 17:34:05 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ void	raycasting_scene_render(t_raycasting_scene *self, t_frame *fb)
 	size_t		size;
 	size_t		wall_start;
 	float		exceed;
-	t_u32		*texture;
+	t_rgba		*texture;
 	sfVector2u	texture_size;
 	t_rgba		color;
 
 	raycasting_renderer_update(&self->renderer);
 	i = ft_usize(0, 0);
 	frame_layer(fb, &self->background, ft_isize(0, 0), blend_add);
-	texture = (t_u32*)sfImage_getPixelsPtr(self->texture);
+	texture = (t_rgba*)sfImage_getPixelsPtr(self->texture);
 	texture_size = sfImage_getSize(self->texture);
 	i = ft_usize(0, 0);
 	while (i.x < self->renderer.columns_number)
@@ -39,10 +39,10 @@ void	raycasting_scene_render(t_raycasting_scene *self, t_frame *fb)
 		wall_start = (fb->size.y - size) / 2.0f;
 		while (i.y < size && i.y < fb->size.y)
 		{
-			color = ft_rgba_int(
-				texture[(int)(self->renderer.columns[i.x].texture_ratio
-					* texture_size.x) + (int)((((float)(i.y + exceed) / size)
-					* texture_size.y)) * texture_size.x]);
+			color.integer = texture[(int)
+				(self->renderer.columns[i.x].texture_ratio
+				* texture_size.x) + (int)(((i.y + exceed) / size
+				* texture_size.y)) * texture_size.x].integer;
 			color.c.r /= (self->renderer.columns[i.x].distance / 2.0f) + 1;
 			color.c.g /= (self->renderer.columns[i.x].distance / 2.0f) + 1;
 			color.c.b /= (self->renderer.columns[i.x].distance / 2.0f) + 1;

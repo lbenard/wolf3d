@@ -1,0 +1,28 @@
+{
+	"files.associations": {
+		"menu_scene.h": "c",
+		"entity_type.h": "c",
+		"dummy_entity.h": "c",
+		"entities.h": "c",
+		"stdio.h": "c",
+		"scene.h": "c",
+		"event_handler.h": "c",
+		"str.h": "c",
+		"entity_node.h": "c",
+		"framebuffer.h": "c",
+		"scene_type.h": "c",
+		"stdlib.h": "c",
+		"unistd.h": "c",
+		"raycasting.h": "c",
+		"raycasting_scene.h": "c",
+		"game.h": "c",
+		"graphics.h": "c",
+		"player_entity.h": "c",
+		"time.h": "c",
+		"delta.h": "c",
+		"cursor_entity.h": "c",
+		"entity.h": "c",
+		"rgba.h": "c",
+		"blend.h": "c"
+	}
+}
