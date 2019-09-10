@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/26 16:51:41 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/13 00:05:44 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/03 07:11:53 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 void	destroy_map(t_map *self)
 {
+	destroy_module(&self->module);
 	free(self->map);
 }

@@ -6,119 +6,147 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 19:33:38 by lbenard           #+#    #+#              #
-#    Updated: 2019/07/29 20:22:26 by lbenard          ###   ########.fr        #
+#    Updated: 2019/09/07 20:04:01 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	wolf3d
-SRCS_LIST		=	main.c												\
-																		\
-					engine/blend/add.c									\
-																		\
-					engine/cursor/init.c								\
-					engine/cursor/init_custom.c							\
-					engine/cursor/set_visibility.c						\
-					engine/cursor/destroy.c								\
-																		\
-					engine/delta/get_delta_ptr.c						\
-					engine/delta/get_last_delta.c						\
-					engine/delta/get_wall_time.c						\
-					engine/delta/set_last_delta.c						\
-																		\
-					engine/entity_node/new.c							\
-					engine/entity_node/entity_from_node.c				\
-					engine/entity_node/free.c							\
-																		\
-					engine/entity/init.c								\
-					engine/entity/init_default.c						\
-																		\
-					engine/error/throw_error_errno.c					\
-					engine/error/throw_error_str.c						\
-					engine/error/throw_error.c							\
-					engine/error/throw_result_str.c						\
-					engine/error/throw_result.c							\
-																		\
-					engine/event/callback_node/new.c					\
-					engine/event/callback_node/free.c					\
-																		\
-					engine/event/event_handler/init.c					\
-					engine/event/event_handler/add_callback.c			\
-					engine/event/event_handler/add_sub_handler.c		\
-					engine/event/event_handler/call.c					\
-					engine/event/event_handler/destroy.c				\
-																		\
-					engine/frame/init.c									\
-					engine/frame/update.c								\
-					engine/frame/clear.c								\
-					engine/frame/fill.c									\
-					engine/frame/layer.c								\
-					engine/frame/destroy.c								\
-																		\
-					engine/game/args.c									\
-					engine/game/init.c									\
-					engine/game/set_scene.c								\
-					engine/game/loop.c									\
-					engine/game/destroy.c								\
-																		\
-					engine/map/init.c									\
-					engine/map/destroy.c								\
-																		\
-					engine/module/ft_stack_module_descriptor.c			\
-					engine/module/ft_heap_module_descriptor.c			\
-					engine/module/new_stack_module.c					\
-					engine/module/free_stack_module.c					\
-					engine/module/new_heap_module.c						\
-					engine/module/free_heap_module.c					\
-					engine/module/ft_module.c							\
-					engine/module/add_stack_module.c					\
-					engine/module/add_heap_module.c						\
-																		\
-					engine/window/init.c								\
-					engine/window/update.c								\
-					engine/window/is_running.c							\
-					engine/window/is_focused.c							\
-					engine/window/set_name.c							\
-					engine/window/close.c								\
-					engine/window/destroy.c								\
-																		\
-					engine/raycasting/angle/ft.c						\
-					engine/raycasting/ray/ft.c							\
-					engine/raycasting/raycasting_renderer/init.c		\
-					engine/raycasting/raycasting_renderer/update.c		\
-					engine/raycasting/raycasting_renderer/destroy.c		\
-																		\
-					engine/scene/init.c									\
-					engine/scene/add_entity.c							\
-					engine/scene/destroy.c								\
-																		\
-					game/entities/entity_type/update.c					\
-					game/entities/entity_type/free.c					\
-					game/entities/entity_type/get_entities_from_type.c	\
-																		\
-					game/entities/list/dummy/new.c						\
-					game/entities/list/dummy/free.c						\
-					game/entities/list/player/new.c						\
-					game/entities/list/player/update.c					\
-					game/entities/list/player/movements_event.c			\
-					game/entities/list/test/new.c						\
-					game/entities/list/test/update.c					\
-					game/entities/list/test/free.c						\
-																		\
-					game/events/add_test_entity_event.c					\
-					game/events/close_game_event.c						\
-																		\
-					game/scenes/list/menu/new.c							\
-					game/scenes/list/menu/update.c						\
-					game/scenes/list/menu/render.c						\
-					game/scenes/list/menu/free.c						\
-					game/scenes/list/raycasting/new.c					\
-					game/scenes/list/raycasting/update.c				\
-					game/scenes/list/raycasting/render.c				\
-					game/scenes/list/raycasting/free.c					\
-																		\
-					game/scenes/scene_type/update.c						\
-					game/scenes/scene_type/render.c						\
-					game/scenes/scene_type/free.c
+SRCS_LIST		=	main.c														\
+																				\
+					engine/blend/add.c											\
+																				\
+					engine/cursor/cursor.c										\
+					engine/cursor/init.c										\
+					engine/cursor/set_visibility.c								\
+					engine/cursor/destroy.c										\
+																				\
+					engine/delta/get_delta_ptr.c								\
+					engine/delta/get_last_delta.c								\
+					engine/delta/get_wall_time.c								\
+					engine/delta/set_last_delta.c								\
+																				\
+					engine/entities/entity_list/entity_list.c					\
+					engine/entities/entity_list/init.c							\
+					engine/entities/entity_list/add_entity.c					\
+					engine/entities/entity_list/update.c						\
+					engine/entities/entity_list/destroy.c						\
+																				\
+					engine/entities/entity_node/new.c							\
+					engine/entities/entity_node/entity_from_node.c				\
+					engine/entities/entity_node/free.c							\
+																				\
+					engine/entities/entity/init.c								\
+					engine/entities/entity/init_default.c						\
+																				\
+					engine/error/throw_error_errno.c							\
+					engine/error/throw_error_str.c								\
+					engine/error/throw_error.c									\
+					engine/error/throw_result_str.c								\
+					engine/error/throw_result.c									\
+																				\
+					engine/event/callback_node/new.c							\
+					engine/event/callback_node/free.c							\
+																				\
+					engine/event/event_handler/event_handler.c					\
+					engine/event/event_handler/init.c							\
+					engine/event/event_handler/add_callback.c					\
+					engine/event/event_handler/add_sub_handler.c				\
+					engine/event/event_handler/remove_sub_handler.c				\
+					engine/event/event_handler/call.c							\
+					engine/event/event_handler/destroy.c						\
+																				\
+					engine/frame/frame.c										\
+					engine/frame/frame_from_file.c								\
+					engine/frame/init.c											\
+					engine/frame/init_from_file.c								\
+					engine/frame/update.c										\
+					engine/frame/clear.c										\
+					engine/frame/fill.c											\
+					engine/frame/layer.c										\
+					engine/frame/destroy.c										\
+																				\
+					engine/game/args.c											\
+					engine/game/descriptor.c									\
+					engine/game/singleton.c										\
+					engine/game/start.c											\
+					engine/game/set_scene.c										\
+					engine/game/loop.c											\
+					engine/game/stop.c											\
+																				\
+					engine/sfml/image/image_from_file.c							\
+					engine/sfml/render_texture/render_texture.c					\
+					engine/sfml/render_texture/new.c							\
+					engine/sfml/render_texture/free.c							\
+					engine/sfml/sprite/sprite.c									\
+																				\
+					engine/lookup_table/cosine.c								\
+					engine/lookup_table/lerp.c									\
+					engine/lookup_table/sine.c									\
+					engine/lookup_table/tangent.c								\
+																				\
+					engine/map/map.c											\
+					engine/map/init.c											\
+					engine/map/destroy.c										\
+																				\
+					engine/module/stack_module/ft_stack_module_descriptor.c		\
+					engine/module/stack_module/ft_stack_module_factory.c		\
+					engine/module/stack_module/new_stack_module.c				\
+					engine/module/stack_module/free_stack_module.c				\
+					engine/module/heap_module/ft_heap_module_descriptor.c		\
+					engine/module/heap_module/ft_heap_module_factory.c			\
+					engine/module/heap_module/new_heap_module.c					\
+					engine/module/heap_module/free_heap_module.c				\
+					engine/module/init.c										\
+					engine/module/add_stack_module.c							\
+					engine/module/remove_stack_module.c							\
+					engine/module/add_heap_module.c								\
+					engine/module/remove_heap_module.c							\
+					engine/module/destroy_module.c								\
+																				\
+					engine/window/window.c										\
+					engine/window/init.c										\
+					engine/window/update.c										\
+					engine/window/is_running.c									\
+					engine/window/is_focused.c									\
+					engine/window/set_name.c									\
+					engine/window/close.c										\
+					engine/window/destroy.c										\
+																				\
+					engine/raycasting/angle/ft.c								\
+					engine/raycasting/ray/ft.c									\
+					engine/raycasting/raycasting_renderer/raycasting_renderer.c	\
+					engine/raycasting/raycasting_renderer/init.c				\
+					engine/raycasting/raycasting_renderer/update.c				\
+					engine/raycasting/raycasting_renderer/destroy.c				\
+																				\
+					engine/scene/init.c											\
+					engine/scene/destroy.c										\
+																				\
+					game/entities/list/player/player_entity.c					\
+					game/entities/list/player/new.c								\
+					game/entities/list/player/update.c							\
+					game/entities/list/player/free.c							\
+																				\
+					game/entities/list/button/button_entity.c					\
+					game/entities/list/button/dynamic_button_entity.c			\
+					game/entities/list/button/new.c								\
+					game/entities/list/button/new_dynamic.c						\
+					game/entities/list/button/update.c							\
+					game/entities/list/button/free.c							\
+																				\
+					game/events/close_game_event.c								\
+																				\
+					game/scenes/list/menu/menu_scene.c							\
+					game/scenes/list/menu/new.c									\
+					game/scenes/list/menu/update.c								\
+					game/scenes/list/menu/render.c								\
+					game/scenes/list/menu/free.c								\
+																				\
+					game/scenes/list/raycasting/raycasting_scene.c				\
+					game/scenes/list/raycasting/new.c							\
+					game/scenes/list/raycasting/update.c						\
+					game/scenes/list/raycasting/render.c						\
+					game/scenes/list/raycasting/free.c
 
 UNAME			=	$(shell uname)
 
@@ -157,7 +185,8 @@ LIBS			=	-lft				\
 					-lcsfml-system		\
 					-lcsfml-audio
 
-CFLAGS			=	-Wall -Wextra -Werror -O3 -Ofast -flto
+# CFLAGS			=	-Wall -Wextra -Werror -O3 -Ofast -flto -g
+CFLAGS			=	-Wall -Wextra -Werror -O3 -Ofast -g
 
 LDFLAGS			:=	$(LIB_FOLDERS) $(LIBS)
 ifneq ($(UNAME), Linux)
@@ -198,7 +227,7 @@ $(NAME): $(OBJS)
 	@printf "\e[0K$(PREFIX) done\n"
 
 $(OBJS_FOLDER)%.o: $(SRCS_FOLDER)%.c
-	@printf "$(PREFIX) $(shell basename $<)\n"
+	@printf "$(PREFIX) $<\n"
 	@mkdir -p $(dir $@)
 	@gcc -c $< -o $@ $(INCLUDES) $(CFLAGS)
 	@printf "\e[1A\e[0K"

@@ -6,36 +6,37 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 19:31:47 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/21 16:42:28 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/08 15:50:33 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "engine/frame.h"
+#include "engine/sprite.h"
+#include "engine/render_texture.h"
 #include "engine/error.h"
 
-t_result	init_frame(t_frame *const self, const t_usize size,
-	t_rgba fill_color)
+t_result	init_frame(t_frame *const self, t_frame_args *args)
 {
-	if (size.x == 0 || size.y == 0)
+	init_module(&self->module);
+	if (args->size.x == 0 || args->size.y == 0)
 		return (throw_result_str("Cannot create a frame with null horizontal or"
 			" vertical size"));
 	if (!(*(t_u32**)&self->frame =
-		(t_u32*)malloc(sizeof(t_u32) * size.x * size.y)))
+		(t_u32*)malloc(sizeof(t_u32) * args->size.x * args->size.y)))
 		return (throw_result_str("Failed while allocating frame"));
-	if (!(*(sfRenderTexture**)&self->render_texture =
-		sfRenderTexture_create(size.x, size.y, 0)))
+	module_add_heap_module(&self->module,
+		render_texture(args->size), (void**)&self->render_texture);
+	module_add_heap_module(&self->module, sprite(), (void**)&self->sprite);
+	*(t_usize*)&self->size = args->size;
+	frame_fill(self, args->fill_color);
+	if (self->module.has_error == FALSE)
+		sfSprite_setTexture(self->sprite,
+			sfRenderTexture_getTexture(self->render_texture), 0);
+	else
 	{
-		free(self->frame);
-		return (throw_result_str("failed while creating SFML texture"));
+		destroy_frame(self);
+		return (throw_result_str("Failed to init frame module"));
 	}
-	if (!(*(sfSprite**)&self->sprite = sfSprite_create()))
-	{
-		free(self->frame);
-		sfRenderTexture_destroy(self->render_texture);
-		return (throw_result_str("failed while creating SFML sprite"));
-	}
-	*(t_usize*)&self->size = size;
-	frame_fill(self, fill_color);
 	return (OK);
 }

@@ -1,4 +1,4 @@
-/* ************************************************************************** */
+	/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   new.c                                              :+:      :+:    :+:   */
@@ -6,14 +6,14 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:26:02 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/21 15:44:20 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/08/14 16:31:32 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "game/scenes/raycasting_scene.h"
-#include "game/scenes/scene_type.h"
 #include "engine/error.h"
+#include "engine/image.h"
 
 void	background_frame(t_frame *frame, t_rgb ground_color, t_rgb sky_color)
 {
@@ -46,62 +46,47 @@ void	background_frame(t_frame *frame, t_rgb ground_color, t_rgb sky_color)
 	}
 }
 
-t_raycasting_scene	*new_raycasting_scene(const t_window *const window)
+t_raycasting_scene	*new_raycasting_scene(
+						const t_raycasting_scene_args *const args)
 {
 	t_raycasting_scene	*ret;
 
 	if (!(ret = (t_raycasting_scene*)malloc(sizeof(t_raycasting_scene))))
 		return (throw_error_str("Failed while mallocing raycasting scene"));
-	if (!init_scene(&ret->super, RAYCASTING_SCENE_TYPE, "Raycasting sandbox"))
+	if (!init_scene(&ret->super, "Raycasting sandbox",
+		(void(*)())raycasting_scene_update,
+		(void(*)())raycasting_scene_render))
 	{
 		free(ret);
 		return (throw_error_str("Failed while initalizing scene"));
 	}
-	if (init_map(&ret->map, "maps/simple_map.wolf") == ERROR)
+	module_add_heap_module(&ret->super.module,
+		image_from_file("resources/textures/plaster.jpg"),
+		(void**)&ret->texture);
+	module_add_stack_module(&ret->super.module, map("maps/simple_map.wolf"),
+		&ret->map);
+	module_add_stack_module(&ret->super.module,
+		frame(args->window->size, ft_rgba(255, 255, 255, 255)),
+		&ret->background);
+	module_add_stack_module(&ret->super.module,
+		raycasting_renderer(args->window->size, &ret->map), &ret->renderer);
+	ret->player_ref = (t_player_entity*)entity_list_add_entity(
+		&ret->super.entities, player_entity(&ret->map, ret->renderer.position));
+	if (!ret->super.module.has_error)
 	{
-		free(ret);
-		return (throw_error_str("Failed while initializing map"));
+		ret->ground_color = ft_rgb(105, 105, 105);
+		ret->sky_color = ft_rgb(129, 244, 252);
+		background_frame(&ret->background, ret->ground_color, ret->sky_color);
+		// TODO: move player spawn position into player constructor
+		ret->player_ref->super.transform.position
+			= ft_vec3f(ret->renderer.position.x, ret->renderer.position.y, 0);
+		event_handler_add_sub_handler(&ret->super.input_manager,
+			&ret->player_ref->event_handler);
 	}
-	if (init_frame(&ret->background, window->size, ft_rgba(255, 255, 255, 255))
-		== ERROR)
+	else
 	{
-		free(ret);
-		destroy_map(&ret->map);
-		return (throw_error_str("Failed while initializing frame"));
+		free_raycasting_scene(ret);
+		return (throw_error_str("Failed to create raycasting scene"));
 	}
-	ret->ground_color = ft_rgb(105, 105, 105);
-	ret->sky_color = ft_rgb(129, 244, 252);
-	// frame_fill(&ret->background, ft_rgba(255, 0, 255, 255));
-	background_frame(&ret->background, ret->ground_color, ret->sky_color);
-	if (init_raycasting_renderer(&ret->renderer, window->size, &ret->map) ==
-		ERROR)
-	{
-		free(ret);
-		destroy_map(&ret->map);
-		destroy_frame(&ret->background);
-		return (throw_error_str("Failed while initializing raycasting "
-			"renderer"));
-	}
-	if (!(ret->texture = sfImage_createFromFile("wall.png")))
-	{
-		free(ret);
-		destroy_map(&ret->map);
-		destroy_frame(&ret->background);
-		destroy_raycasting_renderer(&ret->renderer);
-		return (throw_error_str("Failed while initializing texture"));
-	}
-	ret->player_ref = new_player_entity();
-	if (scene_add_entity(&ret->super,
-		new_entity_node((t_entity*)ret->player_ref)) == ERROR)
-	{
-		free(ret);
-		destroy_map(&ret->map);
-		destroy_frame(&ret->background);
-		destroy_raycasting_renderer(&ret->renderer);
-		sfImage_destroy(ret->texture);
-	}
-	ret->player_ref->super.transform.position = ft_vec3f(ret->renderer.position.x, ret->renderer.position.y, 0);
-	event_handler_add_sub_handler(&ret->super.input_manager,
-		&ret->player_ref->event_handler);
 	return (ret);
 }

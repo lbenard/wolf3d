@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 00:27:51 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/13 00:36:49 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/08/14 20:38:36 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 
 void	destroy_window(t_window *const self)
 {
+	destroy_module(&self->module);
 	sfRenderWindow_destroy(self->window);
 	free(*(char**)&self->name);
-	destroy_frame(&self->frame);
-	destroy_cursor(&self->cursor);
 }

@@ -6,29 +6,33 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 20:07:46 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/15 21:24:47 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/10 06:11:57 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "engine/game.h"
 #include "engine/delta.h"
-#include "game/scenes/scene_type.h"
 
-void	game_loop(t_game *self)
+#include <stdio.h>
+
+void	game_loop(void)
 {
+	t_game	*game;
 	double	last_time;
 	sfEvent	event;
 
+	game = game_singleton();
 	last_time = get_wall_time();
-	while (sfRenderWindow_pollEvent(self->window.window, &event))
-		event_handler_call(&self->event_handler, &event);
-	scene_type_update(self->scene, get_last_delta());
-	if (window_is_focused(&self->window))
+	while (sfRenderWindow_pollEvent(game->window.window, &event))
+		event_handler_call(&game->event_handler, &event);
+	if (game->scene)
+		game->scene->update_fn(game->scene);
+	if (window_is_focused(&game->window))
 	{
-		scene_type_render(self->scene, &self->window.frame);
-		window_update(&self->window);
+		if (game->scene)
+			game->scene->render_fn(game->scene, &game->window.frame);
+		window_update(&game->window);
 	}
-	// list_foreach(&self->scene->entities, 0, print_entity);
 	double spf = get_wall_time() - last_time;
 	// printf("fps %f\n", 1.0f / spf);
 	set_last_delta(spf);

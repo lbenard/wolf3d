@@ -6,29 +6,31 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/29 01:18:13 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/29 19:44:01 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/04 23:22:08 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "engine/module.h"
 #include "engine/error.h"
 
 void	module_add_stack_module(t_module *const self,
-			t_stack_module_descriptor descriptor,
-			void *const module,
-			void *const args)
+			const t_stack_module_factory factory,
+			void *const module)
 {
 	t_stack_module	*stack_module;
 
-	if (!(stack_module = new_stack_module(module, descriptor)))
+	if (self->has_error == TRUE)
+		return ;
+	if (!(stack_module = new_stack_module(module, factory.descriptor)))
 	{
 		self->has_error = TRUE;
 		throw_error_str("cannot allocate stack module node");
 		return ;
 	}
-	if (descriptor.init_fn(module, args) == ERROR)
+	if (factory.descriptor.init_fn(module, factory.args) == ERROR)
 	{
-		free_stack_module(stack_module);
+		free(stack_module);
 		self->has_error = TRUE;
 		throw_error_str("failed to init stack module");
 		return ;

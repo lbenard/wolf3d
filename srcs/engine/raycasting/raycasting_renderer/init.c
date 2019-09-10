@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 17:14:21 by lbenard           #+#    #+#             */
-/*   Updated: 2019/06/25 19:23:13 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/06 14:59:49 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,19 @@
 #include "engine/error.h"
 
 t_result	init_raycasting_renderer(t_raycasting_renderer *const self,
-	const t_usize window_size, t_map *const map)
+				const t_raycasting_renderer_args *const args)
 {
+	init_module(&self->module);
 	if (!(*(t_ray**)&self->columns = (t_ray*)malloc(sizeof(t_ray)
-		* window_size.x)))
+		* args->window_size.x)))
+	{
+		self->module.has_error = TRUE;
 		return (throw_result_str("Error while creating rays array"));
-	*(t_map**)&self->map = map;
-	self->columns_number = window_size.x;
-	self->position = map->spawn_position;
+	}
+	*(t_map**)&self->map = args->map;
+	self->columns_number = args->window_size.x;
+	self->position = args->map->spawn_position;
 	self->direction = 0.0f;
-	self->fov = 200.0f;
-	// init_list_head(&self->sprites);
+	self->fov = 900.0f;
 	return (OK);
 }

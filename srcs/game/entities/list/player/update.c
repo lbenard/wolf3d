@@ -6,17 +6,16 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 19:05:27 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/21 17:34:29 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/03 06:49:49 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
-#include <stdio.h>
 #include "game/scenes/raycasting_scene.h"
 #include "game/entities/player_entity.h"
 #include "engine/delta.h"
 
-static t_bool	is_colliding(t_map *map, t_vec3f pos, t_vec3f vel)
+static t_bool	is_colliding(const t_map *const map, t_vec3f pos, t_vec3f vel)
 {
 	float	x_miss;
 	float	y_miss;
@@ -76,9 +75,8 @@ static void	wasd(t_vec3f *transform, t_vec3f rotation)
 	*transform = vec3f_normalize(*transform);
 }
 
-void	player_entity_update(t_player_entity *self, t_scene *scene)
+void	player_entity_update(t_player_entity *self)
 {
-	(void)scene;
 	t_vec3f	velocity;
 	
 	velocity = ft_vec3f(0.0f, 0.0f, 0.0f);
@@ -88,8 +86,7 @@ void	player_entity_update(t_player_entity *self, t_scene *scene)
 	velocity = vec3f_scalar(velocity, self->speed);
 	if (sfKeyboard_isKeyPressed(sfKeyLShift))
 		velocity = vec3f_scalar(velocity, 2.0f);
-	if (is_colliding(((t_raycasting_scene*)scene)->renderer.map,
-		self->super.transform.position, velocity) == FALSE)
+	if (!is_colliding(self->map_ref, self->super.transform.position, velocity))
 		return ;
 	self->super.transform.position.x += velocity.x;
 	self->super.transform.position.y += velocity.y;

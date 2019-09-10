@@ -6,35 +6,46 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 23:40:12 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/13 00:38:45 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/03 13:12:52 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WINDOW_H
 # define WINDOW_H
 
+# include "engine/module.h"
 # include <SFML/Graphics.h>
 # include "sizes/usize.h"
 # include "types.h"
 # include "engine/frame.h"
 # include "engine/cursor.h"
 
-typedef struct	s_window
+typedef struct			s_window
 {
-	sfRenderWindow	*const window;
+	t_module		module;
+	sfRenderWindow	*window;
 	const char		*name;
 	t_frame			frame;
 	t_cursor		cursor;
 	const t_usize	size;
-}				t_window;
+}						t_window;
 
-t_result		init_window(t_window *const self, const char *const name,
-					t_usize size);
-void			window_update(t_window *const self);
-t_bool			window_is_running(const t_window *const self);
-t_bool			window_is_focused(const t_window *const self);
-t_result		window_set_name(t_window *const self, const char *const name);
-void			window_close(t_window *const self);
-void			destroy_window(t_window *const self);
+typedef struct 			s_window_args
+{
+	const char	*name;
+	t_usize		size;
+}						t_window_args;
+
+t_stack_module_factory	window(const char *const name, const t_usize size);
+
+t_result				init_window(t_window *const self,
+							const t_window_args *const args);
+void					window_update(t_window *const self);
+t_bool					window_is_running(const t_window *const self);
+t_bool					window_is_focused(const t_window *const self);
+t_result				window_set_name(t_window *const self,
+							const char *const name);
+void					window_close(t_window *const self);
+void					destroy_window(t_window *const self);
 
 #endif

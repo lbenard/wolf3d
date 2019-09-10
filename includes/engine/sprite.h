@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/08 17:05:56 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/08 17:09:50 by lbenard          ###   ########.fr       */
+/*   Created: 2019/09/07 19:58:55 by lbenard           #+#    #+#             */
+/*   Updated: 2019/09/07 20:00:15 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 # define SPRITE_H
 
 # include <SFML/Graphics.h>
-# include "maths/vec3f.h"
+# include "engine/module.h"
 
-typedef struct	s_sprite
-{
-	sfImage	*texture;
-	t_vec3f	position;
-	float	size;
-}				t_sprite;
+typedef sfSprite		t_sprite;
+
+t_heap_module_factory	sprite(void);
 
 #endif

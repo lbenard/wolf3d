@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/29 19:44:19 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/29 20:05:11 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/07 20:02:15 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,24 @@
 #include "engine/error.h"
 
 void	module_add_heap_module(t_module *const self,
-			t_heap_module_descriptor descriptor,
-			void **const module,
-			void *const args)
+			const t_heap_module_factory factory,
+			void **const module)
 {
 	t_heap_module	*heap_module;
 
-	if (!(heap_module = new_heap_module(module, descriptor)))
+	if (self->has_error == TRUE)
+		return ;
+	if (!(heap_module = new_heap_module(module, factory.descriptor)))
 	{
 		self->has_error = TRUE;
 		throw_error_str("cannot allocate heap module node");
 		return ;
 	}
-	if (!(*module = descriptor.new_fn(args)))
+	if (factory.args)
+		*module = factory.descriptor.new_fn(factory.args);
+	else
+		*module = factory.descriptor.new_fn();
+	if (!(*module))
 	{
 		free_heap_module(heap_module);
 		self->has_error = TRUE;

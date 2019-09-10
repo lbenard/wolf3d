@@ -6,13 +6,11 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/10 00:49:48 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/21 15:39:37 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/08/13 16:35:02 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "engine/blend.h"
-
-#include <stdio.h>
 
 t_u32	blend_add(const t_rgba *const back, const t_rgba *const front)
 {
@@ -22,5 +20,3 @@ t_u32	blend_add(const t_rgba *const back, const t_rgba *const front)
 		(1.0f - (front->c.a / 255.0f)) * back->c.b + front->c.b * (front->c.a / 255.0f),
 		255).integer);
 }
-
-// #AABBGGRR

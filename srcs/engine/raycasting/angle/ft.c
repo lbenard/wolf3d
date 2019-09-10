@@ -6,18 +6,26 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 18:04:32 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/12 15:11:53 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/06 11:34:14 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include "engine/raycasting.h"
+#include "engine/lookup_table.h"
 
 t_angle	ft_angle(float rad)
 {
 	t_angle	ret;
+
+	// if (rad >= 0.0f)
+	// 	rad = rad - (int)rad;
+	// else
+	// 	rad = rad - (int)rad + 1.0f;
 	
 	ret.cos = cos(rad);
+	// ret.cos = cosine_lookup(rad / (2 * M_PI) * ((rad < 0.0f) ? -1.0f : 1.0f));
+	// ret.cos = sine_lookup(rad / (2 * M_PI) * ((rad < 0.0f) ? -1.0f : 1.0f)) * ((rad < 0.0f) ? -1.0f : 1.0f);
 	ret.sin = sin(rad);
 	ret.tan = tan(rad);
 	ret.rad = rad;

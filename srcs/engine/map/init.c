@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_map.c                                         :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 16:45:58 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/11 18:39:15 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/08/29 15:22:18 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,11 +91,12 @@ static t_result	fill_map_data(t_map *map, int map_fd)
 	return (OK);
 }
 
-t_result		init_map(t_map *self, const char *const path)
+t_result		init_map(t_map *self, const t_map_args *const args)
 {
 	int	map_fd;
 
-	if ((map_fd = open(path, O_RDONLY)) < 0)
+	init_module(&self->module);
+	if ((map_fd = open(args->path, O_RDONLY)) < 0)
 		return (throw_result_str("Failed while opening map path"));
 	if (fill_map_size(&self->size, map_fd) == ERROR)
 	{
@@ -114,8 +115,7 @@ t_result		init_map(t_map *self, const char *const path)
 		free(self->map);
 		return (throw_result_str("Failed while filling map content"));
 	}
-	self->spawn_position.x = self->size.x / 2;
-	self->spawn_position.y = self->size.y / 2;
+	self->spawn_position = ft_vec2f(self->size.x / 2, self->size.y / 2);
 	close(map_fd);
 	return (OK);
 }
