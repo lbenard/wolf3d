@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 22:17:01 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/10 12:08:34 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/10 12:48:34 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(void)
 	game = game_singleton();
 	if (start_game(game_args("wolf3d", ft_usize(1200, 600))) == ERROR)
 		return (!throw_error_str("Failed to start game"));
-	// game_set_scene(menu_scene(&game->window));
+	game_set_scene(menu_scene(&game->window));
 	if (!event_handler_add_callback(&game->event_handler,
 		new_close_game_event(NULL)))
 	{
