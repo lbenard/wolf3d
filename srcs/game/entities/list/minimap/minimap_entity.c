@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.c                                               :+:      :+:    :+:   */
+/*   minimap_entity.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/12 15:13:44 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/23 19:14:20 by lbenard          ###   ########.fr       */
+/*   Created: 2019/09/14 13:27:33 by lbenard           #+#    #+#             */
+/*   Updated: 2019/09/14 13:37:03 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "engine/raycasting.h"
+#include "game/entities/minimap_entity.h"
 
-t_ray	ft_ray(const float distance, const t_image *texture,
-	const float texture_ratio)
+t_heap_module_factory	minimap_entity(const t_raycasting_renderer *renderer,
+							const t_usize max_size)
 {
-	t_ray	ret;
+	static t_minimap_entity_args	args;
 
-	ret.distance = distance;
-	ret.texture = texture;
-	ret.texture_ratio = texture_ratio;
-	return (ret);
+	args.renderer = renderer;
+	args.max_size = max_size;
+	return (ft_heap_module_factory(ft_heap_module_descriptor(
+		(t_new_fn)new_minimap_entity, free_minimap_entity), &args));
 }

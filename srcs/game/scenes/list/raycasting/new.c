@@ -63,7 +63,7 @@ t_raycasting_scene	*new_raycasting_scene(
 	module_add_heap_module(&ret->super.module,
 		image_from_file("resources/textures/plaster.jpg"),
 		(void**)&ret->texture);
-	module_add_stack_module(&ret->super.module, map("maps/simple_map.wolf"),
+	module_add_stack_module(&ret->super.module, map("maps/test_map.wolf"),
 		&ret->map);
 	module_add_stack_module(&ret->super.module,
 		frame(args->window->size, ft_rgba(255, 255, 255, 255)),
@@ -71,17 +71,16 @@ t_raycasting_scene	*new_raycasting_scene(
 	module_add_stack_module(&ret->super.module,
 		raycasting_renderer(args->window->size, &ret->map), &ret->renderer);
 	ret->player_ref = (t_player_entity*)entity_list_add_entity(
-		&ret->super.entities, player_entity(&ret->map, ret->renderer.position));
+		&ret->super.entities, player_entity(&ret->map, ft_vec2f(3.0f, 3.0f)));
 	if (!ret->super.module.has_error)
 	{
 		ret->ground_color = ft_rgb(105, 105, 105);
 		ret->sky_color = ft_rgb(129, 244, 252);
 		background_frame(&ret->background, ret->ground_color, ret->sky_color);
-		// TODO: move player spawn position into player constructor
-		ret->player_ref->super.transform.position
-			= ft_vec3f(ret->renderer.position.x, ret->renderer.position.y, 0);
 		event_handler_add_sub_handler(&ret->super.input_manager,
 			&ret->player_ref->event_handler);
+		ret->renderer.direction = ret->player_ref->super.transform.rotation.y;
+		ret->renderer.position = vec3f_to_vec2f(ret->player_ref->super.transform.position);
 	}
 	else
 	{

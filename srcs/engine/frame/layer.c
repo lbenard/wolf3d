@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/01 20:39:19 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/03 08:52:05 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/14 14:42:30 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	frame_layer(t_frame *self, t_frame *layer, t_isize pos,
 		i.x = 0;
 		while (i.x < size.x)
 		{
-		self->frame[self->size.x * (pos.y + start.y + i.y)
+			self->frame[self->size.x * (pos.y + start.y + i.y)
 				+ (pos.x + start.x + i.x)] = blend((t_rgba*)(self->frame
 				+ self->size.x * (pos.y + start.y + i.y)
 				+ (pos.x + start.x + i.x)), (t_rgba*)(layer->frame

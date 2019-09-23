@@ -1,24 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.c                                               :+:      :+:    :+:   */
+/*   cursor_from_file.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/12 15:13:44 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/23 19:14:20 by lbenard          ###   ########.fr       */
+/*   Created: 2019/09/03 12:31:12 by lbenard           #+#    #+#             */
+/*   Updated: 2019/09/22 16:35:50 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "engine/raycasting.h"
+#include "engine/cursor.h"
 
-t_ray	ft_ray(const float distance, const t_image *texture,
-	const float texture_ratio)
+t_stack_module_factory	cursor_from_file(const char *const path)
 {
-	t_ray	ret;
+	static t_cursor_args	args;
 
-	ret.distance = distance;
-	ret.texture = texture;
-	ret.texture_ratio = texture_ratio;
-	return (ret);
+	args.path = path;
+	return (ft_stack_module_factory(ft_stack_module_descriptor(
+		init_cursor_from_file, destroy_cursor), &args));
 }

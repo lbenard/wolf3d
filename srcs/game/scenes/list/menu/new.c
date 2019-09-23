@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:16:18 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/08 16:23:04 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/22 18:07:45 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,33 @@
 #include "game/entities/button_entity.h"
 #include "engine/entity_node.h"
 #include "engine/error.h"
+
+static void		add_buttons(t_menu_scene *const scene,
+					const t_menu_scene_args *const args)
+{
+	scene->start_game_ref = (t_button_entity*)entity_list_add_entity(
+		&scene->super.entities,
+		dynamic_button_entity("resources/buttons/start-game-upscale.png",
+			"resources/buttons/start-game-hover-upscale.png",
+			"resources/buttons/start-game-click-upscale.png",
+			args->window));
+	scene->close_game_ref = (t_button_entity*)entity_list_add_entity(
+		&scene->super.entities,
+		dynamic_button_entity("resources/buttons/close-game-upscale.png",
+			"resources/buttons/close-game-hover-upscale.png",
+			"resources/buttons/close-game-click-upscale.png",
+			args->window));
+}
+
+static void		add_images(t_menu_scene *const scene)
+{
+	scene->title_ref = (t_image_entity*)entity_list_add_entity(
+		&scene->super.entities,
+		image_entity_from_file("resources/texts/wolf3d-upscale.png"));
+	scene->credits_ref = (t_image_entity*)entity_list_add_entity(
+		&scene->super.entities,
+		image_entity_from_file("resources/texts/credits-upscale.png"));
+}
 
 t_menu_scene	*new_menu_scene(const t_menu_scene_args *const args)
 {
@@ -29,18 +56,8 @@ t_menu_scene	*new_menu_scene(const t_menu_scene_args *const args)
 		return (NULL);
 	}
 	ret->window_size = args->window->size;
-	ret->start_game_ref = (t_button_entity*)entity_list_add_entity(
-		&ret->super.entities,
-		dynamic_button_entity("resources/buttons/start-game-upscale.png",
-			"resources/buttons/start-game-hover-upscale.png",
-			"resources/buttons/start-game-click-upscale.png",
-			args->window));
-	ret->close_game_ref = (t_button_entity*)entity_list_add_entity(
-		&ret->super.entities,
-		dynamic_button_entity("resources/buttons/close-game-upscale.png",
-			"resources/buttons/close-game-hover-upscale.png",
-			"resources/buttons/close-game-click-upscale.png",
-			args->window));
+	add_buttons(ret, args);
+	add_images(ret);
 	if (ret->super.module.has_error || ret->super.entities.module.has_error)
 	{
 		free_menu_scene(ret);

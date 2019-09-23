@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 17:51:27 by lbenard           #+#    #+#             */
-/*   Updated: 2019/06/25 19:27:22 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/23 20:05:15 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static t_bool	is_ray_in_map(const t_map *const map, const t_vec2f pos)
 	return (1);
 }
 
-static t_u8		ray_hitting_texture(const t_map *const map, const t_vec2f pos,
+static t_image	*ray_hitting_texture(const t_map *const map, const t_vec2f pos,
 	const t_direction direction, const t_vec2f shift)
 {
 	t_wall	*wall;
@@ -32,18 +32,18 @@ static t_u8		ray_hitting_texture(const t_map *const map, const t_vec2f pos,
 	collision.x += shift.x;
 	collision.y += shift.y;
 	wall = &map->map[(int)collision.x + (int)collision.y * map->size.y];
-	if (direction == NORTH && wall->north_texture_id)
-		return (wall->north_texture_id);
-	if (direction == EAST && wall->east_texture_id)
-		return (wall->east_texture_id);
-	if (direction == SOUTH && wall->south_texture_id)
-		return (wall->south_texture_id);
-	if (direction == WEST && wall->west_texture_id)
-		return (wall->west_texture_id);
-	return (0);
+	if (direction == NORTH && wall->north_texture_ref)
+		return (wall->north_texture_ref);
+	if (direction == EAST && wall->east_texture_ref)
+		return (wall->east_texture_ref);
+	if (direction == SOUTH && wall->south_texture_ref)
+		return (wall->south_texture_ref);
+	if (direction == WEST && wall->west_texture_ref)
+		return (wall->west_texture_ref);
+	return (NULL);
 }
 
-float			euclidean_distance(const t_vec2f a, const t_vec2f b)
+static float	euclidean_distance(const t_vec2f a, const t_vec2f b)
 {
 	return (sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)));
 }
@@ -54,14 +54,14 @@ static t_ray	north_ray(const t_raycasting_renderer *const raycasting_renderer,
 	t_vec2f	pos;
 	float	x_shift;
 	float	y_shift;
-	t_u8	hit_texture;
+	t_image	*hit_texture;
 
 	pos = raycasting_renderer->position;
 	y_shift = 1.0f - (pos.y - (int)pos.y);
 	x_shift = y_shift / direction.tan;
 	pos.x += x_shift;
 	pos.y += y_shift;
-	hit_texture = 0;
+	hit_texture = NULL;
 	while (is_ray_in_map(raycasting_renderer->map, pos))
 	{
 		if ((hit_texture = ray_hitting_texture(raycasting_renderer->map, pos,
@@ -80,14 +80,14 @@ static t_ray	east_ray(const t_raycasting_renderer *const raycasting_renderer,
 	t_vec2f	pos;
 	float	x_shift;
 	float	y_shift;
-	t_u8	hit_texture;
+	t_image	*hit_texture;
 
 	pos = raycasting_renderer->position;
 	x_shift = 1.0f - (pos.x - (int)pos.x);
 	y_shift = x_shift * direction.tan;
 	pos.x += x_shift;
 	pos.y += y_shift;
-	hit_texture = 0;
+	hit_texture = NULL;
 	while (is_ray_in_map(raycasting_renderer->map, pos))
 	{
 		if ((hit_texture = ray_hitting_texture(raycasting_renderer->map, pos,
@@ -106,14 +106,14 @@ static t_ray	south_ray(const t_raycasting_renderer *const raycasting_renderer,
 	t_vec2f	pos;
 	float	x_shift;
 	float	y_shift;
-	t_u8	hit_texture;
+	t_image	*hit_texture;
 
 	pos = raycasting_renderer->position;
 	y_shift = -(pos.y - (int)pos.y);
 	x_shift = y_shift / direction.tan;
 	pos.x += x_shift;
 	pos.y += y_shift;
-	hit_texture = 0;
+	hit_texture = NULL;
 	while (is_ray_in_map(raycasting_renderer->map, pos))
 	{
 		if ((hit_texture = ray_hitting_texture(raycasting_renderer->map, pos,
@@ -132,14 +132,14 @@ static t_ray	west_ray(const t_raycasting_renderer *const raycasting_renderer,
 	t_vec2f	pos;
 	float	x_shift;
 	float	y_shift;
-	t_u8	hit_texture;
+	t_image	*hit_texture;
 
 	pos = raycasting_renderer->position;
 	x_shift = -(pos.x - (int)pos.x);
 	y_shift = x_shift * direction.tan;
 	pos.x += x_shift;
 	pos.y += y_shift;
-	hit_texture = 0;
+	hit_texture = NULL;
 	while (is_ray_in_map(raycasting_renderer->map, pos))
 	{
 		if ((hit_texture = ray_hitting_texture(raycasting_renderer->map, pos,

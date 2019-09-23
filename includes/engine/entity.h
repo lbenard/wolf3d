@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 21:17:24 by lbenard           #+#    #+#             */
-/*   Updated: 2019/08/19 15:56:06 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/14 13:31:35 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include "engine/module.h"
 # include "maths/transform.h"
 # include "engine/type.h"
+
+typedef			void *(*t_new_fn)();
 
 typedef struct	s_entity
 {

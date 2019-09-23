@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.c                                               :+:      :+:    :+:   */
+/*   render.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/12 15:13:44 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/23 19:14:20 by lbenard          ###   ########.fr       */
+/*   Created: 2019/09/22 17:54:55 by lbenard           #+#    #+#             */
+/*   Updated: 2019/09/22 17:56:06 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "engine/raycasting.h"
+#include "game/entities/image_entity.h"
 
-t_ray	ft_ray(const float distance, const t_image *texture,
-	const float texture_ratio)
+void	image_entity_render(t_image_entity *const self, t_frame	*const frame)
 {
-	t_ray	ret;
-
-	ret.distance = distance;
-	ret.texture = texture;
-	ret.texture_ratio = texture_ratio;
-	return (ret);
+	frame_layer(frame, &self->image,
+		ft_isize(self->super.transform.position.x,
+			self->super.transform.position.y),
+		blend_add);
 }

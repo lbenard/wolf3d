@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 19:33:38 by lbenard           #+#    #+#              #
-#    Updated: 2019/09/07 20:04:01 by lbenard          ###   ########.fr        #
+#    Updated: 2019/09/23 20:26:19 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ SRCS_LIST		=	main.c														\
 					engine/blend/add.c											\
 																				\
 					engine/cursor/cursor.c										\
+					engine/cursor/cursor_from_file.c							\
 					engine/cursor/init.c										\
+					engine/cursor/init_from_file.c								\
 					engine/cursor/set_visibility.c								\
 					engine/cursor/destroy.c										\
 																				\
@@ -87,6 +89,8 @@ SRCS_LIST		=	main.c														\
 					engine/map/map.c											\
 					engine/map/init.c											\
 					engine/map/destroy.c										\
+					engine/map/new_bloc_node.c									\
+					engine/map/new_texture_node.c								\
 																				\
 					engine/module/stack_module/ft_stack_module_descriptor.c		\
 					engine/module/stack_module/ft_stack_module_factory.c		\
@@ -132,7 +136,14 @@ SRCS_LIST		=	main.c														\
 					game/entities/list/button/new.c								\
 					game/entities/list/button/new_dynamic.c						\
 					game/entities/list/button/update.c							\
+					game/entities/list/button/render.c							\
 					game/entities/list/button/free.c							\
+																				\
+					game/entities/list/image/image_entity_from_file.c			\
+					game/entities/list/image/new_from_file.c					\
+					game/entities/list/image/update.c							\
+					game/entities/list/image/render.c							\
+					game/entities/list/image/free.c								\
 																				\
 					game/events/close_game_event.c								\
 																				\

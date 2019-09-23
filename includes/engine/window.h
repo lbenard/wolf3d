@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 23:40:12 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/03 13:12:52 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/22 17:00:59 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ typedef struct			s_window
 {
 	t_module		module;
 	sfRenderWindow	*window;
+	const char		*base_name;
 	const char		*name;
 	t_frame			frame;
 	t_cursor		cursor;

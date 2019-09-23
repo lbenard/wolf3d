@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 15:24:16 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/08 16:22:27 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/22 17:38:46 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "engine/frame.h"
 # include "colors/rgb.h"
 # include "game/entities/button_entity.h"
+# include "game/entities/image_entity.h"
 
 /*
 ** Main menu scene
@@ -26,6 +27,8 @@ typedef struct			s_menu_scene
 {
 	t_scene			super;
 	t_usize			window_size;
+	t_image_entity	*title_ref;
+	t_image_entity	*credits_ref;
 	t_button_entity	*start_game_ref;
 	t_button_entity	*close_game_ref;
 }						t_menu_scene;

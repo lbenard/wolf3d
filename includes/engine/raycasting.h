@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 16:50:53 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/03 13:28:02 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/23 19:14:52 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,13 @@ typedef enum			e_direction
 
 typedef struct			s_ray
 {
-	float	distance;
-	t_u8	texture;
-	float	texture_ratio;
+	float			distance;
+	const t_image	*texture;
+	float			texture_ratio;
 }						t_ray;
 
 t_ray					ft_ray(const float distance,
-							const t_u8 texture,
+							const t_image *texture,
 							const float texture_ratio);
 
 typedef struct			s_angle

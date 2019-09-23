@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 23:38:02 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/03 13:31:23 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/22 16:37:10 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,17 @@ typedef struct			s_cursor
 
 typedef struct			s_cursor_args
 {
-	t_usize	size;
-	t_rgba	fill_color;
+	t_usize		size;
+	t_rgba		fill_color;
+	const char	*path;
 }						t_cursor_args;
 
 t_stack_module_factory	cursor(const t_usize size, const t_rgba fill_color);
+t_stack_module_factory	cursor_from_file(const char *const path);
 
 t_result				init_cursor(t_cursor *const self,
+							t_cursor_args *args);
+t_result				init_cursor_from_file(t_cursor *const self,
 							t_cursor_args *args);
 void					cursor_set_visibility(t_cursor *const self,
 							const t_bool is_visible);

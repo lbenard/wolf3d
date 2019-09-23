@@ -1,0 +1,25 @@
+-textures
+concrete: resources/textures/concrete.jpg
+plaster: resources/textures/plaster.jpg
+tnt: resources/textures/tnt_wall.png
+
+-blocs
+a: concrete concrete concrete concrete
+b: plaster plaster plaster plaster
+c: plaster tnt plaster tnt
+
+-size
+height: 10
+width: 10
+
+-map
+: aaaaaaaaaa
+: a        a
+: aa       a
+: a        a
+: a        a
+: a        a
+: a bb  c aa
+: a   b    a
+: a   b   aa
+: aaaaaa aaa

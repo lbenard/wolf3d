@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 19:05:27 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/03 06:49:49 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/23 20:25:41 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static t_bool	is_colliding(const t_map *const map, t_vec3f pos, t_vec3f vel)
 		|| pos.y + vel.y < 0 || pos.y + vel.y >= map->size.y)
 		return (FALSE);
 	if (map->map[(int)(pos.x + vel.x) + (int)(pos.y + vel.y)
-		* map->size.x].east_texture_id)
+		* map->size.x].east_texture_ref)
 		return (FALSE);
 	if ((int)pos.x == (int)(pos.x + vel.x)
 		|| (int)pos.y == (int)(pos.y + vel.y))
@@ -33,10 +33,10 @@ static t_bool	is_colliding(const t_map *const map, t_vec3f pos, t_vec3f vel)
 	y_miss = x_miss * vel.y / vel.x;
 	if ((int)(pos.y + y_miss) == (int)pos.y)
 		return (!(map->map[(int)(pos.x + vel.x)+ (int)pos.y * map->size.x]
-			.east_texture_id));
+			.east_texture_ref));
 	else
 		return (!(map->map[(int)(pos.x) + (int)(pos.y + vel.y) * map->size.x]
-			.east_texture_id));
+			.east_texture_ref));
 }
 
 static void	orientation(t_vec3f	*rotation)

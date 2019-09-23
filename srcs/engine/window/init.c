@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 04:36:35 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/03 13:40:27 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/22 17:01:16 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,10 @@ t_result	init_window(t_window *const self, const t_window_args *const args)
 	module_add_stack_module(&self->module,
 		frame(args->size, ft_rgba(0, 0, 0, 255)), &self->frame);
 	module_add_stack_module(&self->module,
-		cursor(ft_usize(32, 32), ft_rgba(255, 255, 255, 127)), &self->cursor);
+		cursor_from_file("resources/cursors/cursor-upscale.png"),
+		&self->cursor);
 	*(t_usize*)&self->size = args->size;
+	self->base_name = args->name;
 	if (self->module.has_error)
 	{
 		destroy_window(self);

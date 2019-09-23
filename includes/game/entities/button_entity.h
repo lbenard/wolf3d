@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 08:47:27 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/06 14:20:25 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/22 16:30:32 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ t_button_entity			*new_button_entity(t_button_entity_args *const args);
 t_button_entity			*new_dynamic_button_entity(
 							t_button_entity_args *const args);
 void					button_entity_update(t_button_entity *const self);
+void					button_entity_render(t_button_entity *const self,
+							t_frame *const frame);
 void					free_button_entity(t_button_entity *const self);
 
 #endif
