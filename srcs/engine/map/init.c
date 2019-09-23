@@ -6,7 +6,7 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 16:45:58 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/22 18:46:18 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/09/23 18:39:26 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,55 +183,90 @@ t_result	is_syntax_safe(char *line)
 		return (ERROR);
 }
 
+char	*add_newline(char *text)
+{
+	char	*tmp;
+
+	if (text)
+	{
+		tmp = text;
+		text = ft_strjoin(text, "\n");
+		free(tmp);
+		return (text);
+	}
+	else
+		return (NULL);
+}
+
+char	*join_next_line(char *text, char *next_line)
+{
+	char	*tmp;
+
+	if (text && next_line)
+	{
+		tmp = text;
+		text = ft_strjoin(text, next_line);
+		free(tmp);
+		free(next_line);
+		return (text);
+	}
+	else
+		return (NULL);
+}
+
 char *read_wolf_syntax_file(const char *path)
 {
 	int file_descriptor;
 	char *map_str;
 	char **line;
-	char *tmp;
 
 	if (!(line = malloc(sizeof(char*))))
 		return (ERROR);
-	if (!(map_str = malloc(sizeof(char) * 2)))
-		return (ERROR); /////////////// free line
-	map_str = ft_strcpy(map_str, "\n");
+	if (!(map_str = ft_strdup("\n")))
+		return (ERROR);		////////////// free line
 	if ((file_descriptor = open(path, O_RDONLY)) <= 0)
-		return (ERROR); ////////////// free line + map_str
+		return (ERROR);		////////////// free line + map_str
 	while (ft_get_next_line(file_descriptor, line))
 	{
 		if (is_syntax_safe(*line))
-		{
-			tmp = *line;
-			*line = ft_strjoin(*line, "\n");
-			free(tmp);
-			tmp = map_str;
-			map_str = ft_strjoin(map_str, *line);
-			free(tmp);
-		}
+			map_str = join_next_line(map_str, add_newline(*line));
 		else
 		{
-			printf("error\n%s\n", map_str); ////////////////// printf
 			free(map_str);
-			return (ERROR);
+			return (throw_error_str("map syntax error.."));
 		}
-		free(*line);  
 	}
 	free(line);
 	return (map_str);
 }
 
+char	*new_flag(char *flag_name)
+{
+	char	*tmp;
+	char	*flag;
+
+	if (flag_name)
+	{
+		tmp = ft_strjoin("\n-", flag_name);
+		flag = ft_strjoin(tmp, "\n");
+		if (tmp)
+			free(tmp);
+		return (flag);
+	}
+	else
+		return (NULL);
+}
 char	*select_flag(char *map_str, char *flag_name)
 {
 	char	*flag_start;
 	char	*flag_end;
-	char	*tmp;
+	char	*flag;
 	
-	tmp = ft_strjoin("\n-", flag_name);
-	flag_name = ft_strjoin(tmp, "\n");
-	free(tmp);
-	if (!(flag_start = ft_strstr(map_str, flag_name)))
+	if (!(flag = new_flag(flag_name)))
 		return (ERROR);
-	flag_start += ft_strlen(flag_name);
+	if (!(flag_start = ft_strstr(map_str, flag)))
+		return (ERROR);		////// free flag
+	flag_start += ft_strlen(flag);
 	if ((flag_end = ft_strstr(flag_start, "\n-")))
 		return (ft_strndup(flag_start, flag_end - flag_start));
 	else
@@ -269,7 +304,8 @@ char	**get_values(char *wolf_data_line, char	split)
 	p = wolf_data_line;
 	value = get_value(p);
 	values = ft_strsplit(value, split);
-	free(value);
+	if (value)
+		free(value);
 	return (values);
 }
 
@@ -342,20 +378,20 @@ t_result parse_blocs_list(t_map *self, char *blocs_flag_str)
 
 t_result parse_size(t_map *self, char *size_flag_str)
 {
-	int		h;
-	int		w;
+	int		height;
+	int		width;
 	char	*p;
 	
 	p = size_flag_str;
 	if (!ft_strstr(p, "height: ") || !ft_strstr(p, "width: "))
 		return (ERROR); /////////////////////// free size_flag_str
-	h = ft_atoi(ft_strstr(p, "height: ") + ft_strlen("height: "));
-	w = ft_atoi(ft_strstr(p, "width: ") + ft_strlen("width: "));
+	height = ft_atoi(ft_strstr(p, "height: ") + ft_strlen("height: "));
+	width = ft_atoi(ft_strstr(p, "width: ") + ft_strlen("width: "));
 	free(size_flag_str);
-	if (h < 3 || w < 3)
+	if (height < 3 || width < 3)
 		return (ERROR);
-	self->size.x = w;
-	self->size.y = h;
+	self->size.x = width;
+	self->size.y = height;
 	return (OK);
 }
 
@@ -369,7 +405,6 @@ t_bloc_node	*is_key_belong_to_blocs_list(t_map *self, char key)
 	while ((pos = next) != (t_list_head*)&(self->blocs))
 	{
 		next = next->next;
-		// printf("%c - %c\n",*((t_bloc_node*)pos)->key, key);
 		if (*(((t_bloc_node*)pos)->key) == key)
 			return ((t_bloc_node*)pos);
 	}
@@ -429,13 +464,9 @@ t_result	fill_map_row(t_map *self, char *row, int y)
 			self->map[x + y * self->size.x].west_texture_ref = NULL;
 		}
 		else if ((bloc = is_key_belong_to_blocs_list(self, row[x])))
-		{
 			add_wall(self, bloc, x, y);
-		}
 		else
-		{
 			return (throw_result_str("failed to find key in blocs list.."));
-		}
 		x++;
 	}
 	return (OK);
@@ -474,6 +505,9 @@ t_result	init_map(t_map *self, const t_map_args *const args)
 		return (throw_result_str("failed to parse size"));
 	if (!parse_map(self, select_flag(map_file_str, "map")))
 		return (throw_result_str("failed to parse map"));
+
+
+		
 	list_foreach(&self->textures, 0, list_print_texture); ///// debug
 	list_foreach(&self->blocs, 0, list_print_bloc); ///// debug
 	printf("x: %d y:%d\n", self->size.x, self->size.y);
@@ -491,6 +525,8 @@ t_result	init_map(t_map *self, const t_map_args *const args)
 		}
 		printf("\n");
 	}
+
+
 	free(map_file_str);
 	return (OK);
 }
