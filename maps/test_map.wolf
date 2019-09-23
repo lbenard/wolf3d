@@ -1,0 +1,24 @@
+-textures
+plaster: resources/textures/plaster.jpg
+
+-blocs
+a: plaster plaster plaster plaster
+
+
+-size
+height: 10
+width: 10
+
+-map
+: aaaaaaaaaa
+: a        a
+: aa       a
+: a        a
+: a        a
+: a        a
+: a aa  a aa
+: a   a    a
+: a   a   aa
+: aaaaaa aaa
+
+
