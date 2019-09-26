@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 16:38:15 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/23 19:19:05 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/25 18:53:03 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@
 
 typedef struct			s_wall
 {
-	t_image	*north_texture_ref;
-	t_image	*east_texture_ref;
-	t_image	*south_texture_ref;
-	t_image	*west_texture_ref;
+	const t_image	*north_texture_ref;
+	const t_image	*east_texture_ref;
+	const t_image	*south_texture_ref;
+	const t_image	*west_texture_ref;
 }						t_wall;
 
 typedef struct			s_texture_node
@@ -33,10 +33,11 @@ typedef struct			s_texture_node
 	const char	*name;
 	t_image		*image;
 }						t_texture_node;
+
 t_texture_node			*new_texture_node(const char *name,
 							const char *const path);
 
-typedef struct			s_bloc_node
+typedef struct			s_block_node
 {
 	t_list_head	node;
 	const char	*key;
@@ -44,14 +45,15 @@ typedef struct			s_bloc_node
 	const char	*east_texture_name;
 	const char	*south_texture_name;
 	const char	*west_texture_name;
-}						t_bloc_node;
-t_bloc_node  *new_bloc_node(const char *key, char **values);
+}						t_block_node;
+
+t_block_node			*new_block_node(const char *key, char **values);
 
 typedef struct			s_map
 {
 	t_module	module;
 	t_list_head textures;
-	t_list_head blocs;
+	t_list_head blocks;
 	t_usize		size;
 	t_wall		*map;
 }						t_map;

@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 19:33:38 by lbenard           #+#    #+#              #
-#    Updated: 2019/09/23 20:26:19 by lbenard          ###   ########.fr        #
+#    Updated: 2019/09/25 18:36:35 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,7 @@ SRCS_LIST		=	main.c														\
 					engine/map/map.c											\
 					engine/map/init.c											\
 					engine/map/destroy.c										\
-					engine/map/new_bloc_node.c									\
+					engine/map/new_block_node.c									\
 					engine/map/new_texture_node.c								\
 																				\
 					engine/module/stack_module/ft_stack_module_descriptor.c		\
@@ -106,6 +106,17 @@ SRCS_LIST		=	main.c														\
 					engine/module/add_heap_module.c								\
 					engine/module/remove_heap_module.c							\
 					engine/module/destroy_module.c								\
+																				\
+					engine/parsing/wolf_read_file.c								\
+					engine/parsing/wolf_is_flag_correct.c						\
+					engine/parsing/wolf_is_kv_correct.c							\
+					engine/parsing/wolf_is_line_correct.c						\
+					engine/parsing/wolf_new_flag.c								\
+					engine/parsing/wolf_select_flag.c							\
+					engine/parsing/wolf_get_key.c								\
+					engine/parsing/wolf_get_value.c								\
+					engine/parsing/wolf_get_values.c							\
+					engine/parsing/wolf_free_values.c							\
 																				\
 					engine/window/window.c										\
 					engine/window/init.c										\
