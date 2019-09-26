@@ -48,10 +48,10 @@ RM = /Users/lbenard/.brew/Cellar/cmake/3.13.4/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lbenard/Desktop/github/wolf3d/CSFML
+CMAKE_SOURCE_DIR = /Users/lbenard/Desktop/42/wolf3d/00/CSFML
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lbenard/Desktop/github/wolf3d/CSFML
+CMAKE_BINARY_DIR = /Users/lbenard/Desktop/42/wolf3d/00/CSFML
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -126,14 +126,14 @@ list_install_components/fast: list_install_components
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(CMAKE_COMMAND) -E cmake_progress_start /Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/CMakeFiles/progress.marks
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f CMakeFiles/Makefile2 src/SFML/Window/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles 0
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(CMAKE_COMMAND) -E cmake_progress_start /Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/CMakeFiles/progress.marks
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f CMakeFiles/Makefile2 src/SFML/Window/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f CMakeFiles/Makefile2 src/SFML/Window/clean
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f CMakeFiles/Makefile2 src/SFML/Window/clean
 .PHONY : clean
 
 # The main clean target
@@ -143,22 +143,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f CMakeFiles/Makefile2 src/SFML/Window/preinstall
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f CMakeFiles/Makefile2 src/SFML/Window/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f CMakeFiles/Makefile2 src/SFML/Window/preinstall
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f CMakeFiles/Makefile2 src/SFML/Window/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/SFML/Window/CMakeFiles/csfml-window.dir/rule:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f CMakeFiles/Makefile2 src/SFML/Window/CMakeFiles/csfml-window.dir/rule
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f CMakeFiles/Makefile2 src/SFML/Window/CMakeFiles/csfml-window.dir/rule
 .PHONY : src/SFML/Window/CMakeFiles/csfml-window.dir/rule
 
 # Convenience name for target.
@@ -168,8 +168,35 @@ csfml-window: src/SFML/Window/CMakeFiles/csfml-window.dir/rule
 
 # fast build rule for target.
 csfml-window/fast:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/build
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/build
 .PHONY : csfml-window/fast
+
+Clipboard.o: Clipboard.cpp.o
+
+.PHONY : Clipboard.o
+
+# target to build an object file
+Clipboard.cpp.o:
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Clipboard.cpp.o
+.PHONY : Clipboard.cpp.o
+
+Clipboard.i: Clipboard.cpp.i
+
+.PHONY : Clipboard.i
+
+# target to preprocess a source file
+Clipboard.cpp.i:
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Clipboard.cpp.i
+.PHONY : Clipboard.cpp.i
+
+Clipboard.s: Clipboard.cpp.s
+
+.PHONY : Clipboard.s
+
+# target to generate assembly for a file
+Clipboard.cpp.s:
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Clipboard.cpp.s
+.PHONY : Clipboard.cpp.s
 
 Context.o: Context.cpp.o
 
@@ -177,7 +204,7 @@ Context.o: Context.cpp.o
 
 # target to build an object file
 Context.cpp.o:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Context.cpp.o
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Context.cpp.o
 .PHONY : Context.cpp.o
 
 Context.i: Context.cpp.i
@@ -186,7 +213,7 @@ Context.i: Context.cpp.i
 
 # target to preprocess a source file
 Context.cpp.i:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Context.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Context.cpp.i
 .PHONY : Context.cpp.i
 
 Context.s: Context.cpp.s
@@ -195,8 +222,35 @@ Context.s: Context.cpp.s
 
 # target to generate assembly for a file
 Context.cpp.s:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Context.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Context.cpp.s
 .PHONY : Context.cpp.s
+
+Cursor.o: Cursor.cpp.o
+
+.PHONY : Cursor.o
+
+# target to build an object file
+Cursor.cpp.o:
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Cursor.cpp.o
+.PHONY : Cursor.cpp.o
+
+Cursor.i: Cursor.cpp.i
+
+.PHONY : Cursor.i
+
+# target to preprocess a source file
+Cursor.cpp.i:
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Cursor.cpp.i
+.PHONY : Cursor.cpp.i
+
+Cursor.s: Cursor.cpp.s
+
+.PHONY : Cursor.s
+
+# target to generate assembly for a file
+Cursor.cpp.s:
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Cursor.cpp.s
+.PHONY : Cursor.cpp.s
 
 Joystick.o: Joystick.cpp.o
 
@@ -204,7 +258,7 @@ Joystick.o: Joystick.cpp.o
 
 # target to build an object file
 Joystick.cpp.o:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Joystick.cpp.o
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Joystick.cpp.o
 .PHONY : Joystick.cpp.o
 
 Joystick.i: Joystick.cpp.i
@@ -213,7 +267,7 @@ Joystick.i: Joystick.cpp.i
 
 # target to preprocess a source file
 Joystick.cpp.i:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Joystick.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Joystick.cpp.i
 .PHONY : Joystick.cpp.i
 
 Joystick.s: Joystick.cpp.s
@@ -222,7 +276,7 @@ Joystick.s: Joystick.cpp.s
 
 # target to generate assembly for a file
 Joystick.cpp.s:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Joystick.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Joystick.cpp.s
 .PHONY : Joystick.cpp.s
 
 Keyboard.o: Keyboard.cpp.o
@@ -231,7 +285,7 @@ Keyboard.o: Keyboard.cpp.o
 
 # target to build an object file
 Keyboard.cpp.o:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Keyboard.cpp.o
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Keyboard.cpp.o
 .PHONY : Keyboard.cpp.o
 
 Keyboard.i: Keyboard.cpp.i
@@ -240,7 +294,7 @@ Keyboard.i: Keyboard.cpp.i
 
 # target to preprocess a source file
 Keyboard.cpp.i:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Keyboard.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Keyboard.cpp.i
 .PHONY : Keyboard.cpp.i
 
 Keyboard.s: Keyboard.cpp.s
@@ -249,7 +303,7 @@ Keyboard.s: Keyboard.cpp.s
 
 # target to generate assembly for a file
 Keyboard.cpp.s:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Keyboard.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Keyboard.cpp.s
 .PHONY : Keyboard.cpp.s
 
 Mouse.o: Mouse.cpp.o
@@ -258,7 +312,7 @@ Mouse.o: Mouse.cpp.o
 
 # target to build an object file
 Mouse.cpp.o:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Mouse.cpp.o
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Mouse.cpp.o
 .PHONY : Mouse.cpp.o
 
 Mouse.i: Mouse.cpp.i
@@ -267,7 +321,7 @@ Mouse.i: Mouse.cpp.i
 
 # target to preprocess a source file
 Mouse.cpp.i:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Mouse.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Mouse.cpp.i
 .PHONY : Mouse.cpp.i
 
 Mouse.s: Mouse.cpp.s
@@ -276,7 +330,7 @@ Mouse.s: Mouse.cpp.s
 
 # target to generate assembly for a file
 Mouse.cpp.s:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Mouse.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Mouse.cpp.s
 .PHONY : Mouse.cpp.s
 
 Sensor.o: Sensor.cpp.o
@@ -285,7 +339,7 @@ Sensor.o: Sensor.cpp.o
 
 # target to build an object file
 Sensor.cpp.o:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Sensor.cpp.o
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Sensor.cpp.o
 .PHONY : Sensor.cpp.o
 
 Sensor.i: Sensor.cpp.i
@@ -294,7 +348,7 @@ Sensor.i: Sensor.cpp.i
 
 # target to preprocess a source file
 Sensor.cpp.i:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Sensor.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Sensor.cpp.i
 .PHONY : Sensor.cpp.i
 
 Sensor.s: Sensor.cpp.s
@@ -303,7 +357,7 @@ Sensor.s: Sensor.cpp.s
 
 # target to generate assembly for a file
 Sensor.cpp.s:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Sensor.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Sensor.cpp.s
 .PHONY : Sensor.cpp.s
 
 Touch.o: Touch.cpp.o
@@ -312,7 +366,7 @@ Touch.o: Touch.cpp.o
 
 # target to build an object file
 Touch.cpp.o:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Touch.cpp.o
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Touch.cpp.o
 .PHONY : Touch.cpp.o
 
 Touch.i: Touch.cpp.i
@@ -321,7 +375,7 @@ Touch.i: Touch.cpp.i
 
 # target to preprocess a source file
 Touch.cpp.i:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Touch.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Touch.cpp.i
 .PHONY : Touch.cpp.i
 
 Touch.s: Touch.cpp.s
@@ -330,7 +384,7 @@ Touch.s: Touch.cpp.s
 
 # target to generate assembly for a file
 Touch.cpp.s:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Touch.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Touch.cpp.s
 .PHONY : Touch.cpp.s
 
 VideoMode.o: VideoMode.cpp.o
@@ -339,7 +393,7 @@ VideoMode.o: VideoMode.cpp.o
 
 # target to build an object file
 VideoMode.cpp.o:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/VideoMode.cpp.o
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/VideoMode.cpp.o
 .PHONY : VideoMode.cpp.o
 
 VideoMode.i: VideoMode.cpp.i
@@ -348,7 +402,7 @@ VideoMode.i: VideoMode.cpp.i
 
 # target to preprocess a source file
 VideoMode.cpp.i:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/VideoMode.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/VideoMode.cpp.i
 .PHONY : VideoMode.cpp.i
 
 VideoMode.s: VideoMode.cpp.s
@@ -357,7 +411,7 @@ VideoMode.s: VideoMode.cpp.s
 
 # target to generate assembly for a file
 VideoMode.cpp.s:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/VideoMode.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/VideoMode.cpp.s
 .PHONY : VideoMode.cpp.s
 
 Window.o: Window.cpp.o
@@ -366,7 +420,7 @@ Window.o: Window.cpp.o
 
 # target to build an object file
 Window.cpp.o:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Window.cpp.o
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Window.cpp.o
 .PHONY : Window.cpp.o
 
 Window.i: Window.cpp.i
@@ -375,7 +429,7 @@ Window.i: Window.cpp.i
 
 # target to preprocess a source file
 Window.cpp.i:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Window.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Window.cpp.i
 .PHONY : Window.cpp.i
 
 Window.s: Window.cpp.s
@@ -384,7 +438,7 @@ Window.s: Window.cpp.s
 
 # target to generate assembly for a file
 Window.cpp.s:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Window.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(MAKE) -f src/SFML/Window/CMakeFiles/csfml-window.dir/build.make src/SFML/Window/CMakeFiles/csfml-window.dir/Window.cpp.s
 .PHONY : Window.cpp.s
 
 # Help Target
@@ -400,9 +454,15 @@ help:
 	@echo "... install/strip"
 	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... Clipboard.o"
+	@echo "... Clipboard.i"
+	@echo "... Clipboard.s"
 	@echo "... Context.o"
 	@echo "... Context.i"
 	@echo "... Context.s"
+	@echo "... Cursor.o"
+	@echo "... Cursor.i"
+	@echo "... Cursor.s"
 	@echo "... Joystick.o"
 	@echo "... Joystick.i"
 	@echo "... Joystick.s"
@@ -435,6 +495,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

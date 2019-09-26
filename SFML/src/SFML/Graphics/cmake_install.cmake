@@ -1,4 +1,4 @@
-# Install script for directory: /Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Graphics
+# Install script for directory: /Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Graphics
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,15 +34,21 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xbinx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES
-    "/Users/lbenard/Desktop/github/wolf3d/SFML/lib/libsfml-graphics.2.4.0.dylib"
-    "/Users/lbenard/Desktop/github/wolf3d/SFML/lib/libsfml-graphics.2.4.dylib"
+    "/Users/lbenard/Desktop/42/wolf3d/00/SFML/lib/libsfml-graphics.2.5.1.dylib"
+    "/Users/lbenard/Desktop/42/wolf3d/00/SFML/lib/libsfml-graphics.2.5.dylib"
     )
   foreach(file
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics.2.4.0.dylib"
-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics.2.4.dylib"
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics.2.5.1.dylib"
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics.2.5.dylib"
       )
     if(EXISTS "${file}" AND
        NOT IS_SYMLINK "${file}")
+      execute_process(COMMAND /usr/bin/install_name_tool
+        -delete_rpath "/Users/lbenard/Desktop/42/wolf3d/00/SFML/lib"
+        "${file}")
+      execute_process(COMMAND /usr/bin/install_name_tool
+        -delete_rpath "/Users/lbenard/Desktop/42/wolf3d/00/SFML/extlibs/libs-osx/Frameworks"
+        "${file}")
       if(CMAKE_INSTALL_DO_STRIP)
         execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip" "${file}")
       endif()
@@ -51,9 +57,15 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xbinx" OR NOT CMAKE_INSTALL_COMPONEN
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xbinx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/Users/lbenard/Desktop/github/wolf3d/SFML/lib/libsfml-graphics.dylib")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/Users/lbenard/Desktop/42/wolf3d/00/SFML/lib/libsfml-graphics.dylib")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics.dylib" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics.dylib")
+    execute_process(COMMAND /usr/bin/install_name_tool
+      -delete_rpath "/Users/lbenard/Desktop/42/wolf3d/00/SFML/lib"
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics.dylib")
+    execute_process(COMMAND /usr/bin/install_name_tool
+      -delete_rpath "/Users/lbenard/Desktop/42/wolf3d/00/SFML/extlibs/libs-osx/Frameworks"
+      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics.dylib")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libsfml-graphics.dylib")
     endif()

@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////
 //
 // SFML - Simple and Fast Multimedia Library
-// Copyright (C) 2007-2015 Laurent Gomila (laurent@sfml-dev.org)
+// Copyright (C) 2007-2018 Laurent Gomila (laurent@sfml-dev.org)
 //
 // This software is provided 'as-is', without any express or implied warranty.
 // In no event will the authors be held liable for any damages arising from the use of this software.
@@ -93,7 +93,7 @@ void sfFont_destroy(sfFont* font)
 
 
 ////////////////////////////////////////////////////////////
-sfGlyph sfFont_getGlyph(sfFont* font, sfUint32 codePoint, unsigned int characterSize, sfBool bold, float outlineThickness)
+sfGlyph sfFont_getGlyph(const sfFont* font, sfUint32 codePoint, unsigned int characterSize, sfBool bold, float outlineThickness)
 {
     sfGlyph glyph = {0, {0, 0, 0, 0}, {0, 0, 0, 0}};
     CSFML_CHECK_RETURN(font, glyph);
@@ -115,28 +115,28 @@ sfGlyph sfFont_getGlyph(sfFont* font, sfUint32 codePoint, unsigned int character
 
 
 ////////////////////////////////////////////////////////////
-float sfFont_getKerning(sfFont* font, sfUint32 first, sfUint32 second, unsigned int characterSize)
+float sfFont_getKerning(const sfFont* font, sfUint32 first, sfUint32 second, unsigned int characterSize)
 {
     CSFML_CALL_RETURN(font, getKerning(first, second, characterSize), 0);
 }
 
 
 ////////////////////////////////////////////////////////////
-float sfFont_getLineSpacing(sfFont* font, unsigned int characterSize)
+float sfFont_getLineSpacing(const sfFont* font, unsigned int characterSize)
 {
     CSFML_CALL_RETURN(font, getLineSpacing(characterSize), 0);
 }
 
 
 ////////////////////////////////////////////////////////////
-float sfFont_getUnderlinePosition(sfFont* font, unsigned int characterSize)
+float sfFont_getUnderlinePosition(const sfFont* font, unsigned int characterSize)
 {
     CSFML_CALL_RETURN(font, getUnderlinePosition(characterSize), 0)
 }
 
 
 ////////////////////////////////////////////////////////////
-float sfFont_getUnderlineThickness(sfFont* font, unsigned int characterSize)
+float sfFont_getUnderlineThickness(const sfFont* font, unsigned int characterSize)
 {
     CSFML_CALL_RETURN(font, getUnderlineThickness(characterSize), 0)
 }

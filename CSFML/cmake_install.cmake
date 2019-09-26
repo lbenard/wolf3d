@@ -1,4 +1,4 @@
-# Install script for directory: /Users/lbenard/Desktop/github/wolf3d/CSFML
+# Install script for directory: /Users/lbenard/Desktop/42/wolf3d/00/CSFML
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,20 +33,20 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevelx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE DIRECTORY FILES "/Users/lbenard/Desktop/github/wolf3d/CSFML/include" REGEX "/\\.svn$" EXCLUDE)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE DIRECTORY FILES "/Users/lbenard/Desktop/42/wolf3d/00/CSFML/include" REGEX "/\\.svn$" EXCLUDE)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/CSFML" TYPE FILE FILES "/Users/lbenard/Desktop/github/wolf3d/CSFML/license.txt")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/CSFML" TYPE FILE FILES "/Users/lbenard/Desktop/42/wolf3d/00/CSFML/license.txt")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/CSFML" TYPE FILE FILES "/Users/lbenard/Desktop/github/wolf3d/CSFML/readme.txt")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/CSFML" TYPE FILE FILES "/Users/lbenard/Desktop/42/wolf3d/00/CSFML/readme.txt")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/cmake_install.cmake")
+  include("/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/cmake_install.cmake")
 
 endif()
 
@@ -58,5 +58,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/lbenard/Desktop/github/wolf3d/CSFML/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/lbenard/Desktop/42/wolf3d/00/CSFML/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML
+# Install script for directory: /Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,11 +34,11 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/System/cmake_install.cmake")
-  include("/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Window/cmake_install.cmake")
-  include("/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Network/cmake_install.cmake")
-  include("/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Graphics/cmake_install.cmake")
-  include("/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/cmake_install.cmake")
+  include("/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/System/cmake_install.cmake")
+  include("/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Window/cmake_install.cmake")
+  include("/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Network/cmake_install.cmake")
+  include("/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Graphics/cmake_install.cmake")
+  include("/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/cmake_install.cmake")
 
 endif()
 

@@ -43,10 +43,10 @@ RM = /Users/lbenard/.brew/Cellar/cmake/3.13.4/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lbenard/Desktop/github/wolf3d/CSFML
+CMAKE_SOURCE_DIR = /Users/lbenard/Desktop/42/wolf3d/00/CSFML
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lbenard/Desktop/github/wolf3d/CSFML
+CMAKE_BINARY_DIR = /Users/lbenard/Desktop/42/wolf3d/00/CSFML
 
 # Include any dependencies generated for this target.
 include src/SFML/Audio/CMakeFiles/csfml-audio.dir/depend.make
@@ -59,94 +59,94 @@ include src/SFML/Audio/CMakeFiles/csfml-audio.dir/flags.make
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/Listener.cpp.o: src/SFML/Audio/CMakeFiles/csfml-audio.dir/flags.make
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/Listener.cpp.o: src/SFML/Audio/Listener.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/SFML/Audio/CMakeFiles/csfml-audio.dir/Listener.cpp.o"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-audio.dir/Listener.cpp.o -c /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/Listener.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/SFML/Audio/CMakeFiles/csfml-audio.dir/Listener.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-audio.dir/Listener.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/Listener.cpp
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/Listener.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-audio.dir/Listener.cpp.i"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/Listener.cpp > CMakeFiles/csfml-audio.dir/Listener.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/Listener.cpp > CMakeFiles/csfml-audio.dir/Listener.cpp.i
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/Listener.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-audio.dir/Listener.cpp.s"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/Listener.cpp -o CMakeFiles/csfml-audio.dir/Listener.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/Listener.cpp -o CMakeFiles/csfml-audio.dir/Listener.cpp.s
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/Music.cpp.o: src/SFML/Audio/CMakeFiles/csfml-audio.dir/flags.make
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/Music.cpp.o: src/SFML/Audio/Music.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/SFML/Audio/CMakeFiles/csfml-audio.dir/Music.cpp.o"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-audio.dir/Music.cpp.o -c /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/Music.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/SFML/Audio/CMakeFiles/csfml-audio.dir/Music.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-audio.dir/Music.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/Music.cpp
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/Music.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-audio.dir/Music.cpp.i"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/Music.cpp > CMakeFiles/csfml-audio.dir/Music.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/Music.cpp > CMakeFiles/csfml-audio.dir/Music.cpp.i
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/Music.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-audio.dir/Music.cpp.s"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/Music.cpp -o CMakeFiles/csfml-audio.dir/Music.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/Music.cpp -o CMakeFiles/csfml-audio.dir/Music.cpp.s
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/Sound.cpp.o: src/SFML/Audio/CMakeFiles/csfml-audio.dir/flags.make
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/Sound.cpp.o: src/SFML/Audio/Sound.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/SFML/Audio/CMakeFiles/csfml-audio.dir/Sound.cpp.o"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-audio.dir/Sound.cpp.o -c /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/Sound.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/SFML/Audio/CMakeFiles/csfml-audio.dir/Sound.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-audio.dir/Sound.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/Sound.cpp
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/Sound.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-audio.dir/Sound.cpp.i"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/Sound.cpp > CMakeFiles/csfml-audio.dir/Sound.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/Sound.cpp > CMakeFiles/csfml-audio.dir/Sound.cpp.i
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/Sound.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-audio.dir/Sound.cpp.s"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/Sound.cpp -o CMakeFiles/csfml-audio.dir/Sound.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/Sound.cpp -o CMakeFiles/csfml-audio.dir/Sound.cpp.s
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.o: src/SFML/Audio/CMakeFiles/csfml-audio.dir/flags.make
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.o: src/SFML/Audio/SoundBuffer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.o"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.o -c /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundBuffer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundBuffer.cpp
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.i"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundBuffer.cpp > CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundBuffer.cpp > CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.i
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.s"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundBuffer.cpp -o CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundBuffer.cpp -o CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.s
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.o: src/SFML/Audio/CMakeFiles/csfml-audio.dir/flags.make
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.o: src/SFML/Audio/SoundBufferRecorder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.o"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.o -c /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundBufferRecorder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundBufferRecorder.cpp
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.i"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundBufferRecorder.cpp > CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundBufferRecorder.cpp > CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.i
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.s"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundBufferRecorder.cpp -o CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundBufferRecorder.cpp -o CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.s
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.o: src/SFML/Audio/CMakeFiles/csfml-audio.dir/flags.make
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.o: src/SFML/Audio/SoundRecorder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.o"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.o -c /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundRecorder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundRecorder.cpp
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.i"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundRecorder.cpp > CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundRecorder.cpp > CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.i
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.s"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundRecorder.cpp -o CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundRecorder.cpp -o CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.s
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundStream.cpp.o: src/SFML/Audio/CMakeFiles/csfml-audio.dir/flags.make
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundStream.cpp.o: src/SFML/Audio/SoundStream.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundStream.cpp.o"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-audio.dir/SoundStream.cpp.o -c /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundStream.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundStream.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-audio.dir/SoundStream.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundStream.cpp
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundStream.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-audio.dir/SoundStream.cpp.i"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundStream.cpp > CMakeFiles/csfml-audio.dir/SoundStream.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundStream.cpp > CMakeFiles/csfml-audio.dir/SoundStream.cpp.i
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundStream.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-audio.dir/SoundStream.cpp.s"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundStream.cpp -o CMakeFiles/csfml-audio.dir/SoundStream.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundStream.cpp -o CMakeFiles/csfml-audio.dir/SoundStream.cpp.s
 
 # Object files for target csfml-audio
 csfml__audio_OBJECTS = \
@@ -161,25 +161,25 @@ csfml__audio_OBJECTS = \
 # External object files for target csfml-audio
 csfml__audio_EXTERNAL_OBJECTS =
 
-lib/libcsfml-audio.2.4.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/Listener.cpp.o
-lib/libcsfml-audio.2.4.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/Music.cpp.o
-lib/libcsfml-audio.2.4.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/Sound.cpp.o
-lib/libcsfml-audio.2.4.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.o
-lib/libcsfml-audio.2.4.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.o
-lib/libcsfml-audio.2.4.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.o
-lib/libcsfml-audio.2.4.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundStream.cpp.o
-lib/libcsfml-audio.2.4.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/build.make
-lib/libcsfml-audio.2.4.0.dylib: /Users/lbenard/Desktop/github/wolf3d/SFML/lib/libsfml-audio.dylib
-lib/libcsfml-audio.2.4.0.dylib: /Users/lbenard/Desktop/github/wolf3d/SFML/lib/libsfml-system.dylib
-lib/libcsfml-audio.2.4.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX shared library ../../../lib/libcsfml-audio.dylib"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/csfml-audio.dir/link.txt --verbose=$(VERBOSE)
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && $(CMAKE_COMMAND) -E cmake_symlink_library ../../../lib/libcsfml-audio.2.4.0.dylib ../../../lib/libcsfml-audio.2.4.dylib ../../../lib/libcsfml-audio.dylib
+lib/libcsfml-audio.2.5.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/Listener.cpp.o
+lib/libcsfml-audio.2.5.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/Music.cpp.o
+lib/libcsfml-audio.2.5.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/Sound.cpp.o
+lib/libcsfml-audio.2.5.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBuffer.cpp.o
+lib/libcsfml-audio.2.5.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundBufferRecorder.cpp.o
+lib/libcsfml-audio.2.5.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundRecorder.cpp.o
+lib/libcsfml-audio.2.5.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/SoundStream.cpp.o
+lib/libcsfml-audio.2.5.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/build.make
+lib/libcsfml-audio.2.5.0.dylib: /Users/lbenard/Desktop/42/wolf3d/00/SFML/lib/libsfml-audio.2.5.1.dylib
+lib/libcsfml-audio.2.5.0.dylib: /Users/lbenard/Desktop/42/wolf3d/00/SFML/lib/libsfml-system.2.5.1.dylib
+lib/libcsfml-audio.2.5.0.dylib: src/SFML/Audio/CMakeFiles/csfml-audio.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX shared library ../../../lib/libcsfml-audio.dylib"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/csfml-audio.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && $(CMAKE_COMMAND) -E cmake_symlink_library ../../../lib/libcsfml-audio.2.5.0.dylib ../../../lib/libcsfml-audio.2.5.dylib ../../../lib/libcsfml-audio.dylib
 
-lib/libcsfml-audio.2.4.dylib: lib/libcsfml-audio.2.4.0.dylib
-	@$(CMAKE_COMMAND) -E touch_nocreate lib/libcsfml-audio.2.4.dylib
+lib/libcsfml-audio.2.5.dylib: lib/libcsfml-audio.2.5.0.dylib
+	@$(CMAKE_COMMAND) -E touch_nocreate lib/libcsfml-audio.2.5.dylib
 
-lib/libcsfml-audio.dylib: lib/libcsfml-audio.2.4.0.dylib
+lib/libcsfml-audio.dylib: lib/libcsfml-audio.2.5.0.dylib
 	@$(CMAKE_COMMAND) -E touch_nocreate lib/libcsfml-audio.dylib
 
 # Rule to build all files generated by this target.
@@ -188,10 +188,10 @@ src/SFML/Audio/CMakeFiles/csfml-audio.dir/build: lib/libcsfml-audio.dylib
 .PHONY : src/SFML/Audio/CMakeFiles/csfml-audio.dir/build
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/clean:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio && $(CMAKE_COMMAND) -P CMakeFiles/csfml-audio.dir/cmake_clean.cmake
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio && $(CMAKE_COMMAND) -P CMakeFiles/csfml-audio.dir/cmake_clean.cmake
 .PHONY : src/SFML/Audio/CMakeFiles/csfml-audio.dir/clean
 
 src/SFML/Audio/CMakeFiles/csfml-audio.dir/depend:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lbenard/Desktop/github/wolf3d/CSFML /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio /Users/lbenard/Desktop/github/wolf3d/CSFML /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/CMakeFiles/csfml-audio.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lbenard/Desktop/42/wolf3d/00/CSFML /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio /Users/lbenard/Desktop/42/wolf3d/00/CSFML /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/CMakeFiles/csfml-audio.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/SFML/Audio/CMakeFiles/csfml-audio.dir/depend
 

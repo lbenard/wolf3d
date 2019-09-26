@@ -16,9 +16,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/sfml-system.dir/Unix/ThreadImpl.cpp.o"
   "CMakeFiles/sfml-system.dir/Unix/ThreadLocalImpl.cpp.o"
   "../../../lib/libsfml-system.pdb"
-  "../../../lib/libsfml-system.2.4.0.dylib"
+  "../../../lib/libsfml-system.2.5.1.dylib"
   "../../../lib/libsfml-system.dylib"
-  "../../../lib/libsfml-system.2.4.dylib"
+  "../../../lib/libsfml-system.2.5.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

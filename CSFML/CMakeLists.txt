@@ -21,7 +21,7 @@ include(${CMAKE_SOURCE_DIR}/cmake/Config.cmake)
 
 # setup version numbers
 set(VERSION_MAJOR 2)
-set(VERSION_MINOR 4)
+set(VERSION_MINOR 5)
 set(VERSION_PATCH 0)
 
 # add the CSFML header path
@@ -34,7 +34,13 @@ csfml_set_option(BUILD_SHARED_LIBS TRUE BOOL "TRUE to build CSFML as shared libr
 csfml_set_option(CSFML_BUILD_DOC FALSE BOOL "TRUE to generate the API documentation, FALSE to ignore it")
 
 # add an option for linking to sfml either statically or dynamically
-csfml_set_option(CSFML_LINK_SFML_STATICALLY TRUE BOOL "TRUE to link to a static version of SFML, FALSE to link dynamically")
+# default on windows to static and on other platforms to dynamic
+if(SFML_OS_WINDOWS)
+    set(LINK_STATICALLY_DEFAULT TRUE)
+else()
+    set(LINK_STATICALLY_DEFAULT FALSE)
+endif()
+csfml_set_option(CSFML_LINK_SFML_STATICALLY ${LINK_STATICALLY_DEFAULT} BOOL "TRUE to link to a static version of SFML, FALSE to link dynamically")
 
 # disable the rpath stuff
 set(CMAKE_SKIP_BUILD_RPATH TRUE)
@@ -42,7 +48,7 @@ set(CMAKE_SKIP_BUILD_RPATH TRUE)
 # define an option for choosing between static and dynamic C runtime (Windows only)
 if(SFML_OS_WINDOWS)
     set(STATIC_STD_LIBS FALSE CACHE BOOL "TRUE to statically link to the standard libraries, FALSE to use them as DLLs")
-    
+
     # for VC++, we can apply it globally by modifying the compiler flags
     if(SFML_COMPILER_MSVC AND STATIC_STD_LIBS)
         foreach(flag

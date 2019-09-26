@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Network/Ftp.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Network/Ftp.cpp
 SFML/Network/Ftp.hpp
 -
 SFML/Network/IpAddress.hpp
@@ -26,7 +26,7 @@ sstream
 cstdio
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Network/Http.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Network/Http.cpp
 SFML/Network/Http.hpp
 -
 SFML/System/Err.hpp
@@ -42,7 +42,7 @@ sstream
 limits
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Network/IpAddress.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Network/IpAddress.cpp
 SFML/Network/IpAddress.hpp
 -
 SFML/Network/Http.hpp
@@ -54,7 +54,7 @@ cstring
 utility
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Network/Packet.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Network/Packet.cpp
 SFML/Network/Packet.hpp
 -
 SFML/Network/SocketImpl.hpp
@@ -66,7 +66,7 @@ cstring
 cwchar
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Network/Socket.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Network/Socket.cpp
 SFML/Network/Socket.hpp
 -
 SFML/Network/SocketImpl.hpp
@@ -74,7 +74,7 @@ SFML/Network/SocketImpl.hpp
 SFML/System/Err.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Network/SocketSelector.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Network/SocketSelector.cpp
 SFML/Network/SocketSelector.hpp
 -
 SFML/Network/Socket.hpp
@@ -88,7 +88,7 @@ algorithm
 utility
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Network/TcpListener.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Network/TcpListener.cpp
 SFML/Network/TcpListener.hpp
 -
 SFML/Network/TcpSocket.hpp
@@ -98,7 +98,7 @@ SFML/Network/SocketImpl.hpp
 SFML/System/Err.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Network/TcpSocket.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Network/TcpSocket.cpp
 SFML/Network/TcpSocket.hpp
 -
 SFML/Network/IpAddress.hpp
@@ -114,7 +114,7 @@ algorithm
 cstring
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Network/UdpSocket.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Network/UdpSocket.cpp
 SFML/Network/UdpSocket.hpp
 -
 SFML/Network/IpAddress.hpp
@@ -128,7 +128,7 @@ SFML/System/Err.hpp
 algorithm
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Network/Unix/SocketImpl.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Network/Unix/SocketImpl.cpp
 SFML/Network/Unix/SocketImpl.hpp
 -
 SFML/System/Err.hpp

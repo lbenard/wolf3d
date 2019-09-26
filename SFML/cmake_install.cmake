@@ -1,4 +1,4 @@
-# Install script for directory: /Users/lbenard/Desktop/github/wolf3d/SFML
+# Install script for directory: /Users/lbenard/Desktop/42/wolf3d/00/SFML
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -33,31 +33,31 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevelx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE DIRECTORY FILES "/Users/lbenard/Desktop/github/wolf3d/SFML/include" FILES_MATCHING REGEX "/[^/]*\\.hpp$" REGEX "/[^/]*\\.inl$")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/SFML" TYPE FILE FILES "/Users/lbenard/Desktop/github/wolf3d/SFML/license.txt")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/SFML" TYPE FILE FILES "/Users/lbenard/Desktop/github/wolf3d/SFML/readme.txt")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/SFML/cmake/Modules" TYPE FILE FILES "/Users/lbenard/Desktop/github/wolf3d/SFML/cmake/Modules/FindSFML.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/." TYPE DIRECTORY FILES "/Users/lbenard/Desktop/42/wolf3d/00/SFML/include" FILES_MATCHING REGEX "/[^/]*\\.hpp$" REGEX "/[^/]*\\.inl$")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/Library/Frameworks/FLAC.framework")
+   "/usr/local/share/SFML/license.md")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/Library/Frameworks" TYPE DIRECTORY FILES "/Users/lbenard/Desktop/github/wolf3d/SFML/extlibs/libs-osx/Frameworks/FLAC.framework")
+file(INSTALL DESTINATION "/usr/local/share/SFML" TYPE FILE FILES "/Users/lbenard/Desktop/42/wolf3d/00/SFML/license.md")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/usr/local/share/SFML/readme.md")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+file(INSTALL DESTINATION "/usr/local/share/SFML" TYPE FILE FILES "/Users/lbenard/Desktop/42/wolf3d/00/SFML/readme.md")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -69,7 +69,19 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/Library/Frameworks" TYPE DIRECTORY FILES "/Users/lbenard/Desktop/github/wolf3d/SFML/extlibs/libs-osx/Frameworks/freetype.framework")
+file(INSTALL DESTINATION "/Library/Frameworks" TYPE DIRECTORY FILES "/Users/lbenard/Desktop/42/wolf3d/00/SFML/extlibs/libs-osx/Frameworks/freetype.framework")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
+   "/Library/Frameworks/FLAC.framework")
+  if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+  if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
+    message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
+  endif()
+file(INSTALL DESTINATION "/Library/Frameworks" TYPE DIRECTORY FILES "/Users/lbenard/Desktop/42/wolf3d/00/SFML/extlibs/libs-osx/Frameworks/FLAC.framework")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -81,7 +93,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/Library/Frameworks" TYPE DIRECTORY FILES "/Users/lbenard/Desktop/github/wolf3d/SFML/extlibs/libs-osx/Frameworks/ogg.framework")
+file(INSTALL DESTINATION "/Library/Frameworks" TYPE DIRECTORY FILES "/Users/lbenard/Desktop/42/wolf3d/00/SFML/extlibs/libs-osx/Frameworks/ogg.framework")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -93,7 +105,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/Library/Frameworks" TYPE DIRECTORY FILES "/Users/lbenard/Desktop/github/wolf3d/SFML/extlibs/libs-osx/Frameworks/vorbis.framework")
+file(INSTALL DESTINATION "/Library/Frameworks" TYPE DIRECTORY FILES "/Users/lbenard/Desktop/42/wolf3d/00/SFML/extlibs/libs-osx/Frameworks/vorbis.framework")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -105,7 +117,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/Library/Frameworks" TYPE DIRECTORY FILES "/Users/lbenard/Desktop/github/wolf3d/SFML/extlibs/libs-osx/Frameworks/vorbisenc.framework")
+file(INSTALL DESTINATION "/Library/Frameworks" TYPE DIRECTORY FILES "/Users/lbenard/Desktop/42/wolf3d/00/SFML/extlibs/libs-osx/Frameworks/vorbisenc.framework")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -117,7 +129,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/Library/Frameworks" TYPE DIRECTORY FILES "/Users/lbenard/Desktop/github/wolf3d/SFML/extlibs/libs-osx/Frameworks/vorbisfile.framework")
+file(INSTALL DESTINATION "/Library/Frameworks" TYPE DIRECTORY FILES "/Users/lbenard/Desktop/42/wolf3d/00/SFML/extlibs/libs-osx/Frameworks/vorbisfile.framework")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -129,12 +141,39 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/Library/Frameworks" TYPE DIRECTORY FILES "/Users/lbenard/Desktop/github/wolf3d/SFML/extlibs/libs-osx/Frameworks/OpenAL.framework")
+file(INSTALL DESTINATION "/Library/Frameworks" TYPE DIRECTORY FILES "/Users/lbenard/Desktop/42/wolf3d/00/SFML/extlibs/libs-osx/Frameworks/OpenAL.framework")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/SFML/SFMLSharedTargets.cmake")
+    file(DIFFERENT EXPORT_FILE_CHANGED FILES
+         "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/SFML/SFMLSharedTargets.cmake"
+         "/Users/lbenard/Desktop/42/wolf3d/00/SFML/CMakeFiles/Export/lib/cmake/SFML/SFMLSharedTargets.cmake")
+    if(EXPORT_FILE_CHANGED)
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/SFML/SFMLSharedTargets-*.cmake")
+      if(OLD_CONFIG_FILES)
+        message(STATUS "Old export file \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/SFML/SFMLSharedTargets.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        file(REMOVE ${OLD_CONFIG_FILES})
+      endif()
+    endif()
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SFML" TYPE FILE FILES "/Users/lbenard/Desktop/42/wolf3d/00/SFML/CMakeFiles/Export/lib/cmake/SFML/SFMLSharedTargets.cmake")
+  if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SFML" TYPE FILE FILES "/Users/lbenard/Desktop/42/wolf3d/00/SFML/CMakeFiles/Export/lib/cmake/SFML/SFMLSharedTargets-release.cmake")
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevelx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/SFML" TYPE FILE FILES
+    "/Users/lbenard/Desktop/42/wolf3d/00/SFML/SFMLConfig.cmake"
+    "/Users/lbenard/Desktop/42/wolf3d/00/SFML/SFMLConfigDependencies.cmake"
+    "/Users/lbenard/Desktop/42/wolf3d/00/SFML/SFMLConfigVersion.cmake"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/cmake_install.cmake")
+  include("/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/cmake_install.cmake")
 
 endif()
 
@@ -146,5 +185,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/lbenard/Desktop/github/wolf3d/SFML/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/lbenard/Desktop/42/wolf3d/00/SFML/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

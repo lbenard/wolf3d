@@ -6,7 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Context.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Clipboard.cpp
+SFML/Window/Clipboard.h
+-
+SFML/Window/Clipboard.hpp
+-
+SFML/Internal.h
+-
+
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Context.cpp
 SFML/Window/Context.h
 -
 SFML/Window/ContextStruct.h
@@ -16,7 +24,67 @@ SFML/Internal.h
 SFML/Window/ContextSettingsInternal.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Window.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Cursor.cpp
+SFML/Window/Cursor.h
+-
+SFML/Window/CursorStruct.h
+-
+SFML/Internal.h
+-
+
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Joystick.cpp
+SFML/Window/Joystick.h
+-
+SFML/Window/Joystick.hpp
+-
+SFML/Internal.h
+-
+
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Keyboard.cpp
+SFML/Window/Keyboard.h
+-
+SFML/Window/Keyboard.hpp
+-
+SFML/Internal.h
+-
+
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Mouse.cpp
+SFML/Window/Mouse.h
+-
+SFML/Window/WindowStruct.h
+-
+SFML/Window/Mouse.hpp
+-
+SFML/Internal.h
+-
+
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Sensor.cpp
+SFML/Window/Sensor.h
+-
+SFML/Window/Sensor.hpp
+-
+SFML/Internal.h
+-
+
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Touch.cpp
+SFML/Window/Touch.h
+-
+SFML/Window/Touch.hpp
+-
+SFML/Window/WindowStruct.h
+-
+SFML/Internal.h
+-
+
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/VideoMode.cpp
+SFML/Window/VideoMode.h
+-
+SFML/Window/VideoMode.hpp
+-
+SFML/Internal.h
+-
+
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Window.cpp
 SFML/Window/Window.h
 -
 SFML/Window/WindowStruct.h
@@ -25,14 +93,16 @@ SFML/Internal.h
 -
 SFML/Window/ContextSettingsInternal.h
 -
+SFML/Window/CursorStruct.h
+-
 SFML/ConvertEvent.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Config.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Config.hpp
 TargetConditionals.h
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/TargetConditionals.h
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/TargetConditionals.h
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System.hpp
 SFML/Config.hpp
 -
 SFML/System/Clock.hpp
@@ -70,23 +140,23 @@ SFML/System/Vector2.hpp
 SFML/System/Vector3.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Clock.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Clock.hpp
 SFML/System/Export.hpp
 -
 SFML/System/Time.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Err.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Err.hpp
 SFML/System/Export.hpp
 -
 ostream
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Export.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Export.hpp
 SFML/Config.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/FileInputStream.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/FileInputStream.hpp
 SFML/Config.hpp
 -
 SFML/System/Export.hpp
@@ -100,19 +170,19 @@ cstdio
 string
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/InputStream.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/InputStream.hpp
 SFML/Config.hpp
 -
 SFML/System/Export.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Lock.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Lock.hpp
 SFML/System/Export.hpp
 -
 SFML/System/NonCopyable.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/MemoryInputStream.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/MemoryInputStream.hpp
 SFML/Config.hpp
 -
 SFML/System/InputStream.hpp
@@ -122,23 +192,23 @@ SFML/System/Export.hpp
 cstdlib
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Mutex.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Mutex.hpp
 SFML/System/Export.hpp
 -
 SFML/System/NonCopyable.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/NonCopyable.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/NonCopyable.hpp
 SFML/System/Export.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Sleep.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Sleep.hpp
 SFML/System/Export.hpp
 -
 SFML/System/Time.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/String.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/String.hpp
 SFML/System/Export.hpp
 -
 SFML/System/Utf.hpp
@@ -152,9 +222,9 @@ string
 SFML/System/String.inl
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/String.inl
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/String.inl
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Thread.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Thread.hpp
 SFML/System/Export.hpp
 -
 SFML/System/NonCopyable.hpp
@@ -164,9 +234,9 @@ cstdlib
 SFML/System/Thread.inl
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Thread.inl
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Thread.inl
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/ThreadLocal.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/ThreadLocal.hpp
 SFML/System/Export.hpp
 -
 SFML/System/NonCopyable.hpp
@@ -174,19 +244,19 @@ SFML/System/NonCopyable.hpp
 cstdlib
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/ThreadLocalPtr.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/ThreadLocalPtr.hpp
 SFML/System/ThreadLocal.hpp
 -
 SFML/System/ThreadLocalPtr.inl
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/ThreadLocalPtr.inl
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/ThreadLocalPtr.inl
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Time.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Time.hpp
 SFML/System/Export.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Utf.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Utf.hpp
 SFML/Config.hpp
 -
 algorithm
@@ -200,26 +270,30 @@ cstdlib
 SFML/System/Utf.inl
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Utf.inl
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Utf.inl
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Vector2.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Vector2.hpp
 SFML/System/Vector2.inl
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Vector2.inl
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Vector2.inl
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Vector3.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Vector3.hpp
 SFML/System/Vector3.inl
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Vector3.inl
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Vector3.inl
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Window.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window.hpp
 SFML/System.hpp
+-
+SFML/Window/Clipboard.hpp
 -
 SFML/Window/Context.hpp
 -
 SFML/Window/ContextSettings.hpp
+-
+SFML/Window/Cursor.hpp
 -
 SFML/Window/Event.hpp
 -
@@ -242,7 +316,13 @@ SFML/Window/WindowHandle.hpp
 SFML/Window/WindowStyle.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Window/Context.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/Clipboard.hpp
+SFML/Window/Export.hpp
+-
+SFML/System/String.hpp
+-
+
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/Context.hpp
 SFML/Window/Export.hpp
 -
 SFML/Window/GlResource.hpp
@@ -252,9 +332,19 @@ SFML/Window/ContextSettings.hpp
 SFML/System/NonCopyable.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Window/ContextSettings.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/ContextSettings.hpp
+SFML/Config.hpp
+-
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Window/Event.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/Cursor.hpp
+SFML/Window/Export.hpp
+-
+SFML/System/NonCopyable.hpp
+-
+SFML/System/Vector2.hpp
+-
+
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/Event.hpp
 SFML/Config.hpp
 -
 SFML/Window/Joystick.hpp
@@ -266,31 +356,33 @@ SFML/Window/Mouse.hpp
 SFML/Window/Sensor.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Window/Export.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/Export.hpp
 SFML/Config.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Window/GlResource.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/GlResource.hpp
 SFML/Window/Export.hpp
 -
+SFML/System/NonCopyable.hpp
+-
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Window/Joystick.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/Joystick.hpp
 SFML/Window/Export.hpp
 -
 SFML/System/String.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Window/Keyboard.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/Keyboard.hpp
 SFML/Window/Export.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Window/Mouse.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/Mouse.hpp
 SFML/Window/Export.hpp
 -
 SFML/System/Vector2.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Window/Sensor.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/Sensor.hpp
 SFML/Window/Export.hpp
 -
 SFML/System/Vector3.hpp
@@ -298,22 +390,26 @@ SFML/System/Vector3.hpp
 SFML/System/Time.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Window/Touch.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/Touch.hpp
 SFML/Window/Export.hpp
 -
 SFML/System/Vector2.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Window/VideoMode.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/VideoMode.hpp
 SFML/Window/Export.hpp
 -
 vector
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Window/Window.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/Window.hpp
+SFML/Window/ContextSettings.hpp
+-
+SFML/Window/Cursor.hpp
+-
 SFML/Window/Export.hpp
 -
-SFML/Window/ContextSettings.hpp
+SFML/Window/GlResource.hpp
 -
 SFML/Window/VideoMode.hpp
 -
@@ -321,22 +417,20 @@ SFML/Window/WindowHandle.hpp
 -
 SFML/Window/WindowStyle.hpp
 -
-SFML/Window/GlResource.hpp
--
 SFML/System/Clock.hpp
--
-SFML/System/Vector2.hpp
 -
 SFML/System/NonCopyable.hpp
 -
 SFML/System/String.hpp
 -
+SFML/System/Vector2.hpp
+-
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Window/WindowHandle.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/WindowHandle.hpp
 SFML/Config.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Window/WindowStyle.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Window/WindowStyle.hpp
 
 include/SFML/Config.h
 
@@ -411,7 +505,11 @@ SFML/System/Export.h
 include/SFML/Window.h
 SFML/System.h
 -
+SFML/Window/Clipboard.h
+-
 SFML/Window/Context.h
+-
+SFML/Window/Cursor.h
 -
 SFML/Window/Event.h
 -
@@ -432,12 +530,26 @@ SFML/Window/VideoMode.h
 SFML/Window/Window.h
 -
 
+include/SFML/Window/Clipboard.h
+SFML/Window/Export.h
+-
+SFML/Window/Types.h
+-
+
 include/SFML/Window/Context.h
 SFML/Window/Export.h
 -
 SFML/Window/Types.h
 -
 SFML/Window/Window.h
+-
+
+include/SFML/Window/Cursor.h
+SFML/System/Vector2.h
+-
+SFML/Window/Export.h
+-
+SFML/Window/Types.h
 -
 
 include/SFML/Window/Event.h
@@ -538,6 +650,10 @@ SFML/Window.hpp
 
 src/SFML/Window/ContextStruct.h
 SFML/Window/Context.hpp
+-
+
+src/SFML/Window/CursorStruct.h
+SFML/Window/Cursor.hpp
 -
 
 src/SFML/Window/WindowStruct.h

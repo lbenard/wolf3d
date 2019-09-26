@@ -43,10 +43,10 @@ RM = /Users/lbenard/.brew/Cellar/cmake/3.13.4/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/lbenard/Desktop/github/wolf3d/CSFML
+CMAKE_SOURCE_DIR = /Users/lbenard/Desktop/42/wolf3d/00/CSFML
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/lbenard/Desktop/github/wolf3d/CSFML
+CMAKE_BINARY_DIR = /Users/lbenard/Desktop/42/wolf3d/00/CSFML
 
 # Include any dependencies generated for this target.
 include src/SFML/Window/CMakeFiles/csfml-window.dir/depend.make
@@ -57,112 +57,140 @@ include src/SFML/Window/CMakeFiles/csfml-window.dir/progress.make
 # Include the compile flags for this target's objects.
 include src/SFML/Window/CMakeFiles/csfml-window.dir/flags.make
 
+src/SFML/Window/CMakeFiles/csfml-window.dir/Clipboard.cpp.o: src/SFML/Window/CMakeFiles/csfml-window.dir/flags.make
+src/SFML/Window/CMakeFiles/csfml-window.dir/Clipboard.cpp.o: src/SFML/Window/Clipboard.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Clipboard.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Clipboard.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Clipboard.cpp
+
+src/SFML/Window/CMakeFiles/csfml-window.dir/Clipboard.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-window.dir/Clipboard.cpp.i"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Clipboard.cpp > CMakeFiles/csfml-window.dir/Clipboard.cpp.i
+
+src/SFML/Window/CMakeFiles/csfml-window.dir/Clipboard.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-window.dir/Clipboard.cpp.s"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Clipboard.cpp -o CMakeFiles/csfml-window.dir/Clipboard.cpp.s
+
+src/SFML/Window/CMakeFiles/csfml-window.dir/Cursor.cpp.o: src/SFML/Window/CMakeFiles/csfml-window.dir/flags.make
+src/SFML/Window/CMakeFiles/csfml-window.dir/Cursor.cpp.o: src/SFML/Window/Cursor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Cursor.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Cursor.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Cursor.cpp
+
+src/SFML/Window/CMakeFiles/csfml-window.dir/Cursor.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-window.dir/Cursor.cpp.i"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Cursor.cpp > CMakeFiles/csfml-window.dir/Cursor.cpp.i
+
+src/SFML/Window/CMakeFiles/csfml-window.dir/Cursor.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-window.dir/Cursor.cpp.s"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Cursor.cpp -o CMakeFiles/csfml-window.dir/Cursor.cpp.s
+
 src/SFML/Window/CMakeFiles/csfml-window.dir/Context.cpp.o: src/SFML/Window/CMakeFiles/csfml-window.dir/flags.make
 src/SFML/Window/CMakeFiles/csfml-window.dir/Context.cpp.o: src/SFML/Window/Context.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Context.cpp.o"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Context.cpp.o -c /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Context.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Context.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Context.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Context.cpp
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Context.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-window.dir/Context.cpp.i"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Context.cpp > CMakeFiles/csfml-window.dir/Context.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Context.cpp > CMakeFiles/csfml-window.dir/Context.cpp.i
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Context.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-window.dir/Context.cpp.s"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Context.cpp -o CMakeFiles/csfml-window.dir/Context.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Context.cpp -o CMakeFiles/csfml-window.dir/Context.cpp.s
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Joystick.cpp.o: src/SFML/Window/CMakeFiles/csfml-window.dir/flags.make
 src/SFML/Window/CMakeFiles/csfml-window.dir/Joystick.cpp.o: src/SFML/Window/Joystick.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Joystick.cpp.o"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Joystick.cpp.o -c /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Joystick.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Joystick.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Joystick.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Joystick.cpp
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Joystick.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-window.dir/Joystick.cpp.i"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Joystick.cpp > CMakeFiles/csfml-window.dir/Joystick.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Joystick.cpp > CMakeFiles/csfml-window.dir/Joystick.cpp.i
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Joystick.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-window.dir/Joystick.cpp.s"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Joystick.cpp -o CMakeFiles/csfml-window.dir/Joystick.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Joystick.cpp -o CMakeFiles/csfml-window.dir/Joystick.cpp.s
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Keyboard.cpp.o: src/SFML/Window/CMakeFiles/csfml-window.dir/flags.make
 src/SFML/Window/CMakeFiles/csfml-window.dir/Keyboard.cpp.o: src/SFML/Window/Keyboard.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Keyboard.cpp.o"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Keyboard.cpp.o -c /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Keyboard.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Keyboard.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Keyboard.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Keyboard.cpp
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Keyboard.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-window.dir/Keyboard.cpp.i"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Keyboard.cpp > CMakeFiles/csfml-window.dir/Keyboard.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Keyboard.cpp > CMakeFiles/csfml-window.dir/Keyboard.cpp.i
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Keyboard.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-window.dir/Keyboard.cpp.s"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Keyboard.cpp -o CMakeFiles/csfml-window.dir/Keyboard.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Keyboard.cpp -o CMakeFiles/csfml-window.dir/Keyboard.cpp.s
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Mouse.cpp.o: src/SFML/Window/CMakeFiles/csfml-window.dir/flags.make
 src/SFML/Window/CMakeFiles/csfml-window.dir/Mouse.cpp.o: src/SFML/Window/Mouse.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Mouse.cpp.o"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Mouse.cpp.o -c /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Mouse.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Mouse.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Mouse.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Mouse.cpp
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Mouse.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-window.dir/Mouse.cpp.i"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Mouse.cpp > CMakeFiles/csfml-window.dir/Mouse.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Mouse.cpp > CMakeFiles/csfml-window.dir/Mouse.cpp.i
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Mouse.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-window.dir/Mouse.cpp.s"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Mouse.cpp -o CMakeFiles/csfml-window.dir/Mouse.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Mouse.cpp -o CMakeFiles/csfml-window.dir/Mouse.cpp.s
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Sensor.cpp.o: src/SFML/Window/CMakeFiles/csfml-window.dir/flags.make
 src/SFML/Window/CMakeFiles/csfml-window.dir/Sensor.cpp.o: src/SFML/Window/Sensor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Sensor.cpp.o"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Sensor.cpp.o -c /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Sensor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Sensor.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Sensor.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Sensor.cpp
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Sensor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-window.dir/Sensor.cpp.i"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Sensor.cpp > CMakeFiles/csfml-window.dir/Sensor.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Sensor.cpp > CMakeFiles/csfml-window.dir/Sensor.cpp.i
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Sensor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-window.dir/Sensor.cpp.s"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Sensor.cpp -o CMakeFiles/csfml-window.dir/Sensor.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Sensor.cpp -o CMakeFiles/csfml-window.dir/Sensor.cpp.s
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Touch.cpp.o: src/SFML/Window/CMakeFiles/csfml-window.dir/flags.make
 src/SFML/Window/CMakeFiles/csfml-window.dir/Touch.cpp.o: src/SFML/Window/Touch.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Touch.cpp.o"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Touch.cpp.o -c /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Touch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Touch.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Touch.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Touch.cpp
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Touch.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-window.dir/Touch.cpp.i"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Touch.cpp > CMakeFiles/csfml-window.dir/Touch.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Touch.cpp > CMakeFiles/csfml-window.dir/Touch.cpp.i
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Touch.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-window.dir/Touch.cpp.s"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Touch.cpp -o CMakeFiles/csfml-window.dir/Touch.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Touch.cpp -o CMakeFiles/csfml-window.dir/Touch.cpp.s
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/VideoMode.cpp.o: src/SFML/Window/CMakeFiles/csfml-window.dir/flags.make
 src/SFML/Window/CMakeFiles/csfml-window.dir/VideoMode.cpp.o: src/SFML/Window/VideoMode.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/VideoMode.cpp.o"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/VideoMode.cpp.o -c /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/VideoMode.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/VideoMode.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/VideoMode.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/VideoMode.cpp
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/VideoMode.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-window.dir/VideoMode.cpp.i"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/VideoMode.cpp > CMakeFiles/csfml-window.dir/VideoMode.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/VideoMode.cpp > CMakeFiles/csfml-window.dir/VideoMode.cpp.i
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/VideoMode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-window.dir/VideoMode.cpp.s"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/VideoMode.cpp -o CMakeFiles/csfml-window.dir/VideoMode.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/VideoMode.cpp -o CMakeFiles/csfml-window.dir/VideoMode.cpp.s
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Window.cpp.o: src/SFML/Window/CMakeFiles/csfml-window.dir/flags.make
 src/SFML/Window/CMakeFiles/csfml-window.dir/Window.cpp.o: src/SFML/Window/Window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Window.cpp.o"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Window.cpp.o -c /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object src/SFML/Window/CMakeFiles/csfml-window.dir/Window.cpp.o"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/csfml-window.dir/Window.cpp.o -c /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Window.cpp
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/csfml-window.dir/Window.cpp.i"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Window.cpp > CMakeFiles/csfml-window.dir/Window.cpp.i
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Window.cpp > CMakeFiles/csfml-window.dir/Window.cpp.i
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/Window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/csfml-window.dir/Window.cpp.s"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/Window.cpp -o CMakeFiles/csfml-window.dir/Window.cpp.s
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/Window.cpp -o CMakeFiles/csfml-window.dir/Window.cpp.s
 
 # Object files for target csfml-window
 csfml__window_OBJECTS = \
+"CMakeFiles/csfml-window.dir/Clipboard.cpp.o" \
+"CMakeFiles/csfml-window.dir/Cursor.cpp.o" \
 "CMakeFiles/csfml-window.dir/Context.cpp.o" \
 "CMakeFiles/csfml-window.dir/Joystick.cpp.o" \
 "CMakeFiles/csfml-window.dir/Keyboard.cpp.o" \
@@ -175,26 +203,28 @@ csfml__window_OBJECTS = \
 # External object files for target csfml-window
 csfml__window_EXTERNAL_OBJECTS =
 
-lib/libcsfml-window.2.4.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Context.cpp.o
-lib/libcsfml-window.2.4.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Joystick.cpp.o
-lib/libcsfml-window.2.4.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Keyboard.cpp.o
-lib/libcsfml-window.2.4.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Mouse.cpp.o
-lib/libcsfml-window.2.4.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Sensor.cpp.o
-lib/libcsfml-window.2.4.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Touch.cpp.o
-lib/libcsfml-window.2.4.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/VideoMode.cpp.o
-lib/libcsfml-window.2.4.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Window.cpp.o
-lib/libcsfml-window.2.4.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/build.make
-lib/libcsfml-window.2.4.0.dylib: /Users/lbenard/Desktop/github/wolf3d/SFML/lib/libsfml-window.dylib
-lib/libcsfml-window.2.4.0.dylib: /Users/lbenard/Desktop/github/wolf3d/SFML/lib/libsfml-system.dylib
-lib/libcsfml-window.2.4.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lbenard/Desktop/github/wolf3d/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX shared library ../../../lib/libcsfml-window.dylib"
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/csfml-window.dir/link.txt --verbose=$(VERBOSE)
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && $(CMAKE_COMMAND) -E cmake_symlink_library ../../../lib/libcsfml-window.2.4.0.dylib ../../../lib/libcsfml-window.2.4.dylib ../../../lib/libcsfml-window.dylib
+lib/libcsfml-window.2.5.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Clipboard.cpp.o
+lib/libcsfml-window.2.5.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Cursor.cpp.o
+lib/libcsfml-window.2.5.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Context.cpp.o
+lib/libcsfml-window.2.5.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Joystick.cpp.o
+lib/libcsfml-window.2.5.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Keyboard.cpp.o
+lib/libcsfml-window.2.5.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Mouse.cpp.o
+lib/libcsfml-window.2.5.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Sensor.cpp.o
+lib/libcsfml-window.2.5.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Touch.cpp.o
+lib/libcsfml-window.2.5.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/VideoMode.cpp.o
+lib/libcsfml-window.2.5.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/Window.cpp.o
+lib/libcsfml-window.2.5.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/build.make
+lib/libcsfml-window.2.5.0.dylib: /Users/lbenard/Desktop/42/wolf3d/00/SFML/lib/libsfml-window.2.5.1.dylib
+lib/libcsfml-window.2.5.0.dylib: /Users/lbenard/Desktop/42/wolf3d/00/SFML/lib/libsfml-system.2.5.1.dylib
+lib/libcsfml-window.2.5.0.dylib: src/SFML/Window/CMakeFiles/csfml-window.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/lbenard/Desktop/42/wolf3d/00/CSFML/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX shared library ../../../lib/libcsfml-window.dylib"
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/csfml-window.dir/link.txt --verbose=$(VERBOSE)
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && $(CMAKE_COMMAND) -E cmake_symlink_library ../../../lib/libcsfml-window.2.5.0.dylib ../../../lib/libcsfml-window.2.5.dylib ../../../lib/libcsfml-window.dylib
 
-lib/libcsfml-window.2.4.dylib: lib/libcsfml-window.2.4.0.dylib
-	@$(CMAKE_COMMAND) -E touch_nocreate lib/libcsfml-window.2.4.dylib
+lib/libcsfml-window.2.5.dylib: lib/libcsfml-window.2.5.0.dylib
+	@$(CMAKE_COMMAND) -E touch_nocreate lib/libcsfml-window.2.5.dylib
 
-lib/libcsfml-window.dylib: lib/libcsfml-window.2.4.0.dylib
+lib/libcsfml-window.dylib: lib/libcsfml-window.2.5.0.dylib
 	@$(CMAKE_COMMAND) -E touch_nocreate lib/libcsfml-window.dylib
 
 # Rule to build all files generated by this target.
@@ -203,10 +233,10 @@ src/SFML/Window/CMakeFiles/csfml-window.dir/build: lib/libcsfml-window.dylib
 .PHONY : src/SFML/Window/CMakeFiles/csfml-window.dir/build
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/clean:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window && $(CMAKE_COMMAND) -P CMakeFiles/csfml-window.dir/cmake_clean.cmake
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window && $(CMAKE_COMMAND) -P CMakeFiles/csfml-window.dir/cmake_clean.cmake
 .PHONY : src/SFML/Window/CMakeFiles/csfml-window.dir/clean
 
 src/SFML/Window/CMakeFiles/csfml-window.dir/depend:
-	cd /Users/lbenard/Desktop/github/wolf3d/CSFML && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lbenard/Desktop/github/wolf3d/CSFML /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window /Users/lbenard/Desktop/github/wolf3d/CSFML /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window /Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Window/CMakeFiles/csfml-window.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/lbenard/Desktop/42/wolf3d/00/CSFML && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/lbenard/Desktop/42/wolf3d/00/CSFML /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window /Users/lbenard/Desktop/42/wolf3d/00/CSFML /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Window/CMakeFiles/csfml-window.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : src/SFML/Window/CMakeFiles/csfml-window.dir/depend
 

@@ -26,13 +26,14 @@ file(REMOVE_RECURSE
   "CMakeFiles/sfml-graphics.dir/Sprite.cpp.o"
   "CMakeFiles/sfml-graphics.dir/Text.cpp.o"
   "CMakeFiles/sfml-graphics.dir/VertexArray.cpp.o"
+  "CMakeFiles/sfml-graphics.dir/VertexBuffer.cpp.o"
   "CMakeFiles/sfml-graphics.dir/RenderTextureImpl.cpp.o"
   "CMakeFiles/sfml-graphics.dir/RenderTextureImplFBO.cpp.o"
   "CMakeFiles/sfml-graphics.dir/RenderTextureImplDefault.cpp.o"
   "../../../lib/libsfml-graphics.pdb"
-  "../../../lib/libsfml-graphics.2.4.0.dylib"
+  "../../../lib/libsfml-graphics.2.5.1.dylib"
   "../../../lib/libsfml-graphics.dylib"
-  "../../../lib/libsfml-graphics.2.4.dylib"
+  "../../../lib/libsfml-graphics.2.5.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

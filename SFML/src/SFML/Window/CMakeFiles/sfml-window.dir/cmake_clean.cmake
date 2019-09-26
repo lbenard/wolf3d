@@ -1,5 +1,7 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/sfml-window.dir/Clipboard.cpp.o"
   "CMakeFiles/sfml-window.dir/Context.cpp.o"
+  "CMakeFiles/sfml-window.dir/Cursor.cpp.o"
   "CMakeFiles/sfml-window.dir/GlContext.cpp.o"
   "CMakeFiles/sfml-window.dir/GlResource.cpp.o"
   "CMakeFiles/sfml-window.dir/Joystick.cpp.o"
@@ -14,6 +16,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/sfml-window.dir/WindowImpl.cpp.o"
   "CMakeFiles/sfml-window.dir/OSX/cpp_objc_conversion.mm.o"
   "CMakeFiles/sfml-window.dir/OSX/cg_sf_conversion.mm.o"
+  "CMakeFiles/sfml-window.dir/OSX/CursorImpl.mm.o"
+  "CMakeFiles/sfml-window.dir/OSX/ClipboardImpl.mm.o"
   "CMakeFiles/sfml-window.dir/OSX/InputImpl.mm.o"
   "CMakeFiles/sfml-window.dir/OSX/HIDInputManager.mm.o"
   "CMakeFiles/sfml-window.dir/OSX/HIDJoystickManager.cpp.o"
@@ -35,9 +39,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/sfml-window.dir/OSX/WindowImplCocoa.mm.o"
   "CMakeFiles/sfml-window.dir/OSX/AutoreleasePoolWrapper.mm.o"
   "../../../lib/libsfml-window.pdb"
-  "../../../lib/libsfml-window.2.4.0.dylib"
+  "../../../lib/libsfml-window.2.5.1.dylib"
   "../../../lib/libsfml-window.dylib"
-  "../../../lib/libsfml-window.2.4.dylib"
+  "../../../lib/libsfml-window.2.5.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

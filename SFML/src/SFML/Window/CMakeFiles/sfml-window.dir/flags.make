@@ -3,15 +3,15 @@
 
 # compile C with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc
 # compile CXX with /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++
-C_FLAGS = -O3 -DNDEBUG -fPIC  
+C_FLAGS = -O3 -DNDEBUG -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -fPIC   -stdlib=libc++
 
 C_DEFINES = -DSFML_WINDOW_EXPORTS
 
-C_INCLUDES = -I/Users/lbenard/Desktop/github/wolf3d/SFML/include -I/Users/lbenard/Desktop/github/wolf3d/SFML/src 
+C_INCLUDES = -I/Users/lbenard/Desktop/42/wolf3d/00/SFML/include -I/Users/lbenard/Desktop/42/wolf3d/00/SFML/src -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks 
 
-CXX_FLAGS = -O3 -DNDEBUG -fPIC  
+CXX_FLAGS = -O3 -DNDEBUG -arch x86_64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk -fPIC   -stdlib=libc++
 
 CXX_DEFINES = -DSFML_WINDOW_EXPORTS
 
-CXX_INCLUDES = -I/Users/lbenard/Desktop/github/wolf3d/SFML/include -I/Users/lbenard/Desktop/github/wolf3d/SFML/src 
+CXX_INCLUDES = -I/Users/lbenard/Desktop/42/wolf3d/00/SFML/include -I/Users/lbenard/Desktop/42/wolf3d/00/SFML/src -F/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks 
 

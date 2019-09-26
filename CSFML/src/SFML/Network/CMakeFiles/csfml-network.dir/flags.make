@@ -6,5 +6,5 @@ CXX_FLAGS = -O3 -DNDEBUG -fPIC
 
 CXX_DEFINES = -DCSFML_EXPORTS -DCSFML_NETWORK_EXPORTS
 
-CXX_INCLUDES = -I/Users/lbenard/Desktop/github/wolf3d/CSFML/include -I/Users/lbenard/Desktop/github/wolf3d/CSFML/src -I/Users/lbenard/Desktop/github/wolf3d/SFML/include 
+CXX_INCLUDES = -I/Users/lbenard/Desktop/42/wolf3d/00/CSFML/include -I/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src -isystem /Users/lbenard/Desktop/42/wolf3d/00/SFML/include 
 

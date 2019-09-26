@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/Listener.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/Listener.cpp
 SFML/Audio/Listener.h
 -
 SFML/Audio/Listener.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/Music.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/Music.cpp
 SFML/Audio/Music.h
 -
 SFML/Audio/MusicStruct.h
@@ -20,7 +20,7 @@ SFML/Audio/MusicStruct.h
 SFML/Internal.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/Sound.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/Sound.cpp
 SFML/Audio/Sound.h
 -
 SFML/Audio/SoundStruct.h
@@ -28,7 +28,7 @@ SFML/Audio/SoundStruct.h
 SFML/Internal.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundBuffer.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundBuffer.cpp
 SFML/Audio/SoundBuffer.h
 -
 SFML/Audio/SoundBufferStruct.h
@@ -38,7 +38,7 @@ SFML/CallbackStream.h
 SFML/Internal.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundBufferRecorder.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundBufferRecorder.cpp
 SFML/Audio/SoundBufferRecorder.h
 -
 SFML/Audio/SoundBufferRecorderStruct.h
@@ -46,7 +46,7 @@ SFML/Audio/SoundBufferRecorderStruct.h
 SFML/Internal.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundRecorder.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundRecorder.cpp
 SFML/Audio/SoundRecorder.h
 -
 SFML/Audio/SoundRecorderStruct.h
@@ -54,7 +54,7 @@ SFML/Audio/SoundRecorderStruct.h
 SFML/Internal.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Audio/SoundStream.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Audio/SoundStream.cpp
 SFML/Audio/SoundStream.h
 -
 SFML/Audio/SoundStreamStruct.h
@@ -62,15 +62,15 @@ SFML/Audio/SoundStreamStruct.h
 SFML/Internal.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Audio/AlResource.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Audio/AlResource.hpp
 SFML/Audio/Export.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Audio/Export.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Audio/Export.hpp
 SFML/Config.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Audio/InputSoundFile.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Audio/InputSoundFile.hpp
 SFML/Audio/Export.hpp
 -
 SFML/System/NonCopyable.hpp
@@ -79,14 +79,16 @@ SFML/System/Time.hpp
 -
 string
 -
+algorithm
+-
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Audio/Listener.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Audio/Listener.hpp
 SFML/Audio/Export.hpp
 -
 SFML/System/Vector3.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Audio/Music.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Audio/Music.hpp
 SFML/Audio/Export.hpp
 -
 SFML/Audio/SoundStream.hpp
@@ -102,7 +104,7 @@ string
 vector
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Audio/Sound.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Audio/Sound.hpp
 SFML/Audio/Export.hpp
 -
 SFML/Audio/SoundSource.hpp
@@ -112,7 +114,7 @@ SFML/System/Time.hpp
 cstdlib
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Audio/SoundBuffer.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Audio/SoundBuffer.hpp
 SFML/Audio/Export.hpp
 -
 SFML/Audio/AlResource.hpp
@@ -126,7 +128,7 @@ vector
 set
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Audio/SoundBufferRecorder.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Audio/SoundBufferRecorder.hpp
 SFML/Audio/Export.hpp
 -
 SFML/Audio/SoundBuffer.hpp
@@ -136,7 +138,7 @@ SFML/Audio/SoundRecorder.hpp
 vector
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Audio/SoundRecorder.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Audio/SoundRecorder.hpp
 SFML/Audio/Export.hpp
 -
 SFML/Audio/AlResource.hpp
@@ -150,7 +152,7 @@ vector
 string
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Audio/SoundSource.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Audio/SoundSource.hpp
 SFML/Audio/Export.hpp
 -
 SFML/Audio/AlResource.hpp
@@ -158,7 +160,7 @@ SFML/Audio/AlResource.hpp
 SFML/System/Vector3.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Audio/SoundStream.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Audio/SoundStream.hpp
 SFML/Audio/Export.hpp
 -
 SFML/Audio/SoundSource.hpp
@@ -172,31 +174,31 @@ SFML/System/Mutex.hpp
 cstdlib
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Config.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Config.hpp
 TargetConditionals.h
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/TargetConditionals.h
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/TargetConditionals.h
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Export.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Export.hpp
 SFML/Config.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/InputStream.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/InputStream.hpp
 SFML/Config.hpp
 -
 SFML/System/Export.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Mutex.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Mutex.hpp
 SFML/System/Export.hpp
 -
 SFML/System/NonCopyable.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/NonCopyable.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/NonCopyable.hpp
 SFML/System/Export.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Thread.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Thread.hpp
 SFML/System/Export.hpp
 -
 SFML/System/NonCopyable.hpp
@@ -206,17 +208,17 @@ cstdlib
 SFML/System/Thread.inl
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Thread.inl
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Thread.inl
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Time.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Time.hpp
 SFML/System/Export.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Vector3.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Vector3.hpp
 SFML/System/Vector3.inl
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Vector3.inl
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Vector3.inl
 
 include/SFML/Audio/Export.h
 SFML/Config.h

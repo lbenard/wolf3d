@@ -17,14 +17,11 @@ if(SFML_COMPILER_MSVC)
 endif()
 
 # find SFML libraries (C++)
-if(SFML_OS_WINDOWS)
-    if (CSFML_LINK_SFML_STATICALLY)
-        set(SFML_STATIC_LIBRARIES TRUE)
-        add_definitions(-DSFML_STATIC)
-    endif()
+if(CSFML_LINK_SFML_STATICALLY)
+    set(SFML_STATIC_LIBRARIES TRUE)
+    add_definitions(-DSFML_STATIC)
 endif()
-find_package(SFML 2 COMPONENTS system window network graphics audio REQUIRED)
-include_directories(${SFML_INCLUDE_DIR})
+find_package(SFML 2 COMPONENTS network graphics audio REQUIRED)
 
 # add the modules subdirectories
 add_subdirectory(System)

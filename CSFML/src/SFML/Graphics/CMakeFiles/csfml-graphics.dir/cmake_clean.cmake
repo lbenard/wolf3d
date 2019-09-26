@@ -17,11 +17,12 @@ file(REMOVE_RECURSE
   "CMakeFiles/csfml-graphics.dir/Transform.cpp.o"
   "CMakeFiles/csfml-graphics.dir/Transformable.cpp.o"
   "CMakeFiles/csfml-graphics.dir/VertexArray.cpp.o"
+  "CMakeFiles/csfml-graphics.dir/VertexBuffer.cpp.o"
   "CMakeFiles/csfml-graphics.dir/View.cpp.o"
   "../../../lib/libcsfml-graphics.pdb"
-  "../../../lib/libcsfml-graphics.2.4.0.dylib"
+  "../../../lib/libcsfml-graphics.2.5.0.dylib"
   "../../../lib/libcsfml-graphics.dylib"
-  "../../../lib/libcsfml-graphics.2.4.dylib"
+  "../../../lib/libcsfml-graphics.2.5.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

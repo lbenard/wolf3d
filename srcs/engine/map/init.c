@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 16:45:58 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/25 19:28:10 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/26 18:52:06 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -323,7 +323,7 @@ t_block_node	*is_key_belong_to_blocks_list(t_map *self, char key)
 		if (*(((t_block_node*)pos)->key) == key)
 			return ((t_block_node*)pos);
 	}
-	return (ERROR);
+	return (NULL);
 }
 
 t_texture_node	*is_key_belong_to_textures_list(t_map *self, const char *key)
@@ -339,7 +339,7 @@ t_texture_node	*is_key_belong_to_textures_list(t_map *self, const char *key)
 		if (!ft_strcmp((((t_texture_node*)pos)->name), key))
 			return ((t_texture_node*)pos);
 	}
-	return (ERROR);
+	return (NULL);
 }
 
 t_result	add_wall(t_map *self, t_block_node *block, int x, int y)

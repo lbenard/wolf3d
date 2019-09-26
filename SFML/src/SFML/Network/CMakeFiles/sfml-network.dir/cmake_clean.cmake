@@ -10,9 +10,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/sfml-network.dir/UdpSocket.cpp.o"
   "CMakeFiles/sfml-network.dir/Unix/SocketImpl.cpp.o"
   "../../../lib/libsfml-network.pdb"
-  "../../../lib/libsfml-network.2.4.0.dylib"
+  "../../../lib/libsfml-network.2.5.1.dylib"
   "../../../lib/libsfml-network.dylib"
-  "../../../lib/libsfml-network.2.4.dylib"
+  "../../../lib/libsfml-network.2.5.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

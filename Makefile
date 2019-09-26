@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 19:33:38 by lbenard           #+#    #+#              #
-#    Updated: 2019/09/25 18:36:35 by lbenard          ###   ########.fr        #
+#    Updated: 2019/09/26 18:51:52 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -208,12 +208,13 @@ LIBS			=	-lft				\
 					-lcsfml-audio
 
 # CFLAGS			=	-Wall -Wextra -Werror -O3 -Ofast -flto -g
-CFLAGS			=	-Wall -Wextra -Werror -O3 -Ofast -g
+CFLAGS			=	-Wall -Wextra -Werror -O3 -Ofast -Wno-deprecated
 
 LDFLAGS			:=	$(LIB_FOLDERS) $(LIBS)
 ifneq ($(UNAME), Linux)
 	LDFLAGS			:=	$(LDFLAGS) \
 						-Wl,-rpath,$(SFML_FOLDER)/extlibs/libs-osx/Frameworks
+	RUN_PREFIX		:=	LD_LIBRARY_PATH=CSFML/lib:SFML/lib
 endif
 
 # Colors
@@ -255,7 +256,7 @@ $(OBJS_FOLDER)%.o: $(SRCS_FOLDER)%.c
 	@printf "\e[1A\e[0K"
 
 run: all
-	@./$(NAME)
+	@$(RUN_PREFIX) ./$(NAME)
 
 $(LIBFT):
 	@printf "\e[0K"
@@ -271,9 +272,7 @@ $(CSFML):
 		cmake .; \
 		make
 	@cd $(CSFML_FOLDER); \
-		cmake -DSFML_ROOT="$(SFML_ABSOLUTE)" \
-			-DSFML_INCLUDE_DIR="$(SFML_ABSOLUTE)/include" \
-			-DCMAKE_MODULE_PATH="$(SFML_ABSOLUTE)/cmake/Modules"; \
+		cmake -DSFML_DIR=$(SFML_ABSOLUTE); \
 		make
 	@printf "\e[1A\e[0K"
 	@printf "$(PREFIX) CSFML done\n";

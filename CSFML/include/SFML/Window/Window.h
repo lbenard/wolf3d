@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////
 //
 // SFML - Simple and Fast Multimedia Library
-// Copyright (C) 2007-2015 Laurent Gomila (laurent@sfml-dev.org)
+// Copyright (C) 2007-2018 Laurent Gomila (laurent@sfml-dev.org)
 //
 // This software is provided 'as-is', without any express or implied warranty.
 // In no event will the authors be held liable for any damages arising from the use of this software.
@@ -355,6 +355,26 @@ CSFML_WINDOW_API void sfWindow_setMouseCursorVisible(sfWindow* window, sfBool vi
 CSFML_WINDOW_API void sfWindow_setMouseCursorGrabbed(sfWindow* window, sfBool grabbed);
 
 ////////////////////////////////////////////////////////////
+/// \brief Set the displayed cursor to a native system cursor
+///
+/// Upon window creation, the arrow cursor is used by default.
+///
+/// \warning The cursor must not be destroyed while in use by
+///          the window.
+///
+/// \warning Features related to Cursor are not supported on
+///          iOS and Android.
+///
+/// \param window Window object
+/// \param cursor Native system cursor type to display
+///
+/// \see sfCursor_createFromSystem
+/// \see sfCursor_createFromPixels
+///
+////////////////////////////////////////////////////////////
+CSFML_WINDOW_API void sfWindow_setMouseCursor(sfWindow* window, const sfCursor* cursor);
+
+////////////////////////////////////////////////////////////
 /// \brief Enable or disable automatic key-repeat
 ///
 /// If key repeat is enabled, you will receive repeated
@@ -413,7 +433,7 @@ CSFML_WINDOW_API void sfWindow_setJoystickThreshold(sfWindow* window, float thre
 ////////////////////////////////////////////////////////////
 CSFML_WINDOW_API sfBool sfWindow_setActive(sfWindow* window, sfBool active);
 
-///////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
 /// \brief Request the current window to be made the active
 /// foreground window
 ///
@@ -424,7 +444,7 @@ CSFML_WINDOW_API sfBool sfWindow_setActive(sfWindow* window, sfBool active);
 /// is free to deny the request.
 /// This is not to be confused with sfWindow_setActive().
 ///
-///////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////
 CSFML_WINDOW_API void sfWindow_requestFocus(sfWindow* window);
 
 ////////////////////////////////////////////////////////////

@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/System/Library/Frameworks/OpenAL.framework/Headers/al.h
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenAL.framework/Headers/al.h
 
-/System/Library/Frameworks/OpenAL.framework/Headers/alc.h
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/OpenAL.framework/Headers/alc.h
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/ALCheck.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/ALCheck.cpp
 SFML/Audio/ALCheck.hpp
 -
 SFML/System/Err.hpp
@@ -18,7 +18,7 @@ SFML/System/Err.hpp
 string
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/AlResource.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/AlResource.cpp
 SFML/Audio/AlResource.hpp
 -
 SFML/Audio/AudioDevice.hpp
@@ -28,7 +28,7 @@ SFML/System/Mutex.hpp
 SFML/System/Lock.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/AudioDevice.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/AudioDevice.cpp
 SFML/Audio/AudioDevice.hpp
 -
 SFML/Audio/ALCheck.hpp
@@ -40,7 +40,7 @@ SFML/System/Err.hpp
 memory
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/InputSoundFile.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/InputSoundFile.cpp
 SFML/Audio/InputSoundFile.hpp
 -
 SFML/Audio/SoundFileReader.hpp
@@ -56,13 +56,13 @@ SFML/System/MemoryInputStream.hpp
 SFML/System/Err.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/Listener.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/Listener.cpp
 SFML/Audio/Listener.hpp
 -
 SFML/Audio/AudioDevice.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/Music.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/Music.cpp
 SFML/Audio/Music.hpp
 -
 SFML/Audio/ALCheck.hpp
@@ -74,7 +74,7 @@ SFML/System/Err.hpp
 fstream
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/OutputSoundFile.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/OutputSoundFile.cpp
 SFML/Audio/OutputSoundFile.hpp
 -
 SFML/Audio/SoundFileWriter.hpp
@@ -82,7 +82,7 @@ SFML/Audio/SoundFileWriter.hpp
 SFML/Audio/SoundFileFactory.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/Sound.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/Sound.cpp
 SFML/Audio/Sound.hpp
 -
 SFML/Audio/SoundBuffer.hpp
@@ -90,7 +90,7 @@ SFML/Audio/SoundBuffer.hpp
 SFML/Audio/ALCheck.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/SoundBuffer.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/SoundBuffer.cpp
 SFML/Audio/SoundBuffer.hpp
 -
 SFML/Audio/InputSoundFile.hpp
@@ -108,7 +108,7 @@ SFML/System/Err.hpp
 memory
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/SoundBufferRecorder.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/SoundBufferRecorder.cpp
 SFML/Audio/SoundBufferRecorder.hpp
 -
 algorithm
@@ -116,7 +116,7 @@ algorithm
 iterator
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/SoundFileFactory.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/SoundFileFactory.cpp
 SFML/Audio/SoundFileFactory.hpp
 -
 SFML/Audio/SoundFileReaderFlac.hpp
@@ -138,7 +138,7 @@ SFML/System/MemoryInputStream.hpp
 SFML/System/Err.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/SoundFileReaderFlac.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/SoundFileReaderFlac.cpp
 SFML/Audio/SoundFileReaderFlac.hpp
 -
 SFML/System/InputStream.hpp
@@ -148,7 +148,7 @@ SFML/System/Err.hpp
 cassert
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/SoundFileReaderOgg.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/SoundFileReaderOgg.cpp
 SFML/Audio/SoundFileReaderOgg.hpp
 -
 SFML/System/MemoryInputStream.hpp
@@ -162,7 +162,7 @@ cctype
 cassert
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/SoundFileReaderWav.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/SoundFileReaderWav.cpp
 SFML/Audio/SoundFileReaderWav.hpp
 -
 SFML/System/InputStream.hpp
@@ -175,8 +175,10 @@ cctype
 -
 cassert
 -
+cstring
+-
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/SoundFileWriterFlac.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/SoundFileWriterFlac.cpp
 SFML/Audio/SoundFileWriterFlac.hpp
 -
 SFML/System/Err.hpp
@@ -188,7 +190,7 @@ cctype
 cassert
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/SoundFileWriterOgg.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/SoundFileWriterOgg.cpp
 SFML/Audio/SoundFileWriterOgg.hpp
 -
 SFML/System/Err.hpp
@@ -202,7 +204,7 @@ cstdlib
 cassert
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/SoundFileWriterWav.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/SoundFileWriterWav.cpp
 SFML/Audio/SoundFileWriterWav.hpp
 -
 SFML/System/Err.hpp
@@ -214,7 +216,7 @@ cctype
 cassert
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/SoundRecorder.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/SoundRecorder.cpp
 SFML/Audio/SoundRecorder.hpp
 -
 SFML/Audio/AudioDevice.hpp
@@ -230,13 +232,13 @@ cstring
 cassert
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/SoundSource.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/SoundSource.cpp
 SFML/Audio/SoundSource.hpp
 -
 SFML/Audio/ALCheck.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/src/SFML/Audio/SoundStream.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/src/SFML/Audio/SoundStream.cpp
 SFML/Audio/SoundStream.hpp
 -
 SFML/Audio/AudioDevice.hpp
@@ -340,6 +342,8 @@ SFML/System/NonCopyable.hpp
 SFML/System/Time.hpp
 -
 string
+-
+algorithm
 -
 
 include/SFML/Audio/Listener.hpp
@@ -556,10 +560,6 @@ include/SFML/System/Vector3.inl
 
 src/SFML/Audio/ALCheck.hpp
 SFML/Config.hpp
--
-OpenAl/al.h
--
-OpenAl/alc.h
 -
 al.h
 -

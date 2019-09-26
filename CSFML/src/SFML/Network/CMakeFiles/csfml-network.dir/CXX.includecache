@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Network/Ftp.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Network/Ftp.cpp
 SFML/Network/Ftp.h
 -
 SFML/Network/FtpStruct.h
@@ -16,7 +16,7 @@ SFML/Network/IpAddress.hpp
 SFML/Internal.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Network/Http.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Network/Http.cpp
 SFML/Network/Http.h
 -
 SFML/Network/HttpStruct.h
@@ -24,7 +24,7 @@ SFML/Network/HttpStruct.h
 SFML/Internal.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Network/IpAddress.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Network/IpAddress.cpp
 SFML/Network/IpAddress.h
 -
 SFML/Network/IpAddress.hpp
@@ -32,7 +32,7 @@ SFML/Network/IpAddress.hpp
 string.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Network/Packet.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Network/Packet.cpp
 SFML/Network/Packet.h
 -
 SFML/Network/PacketStruct.h
@@ -40,7 +40,7 @@ SFML/Network/PacketStruct.h
 SFML/Internal.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Network/SocketSelector.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Network/SocketSelector.cpp
 SFML/Network/SocketSelector.h
 -
 SFML/Network/SocketSelectorStruct.h
@@ -54,7 +54,7 @@ SFML/Network/UdpSocketStruct.h
 SFML/Internal.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Network/TcpListener.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Network/TcpListener.cpp
 SFML/Network/TcpListener.h
 -
 SFML/Network/TcpListenerStruct.h
@@ -64,7 +64,7 @@ SFML/Network/TcpSocketStruct.h
 SFML/Internal.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Network/TcpSocket.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Network/TcpSocket.cpp
 SFML/Network/TcpSocket.h
 -
 SFML/Network/TcpSocketStruct.h
@@ -78,7 +78,7 @@ SFML/Internal.h
 string.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/CSFML/src/SFML/Network/UdpSocket.cpp
+/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Network/UdpSocket.cpp
 SFML/Network/UdpSocket.h
 -
 SFML/Network/UdpSocketStruct.h
@@ -92,15 +92,15 @@ SFML/Internal.h
 string.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Config.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Config.hpp
 TargetConditionals.h
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/TargetConditionals.h
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/TargetConditionals.h
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Network/Export.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Network/Export.hpp
 SFML/Config.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Network/Ftp.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Network/Ftp.hpp
 SFML/Network/Export.hpp
 -
 SFML/Network/TcpSocket.hpp
@@ -114,7 +114,7 @@ string
 vector
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Network/Http.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Network/Http.hpp
 SFML/Network/Export.hpp
 -
 SFML/Network/IpAddress.hpp
@@ -130,7 +130,7 @@ map
 string
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Network/IpAddress.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Network/IpAddress.hpp
 SFML/Network/Export.hpp
 -
 SFML/System/Time.hpp
@@ -142,7 +142,7 @@ ostream
 string
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Network/Packet.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Network/Packet.hpp
 SFML/Network/Export.hpp
 -
 string
@@ -150,7 +150,7 @@ string
 vector
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Network/Socket.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Network/Socket.hpp
 SFML/Network/Export.hpp
 -
 SFML/Network/SocketHandle.hpp
@@ -160,19 +160,19 @@ SFML/System/NonCopyable.hpp
 vector
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Network/SocketHandle.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Network/SocketHandle.hpp
 SFML/Config.hpp
 -
 basetsd.h
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Network/SocketSelector.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Network/SocketSelector.hpp
 SFML/Network/Export.hpp
 -
 SFML/System/Time.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Network/TcpListener.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Network/TcpListener.hpp
 SFML/Network/Export.hpp
 -
 SFML/Network/Socket.hpp
@@ -180,7 +180,7 @@ SFML/Network/Socket.hpp
 SFML/Network/IpAddress.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Network/TcpSocket.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Network/TcpSocket.hpp
 SFML/Network/Export.hpp
 -
 SFML/Network/Socket.hpp
@@ -188,7 +188,7 @@ SFML/Network/Socket.hpp
 SFML/System/Time.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/Network/UdpSocket.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Network/UdpSocket.hpp
 SFML/Network/Export.hpp
 -
 SFML/Network/Socket.hpp
@@ -198,15 +198,15 @@ SFML/Network/IpAddress.hpp
 vector
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Export.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Export.hpp
 SFML/Config.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/NonCopyable.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/NonCopyable.hpp
 SFML/System/Export.hpp
 -
 
-/Users/lbenard/Desktop/github/wolf3d/SFML/include/SFML/System/Time.hpp
+/Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/System/Time.hpp
 SFML/System/Export.hpp
 -
 

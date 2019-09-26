@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/csfml-window.dir/Clipboard.cpp.o"
+  "CMakeFiles/csfml-window.dir/Cursor.cpp.o"
   "CMakeFiles/csfml-window.dir/Context.cpp.o"
   "CMakeFiles/csfml-window.dir/Joystick.cpp.o"
   "CMakeFiles/csfml-window.dir/Keyboard.cpp.o"
@@ -8,9 +10,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/csfml-window.dir/VideoMode.cpp.o"
   "CMakeFiles/csfml-window.dir/Window.cpp.o"
   "../../../lib/libcsfml-window.pdb"
-  "../../../lib/libcsfml-window.2.4.0.dylib"
+  "../../../lib/libcsfml-window.2.5.0.dylib"
   "../../../lib/libcsfml-window.dylib"
-  "../../../lib/libcsfml-window.2.4.dylib"
+  "../../../lib/libcsfml-window.2.5.dylib"
 )
 
 # Per-language clean rules from dependency scanning.

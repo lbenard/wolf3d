@@ -8,9 +8,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/csfml-network.dir/TcpSocket.cpp.o"
   "CMakeFiles/csfml-network.dir/UdpSocket.cpp.o"
   "../../../lib/libcsfml-network.pdb"
-  "../../../lib/libcsfml-network.2.4.0.dylib"
+  "../../../lib/libcsfml-network.2.5.0.dylib"
   "../../../lib/libcsfml-network.dylib"
-  "../../../lib/libcsfml-network.2.4.dylib"
+  "../../../lib/libcsfml-network.2.5.dylib"
 )
 
 # Per-language clean rules from dependency scanning.
