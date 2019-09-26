@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 16:26:29 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/25 19:12:11 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/26 19:15:03 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,11 +55,11 @@ char		*wolf_read_file(const char *path)
 	char	*line;
 
 	if ((file_descriptor = open(path, O_RDONLY)) <= 0)
-		return (throw_error_str("wolf_read_file(): ""failed to open file"));
+		return (throw_error_str("wolf_read_file()", "failed to open file"));
 	if (!(map_str = ft_strdup("\n")))
 	{
 		close(file_descriptor);
-		return (throw_error_str("wolf_read_file(): "
+		return (throw_error_str("wolf_read_file()",
 			"failed to create map string"));
 	}
 	while (ft_get_next_line(file_descriptor, &line))
@@ -68,7 +68,7 @@ char		*wolf_read_file(const char *path)
 		{
 			free(map_str);
 			close(file_descriptor);
-			return (throw_error_str("wolf_read_file(): "
+			return (throw_error_str("wolf_read_file()",
 				"failed to read new line"));
 		}
 		if (!wolf_is_line_correct(line)
@@ -76,7 +76,7 @@ char		*wolf_read_file(const char *path)
 		{
 			free(map_str);
 			close(file_descriptor);
-			return (throw_error_str("wolf_read_file(): ""map syntax error"));
+			return (throw_error_str("wolf_read_file()", "map syntax error"));
 		}
 	}
 	close(file_descriptor);

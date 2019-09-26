@@ -52,13 +52,15 @@ t_raycasting_scene	*new_raycasting_scene(
 	t_raycasting_scene	*ret;
 
 	if (!(ret = (t_raycasting_scene*)malloc(sizeof(t_raycasting_scene))))
-		return (throw_error_str("Failed while mallocing raycasting scene"));
+		return (throw_error_str("new_raycasting_scene()",
+			"failed while mallocing raycasting scene"));
 	if (!init_scene(&ret->super, "Raycasting sandbox",
 		(void(*)())raycasting_scene_update,
 		(void(*)())raycasting_scene_render))
 	{
 		free(ret);
-		return (throw_error_str("Failed while initalizing scene"));
+		return (throw_error_str("new_raycasting_scene()",
+			"failed while initalizing scene"));
 	}
 	module_add_heap_module(&ret->super.module,
 		image_from_file("resources/textures/plaster.jpg"),
@@ -85,7 +87,8 @@ t_raycasting_scene	*new_raycasting_scene(
 	else
 	{
 		free_raycasting_scene(ret);
-		return (throw_error_str("Failed to create raycasting scene"));
+		return (throw_error_str("new_raycasting_scene()",
+			"failed to create raycasting scene"));
 	}
 	return (ret);
 }

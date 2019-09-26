@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:16:18 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/22 18:07:45 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/26 19:20:23 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,8 @@ t_menu_scene	*new_menu_scene(const t_menu_scene_args *const args)
 	if (ret->super.module.has_error || ret->super.entities.module.has_error)
 	{
 		free_menu_scene(ret);
-		return (throw_error_str("Failed to create new menu scene"));
+		return (throw_error_str("new_menu_scene()",
+			"failed to create new menu scene"));
 	}
 	return (ret);
 }

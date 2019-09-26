@@ -6,15 +6,15 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 18:24:54 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/03 20:20:34 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/26 19:04:13 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "engine/error.h"
 #include "types.h"
 
-t_result	throw_result_str(const char *const cause)
+t_result	throw_result_str(const char *const fn, const char *const cause)
 {
-	throw_error_str(cause);
+	throw_error_str(fn, cause);
 	return (ERROR);
 }

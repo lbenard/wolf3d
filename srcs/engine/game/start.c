@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 20:04:22 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/03 13:36:54 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/26 19:09:03 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ t_result	start_game(const t_game_args *const args)
 	if (game->module.has_error)
 	{
 		destroy_module(&game->module);
-		return (throw_result_str("Error while creating game module"));
+		return (throw_result_str("start_game()",
+			"error while creating game module"));
 	}
 	return (OK);
 }

@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 17:14:10 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/25 18:56:15 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/26 19:15:42 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 t_result	wolf_is_line_correct(char *line)
 {
 	if (!line)
-		return (throw_result_str("wolf_is_line_correct(): ""invalid line"));
+		return (throw_result_str("wolf_is_line_correct()", "invalid line"));
 	if (*line == '\0')
 		return (OK);
 	else if (*line == '-')

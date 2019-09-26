@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/21 14:43:55 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/09/25 18:52:32 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/26 19:12:50 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ t_block_node	*new_block_node(const char *key, char **values)
 	if (!key)
 	{
 		wolf_free_values(values);
-		return (throw_error_str("new_block_node(): ""invalid key"));
+		return (throw_error_str("new_block_node()", "invalid key"));
 	}
 	if (!values)
 	{
 		free((char*)key);
-		return (throw_error_str("new_block_node(): ""invalid values"));
+		return (throw_error_str("new_block_node()", "invalid values"));
 	}
 	values_amount = 0;
 	while (values[values_amount])
@@ -37,14 +37,14 @@ t_block_node	*new_block_node(const char *key, char **values)
 	{
 		free((char*)key);
 		wolf_free_values(values);
-		return (throw_error_str("new_block_node(): "
+		return (throw_error_str("new_block_node()",
 			"bad amount of values in block node"));
 	}
 	if (!(ret = (t_block_node*)malloc(sizeof(t_block_node))))
 	{
 		free((char*)key);
 		wolf_free_values(values);
-		return (throw_error_str("new_block_node(): "
+		return (throw_error_str("new_block_node()",
 			"failed while allocating block node"));
 	}
 	init_list_head(&ret->node);

@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 16:35:17 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/25 18:55:29 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/26 19:15:17 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@
 t_result	wolf_is_flag_correct(char *line)
 {
 	if (!line)
-		return (throw_result_str("wolf_is_flag_correct(): ""invalid line"));
+		return (throw_result_str("wolf_is_flag_correct()", "invalid line"));
 	if (!*line)
-		return (throw_result_str("wolf_is_flag_correct(): ""line is blank"));
+		return (throw_result_str("wolf_is_flag_correct()", "line is blank"));
 	line++;
 	while (*line)
 	{
 		if (!ft_isalnum(*line) && *line != '_')
-			return (throw_result_str("wolf_is_flag_correct(): "
+			return (throw_result_str("wolf_is_flag_correct()",
 				"incorrect snake_case syntax"));
 		line++;
 	}

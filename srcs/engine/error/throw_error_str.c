@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/29 18:23:36 by lbenard           #+#    #+#             */
-/*   Updated: 2019/05/03 20:20:19 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/26 19:03:40 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 #include "engine/error.h"
 #include "ft/io.h"
 
-void		*throw_error_str(const char *const cause)
+void		*throw_error_str(const char *const fn, const char *const cause)
 {
 	if (cause)
 	{
 		ft_putstr(PROGRAM_NAME ": ");
+		ft_putstr(fn);
+		ft_putstr(": ");
 		ft_putstr(cause);
 		ft_putchar('\n');
 	}

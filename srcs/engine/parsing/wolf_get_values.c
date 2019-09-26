@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/25 18:17:22 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/25 18:57:16 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/26 19:16:40 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ char	**wolf_get_values(char *kv_line, char split)
 	char	**values;
 
 	if (!(value = wolf_get_value(kv_line)))
-		return (throw_error_str("wolf_get_values(): ""failed to get value"));
+		return (throw_error_str("wolf_get_values()", "failed to get value"));
 	if (!(values = ft_strsplit(value, split)))
 	{
 		free(value);
-		return (throw_error_str("wolf_get_values(): ""failed to split values"));
+		return (throw_error_str("wolf_get_values()", "failed to split values"));
 	}
 	free(value);
 	return (values);

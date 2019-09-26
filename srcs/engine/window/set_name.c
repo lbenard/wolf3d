@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 00:26:03 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/22 17:03:51 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/26 19:17:39 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ t_result	window_set_name(t_window *const self, const char *const name)
 
 	if (!(name_dup = ft_strnew(ft_strlen(name)
 		+ ft_strlen(self->base_name) + 3)))
-		throw_result_str("Failed while duplicating window's name");
+		throw_result_str("window_set_name()",
+			"failed while duplicating window's name");
 	ft_strcat(name_dup, self->base_name);
 	ft_strcat(name_dup, " - ");
 	ft_strcat(name_dup, name);

@@ -38,10 +38,6 @@ SFML/System/ThreadStruct.h
 SFML/Internal.h
 -
 
-/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/System/Time.cpp
-SFML/System/Time.h
--
-
 /Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/Config.hpp
 TargetConditionals.h
 /Users/lbenard/Desktop/42/wolf3d/00/SFML/include/SFML/TargetConditionals.h

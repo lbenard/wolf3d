@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 08:59:56 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/06 14:19:42 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/26 19:18:42 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ t_button_entity	*new_button_entity(t_button_entity_args *const args)
 	t_button_entity	*ret;
 
 	if (!(ret = (t_button_entity*)malloc(sizeof(t_button_entity))))
-		return (throw_error_str("Failed to malloc button entity"));
+		return (throw_error_str("new_button_entity()",
+			"failed to malloc button entity"));
 	if (init_entity_default(&ret->super, button_entity_update) == ERROR)
 	{
 		free(ret);
-		return (throw_error_str("Failed to create button entity"));
+		return (throw_error_str("new_button_entity()",
+			"failed to create button entity"));
 	}
 	module_add_stack_module(&ret->super.module,
 		frame_from_file(args->normal_texture_path), &ret->normal_texture);
@@ -34,7 +36,8 @@ t_button_entity	*new_button_entity(t_button_entity_args *const args)
 	if (ret->super.module.has_error)
 	{
 		free_button_entity(ret);
-		return (throw_error_str("Failed to create new button entity"));
+		return (throw_error_str("new_button_entity()",
+			"failed to create new button entity"));
 	}
 	return (ret);
 }

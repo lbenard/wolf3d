@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 16:45:58 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/26 18:52:06 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/26 19:12:28 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,7 +221,7 @@ static t_result	parse_textures_list(t_map *const self, char *textures_flag_str)
 	char			*p;
 
 	if (!textures_flag_str)
-		return (throw_result_str("parse_textures_list(): "
+		return (throw_result_str("parse_textures_list()",
 			"invalid textures string"));
 	init_list_head(&self->textures);
 	p = skip_newlines(textures_flag_str);
@@ -231,7 +231,7 @@ static t_result	parse_textures_list(t_map *const self, char *textures_flag_str)
 		{
 			free(textures_flag_str);
 			free_textures_list(self);
-			return (throw_result_str("parse_textures_list(): "
+			return (throw_result_str("parse_textures_list()",
 				"failed to create new texture node"));
 		}
 		list_add_entry(&new_node->node, &self->textures);
@@ -268,7 +268,7 @@ static t_result	parse_blocks_list(t_map *self, char *blocks_flag_str)
 	char			*p;
 
 	if (!blocks_flag_str)
-		return (throw_result_str("parse_blocks_list(): "
+		return (throw_result_str("parse_blocks_list()",
 			"invalid blocks string"));
 	init_list_head(&self->blocks);
 	p = skip_newlines(blocks_flag_str);
@@ -279,7 +279,7 @@ static t_result	parse_blocks_list(t_map *self, char *blocks_flag_str)
 		{
 			free(blocks_flag_str);
 			free_blocks_list(self);
-			return (throw_result_str("parse_blocks_list(): "
+			return (throw_result_str("parse_blocks_list()",
 				"failed to create new block node"));
 		}
 		list_add_entry(&new_node->node, &self->blocks);
@@ -347,16 +347,20 @@ t_result	add_wall(t_map *self, t_block_node *block, int x, int y)
 	t_texture_node	*t;
 
 	if (!(t = is_key_belong_to_textures_list(self, block->north_texture_name)))
-		return (throw_result_str("failed to find north texture.."));
+		return (throw_result_str("add_wall()",
+			"failed to find north texture"));
 	self->map[x + y * self->size.x].north_texture_ref = t->image;
 	if (!(t = is_key_belong_to_textures_list(self, block->east_texture_name)))
-		return (throw_result_str("failed to find east texture.."));
+		return (throw_result_str("add_wall()",
+			"failed to find east texture"));
 	self->map[x + y * self->size.x].east_texture_ref = t->image;
 	if (!(t = is_key_belong_to_textures_list(self, block->south_texture_name)))
-		return (throw_result_str("failed to find south texture.."));
+		return (throw_result_str("add_wall()",
+			"failed to find south texture"));
 	self->map[x + y * self->size.x].south_texture_ref = t->image;
 	if (!(t = is_key_belong_to_textures_list(self, block->west_texture_name)))
-		return (throw_result_str("failed to find west texture.."));
+		return (throw_result_str("add_wall()",
+			"failed to find west texture"));
 	self->map[x + y * self->size.x].west_texture_ref = t->image;
 	return (OK);
 }
@@ -367,7 +371,8 @@ t_result	fill_map_row(t_map *self, char *row, int y)
 	int			x;
 
 	if (!row || ft_strlen(row) != self->size.x)
-		return (throw_result_str("bad number of character in map row.."));
+		return (throw_result_str("fill_map_row()",
+			"bad number of characters in map row"));
 	x = 0;
 	while (row && row[x])
 	{
@@ -381,7 +386,8 @@ t_result	fill_map_row(t_map *self, char *row, int y)
 		else if ((block = is_key_belong_to_blocks_list(self, row[x])))
 			add_wall(self, block, x, y);
 		else
-			return (throw_result_str("failed to find key in blocks list.."));
+			return (throw_result_str("fill_map_row()",
+				"failed to find key in blocks list"));
 		x++;
 	}
 	return (OK);
@@ -397,7 +403,7 @@ t_result parse_map(t_map *self, char *map_flag_str)
 	if (!(self->map = malloc(sizeof(t_wall) * self->size.x * self->size.y)))
 	{
 		free(map_flag_str);
-		return (throw_result_str("parse_map: failed to malloc map !"));
+		return (throw_result_str("parse_map()", "failed to allocate map"));
 	}
 	p = skip_newlines(map_flag_str);
 	columns_amount = 0;
@@ -407,7 +413,7 @@ t_result parse_map(t_map *self, char *map_flag_str)
 		{
 			free(map_flag_str);
 			free(self->map);
-			return (throw_result_str("failed to fill map row.."));
+			return (throw_result_str("parse_map()", "failed to fill map row"));
 		}
 		p = next_line(p);
 	}
@@ -421,26 +427,26 @@ t_result	init_map(t_map *self, const t_map_args *const args)
 
 	init_module(&self->module);
 	if (!(map_file_str = wolf_read_file(args->path)))
-		return (throw_result_str("init_map(): ""failed to read file"));
+		return (throw_result_str("init_map()", "failed to read file"));
 	if (!parse_textures_list(self, wolf_select_flag(map_file_str, "textures")))
 	{
 		free(map_file_str);
-		return (throw_result_str("init_map(): ""failed to parse textures"));
+		return (throw_result_str("init_map()", "failed to parse textures"));
 	}
 	if (!parse_blocks_list(self, wolf_select_flag(map_file_str, "blocks")))
 	{
 		free(map_file_str);
-		return (throw_result_str("init_map(): ""failed to parse blocks"));
+		return (throw_result_str("init_map()", "failed to parse blocks"));
 	}
 	if (!parse_size(self, wolf_select_flag(map_file_str, "size")))
 	{
 		free(map_file_str);
-		return (throw_result_str("init_map(): ""failed to parse size"));
+		return (throw_result_str("init_map()", "failed to parse size"));
 	}
 	if (!parse_map(self, wolf_select_flag(map_file_str, "map")))
 	{
 		free(map_file_str);
-		return (throw_result_str("init_map(): ""failed to parse map"));
+		return (throw_result_str("init_map()", "failed to parse map"));
 	}
 	free(map_file_str);
 	return (OK);

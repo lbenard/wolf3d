@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 20:06:58 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/09 14:43:57 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/26 19:09:34 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ t_result	game_set_scene(t_heap_module_factory factory)
 	if (game->module.has_error)
 	{
 		stop_game();
-		return (throw_result_str("Failed to set new scene"));
+		return (throw_result_str("game_set_scene()",
+			"failed to set new scene"));
 	}
 	window_set_name(&game->window, game->scene->name);
 	event_handler_add_sub_handler(&game->event_handler,

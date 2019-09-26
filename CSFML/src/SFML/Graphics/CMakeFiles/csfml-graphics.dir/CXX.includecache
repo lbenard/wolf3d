@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Graphics/BlendMode.cpp
-SFML/Graphics/BlendMode.h
--
-
 /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Graphics/CircleShape.cpp
 SFML/Graphics/CircleShape.h
 -
@@ -20,14 +16,6 @@ SFML/Graphics/Color.hpp
 SFML/Graphics/ConvertTransform.hpp
 -
 SFML/Internal.h
--
-
-/Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Graphics/Color.cpp
-SFML/Graphics/Color.h
--
-SFML/Internal.h
--
-algorithm
 -
 
 /Users/lbenard/Desktop/42/wolf3d/00/CSFML/src/SFML/Graphics/ConvexShape.cpp

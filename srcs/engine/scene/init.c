@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 20:22:43 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/03 13:41:15 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/26 19:18:20 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ t_result	init_scene(t_scene *const self,
 	if (self->module.has_error)
 	{
 		destroy_scene(self);
-		return (throw_result_str("Failed while creating new scene"));
+		return (throw_result_str("init_scene()",
+			"failed while creating new scene"));
 	}
 	return (OK);
 }
