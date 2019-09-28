@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   update.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 17:51:27 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/25 19:00:51 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/28 15:36:54 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,10 @@ static const t_image	*ray_hitting_texture(const t_map *const map,
 	return (NULL);
 }
 
-static float			euclidean_distance(const t_vec2f a, const t_vec2f b)
-{
-	return (sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)));
-}
+// static float			euclidean_distance(const t_vec2f a, const t_vec2f b)
+// {
+// 	return (sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y)));
+// }
 
 static t_ray			north_ray(const t_raycasting_renderer *const self,
 							t_angle direction)
@@ -72,8 +72,8 @@ static t_ray			north_ray(const t_raycasting_renderer *const self,
 		pos.x += 1.0f / direction.tan;
 		pos.y++;
 	}
-	return (ft_ray(euclidean_distance(self->position, pos),
-		hit_texture, 1.0f - (pos.x - (int)pos.x)));
+	return (ft_ray(self->position, pos,	hit_texture,
+		1.0f - (pos.x - (int)pos.x)));
 }
 
 static t_ray			east_ray(const t_raycasting_renderer *const self,
@@ -98,8 +98,8 @@ static t_ray			east_ray(const t_raycasting_renderer *const self,
 		pos.x++;
 		pos.y += direction.tan;
 	}
-	return (ft_ray(euclidean_distance(self->position, pos),
-		hit_texture, pos.y - (int)pos.y));
+	return (ft_ray(self->position, pos,	hit_texture,
+		pos.y - (int)pos.y));
 }
 
 static t_ray			south_ray(const t_raycasting_renderer *const self,
@@ -124,8 +124,8 @@ static t_ray			south_ray(const t_raycasting_renderer *const self,
 		pos.x -= 1.0f / direction.tan;
 		pos.y--;
 	}
-	return (ft_ray(euclidean_distance(self->position, pos),
-		hit_texture, pos.x - (int)pos.x));
+	return (ft_ray(self->position, pos,	hit_texture,
+		pos.x - (int)pos.x));
 }
 
 static t_ray			west_ray(const t_raycasting_renderer *const self,
@@ -150,8 +150,8 @@ static t_ray			west_ray(const t_raycasting_renderer *const self,
 		pos.x--;
 		pos.y -= direction.tan;
 	}
-	return (ft_ray(euclidean_distance(self->position, pos),
-		hit_texture, 1.0f - (pos.y - (int)pos.y)));
+	return (ft_ray(self->position, pos,	hit_texture,
+		1.0f - (pos.y - (int)pos.y)));
 }
 
 static t_ray			find_obstacle(const t_raycasting_renderer *const self,

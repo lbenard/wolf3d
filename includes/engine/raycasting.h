@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 16:50:53 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/23 19:14:52 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/28 15:31:29 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,13 @@ typedef enum			e_direction
 typedef struct			s_ray
 {
 	float			distance;
+	t_vec2f			hit_position;
 	const t_image	*texture;
 	float			texture_ratio;
 }						t_ray;
 
-t_ray					ft_ray(const float distance,
+t_ray					ft_ray(const t_vec2f player_position,
+							const t_vec2f hit_position,
 							const t_image *texture,
 							const float texture_ratio);
 
