@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/05 18:02:14 by lbenard           #+#    #+#              #
-#    Updated: 2019/07/21 15:38:55 by lbenard          ###   ########.fr        #
+#    Updated: 2019/09/28 15:43:56 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,9 +72,11 @@ SRCS_LIST		=	containers/list/init_list_head.c		\
 					maths/vec2f/ft_vec2f.c					\
 					maths/vec2f/vec2f_dot.c					\
 					maths/vec2f/vec2f_scalar.c				\
+					maths/vec2f/vec2f_distance.c			\
 					maths/vec3f/ft_vec3f.c					\
 					maths/vec3f/vec3f_dot.c					\
 					maths/vec3f/vec3f_scalar.c				\
+					maths/vec3f/vec3f_distance.c			\
 					maths/vec3f/vec3f_normalize.c			\
 					maths/vec3f/vec3f_to_vec2f.c			\
 					maths/vec3f/vec3f_to_vec4f.c			\
@@ -85,9 +87,11 @@ SRCS_LIST		=	containers/list/init_list_head.c		\
 					maths/vec2d/ft_vec2d.c					\
 					maths/vec2d/vec2d_dot.c					\
 					maths/vec2d/vec2d_scalar.c				\
+					maths/vec2d/vec2d_distance.c			\
 					maths/vec3d/ft_vec3d.c					\
 					maths/vec3d/vec3d_dot.c					\
 					maths/vec3d/vec3d_scalar.c				\
+					maths/vec3d/vec3d_distance.c			\
 					maths/vec3d/vec3d_to_vec2d.c			\
 					maths/vec3d/vec3d_to_vec4d.c			\
 					maths/vec4d/ft_vec4d.c					\
@@ -97,9 +101,11 @@ SRCS_LIST		=	containers/list/init_list_head.c		\
 					maths/vec2ld/ft_vec2ld.c				\
 					maths/vec2ld/vec2ld_dot.c				\
 					maths/vec2ld/vec2ld_scalar.c			\
+					maths/vec2ld/vec2ld_distance.c			\
 					maths/vec3ld/ft_vec3ld.c				\
 					maths/vec3ld/vec3ld_dot.c				\
 					maths/vec3ld/vec3ld_scalar.c			\
+					maths/vec3ld/vec3ld_distance.c			\
 					maths/vec3ld/vec3ld_to_vec2ld.c			\
 					maths/vec3ld/vec3ld_to_vec4ld.c			\
 					maths/vec4ld/ft_vec4ld.c				\

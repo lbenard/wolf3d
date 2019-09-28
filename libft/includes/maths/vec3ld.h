@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/20 17:32:10 by lbenard           #+#    #+#             */
-/*   Updated: 2019/02/20 22:47:39 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/28 15:43:37 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ t_vec3ld		ft_vec3ld(long double x, long double y, long double z);
 */
 long double		vec3ld_dot(t_vec3ld a, t_vec3ld b);
 t_vec3ld		vec3ld_scalar(t_vec3ld src, long double a);
+long double		vec3ld_distance(t_vec3ld a, t_vec3ld b);
 
 /*
 ** Casts
