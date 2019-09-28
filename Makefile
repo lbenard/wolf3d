@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 19:33:38 by lbenard           #+#    #+#              #
-#    Updated: 2019/09/26 19:20:01 by lbenard          ###   ########.fr        #
+#    Updated: 2019/09/28 16:13:25 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -155,6 +155,12 @@ SRCS_LIST		=	main.c														\
 					game/entities/list/image/update.c							\
 					game/entities/list/image/render.c							\
 					game/entities/list/image/free.c								\
+																				\
+					game/entities/list/minimap/minimap_entity.c					\
+					game/entities/list/minimap/new.c							\
+					game/entities/list/minimap/update.c							\
+					game/entities/list/minimap/render.c							\
+					game/entities/list/minimap/free.c							\
 																				\
 					game/events/close_game_event.c								\
 																				\

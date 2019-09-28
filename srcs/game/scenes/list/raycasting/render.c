@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:42:30 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/23 20:07:25 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/28 16:12:11 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,5 @@ void	raycasting_scene_render(t_raycasting_scene *self, t_frame *fb)
 		}
 		i.x++;
 	}
+	minimap_entity_render(self->minimap_ref, fb);
 }

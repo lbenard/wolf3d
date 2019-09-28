@@ -74,6 +74,9 @@ t_raycasting_scene	*new_raycasting_scene(
 		raycasting_renderer(args->window->size, &ret->map), &ret->renderer);
 	ret->player_ref = (t_player_entity*)entity_list_add_entity(
 		&ret->super.entities, player_entity(&ret->map, ft_vec2f(3.0f, 3.0f)));
+	ret->minimap_ref = (t_minimap_entity*)entity_list_add_entity(
+		&ret->super.entities,
+		minimap_entity(&ret->renderer, ft_usize(200, 200)));
 	if (!ret->super.module.has_error)
 	{
 		ret->ground_color = ft_rgb(105, 105, 105);
