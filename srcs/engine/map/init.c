@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 16:45:58 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/26 19:12:28 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/30 17:36:05 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,158 +16,9 @@
 #include "engine/map.h"
 #include "ft/str.h"
 #include "maths/maths.h"
+#include "maths/vec2d.h"
 #include "engine/error.h"
 #include "engine/parsing.h"
-
-// t_result	is_wolf_flag_safe(char *line)
-// {
-// 	if (!line || !(*line))
-// 		return (ERROR);
-// 	line++;
-// 	while (*line)
-// 	{
-// 		if (!ft_isalnum(*line) && *line != '_')
-// 			return (ERROR);
-// 		line++;
-// 	}
-// 	return (OK);
-// }
-
-// t_result	is_wolf_data_line_safe(char *line, char end)
-// {
-// 	while (line && *line && *line != ':' && *line != end)
-// 	{
-// 		if (!ft_isalnum(*line) && *line != '_')
-// 			return (ERROR);
-// 		line++;
-// 	}
-// 	if (!line || *line != ':' || line[1] != ' ')
-// 		return (ERROR);
-// 	else
-// 		return (OK);
-// }
-
-// t_result	is_syntax_safe(char *line)
-// {
-// 	if (line && *line == '\0')
-// 		return (OK);
-// 	else if (line && *line == '-' && is_wolf_flag_safe(line))
-// 		return (OK);
-// 	else if (line && is_wolf_data_line_safe(line, '\0'))
-// 		return (OK);
-// 	else
-// 		return (ERROR);
-// }
-
-// char *read_wolf_syntax_file(const char *path)
-// {
-// 	int		file_descriptor;
-// 	char	*map_str;
-// 	char	**line;
-
-// 	if (!(line = malloc(sizeof(char*))))
-// 		return (ERROR);
-// 	if (!(map_str = ft_strdup("\n")))
-// 		return (ERROR);		////////////// free line
-// 	if ((file_descriptor = open(path, O_RDONLY)) <= 0)
-// 		return (ERROR);		////////////// free line + map_str
-// 	while (ft_get_next_line(file_descriptor, line))
-// 	{
-// 		if (is_syntax_safe(*line))
-// 			map_str = join_next_line(map_str, add_newline(*line));
-// 		else
-// 		{
-// 			free(map_str);
-// 			return (throw_error_str("map syntax error.."));
-// 		}
-// 	}
-// 	free(line);
-// 	return (map_str);
-// }
-
-// char	*new_flag(char *flag_name)
-// {
-// 	char	*tmp;
-// 	char	*flag;
-
-// 	if (flag_name)
-// 	{
-// 		tmp = ft_strjoin("\n-", flag_name);
-// 		flag = ft_strjoin(tmp, "\n");
-// 		if (tmp)
-// 			free(tmp);
-// 		return (flag);
-// 	}
-// 	else
-// 		return (NULL);
-// }
-// char	*select_flag(char *map_str, char *flag_name)
-// {
-// 	char	*flag_start;
-// 	char	*flag_end;
-// 	char	*flag;
-	
-// 	if (!(flag = new_flag(flag_name)))
-// 		return (ERROR);
-// 	if (!(flag_start = ft_strstr(map_str, flag)))
-// 	{
-// 		free(flag);
-// 		return (ERROR);
-// 	}
-// 	flag_start += ft_strlen(flag);
-// 	if ((flag_end = ft_strstr(flag_start, "\n-")))
-// 		return (ft_strndup(flag_start, flag_end - flag_start));
-// 	else
-// 		return (ft_strdup(flag_start));
-// }
-
-// char	*get_key(char *wolf_data_line)
-// {
-// 	char	*p;
-
-// 	p = wolf_data_line;
-// 	return (ft_strndup(p, ft_strstr(p, ": ") - p));
-// }
-
-// char	*get_value(char *wolf_data_line)
-// {
-// 	char	*p;
-
-// 	p = wolf_data_line;
-// 	if (!is_wolf_data_line_safe(p, '\n'))
-// 		return (throw_error_str("get_value() has received bad data line.."));
-// 	return (ft_strndup(
-// 		ft_strstr(p, ":") + 2,
-// 		ft_strstr(p, "\n") - (ft_strstr(p, ": ") + 2)));
-// }
-
-// char	**get_values(char *wolf_data_line, char	split)
-// {
-// 	char	*p;
-// 	char	*value;
-// 	char	**values;
-
-// 	p = wolf_data_line;
-// 	if (!(value = get_value(p)))
-// 		return (throw_error_str("failed to get value"));
-// 	if (!(values = ft_strsplit(value, split)))
-// 	{
-// 		free(value);
-// 		return (throw_error_str("failed to split values"));
-// 	}
-// 	free(value);
-// 	return (values);
-// }
-
-// void	free_values(char **values)
-// {
-// 	size_t	i;
-
-// 	i = 0;
-// 	while (values[i])
-// 		free(values[i++]);
-// 	free(values);
-// }
 
 ///////////////////////////////////////////////////////// text cursor
 
@@ -421,6 +272,30 @@ t_result parse_map(t_map *self, char *map_flag_str)
 	return (OK);
 }
 
+int	ft_strsplit_length(char **strings)
+{
+	int	length;
+
+	length = 0;
+	while (strings && strings[length])
+		length++;
+	return (length);
+}
+
+t_result parse_player(t_map *self, char *player_flag_str)
+{
+	char	**spawn_str;
+
+	spawn_str = wolf_get_values(ft_strstr(player_flag_str, "spawn: "), ' ');
+	if (!spawn_str || ft_strsplit_length(spawn_str) != 2)
+		return (throw_result_str("parse_player()", "bad player_spawn data"));
+	else
+		self->spawn = ft_vec2d(ft_atof(spawn_str[0]), ft_atof(spawn_str[1]));
+	free(spawn_str);
+	free(player_flag_str);
+	return (OK);
+}
+
 t_result	init_map(t_map *self, const t_map_args *const args)
 {
 	char 	*map_file_str;
@@ -447,6 +322,11 @@ t_result	init_map(t_map *self, const t_map_args *const args)
 	{
 		free(map_file_str);
 		return (throw_result_str("init_map()", "failed to parse map"));
+	}
+	if (!parse_player(self, wolf_select_flag(map_file_str, "player")))
+	{
+		free(map_file_str);
+		return (throw_result_str("init_map()", "failed to parse player"));
 	}
 	free(map_file_str);
 	return (OK);

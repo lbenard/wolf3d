@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   map.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 16:38:15 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/25 18:53:03 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/30 17:35:01 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "types.h"
 # include "sizes/usize.h"
 # include "maths/vec2f.h"
+# include "maths/vec2d.h"
 # include "engine/image.h"
 
 typedef struct			s_wall
@@ -56,6 +57,7 @@ typedef struct			s_map
 	t_list_head blocks;
 	t_usize		size;
 	t_wall		*map;
+	t_vec2d		spawn;
 }						t_map;
 
 typedef struct			s_map_args

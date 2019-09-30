@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player_entity.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 15:42:02 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/03 13:22:53 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/30 17:39:05 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,10 @@ typedef struct			s_player_entity
 
 typedef struct			s_player_entity_args
 {
-	const t_map	*map;
-	t_vec2f		spawn_pos;
+	const t_map		*map;
 }						t_player_entity_args;
 
-t_heap_module_factory	player_entity(const t_map *const map,
-							const t_vec2f spawn_pos);
+t_heap_module_factory	player_entity(const t_map *const map);
 
 t_player_entity			*new_player_entity(t_player_entity_args *const args);
 void					player_entity_update(t_player_entity *const self);
