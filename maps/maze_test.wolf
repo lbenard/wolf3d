@@ -8,16 +8,30 @@ a: maze maze maze maze
 E: end end end end
 
 -size
-height: 6
-width: 6
+height: 20
+width: 20
 
 -map
-: aaaaaa
-: a a  a
-: a   aa
-: a a  a
-: E  a a
-: aaaaaa
+: aaaaaaaaaaaaaaaEaaaa
+: a  aa        a     a
+: aa   aa aaaa aaaaa a
+: a aa    a  a     a a
+: a   aaaaaa aa aa a a
+: a a a   a   aa   a a
+: a a   a  aa    aaa a
+: a aaaaaa    aaa    a
+: a     a aaaaa   aa a
+: aaaaa a       aa a a
+: a   a  aaa aaa   a a
+: a a  a     a aa a  a
+: a  a aaaa aa    a aa
+: aa a     a   a a   a
+: a   a a a  aa  a a a
+: a a  a a  aaa aa a a
+: a  aa    a a  a   aa
+: aa    a aa a aa a  a
+: a  a a     a     a a
+: aaaaaaaaaaaaaaaaaaaa
 
 -player
-spawn: 3.500000 3.500000
+spawn: 10.500000 10.500000

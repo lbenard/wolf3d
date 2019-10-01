@@ -6,7 +6,7 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 15:42:02 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/30 17:39:05 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/10/02 01:03:33 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@ typedef struct			s_player_entity
 	const t_map		*map_ref;
 	float			speed;
 }						t_player_entity;
+
+typedef struct			s_corners
+{
+	t_bool			NE;
+	t_bool			SE;
+	t_bool			SO;
+	t_bool			NO;
+}						t_corners;
 
 typedef struct			s_player_entity_args
 {
