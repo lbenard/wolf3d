@@ -6,7 +6,7 @@
 /*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 19:05:27 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/02 01:02:31 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/10/02 16:47:21 by ppetitea         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_bool is_position_belong_to_range(t_vec2i pos, t_vec2i min, t_vec2i max)
 {
 	if (pos.x < min.x || pos.y < min.y || pos.x > max.x || pos.y > max.y)
 		return (FALSE);
-	else
+	else 
 		return (TRUE);
 }
 
@@ -94,24 +94,86 @@ t_bool	is_horizontal_collide(t_corners box)
 		return (FALSE);
 }
 
+t_vec3f north_east_rebound(t_vec3f vel)
+{
+	if (vel.x > 0.0f && vel.y < 0.0f)
+	{
+		if (vel.x * vel.x > vel.y * vel.y)
+			return (ft_vec3f(0.0f, -vel.y, vel.z));
+		else
+			return (ft_vec3f(-vel.x, 0.0f, vel.z));
+	}
+	else if (vel.x > 0.0f)
+		return (ft_vec3f(0.0f, vel.y, vel.z));
+	else
+		return (ft_vec3f(vel.x, 0.0f, vel.z));
+}
+
+t_vec3f south_east_rebound(t_vec3f vel)
+{
+	if (vel.x > 0.0f && vel.y > 0.0f)
+	{
+		if (vel.x * vel.x > vel.y * vel.y)
+			return (ft_vec3f(0.0f, -vel.y, vel.z));
+		else
+			return (ft_vec3f(-vel.x, 0.0f, vel.z));
+	}
+	else if (vel.x > 0.0f)
+		return (ft_vec3f(0.0f, vel.y, vel.z));
+	else
+		return (ft_vec3f(vel.x, 0.0f, vel.z));
+}
+
+t_vec3f south_west_rebound(t_vec3f vel)
+{
+	if (vel.x < 0.0f && vel.y > 0.0f)
+	{
+		if (vel.x * vel.x > vel.y * vel.y)
+			return (ft_vec3f(0.0f, -vel.y, vel.z));
+		else
+			return (ft_vec3f(-vel.x, 0.0f, vel.z));
+	}
+	else if (vel.x < 0.0f)
+		return (ft_vec3f(0.0f, vel.y, vel.z));
+	else
+		return (ft_vec3f(vel.x, 0.0f, vel.z));
+}
+
+t_vec3f north_west_rebound(t_vec3f vel)
+{
+	if (vel.x < 0.0f && vel.y < 0.0f)
+	{
+		if (vel.x * vel.x > vel.y * vel.y)
+			return (ft_vec3f(0.0f, -vel.y, vel.z));
+		else
+			return (ft_vec3f(-vel.x, 0.0f, vel.z));
+	}
+	else if (vel.x < 0.0f)
+		return (ft_vec3f(0.0f, vel.y, vel.z));
+	else
+		return (ft_vec3f(vel.x, 0.0f, vel.z));
+}
+
 t_bool	is_corner_collide(t_corners box_corner, float box_size, t_vec3f *vel)
 {
+	(void)box_size;
 	if (box_corner.NE + box_corner.NO + box_corner.SE + box_corner.SO == 1)
 	{
 		if (box_corner.NE)
-			*vel = ft_vec3f(vel->x - box_size, vel->y + box_size, vel->z);
+			*vel = north_east_rebound(*vel);
 		if (box_corner.SE)
-			*vel = ft_vec3f(vel->x - box_size, vel->y - box_size, vel->z);
+			*vel = south_east_rebound(*vel);
 		if (box_corner.SO)
-			*vel = ft_vec3f(vel->x + box_size, vel->y - box_size, vel->z);
+			*vel = south_west_rebound(*vel);
 		if (box_corner.NO)
-			*vel = ft_vec3f(vel->x + box_size, vel->y + box_size, vel->z);
+			*vel = north_west_rebound(*vel);
 		return (TRUE);
 	}
 	else
 		return (FALSE);
 }
 
+#include <stdio.h>
 t_vec3f		move(const t_map *const map, t_vec3f pos, t_vec3f vel)
 {
 	float		box_size;
@@ -123,12 +185,13 @@ t_vec3f		move(const t_map *const map, t_vec3f pos, t_vec3f vel)
 	next_position = ft_vec2f(pos.x + vel.x, pos.y + vel.y);
 	if (is_collide(map, next_position, box_size, &box_corners))
 	{
+		printf("NE %d SE %d SO %d NO %d\n", box_corners.NE, box_corners.SE, box_corners.SO, box_corners.NO);
 		if (is_vertical_collide(box_corners))
-			return (ft_vec3f(-vel.x * 0.001, vel.y, vel.z));
+			return (ft_vec3f(0, vel.y, vel.z));
 		else if (is_horizontal_collide(box_corners))
-			return (ft_vec3f(vel.x, -vel.y * 0.001, vel.z));
+			return (ft_vec3f(vel.x, 0, vel.z));
 		else if (is_corner_collide(box_corners, box_size, &vel))
-			return (vel);
+			return (vel);  
 		else
 			return (ft_vec3f(0.0f, 0.0f, 0.0f));
 	}
