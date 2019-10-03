@@ -6,12 +6,14 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 20:06:58 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/26 19:09:34 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 18:09:47 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "engine/game.h"
 #include "engine/error.h"
+
+#include <stdio.h>
 
 t_result	game_set_scene(t_heap_module_factory factory)
 {
@@ -27,7 +29,7 @@ t_result	game_set_scene(t_heap_module_factory factory)
 	module_add_heap_module(&game->module, factory, (void**)&game->scene);
 	if (game->module.has_error)
 	{
-		stop_game();
+		game_close();
 		return (throw_result_str("game_set_scene()",
 			"failed to set new scene"));
 	}

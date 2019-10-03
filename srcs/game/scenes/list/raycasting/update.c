@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:41:49 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/08 17:21:35 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 16:48:30 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	raycasting_scene_update(t_raycasting_scene *self)
 {
 	entity_list_update(&self->super.entities);
 	self->renderer.direction = self->player_ref->super.transform.rotation.y;
-	self->renderer.position = vec3f_to_vec2f(self->player_ref->super.transform.position);
+	self->renderer.position =
+		vec3f_to_vec2f(self->player_ref->super.transform.position);
 	if (self->renderer.direction < M_PI)
 		self->renderer.direction += 2.0f * M_PI;
 	if (self->renderer.direction > M_PI)

@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 19:33:38 by lbenard           #+#    #+#              #
-#    Updated: 2019/10/02 07:24:07 by lbenard          ###   ########.fr        #
+#    Updated: 2019/10/03 22:26:53 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,6 +73,7 @@ SRCS_LIST		=	main.c														\
 					engine/game/start.c											\
 					engine/game/set_scene.c										\
 					engine/game/loop.c											\
+					engine/game/close.c											\
 					engine/game/stop.c											\
 																				\
 					engine/sfml/image/image_from_file.c							\
@@ -86,11 +87,20 @@ SRCS_LIST		=	main.c														\
 					engine/lookup_table/sine.c									\
 					engine/lookup_table/tangent.c								\
 																				\
+					engine/map/new_block_node.c									\
+					engine/map/block_from_key.c									\
+					engine/map/free_block_list.c								\
+					engine/map/new_texture_node.c								\
+					engine/map/texture_from_key.c								\
+					engine/map/free_texture_list.c								\
 					engine/map/map.c											\
 					engine/map/init.c											\
+					engine/map/parse_texture_list.c								\
+					engine/map/parse_block_list.c								\
+					engine/map/parse_size.c										\
+					engine/map/parse_map.c										\
+					engine/map/parse_player.c									\
 					engine/map/destroy.c										\
-					engine/map/new_block_node.c									\
-					engine/map/new_texture_node.c								\
 																				\
 					engine/module/stack_module/ft_stack_module_descriptor.c		\
 					engine/module/stack_module/ft_stack_module_factory.c		\
@@ -117,6 +127,7 @@ SRCS_LIST		=	main.c														\
 					engine/parsing/wolf_get_value.c								\
 					engine/parsing/wolf_get_values.c							\
 					engine/parsing/wolf_free_values.c							\
+					engine/parsing/wolf_strsplit_length.c						\
 																				\
 					engine/window/window.c										\
 					engine/window/init.c										\
@@ -134,14 +145,24 @@ SRCS_LIST		=	main.c														\
 					engine/raycasting/raycasting/raycasting.c					\
 					engine/raycasting/raycasting/init.c							\
 					engine/raycasting/raycasting/update.c						\
+					engine/raycasting/raycasting/find_obstacle.c				\
 					engine/raycasting/raycasting/destroy.c						\
 																				\
 					engine/scene/init.c											\
 					engine/scene/destroy.c										\
 																				\
+					game/entities/list/player/ft_corners.c						\
 					game/entities/list/player/player_entity.c					\
 					game/entities/list/player/new.c								\
 					game/entities/list/player/update.c							\
+					game/entities/list/player/is_colliding.c					\
+					game/entities/list/player/is_vertical_collide.c				\
+					game/entities/list/player/is_horizontal_collide.c			\
+					game/entities/list/player/is_corner_collide.c				\
+					game/entities/list/player/north_east_rebound.c				\
+					game/entities/list/player/south_east_rebound.c				\
+					game/entities/list/player/south_west_rebound.c				\
+					game/entities/list/player/north_west_rebound.c				\
 					game/entities/list/player/free.c							\
 																				\
 					game/entities/list/button/button_entity.c					\

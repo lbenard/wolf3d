@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 18:07:39 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/05 18:09:35 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 17:27:29 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	generate(float *const array, float max_amplitude, size_t steps)
 	}
 }
 
-float	tangent_lookup(float t)
+float		tangent_lookup(float t)
 {
 	static t_bool	is_generated = FALSE;
 	static float	array[TANGENT_TABLE_SIZE];

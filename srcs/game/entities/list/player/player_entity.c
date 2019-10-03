@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   player_entity.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 13:14:55 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/30 17:37:32 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/10/03 15:57:15 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ t_heap_module_factory	player_entity(const t_map *const map)
 
 	args.map = map;
 	return (ft_heap_module_factory(ft_heap_module_descriptor(
-		(void *(*)())new_player_entity, free_player_entity), &args));
+		(t_new_fn)new_player_entity, free_player_entity), &args));
 }

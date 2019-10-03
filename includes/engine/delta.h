@@ -6,12 +6,12 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/28 17:47:02 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/04 18:20:44 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 15:32:53 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DELTA
-# define DELTA
+#ifndef DELTA_H
+# define DELTA_H
 
 void	set_last_delta(const float delta);
 float	get_last_delta(void);

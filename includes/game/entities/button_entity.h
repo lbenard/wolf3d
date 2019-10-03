@@ -6,12 +6,12 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 08:47:27 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/22 16:30:32 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 15:42:30 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUTTON_ENTITY
-# define BUTTON_ENTITY
+#ifndef BUTTON_ENTITY_H
+# define BUTTON_ENTITY_H
 
 # include "engine/entity.h"
 # include "engine/entity_node.h"

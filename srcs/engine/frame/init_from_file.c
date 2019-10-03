@@ -6,58 +6,78 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 18:13:26 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/26 19:08:46 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 17:17:37 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "engine/frame.h"
 #include "engine/error.h"
+#include "engine/image.h"
 #include "engine/render_texture.h"
 #include "engine/sprite.h"
 #include "ft/mem.h"
 
-t_result	init_frame_from_file(t_frame *const self, t_frame_args *args)
+static t_result	load_texture(t_image **file, t_usize *image_size,
+					t_frame_args *const args)
 {
-	sfImage		*buffer;
 	sfVector2u	frame_size;
 
-	init_module(&self->module);
-	if (!(buffer = sfImage_createFromFile(args->path)))
+	if (!(*file = sfImage_createFromFile(args->path)))
+	{
 		return (throw_result_str("init_frame_from_file()",
 			"cannot load texture path"));
-	frame_size = sfImage_getSize(buffer);
+	}
+	frame_size = sfImage_getSize(*file);
 	if (frame_size.x == 0 || frame_size.y == 0)
 	{
-		sfImage_destroy(buffer);
+		sfImage_destroy(*file);
 		return (throw_result_str("init_frame_from_file()",
 			"cannot create a frame with null horizontal or vertical size"));
 	}
-	*(t_usize*)&self->size = ft_usize(frame_size.x, frame_size.y);
-	if (!(*(t_u32**)&self->frame =
-		(t_u32*)malloc(sizeof(t_u32) * frame_size.x * frame_size.y)))
-	{
-		sfImage_destroy(buffer);
-		return (throw_result_str("init_frame_from_file()",
-			"failed while allocating frame"));
-	}
+	*image_size = ft_usize(frame_size.x, frame_size.y);
+	return (OK);
+}
+
+static void		add_modules(t_frame *const self)
+{
 	module_add_heap_module(&self->module, render_texture(self->size),
 		(void**)&self->render_texture);
 	module_add_heap_module(&self->module, sprite(), (void**)&self->sprite);
-	if (self->module.has_error == FALSE)
+}
+
+static void		copy_texture(t_frame *const self, t_image *const file)
+{
+	ft_memcpy(self->frame, sfImage_getPixelsPtr(file),
+		sizeof(t_u32) * self->size.x * self->size.y);
+	sfSprite_setTexture(self->sprite,
+		sfRenderTexture_getTexture(self->render_texture), 0);
+}
+
+t_result		init_frame_from_file(t_frame *const self,
+					t_frame_args *const args)
+{
+	t_image	*file;
+
+	init_module(&self->module);
+	if (load_texture(&file, &self->size, args) == ERROR)
+		return (throw_result_str("init_frame_from_file()", "failed to load"));
+	if (!(*(t_u32**)&self->frame =
+		(t_u32*)malloc(sizeof(t_u32) * self->size.x * self->size.y)))
 	{
-		ft_memcpy(self->frame, sfImage_getPixelsPtr(buffer),
-			sizeof(t_u32) * frame_size.x * frame_size.y);
-		sfSprite_setTexture(self->sprite,
-			sfRenderTexture_getTexture(self->render_texture), 0);
-		sfImage_destroy(buffer);
+		sfImage_destroy(file);
+		return (throw_result_str("init_frame_from_file()",
+			"failed while allocating frame"));
 	}
-	else
+	add_modules(self);
+	if (self->module.has_error == TRUE)
 	{
-		sfImage_destroy(buffer);
+		sfImage_destroy(file);
 		destroy_frame(self);
 		return (throw_result_str("init_frame_from_file()",
 			"failed to init frame module"));
 	}
+	copy_texture(self, file);
+	sfImage_destroy(file);
 	return (OK);
 }

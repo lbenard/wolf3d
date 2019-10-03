@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 16:55:06 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/26 19:15:35 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 19:01:11 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,18 @@ t_result	wolf_is_kv_correct(char *line, char end)
 	while (*line && *line != ':' && *line != end)
 	{
 		if (!ft_isalnum(*line) && *line != '_')
+		{
 			return (throw_result_str("wolf_is_kv_correct()",
 				"incorrect snake_case key syntax"));
+		}
 		line++;
 	}
 	if (*line != ':')
 		return (throw_result_str("wolf_is_kv_correct()", "missing colon"));
 	if (line[1] != ' ')
+	{
 		return (throw_result_str("wolf_is_kv_correct()",
 			"missing space after colon"));
+	}
 	return (OK);
 }

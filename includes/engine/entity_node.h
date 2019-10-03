@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 15:48:17 by lbenard           #+#    #+#             */
-/*   Updated: 2019/08/19 15:40:54 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 15:38:55 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 */
 typedef struct	s_entity_node
 {
-	t_list_head	node;
-	t_entity	*const entity;
-	void		(*free_fn)();
+	t_list_head		node;
+	t_entity*const	entity;
+	void			(*free_fn)();
 }				t_entity_node;
 
 /*

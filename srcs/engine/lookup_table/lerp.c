@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 16:31:50 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/05 16:32:10 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 17:27:14 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 float	lerp(float v0, float v1, float t)
 {
-  return (1.0f - t) * v0 + t * v1;
+	return ((1.0f - t) * v0 + t * v1);
 }

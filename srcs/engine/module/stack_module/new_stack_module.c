@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/29 19:47:00 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/26 19:13:24 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 18:15:56 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,10 @@ t_stack_module	*new_stack_module(void *const module,
 	t_stack_module	*ret;
 
 	if (!(ret = (t_stack_module*)malloc(sizeof(t_stack_module))))
+	{
 		return (throw_error_str("new_stack_module()",
 			"failed to allocate new stack module node"));
+	}
 	init_list_head(&ret->node);
 	ret->module_ref = module;
 	ret->descriptor = descriptor;

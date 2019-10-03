@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 15:53:03 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/03 12:57:36 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 15:40:39 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct			s_event_handler
 	t_list_head	node;
 	t_module	module;
 	t_list_head	childs;
-	void		*const object;
+	void*const	object;
 	t_list_head	callbacks;
 }						t_event_handler;
 

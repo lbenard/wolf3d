@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:19:02 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/22 18:07:58 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 16:19:06 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,4 @@ void	menu_scene_render(t_menu_scene *self, t_frame *fb)
 	button_entity_render(self->close_game_ref, fb);
 	image_entity_render(self->title_ref, fb);
 	image_entity_render(self->credits_ref, fb);
-	// frame_layer(fb, &self->credits,
-	// 	ft_isize(5, fb->size.y - self->credits.size.y - 5), blend_add);
-	// frame_layer(fb, &self->title,
-	// 	ft_isize(5, fb->size.y - self->credits.size.y - 5), blend_add);
 }

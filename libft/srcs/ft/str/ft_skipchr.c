@@ -6,15 +6,17 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/24 16:57:24 by lbenard           #+#    #+#             */
-/*   Updated: 2019/02/20 19:36:53 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/09/30 19:33:06 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft/str.h"
 
-const char	*ft_skipchr(const char *str, char skip)
+char	*ft_skipchr(const char *str, char skip)
 {
+	if (!str)
+		return (NULL);
 	while (*str == skip)
 		str++;
-	return (str);
+	return ((char*)str);
 }

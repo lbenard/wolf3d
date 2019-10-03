@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 16:50:53 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 22:21:54 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 22:27:04 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ t_ray					ft_ray(const t_vec2f player_position,
 							const t_vec2f hit_position,
 							const t_image *texture,
 							const float texture_ratio);
-t_bool					is_ray_in_map(const t_vec2f pos,
-							const t_map *const map);
+t_bool					is_ray_in_map(const t_map *const map,
+							const t_vec2f pos);
 const t_image			*ray_hitting_texture(const t_map *const map,
 							const t_vec2f pos,
 							const t_direction direction,
@@ -61,9 +61,8 @@ t_angle					ft_angle(float rad);
 typedef struct			s_raycasting
 {
 	t_module	module;
-	t_map		*const map;
-	t_ray		*const columns;
-	t_ray		middle;
+	t_map*const	map;
+	t_ray*const	columns;
 	size_t		columns_number;
 	t_vec2f		position;
 	float		direction;
@@ -81,6 +80,9 @@ t_stack_module_factory	raycasting(const t_usize window_size, t_map *const map);
 t_result				init_raycasting(t_raycasting *const self,
 							const t_raycasting_args *const args);
 void					raycasting_update(t_raycasting *const self);
+t_ray					find_obstacle(const t_raycasting *const self,
+							const float fisheye_cos,
+							const t_angle direction);
 void					destroy_raycasting(t_raycasting *const self);
 
 #endif

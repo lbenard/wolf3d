@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/07 19:52:00 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/07 19:56:39 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 19:16:40 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ t_heap_module_factory	render_texture(const t_usize size)
 
 	args.size = size;
 	return (ft_heap_module_factory(ft_heap_module_descriptor(
-		(void *(*)())new_render_texture, free_render_texture), &args));
+		(t_new_fn)new_render_texture, free_render_texture), &args));
 }

@@ -6,12 +6,12 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 15:24:16 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/22 17:38:46 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 15:43:47 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MENU_SCENE
-# define MENU_SCENE
+#ifndef MENU_SCENE_H
+# define MENU_SCENE_H
 
 # include "engine/window.h"
 # include "engine/scene.h"

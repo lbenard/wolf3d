@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 23:40:12 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/22 17:00:59 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 15:42:17 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct			s_window
 	const t_usize	size;
 }						t_window;
 
-typedef struct 			s_window_args
+typedef struct			s_window_args
 {
 	const char	*name;
 	t_usize		size;

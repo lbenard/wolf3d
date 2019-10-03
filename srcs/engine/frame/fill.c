@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 23:29:06 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/20 21:21:23 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 16:53:17 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,3 @@ void	frame_fill(t_frame *const self, t_rgba fill_color)
 		i++;
 	}
 }
-
-// 0xRRGGBBAA

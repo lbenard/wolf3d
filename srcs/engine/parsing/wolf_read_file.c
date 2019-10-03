@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 16:26:29 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/26 19:15:03 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 19:03:46 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,15 +64,8 @@ char		*wolf_read_file(const char *path)
 	}
 	while (ft_get_next_line(file_descriptor, &line))
 	{
-		if (!line)
-		{
-			free(map_str);
-			close(file_descriptor);
-			return (throw_error_str("wolf_read_file()",
-				"failed to read new line"));
-		}
-		if (!wolf_is_line_correct(line)
-			|| !(map_str = join_next_line(map_str, add_newline(line))))
+		if (!line || !wolf_is_line_correct(line) ||
+			!(map_str = join_next_line(map_str, add_newline(line))))
 		{
 			free(map_str);
 			close(file_descriptor);
