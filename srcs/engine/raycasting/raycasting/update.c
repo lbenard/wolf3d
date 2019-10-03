@@ -6,14 +6,14 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 17:51:27 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 22:29:34 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 22:33:07 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <math.h>
 #include "engine/raycasting.h"
 
-void	raycasting_update(const t_raycasting *const self)
+void	raycasting_update(t_raycasting *const self)
 {
 	size_t	column;
 	float	angle;

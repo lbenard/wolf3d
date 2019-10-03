@@ -6,13 +6,13 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 19:09:47 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 19:11:01 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 22:33:22 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "engine/raycasting.h"
 
-static t_ray	north_ray(const t_raycasting_renderer *const self,
+static t_ray	north_ray(const t_raycasting *const self,
 					t_angle direction)
 {
 	t_vec2f			pos;
@@ -38,7 +38,7 @@ static t_ray	north_ray(const t_raycasting_renderer *const self,
 		1.0f - (pos.x - (int)pos.x)));
 }
 
-static t_ray	east_ray(const t_raycasting_renderer *const self,
+static t_ray	east_ray(const t_raycasting *const self,
 					const t_angle direction)
 {
 	t_vec2f			pos;
@@ -64,7 +64,7 @@ static t_ray	east_ray(const t_raycasting_renderer *const self,
 		pos.y - (int)pos.y));
 }
 
-static t_ray	south_ray(const t_raycasting_renderer *const self,
+static t_ray	south_ray(const t_raycasting *const self,
 					const t_angle direction)
 {
 	t_vec2f			pos;
@@ -90,7 +90,7 @@ static t_ray	south_ray(const t_raycasting_renderer *const self,
 		pos.x - (int)pos.x));
 }
 
-static t_ray	west_ray(const t_raycasting_renderer *const self,
+static t_ray	west_ray(const t_raycasting *const self,
 					const t_angle direction)
 {
 	t_vec2f			pos;
@@ -116,7 +116,7 @@ static t_ray	west_ray(const t_raycasting_renderer *const self,
 		1.0f - (pos.y - (int)pos.y)));
 }
 
-t_ray			find_obstacle(const t_raycasting_renderer *const self,
+t_ray			find_obstacle(const t_raycasting *const self,
 					const float fisheye_cos,
 					const t_angle direction)
 {
