@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/15 16:24:09 by ppetitea          #+#    #+#             */
-/*   Updated: 2019/10/03 17:34:06 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 23:52:37 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ t_texture_node	*new_texture_node(const char *key, const char *const path)
 	}
 	if (!(ret = (t_texture_node*)malloc(sizeof(t_texture_node))))
 	{
+		free((char*)key);
+		free((char*)path);
 		return (throw_error_str("new_texture_node()",
 			"failed while allocating texture node"));
 	}

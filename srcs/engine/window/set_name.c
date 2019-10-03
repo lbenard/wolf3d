@@ -6,10 +6,11 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 00:26:03 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 19:17:06 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 23:38:16 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdlib.h>
 #include "engine/window.h"
 #include "engine/error.h"
 #include "ft/str.h"
@@ -26,6 +27,7 @@ t_result	window_set_name(t_window *const self, const char *const name)
 	ft_strcat(name_dup, " - ");
 	ft_strcat(name_dup, name);
 	sfRenderWindow_setTitle(self->window, name_dup);
+	free(*(char**)&self->name);
 	self->name = name_dup;
 	return (OK);
 }

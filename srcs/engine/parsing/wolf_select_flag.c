@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 17:19:15 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 19:01:52 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 23:59:05 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ char	*wolf_select_flag(char *map_str, char *flag_name)
 	char	*flag_start;
 	char	*flag_end;
 	char	*flag;
+	char	*ret;
 
 	if (!(flag = wolf_new_flag(flag_name)))
 	{
@@ -33,7 +34,9 @@ char	*wolf_select_flag(char *map_str, char *flag_name)
 	}
 	flag_start += ft_strlen(flag);
 	if ((flag_end = ft_strstr(flag_start, "\n-")))
-		return (ft_strndup(flag_start, flag_end - flag_start));
+		ret = ft_strndup(flag_start, flag_end - flag_start);
 	else
-		return (ft_strdup(flag_start));
+		ret = ft_strdup(flag_start);
+	free(flag);
+	return (ret);
 }
