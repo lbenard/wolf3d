@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 13:26:25 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/03 13:48:59 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 16:25:58 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,5 @@ t_heap_module_factory	raycasting_scene(const t_window *const window)
 
 	args.window = window;
 	return (ft_heap_module_factory(ft_heap_module_descriptor(
-		(void *(*)())new_raycasting_scene, free_raycasting_scene), &args));
+		(t_new_fn)new_raycasting_scene, free_raycasting_scene), &args));
 }

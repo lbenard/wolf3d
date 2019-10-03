@@ -1,4 +1,4 @@
-	/* ************************************************************************** */
+/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   new.c                                              :+:      :+:    :+:   */
@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:26:02 by lbenard           #+#    #+#             */
-/*   Updated: 2019/08/14 16:31:32 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 19:21:35 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 #include "engine/error.h"
 #include "engine/image.h"
 
-void	background_frame(t_frame *frame, t_rgb ground_color, t_rgb sky_color)
+static void			background_frame(t_frame *frame,
+						t_rgb ground_color,
+						t_rgb sky_color)
 {
 	t_usize	i;
 	float	darkness;
@@ -27,11 +29,8 @@ void	background_frame(t_frame *frame, t_rgb ground_color, t_rgb sky_color)
 		while (i.x < frame->size.x)
 		{
 			darkness = (((double)frame->size.y / 2.0f) - (double)i.y);
-			if (i.y < frame->size.y / 2)
-				darkness /= ((double)frame->size.y / 2.0f);
-			else
-				darkness /= (((double)frame->size.y / 2.0f)
-					- ((double)frame->size.y));
+			darkness /= (((double)frame->size.y / 2.0f)
+				- ((i.y < frame->size.y / 2) ? 0 : ((double)frame->size.y)));
 			if (i.y < frame->size.y / 2)
 				frame->frame[i.y * frame->size.x + i.x] =
 					ft_rgba(sky_color.r * darkness, sky_color.g
@@ -46,52 +45,68 @@ void	background_frame(t_frame *frame, t_rgb ground_color, t_rgb sky_color)
 	}
 }
 
+static void			add_modules(t_raycasting_scene *const self,
+						const t_raycasting_scene_args *const args)
+{
+	module_add_heap_module(&self->super.module,
+		image_from_file("resources/textures/plaster.jpg"),
+		(void**)&self->texture);
+	module_add_stack_module(&self->super.module, map("maps/maze_test.wolf"),
+		&self->map);
+	module_add_stack_module(&self->super.module,
+		frame(args->window->size, ft_rgba(255, 255, 255, 255)),
+		&self->background);
+	module_add_stack_module(&self->super.module,
+		raycasting_renderer(args->window->size, &self->map), &self->renderer);
+}
+
+static void			add_entities(t_raycasting_scene *const self)
+{
+	self->player_ref = (t_player_entity*)entity_list_add_entity(
+		&self->super.entities, player_entity(&self->map));
+	self->minimap_ref = (t_minimap_entity*)entity_list_add_entity(
+		&self->super.entities,
+		minimap_entity(&self->renderer, ft_usize(200, 200)));
+}
+
+static void			init_vars(t_raycasting_scene *const self)
+{
+	self->ground_color = ft_rgb(105, 105, 105);
+	self->sky_color = ft_rgb(129, 244, 252);
+	background_frame(&self->background, self->ground_color, self->sky_color);
+	event_handler_add_sub_handler(&self->super.input_manager,
+		&self->player_ref->event_handler);
+	self->renderer.direction = self->player_ref->super.transform.rotation.y;
+	self->renderer.position =
+		vec3f_to_vec2f(self->player_ref->super.transform.position);
+}
+
 t_raycasting_scene	*new_raycasting_scene(
 						const t_raycasting_scene_args *const args)
 {
 	t_raycasting_scene	*ret;
 
 	if (!(ret = (t_raycasting_scene*)malloc(sizeof(t_raycasting_scene))))
+	{
 		return (throw_error_str("new_raycasting_scene()",
 			"failed while mallocing raycasting scene"));
+	}
 	if (!init_scene(&ret->super, "Raycasting sandbox",
-		(void(*)())raycasting_scene_update,
-		(void(*)())raycasting_scene_render))
+		(void(*)())raycasting_scene_update, (void(*)())raycasting_scene_render))
 	{
 		free(ret);
 		return (throw_error_str("new_raycasting_scene()",
 			"failed while initalizing scene"));
 	}
-	module_add_heap_module(&ret->super.module,
-		image_from_file("resources/textures/plaster.jpg"),
-		(void**)&ret->texture);
-	module_add_stack_module(&ret->super.module, map("maps/maze_test.wolf"),
-		&ret->map);
-	module_add_stack_module(&ret->super.module,
-		frame(args->window->size, ft_rgba(255, 255, 255, 255)),
-		&ret->background);
-	module_add_stack_module(&ret->super.module,
-		raycasting_renderer(args->window->size, &ret->map), &ret->renderer);
-	ret->player_ref = (t_player_entity*)entity_list_add_entity(
-		&ret->super.entities, player_entity(&ret->map));
-	ret->minimap_ref = (t_minimap_entity*)entity_list_add_entity(
-		&ret->super.entities,
-		minimap_entity(&ret->renderer, ft_usize(200, 200)));
+	add_modules(ret, args);
 	if (!ret->super.module.has_error)
-	{
-		ret->ground_color = ft_rgb(105, 105, 105);
-		ret->sky_color = ft_rgb(129, 244, 252);
-		background_frame(&ret->background, ret->ground_color, ret->sky_color);
-		event_handler_add_sub_handler(&ret->super.input_manager,
-			&ret->player_ref->event_handler);
-		ret->renderer.direction = ret->player_ref->super.transform.rotation.y;
-		ret->renderer.position = vec3f_to_vec2f(ret->player_ref->super.transform.position);
-	}
+		add_entities(ret);
+	if (!ret->super.module.has_error)
+		init_vars(ret);
 	else
 	{
 		free_raycasting_scene(ret);
-		return (throw_error_str("new_raycasting_scene()",
-			"failed to create raycasting scene"));
+		return (throw_error_str("new_raycasting_scene()", "failed to create"));
 	}
 	return (ret);
 }

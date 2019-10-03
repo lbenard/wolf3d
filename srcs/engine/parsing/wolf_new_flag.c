@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/24 17:22:39 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/26 19:15:56 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 19:01:26 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,10 @@ char	*wolf_new_flag(char *flag_name)
 	if (!flag_name)
 		return (throw_error_str("wolf_new_flag()", "incorrect flag_name"));
 	if (!(tmp = ft_strjoin("\n-", flag_name)))
+	{
 		return (throw_error_str("wolf_new_flag()",
 			"failed to join temporary flag name"));
+	}
 	if (!(flag = ft_strjoin(tmp, "\n")))
 	{
 		free(tmp);

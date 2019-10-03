@@ -6,12 +6,12 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 17:30:08 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/26 19:02:13 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 15:39:19 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERRORS_H
-# define ERRORS_H
+#ifndef ERROR_H
+# define ERROR_H
 
 # include "types.h"
 

@@ -6,12 +6,12 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 13:16:12 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/28 16:08:50 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 15:43:42 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIMAP_ENTITY
-# define MINIMAP_ENTITY
+#ifndef MINIMAP_ENTITY_H
+# define MINIMAP_ENTITY_H
 
 # include "engine/entity.h"
 # include "sizes/usize.h"

@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 18:31:08 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/08 16:12:40 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 15:51:00 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	button_entity_update(t_button_entity *const self)
 {
 	sfVector2i	pos;
-	
+
 	pos = sfMouse_getPositionRenderWindow(self->window->window);
 	if (pos.x >= self->super.transform.position.x
 		&& pos.x < self->super.transform.position.x

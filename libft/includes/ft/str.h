@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/19 17:43:05 by lbenard           #+#    #+#             */
-/*   Updated: 2019/04/24 16:55:03 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 15:28:24 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,9 @@ char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_strtrim(const char *s);
 char			**ft_strsplit(const char *s, char c);
 size_t			ft_strcount(const char *s, char c);
-const char		*ft_getline(const char *file, size_t line);
-const char		*ft_skipchr(const char *str, char skip);
+char			*ft_getline(const char *file, size_t line);
+char			*ft_skipchr(const char *str, char skip);
+char			*ft_nextline(const char *str);
 
 int				ft_isalpha(int c);
 int				ft_isdigit(int c);

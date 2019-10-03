@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/17 20:15:00 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/26 19:19:46 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 16:17:33 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ t_callback_node	*new_close_game_event(void *params)
 	t_callback_node	*node;
 
 	if (!(node = new_callback_node(close_game_event, params)))
+	{
 		return (throw_error_str("new_close_game_event()",
 			"failed to create new close game event"));
+	}
 	return (node);
 }

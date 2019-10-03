@@ -6,16 +6,16 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 17:31:45 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/22 18:02:13 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 15:43:15 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMAGE_ENTITY_H
 # define IMAGE_ENTITY_H
 
-#include "engine/entity.h"
-#include "engine/frame.h"
-#include "engine/module.h"
+# include "engine/entity.h"
+# include "engine/frame.h"
+# include "engine/module.h"
 
 typedef struct			s_image_entity
 {

@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/05 18:02:14 by lbenard           #+#    #+#              #
-#    Updated: 2019/09/28 15:43:56 by lbenard          ###   ########.fr        #
+#    Updated: 2019/10/03 15:30:44 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -171,6 +171,7 @@ SRCS_LIST		=	containers/list/init_list_head.c		\
 					ft/str/ft_strcount.c					\
 					ft/str/ft_getline.c						\
 					ft/str/ft_skipchr.c						\
+					ft/str/ft_nextline.c					\
 					ft/str/ft_isalpha.c						\
 					ft/str/ft_isdigit.c						\
 					ft/str/ft_isalnum.c						\

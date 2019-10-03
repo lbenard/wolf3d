@@ -21,6 +21,8 @@
 ** sub-modules and potential malloc errors.
 */
 
+typedef void				*(*t_new_fn)();
+
 typedef struct				s_stack_module_descriptor
 {
 	t_result	(*init_fn)();

@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free.c                                             :+:      :+:    :+:   */
+/*   south_west_rebound.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/28 15:32:51 by lbenard           #+#    #+#             */
-/*   Updated: 2019/07/09 17:18:25 by lbenard          ###   ########.fr       */
+/*   Created: 2019/10/03 16:09:59 by lbenard           #+#    #+#             */
+/*   Updated: 2019/10/03 16:13:29 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game/scenes/scene_type.h"
-#include "game/scenes/menu_scene.h"
-#include "game/scenes/raycasting_scene.h"
+#include "game/entities/player_entity.h"
 
-void	free_scene_type(t_scene *scene)
+t_vec3f	south_west_rebound(const t_vec3f vel)
 {
-	if (!scene)
-		return ;
-	if (scene->type == DUMMY_SCENE_TYPE)
-		;
-	else if (scene->type == MENU_SCENE_TYPE)
-		free_menu_scene((t_menu_scene*)scene);
-	else if (scene->type == RAYCASTING_SCENE_TYPE)
-		free_raycasting_scene((t_raycasting_scene*)scene);
+	if (vel.x < 0.0f && vel.y > 0.0f)
+	{
+		if (vel.x * vel.x > vel.y * vel.y)
+			return (ft_vec3f(0.0f, -vel.y, vel.z));
+		else
+			return (ft_vec3f(-vel.x, 0.0f, vel.z));
+	}
+	else if (vel.x < 0.0f)
+		return (ft_vec3f(0.0f, vel.y, vel.z));
+	else
+		return (ft_vec3f(vel.x, 0.0f, vel.z));
 }

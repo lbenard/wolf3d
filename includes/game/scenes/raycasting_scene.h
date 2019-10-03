@@ -6,12 +6,12 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/12 15:51:49 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/28 16:12:16 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 15:43:59 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef RAYCASTING_SCENE
-# define RAYCASTING_SCENE
+#ifndef RAYCASTING_SCENE_H
+# define RAYCASTING_SCENE_H
 
 # include "engine/scene.h"
 # include "engine/window.h"
