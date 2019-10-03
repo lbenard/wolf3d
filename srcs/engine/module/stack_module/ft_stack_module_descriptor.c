@@ -6,13 +6,14 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/29 19:59:24 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 19:07:27 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/03 19:31:33 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "engine/module.h"
 
-t_stack_module_descriptor	ft_stack_module_descriptor(t_result (*init_fn)(),
+t_stack_module_descriptor	ft_stack_module_descriptor(
+								enum e_result (*init_fn)(),
 								void (*destroy_fn)())
 {
 	t_stack_module_descriptor	descriptor;
