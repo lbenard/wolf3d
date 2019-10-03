@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 19:05:27 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 16:14:02 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 00:22:18 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,22 +51,22 @@ static void		wasd(t_vec3f *transform, t_vec3f rotation)
 	t_vec2f	rotation_trigonometry;
 
 	rotation_trigonometry = ft_vec2f(cos(rotation.y), sin(rotation.y));
-	if (sfKeyboard_isKeyPressed(sfKeyW) && !sfKeyboard_isKeyPressed(sfKeyS))
+	if (sfKeyboard_isKeyPressed(sfKeyW) || sfKeyboard_isKeyPressed(sfKeyUp))
 	{
 		transform->x += rotation_trigonometry.x;
 		transform->y += rotation_trigonometry.y;
 	}
-	if (sfKeyboard_isKeyPressed(sfKeyA) && !sfKeyboard_isKeyPressed(sfKeyD))
+	if (sfKeyboard_isKeyPressed(sfKeyA))
 	{
 		transform->x += rotation_trigonometry.y;
 		transform->y -= rotation_trigonometry.x;
 	}
-	if (sfKeyboard_isKeyPressed(sfKeyS) && !sfKeyboard_isKeyPressed(sfKeyW))
+	if (sfKeyboard_isKeyPressed(sfKeyS) || sfKeyboard_isKeyPressed(sfKeyDown))
 	{
 		transform->x -= rotation_trigonometry.x;
 		transform->y -= rotation_trigonometry.y;
 	}
-	if (sfKeyboard_isKeyPressed(sfKeyD) && !sfKeyboard_isKeyPressed(sfKeyA))
+	if (sfKeyboard_isKeyPressed(sfKeyD))
 	{
 		transform->x -= rotation_trigonometry.y;
 		transform->y += rotation_trigonometry.x;
