@@ -71,7 +71,7 @@ t_raycasting_scene	*new_raycasting_scene(
 		frame(args->window->size, ft_rgba(255, 255, 255, 255)),
 		&ret->background);
 	module_add_stack_module(&ret->super.module,
-		raycasting_renderer(args->window->size, &ret->map), &ret->renderer);
+		raycasting(args->window->size, &ret->map), &ret->renderer);
 	ret->player_ref = (t_player_entity*)entity_list_add_entity(
 		&ret->super.entities, player_entity(&ret->map));
 	ret->minimap_ref = (t_minimap_entity*)entity_list_add_entity(

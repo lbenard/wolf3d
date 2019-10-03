@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:42:30 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/28 16:12:11 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/02 08:51:57 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	raycasting_scene_render(t_raycasting_scene *self, t_frame *fb)
 	t_ray			*ray;
 	const t_image	*texture_used;
 
-	raycasting_renderer_update(&self->renderer);
+	raycasting_update(&self->renderer);
 	i = ft_usize(0, 0);
 	frame_layer(fb, &self->background, ft_isize(0, 0), blend_add);
 	i = ft_usize(0, 0);
@@ -39,7 +39,7 @@ void	raycasting_scene_render(t_raycasting_scene *self, t_frame *fb)
 		texture = (t_rgba*)sfImage_getPixelsPtr(texture_used);
 		texture_size = sfImage_getSize(texture_used);
 		exceed = 0.0f;
-		size = fb->size.y / ray->distance;
+		size = fb->size.y / (ray->distance * ray->fisheye);
 		if (size > fb->size.y)
 			exceed = (size - fb->size.y) * 0.5;
 		i.y = 0;

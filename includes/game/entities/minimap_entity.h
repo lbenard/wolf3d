@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 13:16:12 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/28 16:08:50 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/02 07:19:54 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,19 @@
 
 typedef struct			s_minimap_entity
 {
-	t_entity					super;
-	t_usize						size;
-	const t_raycasting_renderer	*raycasting_ref;
-	t_frame						minimap;
+	t_entity			super;
+	t_usize				size;
+	const t_raycasting	*raycasting_ref;
+	t_frame				minimap;
 }						t_minimap_entity;
 
 typedef struct			s_minimap_entity_args
 {
-	const t_raycasting_renderer	*renderer;
-	t_usize						max_size;
+	const t_raycasting	*renderer;
+	t_usize				max_size;
 }						t_minimap_entity_args;
 
-t_heap_module_factory	minimap_entity(const t_raycasting_renderer *renderer,
+t_heap_module_factory	minimap_entity(const t_raycasting *renderer,
 							const t_usize max_size);
 
 t_minimap_entity		*new_minimap_entity(

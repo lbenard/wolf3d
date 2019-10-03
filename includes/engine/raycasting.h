@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   raycasting.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ppetitea <ppetitea@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 16:50:53 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/28 15:31:29 by ppetitea         ###   ########.fr       */
+/*   Updated: 2019/10/03 22:21:54 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef enum			e_direction
 typedef struct			s_ray
 {
 	float			distance;
+	float			fisheye;
 	t_vec2f			hit_position;
 	const t_image	*texture;
 	float			texture_ratio;
@@ -40,6 +41,12 @@ t_ray					ft_ray(const t_vec2f player_position,
 							const t_vec2f hit_position,
 							const t_image *texture,
 							const float texture_ratio);
+t_bool					is_ray_in_map(const t_vec2f pos,
+							const t_map *const map);
+const t_image			*ray_hitting_texture(const t_map *const map,
+							const t_vec2f pos,
+							const t_direction direction,
+							const t_vec2f shift);
 
 typedef struct			s_angle
 {
@@ -51,32 +58,29 @@ typedef struct			s_angle
 
 t_angle					ft_angle(float rad);
 
-typedef struct			s_raycasting_renderer
+typedef struct			s_raycasting
 {
 	t_module	module;
 	t_map		*const map;
 	t_ray		*const columns;
+	t_ray		middle;
 	size_t		columns_number;
 	t_vec2f		position;
 	float		direction;
 	float		fov;
-}						t_raycasting_renderer;
+}						t_raycasting;
 
-typedef struct			s_raycasting_renderer_args
+typedef struct			s_raycasting_args
 {
 	t_usize	window_size;
 	t_map	*map;
-}						t_raycasting_renderer_args;
+}						t_raycasting_args;
 
-t_stack_module_factory	raycasting_renderer(const t_usize window_size,
-							t_map *const map);
+t_stack_module_factory	raycasting(const t_usize window_size, t_map *const map);
 
-t_result				init_raycasting_renderer(
-							t_raycasting_renderer *const self,
-							const t_raycasting_renderer_args *const args);
-void					raycasting_renderer_update(
-							const t_raycasting_renderer *const self);
-void					destroy_raycasting_renderer(
-							t_raycasting_renderer *const self);
+t_result				init_raycasting(t_raycasting *const self,
+							const t_raycasting_args *const args);
+void					raycasting_update(t_raycasting *const self);
+void					destroy_raycasting(t_raycasting *const self);
 
 #endif

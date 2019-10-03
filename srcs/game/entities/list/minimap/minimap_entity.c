@@ -6,13 +6,13 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 13:27:33 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/14 13:37:03 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/02 07:22:46 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game/entities/minimap_entity.h"
 
-t_heap_module_factory	minimap_entity(const t_raycasting_renderer *renderer,
+t_heap_module_factory	minimap_entity(const t_raycasting *renderer,
 							const t_usize max_size)
 {
 	static t_minimap_entity_args	args;

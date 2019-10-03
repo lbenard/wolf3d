@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 19:33:38 by lbenard           #+#    #+#              #
-#    Updated: 2019/09/28 16:13:25 by lbenard          ###   ########.fr        #
+#    Updated: 2019/10/02 07:24:07 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -129,10 +129,12 @@ SRCS_LIST		=	main.c														\
 																				\
 					engine/raycasting/angle/ft.c								\
 					engine/raycasting/ray/ft.c									\
-					engine/raycasting/raycasting_renderer/raycasting_renderer.c	\
-					engine/raycasting/raycasting_renderer/init.c				\
-					engine/raycasting/raycasting_renderer/update.c				\
-					engine/raycasting/raycasting_renderer/destroy.c				\
+					engine/raycasting/ray/is_ray_in_map.c						\
+					engine/raycasting/ray/ray_hitting_texture.c					\
+					engine/raycasting/raycasting/raycasting.c					\
+					engine/raycasting/raycasting/init.c							\
+					engine/raycasting/raycasting/update.c						\
+					engine/raycasting/raycasting/destroy.c						\
 																				\
 					engine/scene/init.c											\
 					engine/scene/destroy.c										\

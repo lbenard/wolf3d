@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/12 15:51:49 by lbenard           #+#    #+#             */
-/*   Updated: 2019/09/28 16:12:16 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/02 07:20:07 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,15 @@
 
 typedef struct			s_raycasting_scene
 {
-	t_scene					super;
-	t_map					map;
-	t_rgb					ground_color;
-	t_rgb					sky_color;
-	t_frame					background;
-	t_raycasting_renderer	renderer;
-	sfImage					*texture;
-	t_player_entity			*player_ref;
-	t_minimap_entity		*minimap_ref;
+	t_scene				super;
+	t_map				map;
+	t_rgb				ground_color;
+	t_rgb				sky_color;
+	t_frame				background;
+	t_raycasting		renderer;
+	sfImage				*texture;
+	t_player_entity		*player_ref;
+	t_minimap_entity	*minimap_ref;
 }						t_raycasting_scene;
 
 typedef struct			s_raycasting_scene_args

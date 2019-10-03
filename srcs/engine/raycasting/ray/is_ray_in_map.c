@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft.c                                               :+:      :+:    :+:   */
+/*   is_ray_in_map.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/12 15:13:44 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/02 08:47:49 by lbenard          ###   ########.fr       */
+/*   Created: 2019/10/02 07:06:41 by lbenard           #+#    #+#             */
+/*   Updated: 2019/10/02 07:07:29 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "engine/raycasting.h"
 
-t_ray	ft_ray(const t_vec2f player_position,
-			const t_vec2f hit_position,
-			const t_image *texture,
-			const float texture_ratio)
+t_bool	is_ray_in_map(const t_vec2f pos, const t_map *const map)
 {
-	t_ray	ret;
-
-	ret.distance = vec2f_distance(player_position, hit_position);
-	ret.hit_position = hit_position;
-	ret.texture = texture;
-	ret.texture_ratio = texture_ratio;
-	return (ret);
+	if (pos.x <= 0 || pos.y <= 0)
+		return (FALSE);
+	else if (pos.x >= map->size.x || pos.y >= map->size.y)
+		return (FALSE);
+	return (TRUE);
 }
