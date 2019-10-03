@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:16:18 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 16:18:49 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 00:27:22 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,9 @@ static void		add_buttons(t_menu_scene *const scene,
 
 static void		add_images(t_menu_scene *const scene)
 {
+	scene->vignette_ref = (t_image_entity*)entity_list_add_entity(
+		&scene->super.entities,
+		image_entity_from_file("resources/textures/vignette.png"));
 	scene->title_ref = (t_image_entity*)entity_list_add_entity(
 		&scene->super.entities,
 		image_entity_from_file("resources/texts/wolf3d-upscale.png"));

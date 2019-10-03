@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:16:58 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 16:19:14 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 00:28:40 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ static void	update_images(t_menu_scene *const self)
 void		menu_scene_update(t_menu_scene *const self)
 {
 	entity_list_update(&self->super.entities);
-	if (self->start_game_ref->is_clicked || sfKeyboard_isKeyPressed(sfKeyEnter))
+	if (self->start_game_ref->is_clicked)
 	{
 		game_set_scene(raycasting_scene(&game_singleton()->window));
 		return ;

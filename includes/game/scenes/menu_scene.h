@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 15:24:16 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 15:43:47 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 00:26:53 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ typedef struct			s_menu_scene
 {
 	t_scene			super;
 	t_usize			window_size;
+	t_image_entity	*vignette_ref;
 	t_image_entity	*title_ref;
 	t_image_entity	*credits_ref;
 	t_button_entity	*start_game_ref;
