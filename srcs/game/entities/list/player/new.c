@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 12:57:30 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/04 02:59:42 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 04:09:05 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_player_entity	*new_player_entity(t_player_entity_args *args)
 	ret->map_ref = args->map;
 	ret->speed = 2.0f;
 	ret->super.transform.position.x = args->map->spawn.x;
-	ret->super.transform.position.y = args->map->spawn.x;
+	ret->super.transform.position.y = args->map->spawn.y;
 	if (ret->super.module.has_error)
 	{
 		free_player_entity(ret);
