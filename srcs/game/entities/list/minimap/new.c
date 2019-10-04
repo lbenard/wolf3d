@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 13:32:00 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 15:54:43 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 03:00:31 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,7 @@ t_minimap_entity	*new_minimap_entity(const t_minimap_entity_args *const args)
 	ret->raycasting_ref = args->renderer;
 	if (ret->super.module.has_error)
 	{
+		free_minimap_entity(ret);
 		return (throw_error_str("new_minimap_entity()",
 			"failed while creating minimap entity"));
 	}

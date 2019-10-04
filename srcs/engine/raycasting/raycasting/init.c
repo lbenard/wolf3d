@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/08 17:14:21 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 22:28:19 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 03:01:23 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ t_result	init_raycasting(t_raycasting *const self,
 	if (!(*(t_ray**)&self->columns = (t_ray*)malloc(sizeof(t_ray)
 		* args->window_size.x)))
 	{
-		self->module.has_error = TRUE;
 		return (throw_result_str("init_raycasting()",
 			"error while creating rays array"));
 	}

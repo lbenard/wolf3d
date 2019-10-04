@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/22 16:36:00 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 16:50:35 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 02:55:03 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_result	init_cursor_from_file(t_cursor *const self, t_cursor_args *args)
 	{
 		destroy_cursor(self);
 		return (throw_result_str("init_cursor_from_file()",
-			"Failed while creating new cursor"));
+			"failed while creating cursor module"));
 	}
 	return (OK);
 }
