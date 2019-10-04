@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 15:24:16 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/04 00:26:53 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:06:58 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@
 # include "game/entities/image_entity.h"
 
 /*
-** Main menu scene
+** Fancy main menu scene, with fancy moving stuff and a fancy vignette on top
+** of it, and fancy buttons to start or stop the game. Isn't that fancy?
 */
 typedef struct			s_menu_scene
 {
@@ -41,20 +42,12 @@ typedef struct			s_menu_scene_args
 
 t_heap_module_factory	menu_scene(const t_window *const window);
 
-/*
-** Constructors
-*/
 t_menu_scene			*new_menu_scene(const t_menu_scene_args *const args);
 
-/*
-** Modifiers
-*/
-void					menu_scene_update(t_menu_scene *self);
-void					menu_scene_render(t_menu_scene *self, t_frame *fb);
+void					menu_scene_update(t_menu_scene *const self);
+void					menu_scene_render(t_menu_scene *const self,
+							t_frame *const fb);
 
-/*
-** Destructors
-*/
-void					free_menu_scene(t_menu_scene *self);
+void					free_menu_scene(t_menu_scene *const self);
 
 #endif

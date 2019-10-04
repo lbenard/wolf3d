@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 19:05:27 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/04 00:22:18 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:00:40 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static void		wasd(t_vec3f *transform, t_vec3f rotation)
 	*transform = vec3f_normalize(*transform);
 }
 
-void			player_entity_update(t_player_entity *self)
+void			player_entity_update(t_player_entity *const self)
 {
 	t_vec3f	velocity;
 

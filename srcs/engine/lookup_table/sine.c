@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 16:20:36 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 17:27:27 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:04:36 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	generate(float *const array, float max_amplitude, size_t steps)
 	}
 }
 
-float		sine_lookup(float t)
+float		sine_lookup(const float t)
 {
 	static t_bool	is_generated = FALSE;
 	static float	array[SINE_TABLE_SIZE];

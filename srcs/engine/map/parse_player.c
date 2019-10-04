@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 17:37:11 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/04 04:09:21 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 12:54:55 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include "ft/str.h"
 #include "maths/maths.h"
 
-t_bool		is_player_immured(t_vec2d position, t_map *const map)
+t_bool		is_player_immured(const t_vec2d position, t_map *const map)
 {
 	return (map->map[(int)position.x
 		+ (int)position.y * map->size.x].north_texture_ref ||

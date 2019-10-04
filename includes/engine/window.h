@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 23:40:12 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 15:42:17 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 12:36:32 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 # include "engine/frame.h"
 # include "engine/cursor.h"
 
+/*
+** Window module wrapped around SFML RenderWindow object.
+*/
 typedef struct			s_window
 {
 	t_module		module;
@@ -41,12 +44,14 @@ t_stack_module_factory	window(const char *const name, const t_usize size);
 
 t_result				init_window(t_window *const self,
 							const t_window_args *const args);
+
 void					window_update(t_window *const self);
 t_bool					window_is_running(const t_window *const self);
 t_bool					window_is_focused(const t_window *const self);
 t_result				window_set_name(t_window *const self,
 							const char *const name);
 void					window_close(t_window *const self);
+
 void					destroy_window(t_window *const self);
 
 #endif

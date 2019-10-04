@@ -6,13 +6,12 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 20:07:46 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 18:09:54 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 12:51:48 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "engine/game.h"
 #include "engine/delta.h"
-#include <stdio.h>
 
 void	game_loop(void)
 {

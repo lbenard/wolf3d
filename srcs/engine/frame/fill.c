@@ -6,13 +6,13 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 23:29:06 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 16:53:17 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:04:07 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "engine/frame.h"
 
-void	frame_fill(t_frame *const self, t_rgba fill_color)
+void	frame_fill(t_frame *const self, const t_rgba fill_color)
 {
 	size_t	i;
 	size_t	total_size;

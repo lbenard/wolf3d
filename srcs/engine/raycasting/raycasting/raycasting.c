@@ -6,14 +6,13 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 07:21:49 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 22:28:33 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 12:57:45 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "engine/raycasting.h"
 
-t_stack_module_factory	raycasting(const t_usize window_size,
-							t_map *const map)
+t_stack_module_factory	raycasting(const t_usize window_size, t_map *const map)
 {
 	static t_raycasting_args	args;
 

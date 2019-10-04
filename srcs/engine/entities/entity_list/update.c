@@ -6,14 +6,12 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/31 18:44:44 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 16:51:23 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 12:49:50 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "engine/entity_list.h"
 #include "engine/entity_node.h"
-
-#include <stdio.h>
 
 void	entity_list_update(t_entity_list *const self)
 {

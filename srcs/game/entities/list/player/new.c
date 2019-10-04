@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/31 12:57:30 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/04 04:09:05 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:13:58 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "game/entities/player_entity.h"
 #include "game/events/events.h"
 
-t_player_entity	*new_player_entity(t_player_entity_args *args)
+t_player_entity	*new_player_entity(const t_player_entity_args *const args)
 {
 	t_player_entity	*ret;
 

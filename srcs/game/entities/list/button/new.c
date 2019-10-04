@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 08:59:56 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 15:49:28 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:12:51 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 #include "engine/error.h"
 
 static void		add_modules(t_button_entity *const self,
-					t_button_entity_args *const args)
+					const t_button_entity_args *const args)
 {
 	module_add_stack_module(&self->super.module,
 		frame_from_file(args->normal_texture_path), &self->normal_texture);
 }
 
-t_button_entity	*new_button_entity(t_button_entity_args *const args)
+t_button_entity	*new_button_entity(const t_button_entity_args *const args)
 {
 	t_button_entity	*ret;
 

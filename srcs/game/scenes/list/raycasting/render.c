@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:42:30 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/04 04:22:38 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:27:19 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,14 @@ t_rgba	color(t_raycasting_scene *self,
 	ret.integer = texture[(int)(ray->texture_ratio * texture_size.x)
 		+ (int)(((vertical_start) / (fb->size.y / ray->distance)
 		* texture_size.y)) * texture_size.x].integer;
-	ret.c.r /= (ray->distance / 2.0f) + 1;
-	ret.c.g /= (ray->distance / 2.0f) + 1;
-	ret.c.b /= (ray->distance / 2.0f) + 1;
+	ret.c.r /= (ray->distance / 3.0f) + 1;
+	ret.c.g /= (ray->distance / 3.0f) + 1;
+	ret.c.b /= (ray->distance / 3.0f) + 1;
 	return (ret);
 }
 
-void	raycasting_scene_render(t_raycasting_scene *self, t_frame *fb)
+void	raycasting_scene_render(t_raycasting_scene *const self,
+			t_frame *const fb)
 {
 	t_usize			i;
 	size_t			size;

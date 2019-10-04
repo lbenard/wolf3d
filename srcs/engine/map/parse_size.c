@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 18:03:56 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 17:34:40 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 12:55:04 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "ft/str.h"
 #include "maths/maths.h"
 
-t_result	map_parse_size(t_map *self, char *size_flag_str)
+t_result	map_parse_size(t_map *const self, char *size_flag_str)
 {
 	int		height;
 	int		width;

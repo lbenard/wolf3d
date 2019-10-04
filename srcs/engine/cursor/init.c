@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 23:45:23 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/04 02:54:35 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:08:23 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "engine/error.h"
 #include "ft/mem.h"
 
-t_result	init_cursor(t_cursor *const self, t_cursor_args *args)
+t_result	init_cursor(t_cursor *const self, const t_cursor_args *const args)
 {
 	init_module(&self->module);
 	module_add_stack_module(&self->module, frame(args->size, args->fill_color),

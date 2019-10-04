@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 13:16:12 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 22:27:12 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 12:39:32 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include "engine/raycasting.h"
 # include "engine/frame.h"
 
+/*
+** Sizable minimap entity. Uses raycasting informations
+*/
 typedef struct			s_minimap_entity
 {
 	t_entity			super;
@@ -37,9 +40,11 @@ t_heap_module_factory	minimap_entity(const t_raycasting *renderer,
 
 t_minimap_entity		*new_minimap_entity(
 							const t_minimap_entity_args *const args);
+
 void					minimap_entity_update(t_minimap_entity *const self);
 void					minimap_entity_render(t_minimap_entity *const self,
 							t_frame *const frame);
+
 void					free_minimap_entity(t_minimap_entity *const self);
 
 #endif

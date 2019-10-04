@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/10 15:53:03 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 15:40:39 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:03:48 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <SFML/Window.h>
 
 /*
-** Callbacks list for each event handler
+** Event node
 */
 typedef struct			s_callback_node
 {
@@ -27,13 +27,12 @@ typedef struct			s_callback_node
 	void		*params;
 }						t_callback_node;
 
-/*
-** Constructors
-*/
-t_callback_node			*new_callback_node(void (*callback)(),
-							void *params);
+t_callback_node			*new_callback_node(void (*callback)(), void *params);
 void					free_callback_node(t_callback_node *self);
 
+/*
+** Callbacks list for each event handler
+*/
 typedef struct			s_event_handler
 {
 	t_list_head	node;
@@ -52,6 +51,7 @@ t_stack_module_factory	event_handler(void *const object);
 
 t_result				init_event_handler(t_event_handler *const self,
 							const t_event_handler_args *const args);
+
 t_result				event_handler_add_callback(t_event_handler *const self,
 							t_callback_node *const callback);
 void					event_handler_add_sub_handler(
@@ -60,8 +60,9 @@ void					event_handler_add_sub_handler(
 void					event_handler_remove_sub_handler(
 							t_event_handler *const self,
 							t_event_handler *const sub_handler);
-void					event_handler_call(t_event_handler *self,
-							sfEvent *event);
+void					event_handler_call(t_event_handler *const self,
+							sfEvent *const event);
+
 void					destroy_event_handler(t_event_handler *const self);
 
 #endif

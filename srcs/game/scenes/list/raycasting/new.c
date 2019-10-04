@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:26:02 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/04 04:25:14 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:29:18 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 #include "engine/error.h"
 #include "engine/image.h"
 
-static void			background_frame(t_frame *frame,
-						t_rgb ground_color,
-						t_rgb sky_color)
+static void			background_frame(t_frame *const frame,
+						const t_rgb ground_color,
+						const t_rgb sky_color)
 {
 	t_usize	i;
 	float	darkness;
@@ -33,8 +33,8 @@ static void			background_frame(t_frame *frame,
 				- ((i.y < frame->size.y / 2) ? 0 : ((double)frame->size.y)));
 			if (i.y < frame->size.y / 2)
 				frame->frame[i.y * frame->size.x + i.x] =
-					ft_rgba(sky_color.r * darkness, sky_color.g
-					* darkness, sky_color.b * darkness, 255).integer;
+					ft_rgba(sky_color.r, sky_color.g, sky_color.b,
+						255).integer;
 			else
 				frame->frame[i.y * frame->size.x + i.x] =
 					ft_rgba(ground_color.r * darkness, ground_color.g

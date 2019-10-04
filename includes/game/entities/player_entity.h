@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/24 15:42:02 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 16:13:25 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:14:10 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,9 @@
 # include "engine/scene.h"
 # include "engine/map.h"
 
-typedef struct			s_player_entity
-{
-	t_entity		super;
-	t_event_handler	event_handler;
-	const t_map		*map_ref;
-	float			speed;
-}						t_player_entity;
-
+/*
+** Corners collision detection
+*/
 typedef struct			s_corners
 {
 	t_bool			ne;
@@ -36,6 +31,19 @@ typedef struct			s_corners
 
 t_corners				ft_corners(t_bool ne, t_bool se, t_bool so, t_bool no);
 
+/*
+** Player entity. The player can move around with WASD + up and down arrows,
+** and turn with left-right arrows. They can sprint by holding the Shift button.
+** The player has collision detection and cannot walls
+*/
+typedef struct			s_player_entity
+{
+	t_entity		super;
+	t_event_handler	event_handler;
+	const t_map		*map_ref;
+	float			speed;
+}						t_player_entity;
+
 typedef struct			s_player_entity_args
 {
 	const t_map		*map;
@@ -43,7 +51,9 @@ typedef struct			s_player_entity_args
 
 t_heap_module_factory	player_entity(const t_map *const map);
 
-t_player_entity			*new_player_entity(t_player_entity_args *const args);
+t_player_entity			*new_player_entity(
+							const t_player_entity_args *const args);
+
 void					player_entity_update(t_player_entity *const self);
 t_bool					is_colliding(const t_map *const map,
 							const t_vec2f move,

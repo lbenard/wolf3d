@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 21:17:24 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 19:15:51 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 12:08:13 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,10 @@
 # include "engine/module.h"
 # include "maths/transform.h"
 
+/*
+** Super-class for any entity object. Every entity contains a transform
+** (position + rotation + scale)
+*/
 typedef struct	s_entity
 {
 	t_module		module;

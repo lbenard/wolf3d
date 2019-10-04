@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 18:13:26 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 17:17:37 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:11:22 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include "ft/mem.h"
 
 static t_result	load_texture(t_image **file, t_usize *image_size,
-					t_frame_args *const args)
+					const t_frame_args *const args)
 {
 	sfVector2u	frame_size;
 
@@ -55,7 +55,7 @@ static void		copy_texture(t_frame *const self, t_image *const file)
 }
 
 t_result		init_frame_from_file(t_frame *const self,
-					t_frame_args *const args)
+					const t_frame_args *const args)
 {
 	t_image	*file;
 

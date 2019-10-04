@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/03 19:31:47 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 16:54:40 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:11:49 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@
 #include "engine/render_texture.h"
 #include "engine/error.h"
 
-static void	add_modules(t_frame *const self, t_frame_args *const args)
+static void	add_modules(t_frame *const self, const t_frame_args *const args)
 {
 	module_add_heap_module(&self->module,
 		render_texture(args->size), (void**)&self->render_texture);
 	module_add_heap_module(&self->module, sprite(), (void**)&self->sprite);
 }
 
-t_result	init_frame(t_frame *const self, t_frame_args *const args)
+t_result	init_frame(t_frame *const self, const t_frame_args *const args)
 {
 	init_module(&self->module);
 	if (args->size.x == 0 || args->size.y == 0)

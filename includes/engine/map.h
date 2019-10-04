@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/04/24 16:38:15 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 15:41:37 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:05:00 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 # include "maths/vec2d.h"
 # include "engine/image.h"
 
+/*
+** Map element. Contains wall texture for each orientation
+*/
 typedef struct			s_wall
 {
 	const t_image	*north_texture_ref;
@@ -28,6 +31,9 @@ typedef struct			s_wall
 	const t_image	*west_texture_ref;
 }						t_wall;
 
+/*
+** Texture node
+*/
 typedef struct			s_texture_node
 {
 	t_list_head	node;
@@ -37,10 +43,15 @@ typedef struct			s_texture_node
 
 t_texture_node			*new_texture_node(const char *key,
 							const char *const path);
+
 t_texture_node			*texture_from_key(t_list_head *const self,
 							const char *const key);
+
 void					free_texture_list(t_list_head *const self);
 
+/*
+** Block node
+*/
 typedef struct			s_block_node
 {
 	t_list_head	node;
@@ -52,10 +63,16 @@ typedef struct			s_block_node
 }						t_block_node;
 
 t_block_node			*new_block_node(const char *key, char **values);
+
 t_block_node			*block_from_key(t_list_head *const self,
 							const char key);
+
 void					free_block_list(t_list_head *const self);
 
+/*
+** Map for .wolf level files. Stores textures, blocks (set of 4 textures),
+** map size, spawn position and the map itself.
+*/
 typedef struct			s_map
 {
 	t_module	module;
@@ -74,6 +91,7 @@ typedef struct			s_map_args
 t_stack_module_factory	map(const char *const path);
 
 t_result				init_map(t_map *self, const t_map_args *const args);
+
 t_result				map_parse_texture_list(t_map *const self,
 							char *textures_flag_str);
 t_result				map_parse_block_list(t_map *const self,
@@ -84,6 +102,7 @@ t_result				map_parse_map(t_map *const self,
 							char *map_flag_str);
 t_result				map_parse_player(t_map *const self,
 							char *player_flag_str);
-void					destroy_map(t_map *self);
+
+void					destroy_map(t_map *const self);
 
 #endif

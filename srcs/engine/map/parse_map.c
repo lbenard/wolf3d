@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 18:08:31 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 18:00:13 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 12:54:42 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,9 +84,7 @@ static t_result	fill_map_row(t_map *self, char *row, int y)
 	return (OK);
 }
 
-static t_result	parse(t_map *const self,
-					char *map_flag_str,
-					char *p)
+static t_result	parse(t_map *const self, char *map_flag_str, char *p)
 {
 	size_t	columns_amount;
 
@@ -111,7 +109,7 @@ static t_result	parse(t_map *const self,
 	return (OK);
 }
 
-t_result		map_parse_map(t_map *self, char *map_flag_str)
+t_result		map_parse_map(t_map *const self, char *map_flag_str)
 {
 	char	*p;
 

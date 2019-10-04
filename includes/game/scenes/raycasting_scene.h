@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/12 15:51:49 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/04 04:20:53 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:07:23 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 # include "game/entities/image_entity.h"
 # include "game/entities/minimap_entity.h"
 
+/*
+** Raycasting level scene
+*/
 typedef struct			s_raycasting_scene
 {
 	t_scene				super;
@@ -42,22 +45,13 @@ typedef struct			s_raycasting_scene_args
 
 t_heap_module_factory	raycasting_scene(const t_window *const window);
 
-/*
-** Constructors
-*/
 t_raycasting_scene		*new_raycasting_scene(
 							const t_raycasting_scene_args *const args);
 
-/*
-** Modifiers
-*/
-void					raycasting_scene_update(t_raycasting_scene *self);
-void					raycasting_scene_render(t_raycasting_scene *self,
-							t_frame *fb);
+void					raycasting_scene_update(t_raycasting_scene *const self);
+void					raycasting_scene_render(t_raycasting_scene *const self,
+							t_frame *const fb);
 
-/*
-** Destructors
-*/
-void					free_raycasting_scene(t_raycasting_scene *self);
+void					free_raycasting_scene(t_raycasting_scene *const self);
 
 #endif

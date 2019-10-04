@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 18:02:30 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 17:34:31 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 12:54:25 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "engine/parsing.h"
 #include "ft/str.h"
 
-t_result	map_parse_block_list(t_map *self, char *blocks_flag_str)
+t_result	map_parse_block_list(t_map *const self, char *blocks_flag_str)
 {
 	t_block_node	*new_node;
 	char			*p;

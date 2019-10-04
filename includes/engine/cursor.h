@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/12 23:38:02 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 15:35:27 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:08:42 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include "types.h"
 # include "engine/frame.h"
 
+/*
+** Mouse cursor module
+*/
 typedef struct			s_cursor
 {
 	t_module	module;
@@ -35,11 +38,13 @@ t_stack_module_factory	cursor(const t_usize size, const t_rgba fill_color);
 t_stack_module_factory	cursor_from_file(const char *const path);
 
 t_result				init_cursor(t_cursor *const self,
-							t_cursor_args *args);
+							const t_cursor_args *const args);
 t_result				init_cursor_from_file(t_cursor *const self,
-							t_cursor_args *args);
+							const t_cursor_args *const args);
+
 void					cursor_set_visibility(t_cursor *const self,
 							const t_bool is_visible);
+
 void					destroy_cursor(t_cursor *const self);
 
 #endif

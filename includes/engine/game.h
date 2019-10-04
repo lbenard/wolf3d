@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/03/29 15:39:38 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 18:09:42 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 12:12:56 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,11 @@ t_stack_module_descriptor	game_descriptor(void);
 t_game						*game_singleton(void);
 
 t_result					start_game(const t_game_args *const args);
+
 t_result					game_set_scene(t_heap_module_factory factory);
 void						game_loop(void);
 void						game_close(void);
+
 void						stop_game(void);
 
 #endif

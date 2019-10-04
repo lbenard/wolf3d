@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/05 00:28:41 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 15:39:28 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 13:04:30 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,19 @@ float	lerp(float v0, float v1, float t);
 */
 float	inverse_lerp(float v0, float v1, float value);
 
+/*
+** Lookup tables for costly mathematics operations
+*/
 # define SINE_TABLE_SIZE 1024
 
-float	sine_lookup(float t);
+float	sine_lookup(const float t);
 
 # define COSINE_TABLE_SIZE 1024
 
-float	cosine_lookup(float t);
+float	cosine_lookup(const float t);
 
 # define TANGENT_TABLE_SIZE 1024
 
-float	tangent_lookup(float t);
+float	tangent_lookup(const float t);
 
 #endif

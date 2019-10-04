@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/23 21:05:56 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 15:44:16 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 12:34:57 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 # include "engine/entity_list.h"
 # include "engine/entity_node.h"
 
+/*
+** Super-class for any scene object. Stores generic scene informations such as
+** an entity batch and an event handler. Each scene has a specific name that
+** is shown as the current window title.
+*/
 typedef struct	s_scene
 {
 	t_module			module;
