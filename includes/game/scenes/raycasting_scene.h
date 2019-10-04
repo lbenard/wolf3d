@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/12 15:51:49 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 22:27:24 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 04:20:53 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "engine/raycasting.h"
 # include "engine/frame.h"
 # include "game/entities/player_entity.h"
+# include "game/entities/image_entity.h"
 # include "game/entities/minimap_entity.h"
 
 typedef struct			s_raycasting_scene
@@ -29,6 +30,7 @@ typedef struct			s_raycasting_scene
 	t_frame				background;
 	t_raycasting		renderer;
 	sfImage				*texture;
+	t_image_entity		*vignette_ref;
 	t_player_entity		*player_ref;
 	t_minimap_entity	*minimap_ref;
 }						t_raycasting_scene;

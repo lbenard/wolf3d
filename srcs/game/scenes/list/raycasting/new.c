@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:26:02 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 22:30:09 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 04:25:14 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,15 @@ static void			add_entities(t_raycasting_scene *const self)
 	self->minimap_ref = (t_minimap_entity*)entity_list_add_entity(
 		&self->super.entities,
 		minimap_entity(&self->renderer, ft_usize(200, 200)));
+	self->vignette_ref = (t_image_entity*)entity_list_add_entity(
+		&self->super.entities,
+		image_entity_from_file("resources/textures/vignette-50.png"));
 }
 
 static void			init_vars(t_raycasting_scene *const self)
 {
 	self->ground_color = ft_rgb(105, 105, 105);
-	self->sky_color = ft_rgb(129, 244, 252);
+	self->sky_color = ft_rgb(135, 206, 235);
 	background_frame(&self->background, self->ground_color, self->sky_color);
 	event_handler_add_sub_handler(&self->super.input_manager,
 		&self->player_ref->event_handler);
