@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 07:09:54 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/03 22:27:55 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 04:11:43 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ const t_image	*ray_hitting_texture(const t_map *const map,
 	collision = pos;
 	collision.x += shift.x;
 	collision.y += shift.y;
-	wall = &map->map[(int)collision.x + (int)collision.y * map->size.y];
+	wall = &map->map[(int)collision.x + (int)collision.y * map->size.x];
 	if (direction == NORTH && wall->north_texture_ref)
 		return (wall->north_texture_ref);
 	if (direction == EAST && wall->east_texture_ref)
