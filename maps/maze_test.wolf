@@ -8,8 +8,8 @@ a: maze maze maze maze
 E: end end end end
 
 -size
-height: 20
 width: 20
+height: 20
 
 -map
 : aaaaaaaaaaaaaaaEaaaa
@@ -34,4 +34,4 @@ width: 20
 : aaaaaaaaaaaaaaaaaaaa
 
 -player
-spawn: 10.500000 10.500000
+spawn: 10.50 9.50
