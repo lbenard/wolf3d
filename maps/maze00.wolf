@@ -1,0 +1,38 @@
+-textures
+bricks: ./resources/textures/bricks02.png
+bricks_crackled: ./resources/textures/bricks02-crackled.png
+end: ./resources/textures/brick-door.png
+
+-blocks
+a: bricks bricks bricks bricks
+b: bricks_crackled bricks_crackled bricks_crackled bricks_crackled
+E: end end end end
+
+-size
+width: 20
+height: 20
+
+-map
+: aaaaaaaaaaaaaaaEaaaa
+: a  ba        a     a
+: ba   ba aaba aaaba b
+: a ba    a  a     a b
+: b   aaaaba ba ba b a
+: b b a   a   ba   a b
+: a b   a  ba    aba b
+: a baaaba    aba    a
+: a     a baaba   ba b
+: aaaba b       ba b a
+: a   a  aba bba   a b
+: b b  a     a ba b  a
+: a  a baba ba    a ba
+: ba b     a   a b   a
+: a   a b a  ba  a b a
+: a b  a b  aba ba b a
+: a  ba    a b  a   aa
+: ba    a ba b ba b  a
+: a  a b     a     a b
+: aaaaaaaaaaaaaaaaaaaa
+
+-player
+spawn: 10.50 9.50

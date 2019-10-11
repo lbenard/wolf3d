@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 19:26:02 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/04 13:29:18 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 16:32:56 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static void			add_modules(t_raycasting_scene *const self,
 	module_add_heap_module(&self->super.module,
 		image_from_file("resources/textures/plaster.jpg"),
 		(void**)&self->texture);
-	module_add_stack_module(&self->super.module, map("maps/maze_test.wolf"),
+	module_add_stack_module(&self->super.module, map("maps/maze00.wolf"),
 		&self->map);
 	module_add_stack_module(&self->super.module,
 		frame(args->window->size, ft_rgba(255, 255, 255, 255)),
