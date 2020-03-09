@@ -1,5 +1,7 @@
 .vscode
 wolf3d
+CSFML
+SFML
 # Prerequisites
 *.d
 

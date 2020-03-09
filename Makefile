@@ -6,7 +6,7 @@
 #    By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 19:33:38 by lbenard           #+#    #+#              #
-#    Updated: 2019/10/03 22:26:53 by lbenard          ###   ########.fr        #
+#    Updated: 2020/03/09 18:09:59 by lbenard          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -206,43 +206,38 @@ SRCS			=	$(addprefix $(SRCS_FOLDER), $(SRCS_LIST))
 OBJS_LIST		=	$(SRCS_LIST:.c=.o)
 OBJS_FOLDER		=	./objs/
 OBJS			=	$(addprefix $(OBJS_FOLDER), $(OBJS_LIST))
+INCLUDES_FOLDER	:=	./includes/
+INCLUDES		:=	-I $(INCLUDES_FOLDER)
+LDFLAGS			:=	-lm
+
+CXX				=	gcc
+LD				=	gcc
 
 LIBFT_FOLDER	=	libft
 LIBFT			=	$(LIBFT_FOLDER)/libft.a
+INCLUDES		:=	$(INCLUDES) -I $(LIBFT_FOLDER)/includes
+LDFLAGS			:=	$(LDFLAGS) -L $(LIBFT_FOLDER) -lft
 
 ifneq ($(UNAME), Linux)
 	SFML_FOLDER		=	SFML
 	SFML_ABSOLUTE	=	$(addprefix $(shell pwd)/, $(SFML_FOLDER))
 	CSFML_FOLDER	=	CSFML
 	CSFML			=	$(CSFML_FOLDER)/lib
-endif
-
-CXX				=	gcc
-LD				=	gcc
-
-INCLUDES		:=	-I includes					\
-					-I $(LIBFT_FOLDER)/includes
-LIB_FOLDERS		:=	-L$(LIBFT_FOLDER)
-
-ifneq ($(UNAME), Linux)
-	INCLUDES		:=	$(INCLUDES) -I $(CSFML_FOLDER)/include
-	LIB_FOLDERS		:=	$(LIB_FOLDERS) -L $(CSFML_FOLDER)/lib
-endif
-
-LIBS			=	-lft				\
-					-lm					\
-					-lcsfml-graphics	\
-					-lcsfml-window		\
-					-lcsfml-system		\
+	INCLUDES	:=	$(INCLUDES) -I $(CSFML_FOLDER)/include
+	LDFLAGS		:=	$(LDFLAGS) -L $(CSFML_FOLDER)/lib \
+					-lcsfml-graphics \
+					-lcsfml-window \
+					-lcsfml-system \
 					-lcsfml-audio
+endif
 
-# CFLAGS			=	-Wall -Wextra -Werror -O3 -Ofast -flto -g
 CFLAGS			=	-Wall -Wextra -Werror -O3 -Ofast -flto -Wno-deprecated
 
-LDFLAGS			:=	$(LIB_FOLDERS) $(LIBS)
 ifneq ($(UNAME), Linux)
 	LDFLAGS			:=	$(LDFLAGS) \
-						-Wl,-rpath,$(SFML_FOLDER)/extlibs/libs-osx/Frameworks
+						-Wl,-rpath,$(SFML_FOLDER)/extlibs/libs-osx/Frameworks \
+						-Wl,-rpath,$(SFML_FOLDER)/lib \
+						-Wl,-rpath,$(CSFML_FOLDER)/lib
 	RUN_PREFIX		:=	LD_LIBRARY_PATH=CSFML/lib:SFML/lib
 endif
 
@@ -275,7 +270,7 @@ PREFIX			=	$(BOLD)$(LIGHT_CYAN)[$(NAME)]$(RESET):
 all: $(CSFML) $(LIBFT) $(NAME)
 
 $(NAME): $(OBJS)
-	@$(LD) $(OBJS) -o $(NAME) $(LDFLAGS)
+	$(LD) $(OBJS) -o $(NAME) $(LDFLAGS)
 	@printf "\e[0K$(PREFIX) done\n"
 
 $(OBJS_FOLDER)%.o: $(SRCS_FOLDER)%.c
