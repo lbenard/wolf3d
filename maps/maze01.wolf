@@ -1,0 +1,118 @@
+-textures
+bricks: ./resources/textures/bricks02.png
+bricks_crackled: ./resources/textures/bricks02-crackled.png
+end: ./resources/textures/brick-door.png
+
+-blocks
+a: bricks bricks bricks bricks
+b: bricks_crackled bricks_crackled bricks_crackled bricks_crackled
+E: end end end end
+
+-size
+height: 100
+width: 100
+
+-map
+: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+: b a    b    b   b       b   b  b   b    b        b aa   b      b     b a  aaa       b      b   b   a
+: b  b a   bb abb   aaabb b a  b   b   bb b bb bb b     bb  aabb  b bb b  b  b  abb b abb abb  b   b a
+: bb b  b bb     b bb   b a  b   b aaabb  b  b  b a b a    b    b   b  bb  b a b    b   b     b  bb  a
+: bb  b a   b bb  b   b a  b  b a b      b a  b bb  b  aabb  b a abb b   b   b bb bb bb  b a b  bb  aa
+: b a abb b  b  b a bb  bb b a b  b bb b   bb b  b a  b    bb  b a    b a  b a  b      b bb  b bb  aaa
+: b a    b a  b   b   b  b a b   bb  abb b  b  b a  b   bb   b   b bb   b a   b  aabb bb   b  b   b aa
+: b  abb b   b  bb  b  b   b  b a   b   b a  b a  b abb b bb  bb    aabb  bb b  b   b   bb  bb  b a  a
+: b a  b   bb  b  b  b  bb  b a b a b a    abb bb      b  b a   abb     b  b  b a b  bb   b  b a   b a
+: b   b a bb  b  b a  b   bb  b a  b  aabb       aabb b  b   bb   abb b a b a b    b   bb bb   b a   a
+: bb b   b   b  b   b  bb  b a   b   b    aabb bb   b a b  b a bb   b a  b     b bb  b  b   aaabb b aa
+: bb   b a bb  b  b a b  b a  b a b a bb b    b   b a     bb     bb  b  b  aabb b   abb abb    b  b  a
+: b  bb  b   b  b  b   b a b a     b   b   b a  bb  bb aabb bb b  bb b a  b       b  b a   abb b abb a
+: b a  bb b a b  b a b   b   b a b   b a b bb  bb  b  b      b  bb   b   b  b aaaabb   b a b   b abb a
+: b a b     b bb   b bb b abb bb  abb  b a  b bb  b a   aabb b a   bb  b bb  b    b  b a b   abb  b  a
+: b     aabb    bb b  bb  b      b  b a  b bb b  b   b a    b  b a  aaabb   b  bb  b  b   abb   b a aa
+: b bb b   b a b   bb    b  aaabb  b   b  b   b a b a  b bb   bb  bb   b  bb  b   b  b  bb  b a   b  a
+: b a  b a   b   b  aabb   b      b  bb  bb bb  b     bb b abb  b    b   b a b  b a b  b   b   bb b aa
+: bb  b   abb b a  b    b abb b abb b   b   bb b a abb   b    b  aabb b bb b a abb  b a  bb  b   bb  a
+: b  bb b a   b a bb bb  b a   b    bb b  bb   b   b   abb bb   bb     b   b a bb  b   b    aabb b a a
+: b bb  abb b   bb     b     b   b a   b a  b a b a  b a   b bb   b a b  b a b   bb  bb  b a b a   b a
+: b a  b     b a   bb b  b aaaabb    b a  b     b   b  b bb    bb  b    abb  b a b  b   b  b    b a  a
+: b  b a b a bb  abb b  b    b   bb b   b a abb b bb b   b  bb   b  b a abb b bb bb bb b  bb b bb b aa
+: b a  b a  b   b     bb abb b a  bb  b a  b    b a   b a  b a b  b   b  b  b     b   b a     b   b  a
+: b  bb  b a  bb  abb b     b  bb   bb  bb b abb  b a  b bb    b a  b  b a b  aabb  b a  bb b a b a aa
+: bb   b a b a   b    b abb  b   bb   bb   b    abb  b     bb b a  b a  b  bb b    bb  b a   b  b a  a
+: b bb b  b  bb b  abb  b  b  bb b bb    bb  b a    aaaabb b  b   b   b a b   b abb   b  b abb b a  aa
+: b  b  b   b a  b a   abb bb b  b   bb b  b  b  b a b     bb b abb b  b  b bb    b aabb b a   b   b a
+: b a b a b a  b a  bb  b   b a b  b   bb b a   b a    b bb   b a   b a  bb   b bb  b a  b a bb  bb  a
+: b a b  bb   b  bb   b  bb b a b a bb       b a  b a b a  bb   b a bb  b  bb bb   b    bb b a  b   aa
+: b    b   b a  b  b a  b   b   bb   abb abb  b a b  b    b   bb  b    b  b a  b bb  abb   b a b  b  a
+: bb bb bb  b  b  b  b a  bb abb b a     b  b a   b a  b a  b   b  b bb  bb  b a abb b   bb  b  b  b a
+: bb     b a  b a   bb b a   b      b abb b a abb b  bb  b a  b bb  b  b    b  b  b  b bb   bb b  b  a
+: b  bb bb  b    b a   b   b a bb b  b          b  b   b    b  b   b  b a abb b a b bb b  abb  bb b aa
+: b a b a b a bb b   bb  b a   b a b  bb b aabb   aabb  b a  b a bb  b        b   b     b     b   b  a
+: b a b     b  b  b bb  b   abb     b   b  b   bb  b  b  b a  b  b a b bb aabb  b  bb b bb aabb b a aa
+: b a  aaabb b  b  b   b bb    bb b abb  bb  b   b   b a    bb  b    b   b   bb  b   b    b    b  b  a
+: b a b    b bb  b  abb    abb  b a   b a   aabb  bb b  abb  b a b bb b a  b   b  bb b a b  bb  bb  aa
+: b a   bb b    b  b   abb   b a  b a b   aabb  b  b  b a  b   b      b a b bb  b  b  b    b  b  b a a
+: b a bb   b a bb b  b   abb   b a b aaabb  b  b  b  b    b abb  abb b  b a  bb  b a b  abb b  b a   a
+: b   b  bb bb b  bb  bb    b a       b  bb   b a b bb b a    b a  b   b  bb    b  b aabb     b  b a a
+: aabb  b     b  b   b  abb b  aaaabb  b    b   b  bb  b a bb b   aaabb  b   abb  bb     b a bb bb b a
+: b  b a  b a  b a abb b  b  b       b a abb b a  b   bb  b   bb abb    b  bb   b   aabb  b  b    b  a
+: b bb  b a  b a   b     b a  b aabb b a b   b  b a bb  b   b  b  b  abb  abb b bb b    b  b   bb bb a
+: b   b  b  b  b a b abb b bb  b   b a    b abb b a   b  b a  abb   b   b  b  b     abb  b aabb      a
+: b a  b   b  b   b  b   b   b  b a  b bb    b  b   bb b a  b  b a b  b  b  b a abb     b      b abb a
+: b  b  b a  b  b   b  bb bb b a   b  b bb b  b  abb     bb  b    b  abb  b  b     aabb  aaabb  b    a
+: bb  b  b  bb b  abb b      b a b  b a   b  b  b    b a   b  abb b a b a  b a b bb   b a     b a b aa
+: b a bb  b   b  b     b a b a b  abb  b a  b  b a bb   b abb b a b      bb  b bb   b  b  abb b a  b a
+: b a   b  bb  bb  b a b a  b  bb    b a b a  b  b   b a   b  b a b abb b   bb  b bb b   b  b a  b   a
+: b  b a b   b a  b bb  b a  b  aabb   b    b   b  b  b  b a b  b   b   b abb  b  b    bb b   b a b aa
+: bb b a  bb b a b    b    b bb     bb b bb b a  b  b a b  b  b  abb  b a b   b  b  abb   b a b a b  a
+: b  b  b  b   bb  bb b bb b   bb b a  b a b  bb  b a  b  b  b a b   b bb  b a b a b    b  b    b  b a
+: bb  b  b  abb   b a  b a  bb   bb b a b    b a b  b a  b a b a  bb b   b bb  b a b abb b a aaabb   a
+: b a b a b     bb  b a  bb  b bb   b a   b a  b a b  aabb      b    b a b   b    bb   b a bb   b  b a
+: b a b    bb bb bb   b a   b  b  bb   bb  b a b  b  b    b a b a b a b   bb  b bb   bb  b   b a  b aa
+: b    abb    b     bb    b a b  b   b abb b   b a  b  bb  b a  b  b    b  bb b a  b    b bb b   b   a
+: bb b    bb b a b bb  abb    b a abb   b   b a  b abb b a    b  b   b bb b   b   b a b a  b a bb bb a
+: b   abb abb     b   b   bb b  b    bb  bb b a b  abb b  abb b aaaaabb   b bb  bb  bb  bb b a bb    a
+: b a   b  b  aabb  bb  b a   b   bb b a  b a b  b  b  b a    b  b   b  abb b a b  b   b a b a    bb a
+: b  bb  b  b a    b   b  abb  b abb    b   b  b  b a b    b a  b  b  bb    b  b  b  abb   b  aabb   a
+: bb b  b a b a b a  aabb   bb  b a abb  abb b   bb b  b abb  b  b  b a  b a b   b  b   b a b a   bb a
+: b   b   b a  b   b   b bb   b a     b a    b bb    b  b   b  b  b a   b a  b a   b  b   b a   b   aa
+: b abb bb  b a  b a b a  bb b    bb b  bb abb    b a b   b  b  b a b bb    b  b bb  b a b   b a bb  a
+: b a   b  bb  b a  b  bb  b  bb b   b a      b bb  b  b a  b  b  b  b   b a  b a   bb  b  b  b  b a a
+: bb  bb b   b  b a  b   b  b   b  bb  b aabb  b   abb  bb b a  b  b a b  b  b    b    b  b a   b    a
+: bb bb   bb  b a   b a b a  bb abb b aabb    b  aabb  b   b  b   bb b  b  b a bb  b a b a  b a b aaaa
+: b  b  b   b a  b a    b   abb       bb   bb  b   b  b  bb b  b a   bb b a  b   abb  bb b a  b a    a
+: b bb b  b a  b bb  abb  b  b  aaaabb   b a aaabb b a  b     b  b bb   bb  bb bb   b a     b  b a b a
+: b   b  b  bb b    b  b a b  bb     b a bb    b a b  b  b a b a b  b a   b   b   b   b a bb  b   bb E
+: b a abb  b    abb  b   b  b    b a   b  b bb   b  b  b  b  b   b a   bb  bb b a  b bb bb   b  b a  a
+: b a   b a  bb b a b  abb b bb b aabb  b a abb b a   b  b  b  bb  b a  b a b a  b  b    b a b bb   aa
+: b abb b a b  b   b  b    b   b   b  b  bb  b    bb b  bb b  b   b  abb  b   b a bb  b bb  b  b bb  a
+: bb    b a   b  b   b  bb  bb   b   abb   b  b bb   b a   b a  bb bb   b   abb      abb   b  b  b  aa
+: b  aabb   bb  b aaabb b a  b aabb b a  b   b   b bb  bb bb b bb     b  b a    aabb  b  abb b a   b a
+: b a     bb   bb    bb b  b a   b  b  bb abb  b a b  b      b    aabb  b   aaabb   b a b    b a bb  a
+: b bb b bb  bb   bb    bb   b a  b  b    b  b  bb  b aaaaaaaaaaabb  bb b a b     b  b   b bb  b a  aa
+: b   b  b  b a b abb bb   bb   b  b  b bb  b a b a b        b      b   bb    aabb  b  b a  b bb b a a
+: b a  abb b  b a  b  b  bb   b abb b   b  b  b     abb aabb b abb bb bb   b a    b   abb b a b  b   a
+: b a b    b a   bb  b a b  b  b     b a  b  b a abb   b   b     b a  b  bb b  bb  bb  b    b a b  b a
+: b a b abb    bb   b    abb  bb abb b   b  b   b    b a b  aabb b a b  b a b aabb b  b  abb  b a bb a
+: b a b a b a b   bb  abb   bb   b   bb b  b  b  b bb  b a bb   b  b  b a   b  abb  b a b   b   b a  a
+: b a   b   abb bb b bb   b    bb b a     b  b a  bb  b  b a  b a b a b  b a b  b a bb  b bb  bb  b aa
+: bb  abb bb    b  b    bb bb b a   bb bb b a  b a   bb b    bb b   b a bb    b a      b   b a  b  b a
+: b  b    b  abb  aaabb b  b a  b bb   b    b a  b bb   b abb    bb b a    bb b  b a bb  b   b a b   a
+: b a bb bb b    b a   b  b   b a b  b a abb  b a    bb  b    abb   b  aabb b  b bb   abb  bb     bb a
+: b a   b   b a b    b a b  b   b a b   b   b   b bb   b  b bb   b abb b    bb b   b a   b a  abb  b a
+: b   b a bb  b   b a  b   b  abb  b bb b a b a b   bb bb b  b a b abb b bb    abb  bb b a  b a bb   a
+: aabb    b bb  bb b  b  abb b   b      b a b  b bb  b     b a b a  b  b a bb b   b a  b bb   b   bb a
+: b   b bb     b a   abb b   b a aabb bb bb  b a b  b a b a  b a  b   b  b   b  abb b bb   abb  b    a
+: b a  b   b bb    bb b  aabb  b     b      b  b   b   b   b   b a aabb bb b a b    b   bb b   b abb a
+: b  bb  bb  b  b bb    b    b  bb b  b a b a bb b a b  bb  b a    b    b  b   bb bb bb bb  bb   b  aa
+: bb    b   b bb  b  b bb bb  b  b a b  b a b a   b   b  b a abb b a aabb b  b  b    bb   b   bb  b  a
+: bb abb b a     b bb  b  b a  b a  b  b   b  b a  b a b  b   b  b a b    b a b  bb b   b  bb  bb  b a
+: b  b a b  aabb      b  b  b bb  b a b a b  bb b a  b bb   b a b  b   abb  b  bb     bb bb  b   b   a
+: bb b    b a   bb b bb b a b   b a   b    b a   b  bb   abb   b  b  bb   b  b   b a b      b  b  bb a
+: b  bb b a   b a   b   b    bb b  abb  abb   abb  b   b    bb bb   b   b a b  b a bb  bb b  b a b   a
+: b a b a aaabb  abb  b bb b  b a b  b a    b a   bb bb b bb    aabb  abb bb  bb bb   b a bb  b  b aaa
+: b     b      b     b      b a     b    b a    bb      b    bb      b       b      bb      b   b    a
+: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+-player
+spawn: 50.500000 50.500000

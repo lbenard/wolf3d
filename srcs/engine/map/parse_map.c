@@ -6,7 +6,7 @@
 /*   By: lbenard <lbenard@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/30 18:08:31 by lbenard           #+#    #+#             */
-/*   Updated: 2019/10/04 12:54:42 by lbenard          ###   ########.fr       */
+/*   Updated: 2019/10/04 16:10:20 by lbenard          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ static t_result	fill_wall_from_char(t_map *const self,
 	if (c == ' ')
 		ft_bzero(wall, sizeof(t_wall));
 	else if ((block = block_from_key(&self->blocks, c)))
-		wall_from_block(&self->textures, wall, block);
+	{
+		if (wall_from_block(&self->textures, wall, block) == ERROR)
+			return (throw_result_str("fill_wall_from_char()", "invalid wall"));
+	}
 	else
 	{
 		return (throw_result_str("fill_wall_from_char()",
