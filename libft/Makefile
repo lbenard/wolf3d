@@ -191,7 +191,9 @@ OBJS_LIST		=	$(SRCS_LIST:.c=.o)
 OBJS_FOLDER		=	./objs/
 OBJS			=	$(addprefix $(OBJS_FOLDER), $(OBJS_LIST))
 INCLUDES		=	-I includes/
-CFLAGS			=	-Wall -Wextra -Werror -O3 -Ofast -flto
+CFLAGS			=	-Wall -Wextra -Werror -O3 -Ofast# -flto
+
+CC				=	clang
 
 # Colors
 BOLD			=	\e[1m
@@ -229,7 +231,7 @@ $(NAME): $(OBJS)
 $(OBJS_FOLDER)%.o: $(SRCS_FOLDER)%.c
 	@printf "$(PREFIX) $(shell basename $<)\n"
 	@mkdir -p $(dir $@)
-	@gcc -c $< -o $@ $(INCLUDES) $(CFLAGS)
+	@$(CC) -c $< -o $@ $(INCLUDES) $(CFLAGS)
 	@printf "\e[1A\e[0K"
 
 clean:

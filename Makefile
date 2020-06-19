@@ -210,36 +210,37 @@ INCLUDES_FOLDER	:=	./includes/
 INCLUDES		:=	-I $(INCLUDES_FOLDER)
 LDFLAGS			:=	-lm
 
-CXX				=	gcc
-LD				=	gcc
+CC				=	clang
+LD				=	clang
 
 LIBFT_FOLDER	=	libft
 LIBFT			=	$(LIBFT_FOLDER)/libft.a
 INCLUDES		:=	$(INCLUDES) -I $(LIBFT_FOLDER)/includes
 LDFLAGS			:=	$(LDFLAGS) -L $(LIBFT_FOLDER) -lft
 
-ifneq ($(UNAME), Linux)
-	SFML_FOLDER		=	SFML
-	SFML_ABSOLUTE	=	$(addprefix $(shell pwd)/, $(SFML_FOLDER))
-	CSFML_FOLDER	=	CSFML
-	CSFML			=	$(CSFML_FOLDER)/lib
-	INCLUDES	:=	$(INCLUDES) -I $(CSFML_FOLDER)/include
-	LDFLAGS		:=	$(LDFLAGS) -L $(CSFML_FOLDER)/lib \
+
+SFML_FOLDER		=	SFML
+SFML_ABSOLUTE	=	$(addprefix $(shell pwd)/, $(SFML_FOLDER))
+CSFML_FOLDER	=	CSFML
+CSFML			=	$(CSFML_FOLDER)/lib
+INCLUDES		:=	$(INCLUDES) -I $(CSFML_FOLDER)/include
+LDFLAGS			:=	$(LDFLAGS) -L $(CSFML_FOLDER)/lib \
 					-lcsfml-graphics \
 					-lcsfml-window \
 					-lcsfml-system \
-					-lcsfml-audio
-endif
+					-lcsfml-audio \
+					-L $(SFML_FOLDER)/lib \
+					-lsfml-graphics \
+					-lsfml-window \
+					-lsfml-system \
+					-lsfml-audio
 
-CFLAGS			=	-Wall -Wextra -Werror -O3 -Ofast -flto -Wno-deprecated
 
-ifneq ($(UNAME), Linux)
-	LDFLAGS			:=	$(LDFLAGS) \
-						-Wl,-rpath,$(SFML_FOLDER)/extlibs/libs-osx/Frameworks \
-						-Wl,-rpath,$(SFML_FOLDER)/lib \
-						-Wl,-rpath,$(CSFML_FOLDER)/lib
-	RUN_PREFIX		:=	LD_LIBRARY_PATH=CSFML/lib:SFML/lib
-endif
+CFLAGS			=	-Wall -Wextra -Werror -Wno-deprecated# -O3 -Ofast -flto -Wno-deprecated
+
+LDFLAGS			:=	$(LDFLAGS) \
+					-Wl,-rpath,$(CSFML_FOLDER)/lib \
+					-Wl,-rpath,$(SFML_FOLDER)/lib
 
 # Colors
 BOLD			=	\e[1m
@@ -271,16 +272,16 @@ all: $(CSFML) $(LIBFT) $(NAME)
 
 $(NAME): $(OBJS)
 	$(LD) $(OBJS) -o $(NAME) $(LDFLAGS)
-	@printf "\e[0K$(PREFIX) done\n"
+	printf "\e[0K$(PREFIX) done\n"
 
 $(OBJS_FOLDER)%.o: $(SRCS_FOLDER)%.c
 	@printf "$(PREFIX) $<\n"
 	@mkdir -p $(dir $@)
-	@gcc -c $< -o $@ $(INCLUDES) $(CFLAGS)
+	@$(CC) -c $< -o $@ $(INCLUDES) $(CFLAGS)
 	@printf "\e[1A\e[0K"
 
 run: all
-	@$(RUN_PREFIX) ./$(NAME)
+	@./$(NAME)
 
 $(LIBFT):
 	@printf "\e[0K"
