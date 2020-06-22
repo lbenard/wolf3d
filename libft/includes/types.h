@@ -24,8 +24,6 @@ typedef int32_t		t_i32;
 typedef uint64_t	t_u64;
 typedef int64_t		t_i64;
 
-// typedef uint8_t		t_bool;
-
 typedef enum		e_result
 {
 	ERROR,
@@ -34,11 +32,11 @@ typedef enum		e_result
 
 typedef enum		e_bool
 {
-	TRUE			= 1,
-	FALSE			= 0,
-	TRUENT			= 0,
-	FALSENT			= 1,
-	LA_TETE_A_TOTO	= 0
+	TRUE = 1,
+	FALSE = 0,
+	TRUENT = 0,
+	FALSENT = 1,
+	LA_TETE_A_TOTO = 0
 }					t_bool;
 
 #endif

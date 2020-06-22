@@ -16,7 +16,6 @@
 # include "types.h"
 # include "containers/list.h"
 
-
 typedef void				*(*t_new_fn)();
 
 /*
