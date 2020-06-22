@@ -236,7 +236,7 @@ LDFLAGS			:=	$(LDFLAGS) -L $(CSFML_FOLDER)/lib \
 					-lsfml-audio
 
 
-CFLAGS			=	-Wall -Wextra -Werror -Wno-deprecated# -O3 -Ofast -flto -Wno-deprecated
+CFLAGS			=	-Wall -Wextra -Werror -Wno-deprecated -O3 -Ofast
 
 LDFLAGS			:=	$(LDFLAGS) \
 					-Wl,-rpath,$(CSFML_FOLDER)/lib \
